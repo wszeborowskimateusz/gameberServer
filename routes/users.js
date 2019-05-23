@@ -21,11 +21,14 @@ router.post('/signup', function(req, res){
      res.status(400);
      res.json({message: "Bad Request"});
   } else {
+
+    //log
+    console.log("New user request");
+
     var user = new db.User({
       login: userData.login,
-      password: userData.password,
+      password: passwordHash.generate(userData.password),
       mail: userData.mail,
-      salt: passwordHash.generate(userData.password),
       exp_points: 0,
       level: 1,
       ammount_of_coins: 50,
@@ -38,12 +41,52 @@ router.post('/signup', function(req, res){
       current_country_id: 0,
     });
  
+    //log
+    console.log("New user created");
+
     user.save(function(err, User){
-      if(err)
-         res.json({message: "Database error/n" + err.message, type: "error"});
-      else
-         res.json({message: "New user added", type: "success"});
+      if(err){
+        //log
+        console.log("Save error"); 
+        res.status(404);
+        res.json({message: "Database error/n" + err.message, type: "error"});
+      }
+      else{
+        //log
+        console.log("New user saved");
+        res.status(201);
+        res.json({message: "New user added", type: "success"});
+      }
    });
+  }
+});
+
+router.post('/signin', function(req, res){
+  var userData = req.body;
+  //Check if all fields are provided and are valid:
+  if(!userData.login ||
+     !userData.password){  
+
+     res.status(400);
+     res.json({message: "Bad Request"});
+  } else {
+
+    db.User.findOne({login: userData.login}, function(err, User){
+      if(err){
+        res.status(404);
+        res.json({message: "Database error/n" + err.message, type: "error"});
+      }
+      else{
+        if(passwordHash.verify(userData.password, User.password)){
+          res.status(201);
+          res.json({message: "Signed in", type: "success"});
+        }
+        else{
+          res.status(401);
+          res.json({message: "Unauthorised access", type: "error"});
+        }
+      }
+    });
   }
 });
 

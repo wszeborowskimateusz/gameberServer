@@ -1,16 +1,15 @@
 var cfg = require('../config');
 var mongoose = require('mongoose');
-var connection = mongoose.createConnection(cfg.dbConnectionString);
+var connection = mongoose.connect(cfg.dbConnectionString);
 var autoIncrement = require('mongoose-auto-increment');
 
-autoIncrement.initialize(connection);
+autoIncrement.initialize(mongoose.connection);
 
 
 let userSchema = mongoose.Schema({
     login: String,
     password: String,
     mail: String,
-    salt: String,
     exp_points: Number,
     level: Number,
     ammount_of_coins: Number,
