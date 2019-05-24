@@ -3,6 +3,7 @@ var express = require('express');
 var db = require('../' + cfg.dbPath);
 var router = express.Router();
 var passwordHash = require('password-hash');
+var jwt = require('jsonwebtoken');
 
 
 // /* GET users listing. */
@@ -82,7 +83,8 @@ router.post('/signin', function(req, res){
       }
       else{
         if(passwordHash.verify(userData.password, User.password)){
-          res.status(200).json({message: "Signed in", type: "success"});
+          var token = jwt.sign({ login: userData.login }, cfg.jwtSecret, { expiresIn: 129600 }); // 36h         
+          res.status(200).json({message: "Signed in", jwtToken:token, type: "success"});
         }
         else{
           res.status(401).json({message: "Unauthorised access", type: "error"});
