@@ -18,7 +18,7 @@ router.post('/signup', function(req, res){
   if(!userData.login ||
      !userData.password ||
      !userData.mail){  
-
+      
      res.status(400).json({message: "Bad Request"});
   } else {
     db.User.count({login: userData.login}, function(err, response){
@@ -71,19 +71,19 @@ router.post('/signin', function(req, res){
   console.log(userData);  
 
   //Check if all fields are provided and are valid:
-  if(!userData.login ||
+  if(!userData.username ||
      !userData.password){  
 
      res.status(400).json({message: "Bad Request"});
   } else {
 
-    db.User.findOne({login: userData.login}, function(err, User){
+    db.User.findOne({login: userData.username}, function(err, User){
       if(err){
         res.status(500).json({message: "Database error/n" + err.message, type: "error"});
       }
       else{
         if(passwordHash.verify(userData.password, User.password)){
-          var token = jwt.sign({ login: userData.login }, cfg.jwtSecret, { expiresIn: 129600 }); // 36h         
+          var token = jwt.sign({ login: userData.username }, cfg.jwtSecret, { expiresIn: 129600 }); // 36h         
           res.status(200).json({message: "Signed in", jwtToken:token, type: "success"});
         }
         else{
