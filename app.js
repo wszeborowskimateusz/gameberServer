@@ -4,13 +4,15 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cfg = require('./config');
 var jwt = require('jsonwebtoken');
-
+var cors = require('cors');
 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+app.use(cors());
 
 app.use(logger('dev'));
 app.use(express.json());
