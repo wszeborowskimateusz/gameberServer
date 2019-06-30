@@ -13,20 +13,24 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 app.use(cors());
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
 app.use('/users', usersRouter);
 
 app.use(function(req, res, next){
     console.log("A new request received at " + Date.now());
     try {
-        var decoded = jwt.verify(req.body.jwtToken, cfg.jwtSecret);
-        console.log(req.body.jwtToken);
+        var auth = req.headers.authorization.split(" ");
+        console.log(auth);
+        if (auth[0] !== "Bearer")
+          throw Error;
+        var decoded = jwt.verify(auth[1], cfg.jwtSecret);
         console.log(cfg.jwtSecret);
         res.status(200).json({message: "Authenticated", type: "success"});
         next()
@@ -36,6 +40,8 @@ app.use(function(req, res, next){
     }
  });
 
-app.use('/', indexRouter);
+console.log("Zautentykowany " + Date.now());
+
+app.use('/home', indexRouter);
 
 module.exports = app;

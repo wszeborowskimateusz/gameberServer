@@ -7,6 +7,7 @@ autoIncrement.initialize(mongoose.connection);
 
 
 let userSchema = mongoose.Schema({
+    user_id: Number,
     login: String,
     password: String,
     mail: String,

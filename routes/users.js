@@ -83,7 +83,7 @@ router.post('/signin', function(req, res){
       }
       else{
         if(passwordHash.verify(userData.password, User.password)){
-          var token = jwt.sign({ login: userData.username }, cfg.jwtSecret, { expiresIn: 129600 }); // 36h         
+          var token = jwt.sign({ login: userData.username, user_id: User.user_id }, cfg.jwtSecret, { expiresIn: 129600 }); // 36h         
           res.status(200).json({message: "Signed in", jwtToken:token, type: "success"});
         }
         else{
