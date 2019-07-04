@@ -9,6 +9,7 @@ var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var accountsRouter = require('./routes/accounts');
 
 var app = express();
 
@@ -21,8 +22,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-app.use('/users', usersRouter);
+app.use('/accounts', accountsRouter);
 
+// Authentication
 app.use(function(req, res, next){
     console.log("A new request received at " + Date.now());
     try {
@@ -42,6 +44,6 @@ app.use(function(req, res, next){
 
 console.log("Zautentykowany " + Date.now());
 
-app.use('/home', indexRouter);
+app.use('/users', usersRouter);
 
 module.exports = app;

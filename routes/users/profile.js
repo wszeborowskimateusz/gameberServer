@@ -3,8 +3,16 @@ var express = require('express');
 var db = require('../' + cfg.dbPath);
 var router = express.Router();
 
-var profileRouter = require('./users/profile');
+router.get('/', function(req, res) {
+  
+});
 
-app.use('/profile', profileRouter);
+router.post('/change-avatar', function(req, res){
+
+});
+
+router.post('/change-image', function(req, res){
+
+});
 
 module.exports = router;
