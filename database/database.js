@@ -26,6 +26,25 @@ let userSchema = mongoose.Schema({
 userSchema.plugin(autoIncrement.plugin, { model: 'User', field: 'user_id', startAt: 1 });
 var User = mongoose.model("User", userSchema);
 
+let availableCountriesSchema = mongoose.Schema({
+    user_id: Number,
+    country_id: Number,
+    level_of_advancement: number,
+    date_of_unlocking: { type : Date, default: Date.now },
+    is_completed: Boolean
+});
+var AvailableCountries = mongoose.model("AvailableCountries", availableCountriesSchema);
+
+// usunięcie wszędzie xxx_id
+let countriesSchema = mongoose.Schema({
+    country_id: Number,
+    level_of_advancement: number,
+    date_of_unlocking: { type : Date, default: Date.now },
+    is_completed: Boolean
+});
+userSchema.plugin(autoIncrement.plugin, { model: 'User', field: 'user_id', startAt: 1 });
+var AvailableCountries = mongoose.model("AvailableCountries", availableCountriesSchema);
+
 // The rest of schemas goes here
 
 module.exports = {
