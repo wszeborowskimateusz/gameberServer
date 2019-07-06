@@ -19,17 +19,17 @@ let userSchema = mongoose.Schema({
     logging_streak: Number,
     date_of_creating_account: { type : Date, default: Date.now },
     date_of_last_login: Date,
-    background_img_id: Number,
-    picked_avatar_id: Number,
-    current_country_id: Number,
+    background_img_id: { type: Number, ref: 'BackgroundImages' },
+    picked_avatar_id: { type: Number, ref: 'Avatars' },
+    current_country_id: { type: Number, ref: 'Countries' }
 });
 userSchema.plugin(autoIncrement.plugin, { model: 'User', field: 'user_id', startAt: 1 });
 var User = mongoose.model("User", userSchema);
 
 let availableCountriesSchema = mongoose.Schema({
-    user_id: Number,
-    country_id: Number,
-    level_of_advancement: number,
+    user_id: { type: Number, ref: 'User' },
+    country_id: { type: Number, ref: 'Countries' },
+    level_of_advancement: Number,
     date_of_unlocking: { type : Date, default: Date.now },
     is_completed: Boolean
 });
@@ -38,15 +38,15 @@ var AvailableCountries = mongoose.model("AvailableCountries", availableCountries
 // usunięcie wszędzie xxx_id
 let countriesSchema = mongoose.Schema({
     country_id: Number,
-    level_of_advancement: number,
-    date_of_unlocking: { type : Date, default: Date.now },
-    is_completed: Boolean
+    country_name: String
 });
-userSchema.plugin(autoIncrement.plugin, { model: 'User', field: 'user_id', startAt: 1 });
-var AvailableCountries = mongoose.model("AvailableCountries", availableCountriesSchema);
+countriesSchema.plugin(autoIncrement.plugin, { model: 'Country', field: 'country_id', startAt: 1 });
+var Countries = mongoose.model("Countries", countriesSchema);
 
 // The rest of schemas goes here
 
 module.exports = {
-    User: User
+    User: User,
+    AvailableCountries: AvailableCountries,
+
 };
