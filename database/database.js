@@ -89,7 +89,7 @@ let dailyQuestsSchema = mongoose.Schema({
     due_date: Date,
 });
 dailyQuestsSchema.plugin(autoIncrement.plugin, { model: 'DailyQuests', field: 'quest_id', startAt: 1 });
-var Messages = mongoose.model("DailyQuests", dailyQuestsSchema);
+var DailyQuests = mongoose.model("DailyQuests", dailyQuestsSchema);
 
 let friendshipSchema = mongoose.Schema({
     user_from_id: { type: Number, ref: 'User' },
@@ -173,5 +173,20 @@ var GamesContent = mongoose.model("GamesContent", gameContentSchema);
 module.exports = {
     User: User,
     AvailableCountries: AvailableCountries,
-
+    Countries: Countries,
+    NeighbouringCountries: NeighbouringCountries,
+    User_Avatar: User_Avatar,
+    Avatars: Avatars,
+    Messages: Messages,
+    User_Quest: User_Quest,
+    DailyQuests: DailyQuests,
+    Friendship: Friendship,
+    BackgroundImages: BackgroundImages,
+    User_Image: User_Image,
+    Achievements: Achievements,
+    AbstractCategory: AbstractCategory,
+    User_Achievement: User_Achievement,
+    Categories: Categories,
+    Games: Games,
+    GamesContent: GamesContent
 };
