@@ -1,6 +1,6 @@
-var cfg = require('../config');
+var cfg = require('../../config');
 var express = require('express');
-var db = require('../' + cfg.dbPath);
+var db = require('../../' + cfg.dbPath);
 var router = express.Router();
 
 router.get('/', function(req, res) {
