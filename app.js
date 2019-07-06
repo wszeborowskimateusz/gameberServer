@@ -10,6 +10,7 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var accountsRouter = require('./routes/accounts');
+var imagesRouter = require('./routes/images');
 
 var app = express();
 
@@ -21,6 +22,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+const mongoose = require('mongoose'); //delete
+const Schema = mongoose.Schema; //delete
+USER_ID = '5ce7023052902127f49d85c2'; // change to 0
+
+//TEST FIELD
+
+
+//TEST FIELD - END
 
 app.use('/accounts', accountsRouter);
 
@@ -34,16 +43,21 @@ app.use(function(req, res, next){
           throw Error;
         var decoded = jwt.verify(auth[1], cfg.jwtSecret);
         console.log(cfg.jwtSecret);
+        USER_ID = decoded.user_id;
         res.status(200).json({message: "Authenticated", type: "success"});
         next()
       } catch (err) {
         console.log(err.message);
-        res.status(401).json({message: "Unauthorised access", type: "error"});
+        //res.status(401).json({message: "Unauthorised access", type: "error"});
+        // DELETE !! !! !!
+        next();
+        // DELETE !! !! !!
     }
  });
 
 console.log("Zautentykowany " + Date.now());
 
 app.use('/users', usersRouter);
+app.use('/images', imagesRouter);
 
 module.exports = app;
