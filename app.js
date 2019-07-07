@@ -22,9 +22,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-const mongoose = require('mongoose'); //delete
-const Schema = mongoose.Schema; //delete
-USER_ID = '5ce7023052902127f49d85c2'; // change to 0
+//const mongoose = require('mongoose'); //delete
+//const Schema = mongoose.Schema; //delete
+//USER_ID = '5ce7023052902127f49d85c2'; // change to 0
+USER_ID = 0;
 
 //TEST FIELD
 
@@ -48,9 +49,9 @@ app.use(function(req, res, next){
         next()
       } catch (err) {
         console.log(err.message);
-        //res.status(401).json({message: "Unauthorised access", type: "error"});
+        res.status(401).json({message: "Unauthorised access", type: "error"});
         // DELETE !! !! !!
-        next();
+        // next();
         // DELETE !! !! !!
     }
  });
