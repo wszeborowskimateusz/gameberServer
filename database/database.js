@@ -74,7 +74,7 @@ let messagesSchema = mongoose.Schema({
     date_of_seeing: Date,
     date_of_sending: { type : Date, default: Date.now }
 });
-countriesSchema.plugin(autoIncrement.plugin, { model: 'Messages', field: 'message_id', startAt: 1 });
+messagesSchema.plugin(autoIncrement.plugin, { model: 'Messages', field: 'message_id', startAt: 1 });
 var Messages = mongoose.model("Messages", messagesSchema);
 
 let user_QuestSchema = mongoose.Schema({
@@ -149,7 +149,7 @@ let categoriesSchema = mongoose.Schema({
     coutnry_id: { type: Schema.Types.ObjectId, ref: 'Countries' },
     abstract_category_id: { type: Schema.Types.ObjectId, ref: 'AbstractCategory' }
 });
-categoriesSchema.plugin(autoIncrement.plugin, { model: 'Categories', field: 'image_id', startAt: 1 });
+categoriesSchema.plugin(autoIncrement.plugin, { model: 'Categories', field: 'category_id', startAt: 1 });
 var Categories = mongoose.model("Categories", categoriesSchema);
 
 let gamesSchema = mongoose.Schema({
