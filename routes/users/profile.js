@@ -3,48 +3,31 @@ var express = require('express');
 var db = require('../../' + cfg.dbPath);
 var router = express.Router();
 
-// TODO: Full path to images
 router.get('/', function(req, res) {
     var r = {
         user: null
     };
-    //r['user'] = [];
 
     var avatarsArr = [];
     var backgroundsArr = [];
     var achievementsArr = [];
-
-    //var avatarId, username, backgroundImageId, level, experiencePoints, pointsToAchieveNewLevel, numberOfCoins;
-
-    console.log('DEBUG#0');
 
     db.User_Avatar.
     find({user_id: USER_ID}).
     populate('user_id').
     populate('avatar_id').
     exec(function (err, ua) {
-        //console.log('DEBUG#1');
         if (err) return res.status(404);
-        //console.log('DEBUG#2');
         
         ua.forEach(function(a) {
             avatarsArr.push({
                 id: a.avatar_id.avatar_id,
                 name: a.avatar_id.avatar_name,
-                img: a.avatar_id.avatar_img,
+                img: cfg.imagesUrl + a.avatar_id.avatar_img,
                 price: a.avatar_id.price
             })
         })
 
-        // avatarId = ua[0].user_id.picked_avatar_id;
-        // username = ua[0].user_id.login;
-        // backgroundImageId = ua[0].user_id.background_image_id;
-        // level = ua[0].user_id.level;
-        // experiencePoints = ua[0].user_id.exp_points;
-        // pointsToAchieveNewLevel = 0; // TODO: brak info w bazie
-        // numberOfCoins = ua[0].user_id.amount_of_coins;
-
-        //console.log(avatarsArr);
         db.User_Image.
         find({user_id: USER_ID}).
         populate('image_id').
@@ -55,7 +38,7 @@ router.get('/', function(req, res) {
                 backgroundsArr.push({
                     id: i.image_id.image_id,
                     name: i.image_id.image_name,
-                    img: i.image_id.image_img,
+                    img: cfg.imagesUrl + i.image_id.image_img,
                     price: i.image_id.price
                 })
             })
@@ -69,7 +52,7 @@ router.get('/', function(req, res) {
                 uach.forEach(function(a) {
                     achievementsArr.push({
                         name: a.achievement_id.achievement_name,
-                        src: a.achievement_id.achievement_img,
+                        src: cfg.imagesUrl + a.achievement_id.achievement_img,
                     })
                 })
 
@@ -81,7 +64,7 @@ router.get('/', function(req, res) {
                     backgroundImages: backgroundsArr,
                     level: ua[0].user_id.level,
                     experiencePoints: ua[0].user_id.exp_points,
-                    pointsToAchieveNewLevel: 0, // TODO: brak info w bazie
+                    pointsToAchieveNewLevel: ua[0].user_id.points_to_new_level,
                     numberOfCoins: ua[0].user_id.amount_of_coins,
                     achievements: achievementsArr
                 }
@@ -93,11 +76,51 @@ router.get('/', function(req, res) {
 });
 
 router.post('/change-avatar', function(req, res){
+    var newAvatarId = req.body.avatarId;
 
+    db.User_Avatar.
+    find({user_id: USER_ID}).
+    populate('user_id').
+    populate('avatar_id').
+    exec(function (err, ua) {
+        if (err) 
+            return res.status(404);      
+        var avatarToChange = ua.find(avatar => avatar.avatar_id.avatar_id == newAvatarId);
+        if (avatarToChange != null){
+            db.User.update({_id: USER_ID}, {picked_avatar_id: avatarToChange._id}, function(err, raw) {
+                if (err)
+                    res.status(406).json({message: "Not Acceptable"})
+                else
+                    res.status(200).json({message: "The avatar has been changed"});
+            });
+        }
+        else
+            res.status(406).json({message: "Not Acceptable"});
+    })
 });
 
 router.post('/change-image', function(req, res){
+    var newImageId = req.body.imageId;
 
+    db.User_Image.
+    find({user_id: USER_ID}).
+    populate('user_id').
+    populate('image_id').
+    exec(function (err, ui) {
+        if (err) 
+            return res.status(404);      
+        var imageToChange = ui.find(image => image.image_id.image_id == newImageId);
+        if (imageToChange != null) {
+            db.User.update({_id: USER_ID}, {background_image_id: imageToChange._id}, function(err, raw) {
+                if (err)
+                    res.status(406).json({message: "Not Acceptable"})
+                else
+                    res.status(200).json({message: "The background image has been changed"});
+            });
+        }
+        else
+            res.status(406).json({message: "Not Acceptable"});
+    })
 });
 
 module.exports = router;
