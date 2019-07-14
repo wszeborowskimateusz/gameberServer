@@ -32,16 +32,6 @@ router.post('/signup', function(req, res){
           login: userData.login,
           password: passwordHash.generate(userData.password),
           mail: userData.mail,
-          exp_points: 0,
-          level: 1,
-          ammount_of_coins: 50,
-          is_daily_mission_completed: false,
-          is_account_private: false,
-          logging_streak: 0,
-          date_of_last_login: '1901-01-01',
-          background_img_id: 0,
-          picked_avatar_id: 0,
-          current_country_id: 0,
         });
     
         //log
@@ -83,7 +73,7 @@ router.post('/signin', function(req, res){
       }
       else{
         if(passwordHash.verify(userData.password, User.password)){
-          var token = jwt.sign({ login: userData.login, user_id: User.user_id }, cfg.jwtSecret, { expiresIn: 129600 }); // 36h         
+          var token = jwt.sign({ login: userData.login, user_id: User._id }, cfg.jwtSecret, { expiresIn: 129600 }); // 36h         
           res.status(200).json({message: "Signed in", jwtToken:token, type: "success"});
         }
         else{
