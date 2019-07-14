@@ -54,6 +54,6 @@ app.use(function(req, res, next){
  });
 
 app.use('/users', usersRouter);
-app.use('/images', imagesRouter);
+//app.use('/images', imagesRouter);
 
 module.exports = app;

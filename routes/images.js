@@ -4,6 +4,8 @@ var db = require('../' + cfg.dbPath);
 var router = express.Router();
 var fs = fileSystem = require('fs');
 
+// unused
+
 router.get('/:name', function(req,res){
     try{
         res.setHeader("content-type", "image/jpeg");
