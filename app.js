@@ -20,6 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.disable('etag'); // disables 304 response
 
 
 //USER_ID = '5ce7023052902127f49d85c2'; // test
@@ -37,13 +38,11 @@ app.use(function(req, res, next){
     console.log("A new request received at " + Date.now());
     try {
         var auth = req.headers.authorization.split(" ");
-        console.log(auth);
         if (auth[0] !== "Bearer")
           throw Error;
         var decoded = jwt.verify(auth[1], cfg.jwtSecret);
-        console.log(cfg.jwtSecret);
         USER_ID = decoded.user_id;
-        res.status(200).json({message: "Authenticated", type: "success"});
+        console.log("Zautentykowany " + Date.now());
         next()
       } catch (err) {
         console.log(err.message);
@@ -53,8 +52,6 @@ app.use(function(req, res, next){
         // DELETE !! !! !!
     }
  });
-
-console.log("Zautentykowany " + Date.now());
 
 app.use('/users', usersRouter);
 app.use('/images', imagesRouter);
