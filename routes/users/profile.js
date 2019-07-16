@@ -15,12 +15,16 @@ router.get('/', async function(req, res) {
     try{
         var ua = await db.User_Avatar.
             find({user_id: USER_ID}).
-            populate('user_id').
+            populate({
+                path: 'user_id',
+                populate: {path: 'picked_avatar_id'},
+                populate: {path: 'background_img_id'}
+            }).
             populate('avatar_id');
         
         ua.forEach(function(a) {
             avatarsArr.push({
-                id: a.avatar_id.avatar_id,
+                id: a.avatar_id._id,
                 name: a.avatar_id.avatar_name,
                 img: cfg.imagesUrl + a.avatar_id.avatar_img,
                 price: a.avatar_id.price
@@ -33,7 +37,7 @@ router.get('/', async function(req, res) {
 
         ui.forEach(function(i) {
             backgroundsArr.push({
-                id: i.image_id.image_id,
+                id: i.image_id._id,
                 name: i.image_id.image_name,
                 img: cfg.imagesUrl + i.image_id.image_img,
                 price: i.image_id.price
@@ -52,10 +56,10 @@ router.get('/', async function(req, res) {
         })
 
         r.user = {
-            avatarId: ua[0].user_id.picked_avatar_id,
+            avatarId: ua[0].user_id.picked_avatar_id._id,
             avatars: avatarsArr,
             username: ua[0].user_id.login,
-            backgroundImageId: ua[0].user_id.background_image_id,
+            backgroundImageId: ua[0].user_id.background_img_id._id,
             backgroundImages: backgroundsArr,
             level: ua[0].user_id.level,
             experiencePoints: ua[0].user_id.exp_points,
@@ -81,7 +85,7 @@ router.post('/change-avatar', function(req, res){
     exec(function (err, ua) {
         if (err) 
             return res.status(404);      
-        var avatarToChange = ua.find(avatar => avatar.avatar_id.avatar_id == newAvatarId);
+        var avatarToChange = ua.findById(newAvatarId);
         if (avatarToChange != null){
             db.User.update({_id: USER_ID}, {picked_avatar_id: avatarToChange._id}, function(err, raw) {
                 if (err)
@@ -105,9 +109,9 @@ router.post('/change-image', function(req, res){
     exec(function (err, ui) {
         if (err) 
             return res.status(404);      
-        var imageToChange = ui.find(image => image.image_id.image_id == newImageId);
+        var imageToChange = ui.findById(newImageId);
         if (imageToChange != null) {
-            db.User.update({_id: USER_ID}, {background_image_id: imageToChange._id}, function(err, raw) {
+            db.User.update({_id: USER_ID}, {background_img_id: imageToChange._id}, function(err, raw) {
                 if (err)
                     res.status(406).json({message: "Not Acceptable"})
                 else
