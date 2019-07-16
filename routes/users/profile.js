@@ -79,23 +79,19 @@ router.post('/change-avatar', function(req, res){
     var newAvatarId = req.body.avatarId;
 
     db.User_Avatar.
-    find({user_id: USER_ID}).
-    populate('user_id').
-    populate('avatar_id').
+    find({
+        user_id: USER_ID,
+        avatar_id: newAvatarId
+    }).
     exec(function (err, ua) {
         if (err) 
-            return res.status(404);      
-        var avatarToChange = ua.findById(newAvatarId);
-        if (avatarToChange != null){
-            db.User.update({_id: USER_ID}, {picked_avatar_id: avatarToChange._id}, function(err, raw) {
-                if (err)
-                    res.status(406).json({message: "Not Acceptable"})
-                else
-                    res.status(200).json({message: "The avatar has been changed"});
-            });
-        }
-        else
-            res.status(406).json({message: "Not Acceptable"});
+            return res.status(406).json({message: "Not Acceptable"});
+        db.User.update({_id: USER_ID}, {picked_avatar_id: newAvatarId}, function(err, raw) {
+            if (err)
+                res.status(406).json({message: "Not Acceptable"});
+            else
+                res.status(200).json({message: "The avatar has been changed"});
+        });
     })
 });
 
@@ -103,23 +99,19 @@ router.post('/change-image', function(req, res){
     var newImageId = req.body.imageId;
 
     db.User_Image.
-    find({user_id: USER_ID}).
-    populate('user_id').
-    populate('image_id').
+    find({
+        user_id: USER_ID,
+        image_id: newImageId
+    }).
     exec(function (err, ui) {
         if (err) 
-            return res.status(404);      
-        var imageToChange = ui.findById(newImageId);
-        if (imageToChange != null) {
-            db.User.update({_id: USER_ID}, {background_img_id: imageToChange._id}, function(err, raw) {
-                if (err)
-                    res.status(406).json({message: "Not Acceptable"})
-                else
-                    res.status(200).json({message: "The background image has been changed"});
-            });
-        }
-        else
-            res.status(406).json({message: "Not Acceptable"});
+            return res.status(406).json({message: "Not Acceptable"});
+        db.User.update({_id: USER_ID}, {background_img_id: newImageId}, function(err, raw) {
+            if (err)
+                res.status(406).json({message: "Not Acceptable"});
+            else
+                res.status(200).json({message: "The background image has been changed"});
+        });
     })
 });
 
