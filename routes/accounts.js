@@ -72,12 +72,12 @@ router.post('/signin', function(req, res){
         res.status(500).json({message: "Database error/n" + err.message, type: "error"});
       }
       else{
-        if(passwordHash.verify(userData.password, User.password)){
+        if(User === null || !passwordHash.verify(userData.password, User.password)) {
+          res.status(401).json({message: "Unauthorised access", type: "error"});
+        }
+        else {
           var token = jwt.sign({ login: userData.login, user_id: User._id }, cfg.jwtSecret, { expiresIn: 129600 }); // 36h         
           res.status(200).json({message: "Signed in", jwtToken:token, type: "success"});
-        }
-        else{
-          res.status(401).json({message: "Unauthorised access", type: "error"});
         }
       }
     });
