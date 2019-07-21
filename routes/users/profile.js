@@ -54,7 +54,6 @@ router.get('/', async function(req, res) {
                 src: cfg.imagesUrl + a.achievement_id.achievement_img,
             })
         })
-
         r.user = {
             avatarId: ua[0].user_id.picked_avatar_id._id,
             avatars: avatarsArr,

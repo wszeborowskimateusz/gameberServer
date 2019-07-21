@@ -19,7 +19,7 @@ let userSchema = mongoose.Schema({
     exp_points: { type : Number, default: 0 },
     points_to_new_level: { type : Number, default: 100 },
     level: { type : Number, default: 1 },
-    ammount_of_coins: { type : Number, default: 100 },
+    amount_of_coins: { type : Number, default: 100 },
     is_daily_mission_completed: { type : Boolean, default: false },
     is_account_private: { type : Boolean, default: false },
     logging_streak: { type : Number, default: 1 },
