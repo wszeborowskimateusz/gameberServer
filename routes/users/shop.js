@@ -13,14 +13,14 @@ router.post('/avatars/buy', async function(req, res){
     if (mUser == null || mAvatar == null)
         return res.status(404).json({message: "Not found"});
 
-    if (mUser.ammount_of_coins < mAvatar.price)
+    if (mUser.amount_of_coins < mAvatar.price)
         return res.status(406).json({message: "Not acceptable"});
 
     db.User_Avatar.create({ user_id: mUser._id, avatar_id: mAvatar._id }, function (err) {
         if (err)
             return res.status(500).json({message: "DB error"});
 
-        mUser.ammount_of_coins -= mAvatar.price;
+        mUser.amount_of_coins -= mAvatar.price;
         mUser.save(function (err) {
             if (err)
                 return res.status(500).json({message: "DB error"});
@@ -39,14 +39,14 @@ router.post('/images/buy', async function(req, res){
     if (mUser == null || mImage == null)
         return res.status(404).json({message: "Not found"});
 
-    if (mUser.ammount_of_coins < mImage.price)
+    if (mUser.amount_of_coins < mImage.price)
         return res.status(406).json({message: "Not acceptable"});
 
     db.User_Image.create({ user_id: mUser._id, avatar_id: mImage._id }, function (err) {
         if (err)
             return res.status(500).json({message: "DB error"});
 
-        mUser.ammount_of_coins -= mImage.price;
+        mUser.amount_of_coins -= mImage.price;
         mUser.save(function (err) {
             if (err)
                 return res.status(500).json({message: "DB error"});
