@@ -13,7 +13,9 @@ router.post('/avatars/buy', async function(req, res){
     if (mUser == null || mAvatar == null)
         return res.status(404).json({message: "Not found"});
 
-    if (mUser.amount_of_coins < mAvatar.price)
+    var foundAvatar = await db.User_Avatar.count({user_id: USER_ID, avatar_id: mAvatar._id});
+
+    if (mUser.amount_of_coins < mAvatar.price || foundAvatar)
         return res.status(406).json({message: "Not acceptable"});
 
     db.User_Avatar.create({ user_id: mUser._id, avatar_id: mAvatar._id }, function (err) {
@@ -39,10 +41,12 @@ router.post('/images/buy', async function(req, res){
     if (mUser == null || mImage == null)
         return res.status(404).json({message: "Not found"});
 
-    if (mUser.amount_of_coins < mImage.price)
+    var foundImage = await db.User_Avatar.count({user_id: USER_ID, image_id: mImage._id});
+
+    if (mUser.amount_of_coins < mImage.price || foundImage)
         return res.status(406).json({message: "Not acceptable"});
 
-    db.User_Image.create({ user_id: mUser._id, avatar_id: mImage._id }, function (err) {
+    db.User_Image.create({ user_id: mUser._id, image_id: mImage._id }, function (err) {
         if (err)
             return res.status(500).json({message: "DB error"});
 

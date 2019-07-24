@@ -72,7 +72,7 @@ router.post('/signin', function(req, res){
         res.status(500).json({message: "Database error/n" + err.message, type: "error"});
       }
       else{
-        if(User === null || !passwordHash.verify(userData.password, User.password)) {
+        if(User == null || !passwordHash.verify(userData.password, User.password)) {
           res.status(401).json({message: "Unauthorised access", type: "error"});
         }
         else {

@@ -85,7 +85,7 @@ router.post('/change-avatar', function(req, res){
             avatar_id: newAvatarId
         }).
         exec(function (err, ua) {
-            if (err) 
+            if (err || !ua.length) 
                 return res.status(406).json({message: "Not Acceptable"});
             db.User.update({_id: USER_ID}, {picked_avatar_id: newAvatarId}, function(err, raw) {
                 if (err)
@@ -108,7 +108,7 @@ router.post('/change-image', function(req, res){
             image_id: newImageId
         }).
         exec(function (err, ui) {
-            if (err) 
+            if (err || !ui.length) 
                 return res.status(406).json({message: "Not Acceptable"});
             db.User.update({_id: USER_ID}, {background_img_id: newImageId}, function(err, raw) {
                 if (err)
