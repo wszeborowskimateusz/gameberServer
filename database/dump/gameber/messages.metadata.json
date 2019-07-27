@@ -1,1 +1,1 @@
-{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"gameber.messages"},{"v":2,"unique":true,"key":{"message_id":1},"name":"message_id_1","ns":"gameber.messages","background":true}],"uuid":"14ac2ddb45ec420b99b3fc7e576f4a5d"}
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"gameber.messages"}],"uuid":"14ac2ddb45ec420b99b3fc7e576f4a5d"}

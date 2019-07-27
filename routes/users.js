@@ -4,6 +4,7 @@ var db = require('../' + cfg.dbPath);
 var router = express.Router();
 
 var profileRouter = require('./users/profile');
+var shopRouter = require('./users/shop');
 
 //TEST FIELD
 // var ua = new db.User_Avatar({
@@ -23,5 +24,6 @@ var profileRouter = require('./users/profile');
 //TEST FIELD - END
 
 router.use('/profile', profileRouter);
+router.use('/shop', shopRouter);
 
 module.exports = router;

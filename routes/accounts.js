@@ -21,17 +21,35 @@ router.post('/signup', function(req, res){
       
      res.status(400).json({message: "Bad Request"});
   } else {
-    db.User.count({login: userData.login}, function(err, response){
+    db.User.count({login: userData.login}, async function(err, response){
       if (response != 0)
         res.status(400).json({message: "Login exists"});
       else{
         //log
         console.log("New user request");
 
+        var defultAvatar = await db.Avatars.findOne({avatar_name: "default"});
+        var defultImage = await db.BackgroundImages.findOne({image_name: "default"});
+
+        if(!defultAvatar || !defultImage)
+          res.status(500).json({message: "Database error/n" + err.message, type: "error"});
+
         var user = new db.User({
           login: userData.login,
           password: passwordHash.generate(userData.password),
           mail: userData.mail,
+          picked_avatar_id: defultAvatar._id,
+          background_img_id: defultImage._id
+        });
+
+        db.User_Avatar.create({ user_id: user._id, avatar_id: defultAvatar._id }, function (err) {
+          if (err)
+              return res.status(500).json({message: "DB error"});
+        });
+
+        db.User_Image.create({ user_id: user._id, image_id: defultImage._id }, function (err) {
+          if (err)
+              return res.status(500).json({message: "DB error"});
         });
     
         //log
@@ -72,7 +90,7 @@ router.post('/signin', function(req, res){
         res.status(500).json({message: "Database error/n" + err.message, type: "error"});
       }
       else{
-        if(User === null || !passwordHash.verify(userData.password, User.password)) {
+        if(User == null || !passwordHash.verify(userData.password, User.password)) {
           res.status(401).json({message: "Unauthorised access", type: "error"});
         }
         else {
