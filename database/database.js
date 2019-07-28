@@ -167,17 +167,17 @@ let gamesSchema = mongoose.Schema({
 //gamesSchema.plugin(autoIncrement.plugin, { model: 'Games', field: 'game_id', startAt: 1 });
 var Games = mongoose.model("Games", gamesSchema);
 
-let gameContentSchema = mongoose.Schema({
-    //game_content_id: Number,
+let gamesContentSchema = mongoose.Schema({
+    //games_content_id: Number,
     image: String,
     learning_phrase: String,
     game_description: String,
-    game_sound: Buffer,
+    game_sound: String,
     correct_answer: String,
     game_id: { type: Schema.Types.ObjectId, ref: 'Games' },
 });
-//gameContentSchema.plugin(autoIncrement.plugin, { model: 'GamesContent', field: 'game_content_id', startAt: 1 });
-var GamesContent = mongoose.model("GamesContent", gameContentSchema);
+//gamesContentSchema.plugin(autoIncrement.plugin, { model: 'GamesContent', field: 'games_content_id', startAt: 1 });
+var GamesContent = mongoose.model("GamesContent", gamesContentSchema);
 
 module.exports = {
     User: User,
