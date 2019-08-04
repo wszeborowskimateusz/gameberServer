@@ -7,32 +7,39 @@ var mongoose = require('mongoose');
 router.get('/:categoryId', async function(req, res) {
     console.log(req);
     var r = {
-        games: []
+        games: [],
+        categoryBackgroundImage: "",
+        categoryName: "",
+        categoryCountryIcon: "",
+        categoryIcon: ""
     };
     var catId = req.params.categoryId;
-    var game = null;
 
     try{
-        var games = await db.GamesContent.
-        find().
+        var games = await db.Games.
+        find({category_id: catId}).
         populate({
-            path: 'game_id',
-            populate: {
-                path: 'category_id',
-                match: { _id: { $eq: catId }}
-            }
+            path: 'category_id',
+            populate: {path: 'country_id'}
         });
 
         if (!games.length)
             throw Error;
+        
+        await games.forEach(game => {
+            r.games.push({
+                name: game.game_name,
+                gameId: game._id,
+                gameInfo: game.game_info
+            })
+        });
 
-        games = await games.filter(game => game.game_id.category_id)
+        r.categoryBackgroundImage = games[0].category_id.category_img;
+        r.categoryCountryIcon = games[0].category_id.country_id.country_icon;
+        r.categoryIcon = games[0].category_id.category_icon;
+        r.categoryName = games[0].category_id.category_name;
 
-        for (var i = 0; i < games.length; ++i) {
-            game = games[i];
-            console.log('Game == ' + game);
-        }
-        res.status(200).send();
+        res.json(r);
 
     }catch(err){
         console.log(err);

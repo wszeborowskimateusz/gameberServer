@@ -43,7 +43,8 @@ var AvailableCountries = mongoose.model("AvailableCountries", availableCountries
 
 let countriesSchema = mongoose.Schema({
     //country_id: Number,
-    country_name: String
+    country_name: String,
+    country_icon: String
 });
 //countriesSchema.plugin(autoIncrement.plugin, { model: 'Countries', field: 'country_id', startAt: 1 });
 var Countries = mongoose.model("Countries", countriesSchema);
@@ -150,8 +151,9 @@ let categoriesSchema = mongoose.Schema({
     //category_id: Number,
     category_name: String,
     category_img: String,
+    category_icon: String,
     //repetition_category_id: { type: Schema.Types.ObjectId, ref: 'Categories' },
-    coutnry_id: { type: Schema.Types.ObjectId, ref: 'Countries' },
+    country_id: { type: Schema.Types.ObjectId, ref: 'Countries' },
     abstract_category_id: { type: Schema.Types.ObjectId, ref: 'AbstractCategory' }
 });
 //categoriesSchema.plugin(autoIncrement.plugin, { model: 'Categories', field: 'category_id', startAt: 1 });
@@ -159,25 +161,25 @@ var Categories = mongoose.model("Categories", categoriesSchema);
 
 let gamesSchema = mongoose.Schema({
     //game_id: Number,
-    game_img: String,
     game_name: String,
-    game_type: String,
+    game_info: String,
+    correct_answer: String,
     category_id: { type: Schema.Types.ObjectId, ref: 'Categories' },
 });
 //gamesSchema.plugin(autoIncrement.plugin, { model: 'Games', field: 'game_id', startAt: 1 });
 var Games = mongoose.model("Games", gamesSchema);
 
-let gamesContentSchema = mongoose.Schema({
-    //games_content_id: Number,
-    image: String,
-    learning_phrase: String,
-    game_description: String,
-    game_sound: String,
-    correct_answer: String,
-    game_id: { type: Schema.Types.ObjectId, ref: 'Games' },
-});
-//gamesContentSchema.plugin(autoIncrement.plugin, { model: 'GamesContent', field: 'games_content_id', startAt: 1 });
-var GamesContent = mongoose.model("GamesContent", gamesContentSchema);
+// let gamesContentSchema = mongoose.Schema({
+//     //games_content_id: Number,
+//     image: String,
+//     learning_phrase: String,
+//     game_description: String,
+//     game_sound: String,
+//     correct_answer: String,
+//     game_id: { type: Schema.Types.ObjectId, ref: 'Games' },
+// });
+// //gamesContentSchema.plugin(autoIncrement.plugin, { model: 'GamesContent', field: 'games_content_id', startAt: 1 });
+// var GamesContent = mongoose.model("GamesContent", gamesContentSchema);
 
 module.exports = {
     User: User,
@@ -196,6 +198,6 @@ module.exports = {
     AbstractCategory: AbstractCategory,
     User_Achievement: User_Achievement,
     Categories: Categories,
-    Games: Games,
-    GamesContent: GamesContent
+    Games: Games
+    // GamesContent: GamesContent
 };
