@@ -5,6 +5,7 @@ var router = express.Router();
 
 var profileRouter = require('./users/profile');
 var shopRouter = require('./users/shop');
+var rankingsRouter = require('./users/rankings');
 
 //TEST FIELD
 // var ua = new db.User_Avatar({
@@ -25,5 +26,6 @@ var shopRouter = require('./users/shop');
 
 router.use('/profile', profileRouter);
 router.use('/shop', shopRouter);
+router.use('/rankings', rankingsRouter);
 
 module.exports = router;

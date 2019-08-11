@@ -10,13 +10,19 @@ var connection = mongoose.connect(cfg.dbConnectionString);
 
 
 // Test Field
+let experienceSchema = mongoose.Schema({
+    earned_points: Number,
+    subject: String,
+    date_of_receiving: { type : Date, default: Date.now },
+    user_id: { type: Schema.Types.ObjectId, ref: 'User' }
+});
+var Experience = mongoose.model("Experience", experienceSchema);
 
 let userSchema = mongoose.Schema({
     //user_id: Number,
     login: String,
     password: String,
     mail: String,
-    exp_points: { type : Number, default: 0 },
     points_to_new_level: { type : Number, default: 100 },
     level: { type : Number, default: 1 },
     amount_of_coins: { type : Number, default: 100 },
@@ -198,6 +204,7 @@ module.exports = {
     AbstractCategory: AbstractCategory,
     User_Achievement: User_Achievement,
     Categories: Categories,
-    Games: Games
+    Games: Games,
+    Experience: Experience
     // GamesContent: GamesContent
 };
