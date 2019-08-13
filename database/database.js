@@ -24,6 +24,7 @@ let userSchema = mongoose.Schema({
     password: String,
     mail: String,
     points_to_new_level: { type : Number, default: 100 },
+    points: { type : Number, default: 0 },
     level: { type : Number, default: 1 },
     amount_of_coins: { type : Number, default: 100 },
     is_daily_mission_completed: { type : Boolean, default: false },
