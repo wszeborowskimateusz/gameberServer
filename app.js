@@ -12,6 +12,7 @@ var usersRouter = require('./routes/users');
 var accountsRouter = require('./routes/accounts');
 var imagesRouter = require('./routes/images');
 var shopRouter = require('./routes/shop');
+var mapRouter = require('./routes/map');
 
 var app = express();
 
@@ -33,7 +34,7 @@ USER_ID = 0;
 //TEST FIELD - END
 
 app.use('/accounts', accountsRouter);
-
+app.use('/map', mapRouter);
 // Authentication
 app.use(function(req, res, next){
     console.log("A new request received at " + Date.now());

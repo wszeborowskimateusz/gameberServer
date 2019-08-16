@@ -42,10 +42,10 @@ let availableCountriesSchema = mongoose.Schema({
 var AvailableCountries = mongoose.model("AvailableCountries", availableCountriesSchema);
 
 let countriesSchema = mongoose.Schema({
-    //country_id: Number,
-    country_name: String
+    ISO: String,
+    country_name: String,
+    price: Number
 });
-//countriesSchema.plugin(autoIncrement.plugin, { model: 'Countries', field: 'country_id', startAt: 1 });
 var Countries = mongoose.model("Countries", countriesSchema);
 
 let neighbouringCountriesSchema = mongoose.Schema({
