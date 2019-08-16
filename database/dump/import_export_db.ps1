@@ -13,7 +13,7 @@ $collections = @(
     "user_avatars",
     "avatars",
     "messages",
-    "user_quest",
+    "user_quests",
     "dailyquests",
     "friendships",
     "backgroundimages",
