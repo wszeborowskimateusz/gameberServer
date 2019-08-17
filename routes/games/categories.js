@@ -1,4 +1,5 @@
 var cfg = require('../../config');
+var functions = require('../../functions');
 var express = require('express');
 var db = require('../../' + cfg.dbPath);
 var router = express.Router();
@@ -44,6 +45,47 @@ router.get('/:categoryId', async function(req, res) {
     }catch(err){
         console.log(err);
         res.status(404).send();
+    }
+});
+
+router.post('/finish', async function(req, res) {
+    const r = {};
+    const categoryId = req.params.categoryId;
+
+    try{
+        const isCategoryPassed = await db.User_Category.findOne({user_id: USER_ID, category_id: categoryId});
+        if (isCategoryPassed)
+            throw Error;
+
+        const passedGames = await db.User_Game.
+            find({user_id: USER_ID}).
+            populate({
+                path: 'game_id',
+                match: {category_id: {$eq: categoryId}} // TODO: check if works
+            }).
+            count();
+
+        const gamesInCategory = await db.Games.
+            find({category_id: categoryId}).
+            count();
+
+        if (passedGames >= gamesInCategory){
+            const category = db.Categories.findById(categoryId);
+
+            const newPassedCategory = new db.User_Category({
+                user_id: USER_ID,
+                category_id: categoryId
+            })
+            newPassedCategory.save();
+
+            functions.giveCoinsToUserAsync(category.prize_coins, USER_ID)
+            functions.giveExperienceToUserAsync(category.prize_points, category.category_name, USER_ID)
+
+            res.json(r);
+        }
+    }
+    catch(err){
+        res.status(400);
     }
 });
 

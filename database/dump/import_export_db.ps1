@@ -24,7 +24,8 @@ $collections = @(
     "categories",
     "games",
     "experiences",
-    "user_games")
+    "user_games",
+    "user_categories")
 
 $importOrExport = Read-Host "Export[e], Import[i]"
 

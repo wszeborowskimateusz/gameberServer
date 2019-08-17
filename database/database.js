@@ -159,6 +159,8 @@ let categoriesSchema = mongoose.Schema({
     category_name: String,
     category_img: String,
     category_icon: String,
+    prize_points: Number,
+    prize_coins: Number,
     //repetition_category_id: { type: Schema.Types.ObjectId, ref: 'Categories' },
     country_id: { type: Schema.Types.ObjectId, ref: 'Countries' },
     abstract_category_id: { type: Schema.Types.ObjectId, ref: 'AbstractCategory' }
@@ -183,6 +185,14 @@ const user_GameSchema = mongoose.Schema({
 });
 //gamesSchema.plugin(autoIncrement.plugin, { model: 'Games', field: 'game_id', startAt: 1 });
 var User_Game = mongoose.model("User_Game", user_GameSchema);
+
+const user_CategorySchema = mongoose.Schema({
+    category_id: { type: Schema.Types.ObjectId, ref: 'Categories' },
+    user_id: { type: Schema.Types.ObjectId, ref: 'User' },
+    date_of_passing: { type : Date, default: Date.now }
+});
+//gamesSchema.plugin(autoIncrement.plugin, { model: 'Games', field: 'game_id', startAt: 1 });
+var User_Category = mongoose.model("User_Category", user_CategorySchema);
 
 // let gamesContentSchema = mongoose.Schema({
 //     //games_content_id: Number,
@@ -215,6 +225,7 @@ module.exports = {
     Categories: Categories,
     Games: Games,
     Experience: Experience,
-    User_Game: User_Game
+    User_Game: User_Game,
+    User_Category: User_Category
     // GamesContent: GamesContent
 };

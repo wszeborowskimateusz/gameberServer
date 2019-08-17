@@ -46,3 +46,23 @@ module.exports.fillRankingAsync = async function (startYear, startMonth, startDa
     return result;
 }
 //#endregion
+
+//#region experience
+module.exports.giveExperienceToUserAsync = async function (experiencePoints, subject, userId){
+    const newExperience = new db.Experience({
+        earned_points: experiencePoints,
+        subject: subject,
+        user_id: userId
+    })
+    newExperience.save();
+}
+//#endregion
+
+//#region coins
+module.exports.giveCoinsToUserAsync = async function (coins, userId){
+    const user = await db.User.findById(userId);
+    
+    user.amount_of_coins += coins;
+    user.save();
+}
+//#endregion
