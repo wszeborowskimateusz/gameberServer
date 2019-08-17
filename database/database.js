@@ -47,6 +47,8 @@ let countriesSchema = mongoose.Schema({
     price: Number,
     centerLatitude: Number,
     centerLongitude: Number
+    //country_id: Number,
+    //country_icon: String
 });
 var Countries = mongoose.model("Countries", countriesSchema);
 
@@ -152,6 +154,7 @@ let categoriesSchema = mongoose.Schema({
     //category_id: Number,
     category_name: String,
     category_img: String,
+    category_icon: String,
     //repetition_category_id: { type: Schema.Types.ObjectId, ref: 'Categories' },
     country_id: { type: Schema.Types.ObjectId, ref: 'Countries' },
     abstract_category_id: { type: Schema.Types.ObjectId, ref: 'AbstractCategory' },
@@ -162,25 +165,25 @@ var Categories = mongoose.model("Categories", categoriesSchema);
 
 let gamesSchema = mongoose.Schema({
     //game_id: Number,
-    game_img: String,
     game_name: String,
-    game_type: String,
+    game_info: String,
+    correct_answer: String,
     category_id: { type: Schema.Types.ObjectId, ref: 'Categories' },
 });
 //gamesSchema.plugin(autoIncrement.plugin, { model: 'Games', field: 'game_id', startAt: 1 });
 var Games = mongoose.model("Games", gamesSchema);
 
-let gameContentSchema = mongoose.Schema({
-    //game_content_id: Number,
-    image: String,
-    learning_phrase: String,
-    game_description: String,
-    game_sound: Buffer,
-    correct_answer: String,
-    game_id: { type: Schema.Types.ObjectId, ref: 'Games' },
-});
-//gameContentSchema.plugin(autoIncrement.plugin, { model: 'GamesContent', field: 'game_content_id', startAt: 1 });
-var GamesContent = mongoose.model("GamesContent", gameContentSchema);
+// let gamesContentSchema = mongoose.Schema({
+//     //games_content_id: Number,
+//     image: String,
+//     learning_phrase: String,
+//     game_description: String,
+//     game_sound: String,
+//     correct_answer: String,
+//     game_id: { type: Schema.Types.ObjectId, ref: 'Games' },
+// });
+// //gamesContentSchema.plugin(autoIncrement.plugin, { model: 'GamesContent', field: 'games_content_id', startAt: 1 });
+// var GamesContent = mongoose.model("GamesContent", gamesContentSchema);
 
 module.exports = {
     User: User,
@@ -199,6 +202,6 @@ module.exports = {
     AbstractCategory: AbstractCategory,
     User_Achievement: User_Achievement,
     Categories: Categories,
-    Games: Games,
-    GamesContent: GamesContent
+    Games: Games
+    // GamesContent: GamesContent
 };

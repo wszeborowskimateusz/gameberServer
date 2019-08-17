@@ -13,6 +13,7 @@ var accountsRouter = require('./routes/accounts');
 var imagesRouter = require('./routes/images');
 var shopRouter = require('./routes/shop');
 var mapRouter = require('./routes/map');
+var gamesRouter = require('./routes/games');
 
 var app = express();
 
@@ -25,7 +26,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.disable('etag'); // disables 304 response
 
 
-//USER_ID = '5ce7023052902127f49d85c2'; // test
 USER_ID = 0;
 
 //TEST FIELD
@@ -49,14 +49,13 @@ app.use(function(req, res, next){
       } catch (err) {
         console.log(err.message);
         res.status(401).json({message: "Unauthorised access", type: "error"});
-        // DELETE !! !! !!
         //next();
-        // DELETE !! !! !!
     }
  });
 
 app.use('/users', usersRouter);
 app.use('/shop', shopRouter);
+app.use('/games', gamesRouter);
 //app.use('/images', imagesRouter);
 
 module.exports = app;
