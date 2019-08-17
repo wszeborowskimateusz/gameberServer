@@ -44,7 +44,9 @@ var AvailableCountries = mongoose.model("AvailableCountries", availableCountries
 let countriesSchema = mongoose.Schema({
     ISO: String,
     country_name: String,
-    price: Number
+    price: Number,
+    centerLatitude: Number,
+    centerLongitude: Number
 });
 var Countries = mongoose.model("Countries", countriesSchema);
 
@@ -151,8 +153,9 @@ let categoriesSchema = mongoose.Schema({
     category_name: String,
     category_img: String,
     //repetition_category_id: { type: Schema.Types.ObjectId, ref: 'Categories' },
-    coutnry_id: { type: Schema.Types.ObjectId, ref: 'Countries' },
-    abstract_category_id: { type: Schema.Types.ObjectId, ref: 'AbstractCategory' }
+    country_id: { type: Schema.Types.ObjectId, ref: 'Countries' },
+    abstract_category_id: { type: Schema.Types.ObjectId, ref: 'AbstractCategory' },
+    country_ISO: String
 });
 //categoriesSchema.plugin(autoIncrement.plugin, { model: 'Categories', field: 'category_id', startAt: 1 });
 var Categories = mongoose.model("Categories", categoriesSchema);

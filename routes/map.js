@@ -94,4 +94,26 @@ router.post('/buyCountry', async function(req, res){
     }
 });
 
+router.post('/countryCategories', async function(req, res)
+{
+    let response = {
+    };
+    const data = req.body;
+    const countryISO = data.countryISO;
+    console.log('get categories for country: ' + countryISO);
+
+    try
+    {
+        const categories = db.Categories.find({country_ISO: countryISO});
+        response.categories = categories;
+        return res.json(response);
+    }
+    catch(err)
+    {
+        console.log(err);
+        return res.status(404);
+    }
+
+});
+
 module.exports = router;
