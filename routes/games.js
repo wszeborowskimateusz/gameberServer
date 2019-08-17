@@ -1,26 +1,38 @@
-var cfg = require('../config');
-var express = require('express');
-var db = require('../' + cfg.dbPath);
-var router = express.Router();
+const cfg = require('../config');
+const express = require('express');
+const db = require('../' + cfg.dbPath);
+const router = express.Router();
 
-var categoriesRouter = require('./games/categories');
+const categoriesRouter = require('./games/categories');
 
 
 router.use('/categories', categoriesRouter);
 
-router.get('/check-answer/:gameId/:answer', async function(req,res){
+router.post('/check-answer', async function(req,res){
+    const r = {};
+    const gameId = req.body.gameId;
+    const answer = req.body.answer;
+    
     try{
-        var gameId = req.params.gameId;
-        var answer = req.params.answer;
-        
-        var answers = await db.Games.findOne({_id: gameId, correct_answer: answer});
-
-        if (!answers)
+        const isPassed = await db.User_Game.findOne({game_id: gameId, user_id: USER_ID});
+        if (isPassed)
             throw Error;
+
+        const isCorrect = await db.Games.findOne({_id: gameId, correct_answer: answer});
+        if (isCorrect){
+            const newPassedGame = new db.User_Game({
+                game_id: gameId,
+                user_id: USER_ID
+            });
+            await newPassedGame.save();
+            r.isCorrect = true;
+        }
+        else
+            r.isCorrect = false;
         
-        res.status(200).send('Correct answer');
+        res.status(200).json(r);
     } catch(err) {
-        res.status(400).send('Wrong answer');
+        res.status(400);
     }
 });
 

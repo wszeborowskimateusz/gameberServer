@@ -176,6 +176,14 @@ let gamesSchema = mongoose.Schema({
 //gamesSchema.plugin(autoIncrement.plugin, { model: 'Games', field: 'game_id', startAt: 1 });
 var Games = mongoose.model("Games", gamesSchema);
 
+const user_GameSchema = mongoose.Schema({
+    game_id: { type: Schema.Types.ObjectId, ref: 'Games' },
+    user_id: { type: Schema.Types.ObjectId, ref: 'User' },
+    date_of_reciving: { type : Date, default: Date.now },
+});
+//gamesSchema.plugin(autoIncrement.plugin, { model: 'Games', field: 'game_id', startAt: 1 });
+var User_Game = mongoose.model("User_Game", user_GameSchema);
+
 // let gamesContentSchema = mongoose.Schema({
 //     //games_content_id: Number,
 //     image: String,
@@ -206,6 +214,7 @@ module.exports = {
     User_Achievement: User_Achievement,
     Categories: Categories,
     Games: Games,
-    Experience: Experience
+    Experience: Experience,
+    User_Game: User_Game
     // GamesContent: GamesContent
 };
