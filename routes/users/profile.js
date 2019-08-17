@@ -1,70 +1,88 @@
-var cfg = require('../../config');
-var express = require('express');
-var db = require('../../' + cfg.dbPath);
-var router = express.Router();
-var mongoose = require('mongoose');
+const cfg = require('../../config');
+const express = require('express');
+const db = require('../../' + cfg.dbPath);
+const router = express.Router();
+const mongoose = require('mongoose');
 
-router.get('/', async function(req, res) {
-    var r = {
-        user: null
+router.get('/:user_id?', async function(req, res) {
+    const otherPlayerProfile = req.params.user_id != null; 
+    const userId = otherPlayerProfile ? req.params.user_id : USER_ID;
+    if (!mongoose.Types.ObjectId.isValid(userId))
+        throw Error;
+
+    const r = {
+        user: {}
     };
 
-    var avatarsArr = [];
-    var backgroundsArr = [];
-    var achievementsArr = [];
+    const avatarsArr = [];
+    const backgroundsArr = [];
+    const achievementsArr = [];
 
     try{
-        var ua = await db.User_Avatar.
-            find({user_id: USER_ID}).
-            populate({
-                path: 'user_id',
-                populate: {path: 'picked_avatar_id'},
-                populate: {path: 'background_img_id'}
-            }).
-            populate('avatar_id');
+        const player_info = await db.User.
+            findById(userId).
+            populate('picked_avatar_id').
+            populate('background_img_id');
+            
+        if (otherPlayerProfile){            
+            avatarsArr.push(player_info.picked_avatar_id);
+            backgroundsArr.push(player_info.background_img_id);
+
+            const friendship = await db.Friendship.FindOne({user_from: USER_ID, user_to: userId});
+            const rev_friendship = await db.Friendship.FindOne({user_to: USER_ID, user_from: userId});
+            
+            r.user.isFriend = friendship || rev_friendship;
+        }
+        else{
+            const ua = await db.User_Avatar.
+                find({user_id: userId}).
+                populate('avatar_id');
         
-        ua.forEach(function(a) {
-            avatarsArr.push({
-                id: a.avatar_id._id,
-                name: a.avatar_id.avatar_name,
-                img: cfg.imagesUrl + a.avatar_id.avatar_img,
-                price: a.avatar_id.price
+            await ua.forEach(a => {
+                avatarsArr.push({
+                    id: a.avatar_id._id,
+                    name: a.avatar_id.avatar_name,
+                    img: cfg.imagesUrl + a.avatar_id.avatar_img,
+                    price: a.avatar_id.price
+                })
             })
-        })
 
-        var ui = await db.User_Image.
-            find({user_id: USER_ID}).
-            populate('image_id');
+            const ui = await db.User_Image.
+                find({user_id: userId}).
+                populate('image_id');
 
-        ui.forEach(function(i) {
-            backgroundsArr.push({
-                id: i.image_id._id,
-                name: i.image_id.image_name,
-                img: cfg.imagesUrl + i.image_id.image_img,
-                price: i.image_id.price
+            await ui.forEach(i => {
+                backgroundsArr.push({
+                    id: i.image_id._id,
+                    name: i.image_id.image_name,
+                    img: cfg.imagesUrl + i.image_id.image_img,
+                    price: i.image_id.price
+                })
             })
-        })
 
-        var uach = await db.User_Achievement.
-            find({user_id: USER_ID}).
+            r.user.numberOfCoins = ua[0].user_id.amount_of_coins;
+        }
+
+        const uach = await db.User_Achievement.
+            find({user_id: userId}).
             populate('achievement_id');
 
-        uach.forEach(function(a) {
+        await uach.forEach(a => {
             achievementsArr.push({
                 name: a.achievement_id.achievement_name,
                 src: cfg.imagesUrl + a.achievement_id.achievement_img,
             })
         })
+
         r.user = {
-            avatarId: ua[0].user_id.picked_avatar_id._id,
+            avatarId: player_info.picked_avatar_id._id,
             avatars: avatarsArr,
-            username: ua[0].user_id.login,
-            backgroundImageId: ua[0].user_id.background_img_id._id,
+            username: player_info.login,
+            backgroundImageId: player_info.background_img_id._id,
             backgroundImages: backgroundsArr,
-            level: ua[0].user_id.level,
-            experiencePoints: ua[0].user_id.exp_points,
-            pointsToAchieveNewLevel: ua[0].user_id.points_to_new_level,
-            numberOfCoins: ua[0].user_id.amount_of_coins,
+            level: player_info.level,
+            experiencePoints: player_info.exp_points,
+            pointsToAchieveNewLevel: player_info.points_to_new_level,
             achievements: achievementsArr
         }
 
