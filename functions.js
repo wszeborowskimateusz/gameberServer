@@ -1,6 +1,8 @@
-var cfg = require('./config');
-var express = require('express');
-var db = require('./' + cfg.dbPath);
+const cfg = require('./config');
+const express = require('express');
+const db = require('./' + cfg.dbPath);
+const mongoose = require('mongoose');
+
 
 //#region rankings
 async function getRankingAsync(startYear, startMonth, startDay, limit){
@@ -44,5 +46,44 @@ module.exports.fillRankingAsync = async function (startYear, startMonth, startDa
         result.push(user)
     }
     return result;
+}
+//#endregion
+
+//#region experience
+module.exports.giveExperienceToUserAsync = async function (experiencePoints, subject, userId){
+    const newExperience = new db.Experience({
+        earned_points: experiencePoints,
+        subject: subject,
+        user_id: userId
+    })
+    await newExperience.save();
+
+    const userExperience = await db.Experience.aggregate([      
+        { $match: {
+            user_id: {$eq: mongoose.Types.ObjectId(USER_ID)}
+        }},
+        { $group: {
+            _id: "$user_id",
+            exp_points: { $sum: "$earned_points" }
+        }}]);
+
+    const user = await db.User.findById(USER_ID);
+
+    while (userExperience[0].exp_points >= user.points_to_new_level){
+        user.points_to_new_level = Math.floor(Math.pow(user.points_to_new_level, cfg.newLevelPower));
+        user.level++;
+    }
+
+    user.save();
+
+}
+//#endregion
+
+//#region coins
+module.exports.giveCoinsToUserAsync = async function (coins, userId){
+    const user = await db.User.findById(userId);
+    
+    user.amount_of_coins += coins;
+    user.save();
 }
 //#endregion

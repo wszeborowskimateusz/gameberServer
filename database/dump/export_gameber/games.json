@@ -4,7 +4,7 @@
 	},
 	"game_name": "PhraseLearning",
 	"game_info": "{\"question\":\"How are you ?\",\"words\":[\"I\",\"all\",\"am\",\"right\"],\"correctOrder\":[\"I\",\"am\",\"all\",\"right\"]}",
-	"correct_answer": "I am all right",
+	"correct_answer": "['I', 'am', 'all', 'right']",
 	"category_id": {
 		"$oid": "5d3d9c359eae4f18d02267d3"
 	}
@@ -81,7 +81,7 @@
 	},
 	"game_name": "WordPicker",
 	"game_info": "{\"img\":\"https://www.seacoastsciencecenter.org/wp-content/themes/FoundationPress/img/seal%202.png\",\"correctAnswer\":0,\"answers\":[\"Seal\",\"Bear\",\"Penguin\",\"Water\"]}",
-	"correct_answer": "",
+	"correct_answer": "0",
 	"category_id": {
 		"$oid": "5d3d9c359eae4f18d02267d3"
 	}

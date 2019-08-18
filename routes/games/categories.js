@@ -1,4 +1,5 @@
 var cfg = require('../../config');
+var functions = require('../../functions');
 var express = require('express');
 var db = require('../../' + cfg.dbPath);
 var router = express.Router();
@@ -44,6 +45,68 @@ router.get('/:categoryId', async function(req, res) {
     }catch(err){
         console.log(err);
         res.status(404).send();
+    }
+});
+
+router.post('/finish', async function(req, res) {
+    const r = {
+        achievements: []
+    };
+    const categoryId = req.body.categoryId;
+
+    try{
+        const category = await db.Categories.
+            findById(categoryId);
+        if (!category)
+            throw Error;
+
+        const isCategoryPassed = await db.User_Category.
+            findOne({user_id: USER_ID, category_id: categoryId});
+        if (isCategoryPassed)
+            throw Error;
+
+        const passedGames = (await db.User_Game.
+            find({user_id: USER_ID}).
+            populate({
+                path: 'game_id',
+                match: {category_id: {$eq: categoryId}}
+            })).
+            filter(x => x.category_id != null).
+            length;
+
+            const gamesInCategory = await db.Games.
+            find({category_id: categoryId}).
+            count();
+
+        if (passedGames >= gamesInCategory){
+            const newPassedCategory = new db.User_Category({
+                user_id: USER_ID,
+                category_id: categoryId
+            })
+            newPassedCategory.save();
+
+            functions.giveCoinsToUserAsync(category.prize_coins, USER_ID)
+            functions.giveExperienceToUserAsync(category.prize_points, category.category_name, USER_ID)
+
+            const achievements4Category = await db.Achievement_Category.
+                find({category_id: categoryId}).
+                populate('achievement_id');
+            
+            await achievements4Category.forEach(ac =>
+                r.achievements.push({
+                    src: ac.achievement_id.achievement_img,
+                    name: ac.achievement_id.achievement_name})
+            );
+            r.coins = category.prize_coins;
+            r.experiencePoints = category.prize_points;
+
+            res.json(r);
+        }
+        else
+            throw Error;
+    }
+    catch(err){
+        res.status(400).send();
     }
 });
 
