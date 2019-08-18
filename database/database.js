@@ -194,6 +194,13 @@ const user_CategorySchema = mongoose.Schema({
 //gamesSchema.plugin(autoIncrement.plugin, { model: 'Games', field: 'game_id', startAt: 1 });
 var User_Category = mongoose.model("User_Category", user_CategorySchema);
 
+const achievement_CategorySchema = mongoose.Schema({
+    category_id: { type: Schema.Types.ObjectId, ref: 'Categories' },
+    achievement_id: { type: Schema.Types.ObjectId, ref: 'Achievements' },
+});
+//gamesSchema.plugin(autoIncrement.plugin, { model: 'Games', field: 'game_id', startAt: 1 });
+var Achievement_Category = mongoose.model("Achievement_Category", achievement_CategorySchema);
+
 // let gamesContentSchema = mongoose.Schema({
 //     //games_content_id: Number,
 //     image: String,
@@ -226,6 +233,7 @@ module.exports = {
     Games: Games,
     Experience: Experience,
     User_Game: User_Game,
-    User_Category: User_Category
+    User_Category: User_Category,
+    Achievement_Category: Achievement_Category
     // GamesContent: GamesContent
 };

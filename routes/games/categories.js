@@ -49,7 +49,9 @@ router.get('/:categoryId', async function(req, res) {
 });
 
 router.post('/finish', async function(req, res) {
-    const r = {};
+    const r = {
+        achievements = []
+    };
     const categoryId = req.params.categoryId;
 
     try{
@@ -70,16 +72,29 @@ router.post('/finish', async function(req, res) {
             count();
 
         if (passedGames >= gamesInCategory){
-            const category = db.Categories.findById(categoryId);
-
             const newPassedCategory = new db.User_Category({
                 user_id: USER_ID,
                 category_id: categoryId
             })
             newPassedCategory.save();
 
+            const category = await db.Categories.
+                findById(categoryId);
+
             functions.giveCoinsToUserAsync(category.prize_coins, USER_ID)
             functions.giveExperienceToUserAsync(category.prize_points, category.category_name, USER_ID)
+
+            const achievements4Category = await db.Achievement_Category.
+                find({category_id: categoryId}).
+                populate('achievement_id');
+            
+            await achievements4Category.foreach(ac =>
+                r.achievements.push({
+                    src: ac.achievement_img,
+                    name: ac.achievement_name})
+            );
+            r.coins = category.prize_coins;
+            r.experiencePoints = prize_points;
 
             res.json(r);
         }
