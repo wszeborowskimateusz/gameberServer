@@ -50,22 +50,29 @@ router.get('/:categoryId', async function(req, res) {
 
 router.post('/finish', async function(req, res) {
     const r = {
-        achievements = []
+        achievements: []
     };
-    const categoryId = req.params.categoryId;
+    const categoryId = req.body.categoryId;
 
     try{
-        const isCategoryPassed = await db.User_Category.findOne({user_id: USER_ID, category_id: categoryId});
+        const category = await db.Categories.
+            findById(categoryId);
+        if (!category)
+            throw Error;
+
+        const isCategoryPassed = await db.User_Category.
+            findOne({user_id: USER_ID, category_id: categoryId});
         if (isCategoryPassed)
             throw Error;
 
-        const passedGames = await db.User_Game.
+        const passedGames = (await db.User_Game.
             find({user_id: USER_ID}).
             populate({
                 path: 'game_id',
-                match: {category_id: {$eq: categoryId}} // TODO: check if works
-            }).
-            count();
+                match: {category_id: {$eq: categoryId}}
+            })).
+            filter(x => x.category_id != null).
+            length;
 
         const gamesInCategory = await db.Games.
             find({category_id: categoryId}).
@@ -77,9 +84,6 @@ router.post('/finish', async function(req, res) {
                 category_id: categoryId
             })
             newPassedCategory.save();
-
-            const category = await db.Categories.
-                findById(categoryId);
 
             functions.giveCoinsToUserAsync(category.prize_coins, USER_ID)
             functions.giveExperienceToUserAsync(category.prize_points, category.category_name, USER_ID)
@@ -98,9 +102,11 @@ router.post('/finish', async function(req, res) {
 
             res.json(r);
         }
+        else
+            throw Error;
     }
     catch(err){
-        res.status(400);
+        res.status(400).send();
     }
 });
 

@@ -1,7 +1,7 @@
 var cfg = require('../config');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var connection = mongoose.connect(cfg.dbConnectionString);
+var connection = mongoose.connect(cfg.dbConnectionString, { useNewUrlParser: true });
 // var autoIncrement = require('mongoose-auto-increment');
 
 // autoIncrement.initialize(mongoose.connection);
@@ -181,7 +181,7 @@ var Games = mongoose.model("Games", gamesSchema);
 const user_GameSchema = mongoose.Schema({
     game_id: { type: Schema.Types.ObjectId, ref: 'Games' },
     user_id: { type: Schema.Types.ObjectId, ref: 'User' },
-    date_of_reciving: { type : Date, default: Date.now },
+    date_of_passing: { type : Date, default: Date.now },
 });
 //gamesSchema.plugin(autoIncrement.plugin, { model: 'Games', field: 'game_id', startAt: 1 });
 var User_Game = mongoose.model("User_Game", user_GameSchema);

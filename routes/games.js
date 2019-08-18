@@ -32,7 +32,7 @@ router.post('/check-answer', async function(req,res){
         
         res.status(200).json(r);
     } catch(err) {
-        res.status(400);
+        res.status(400).send();
     }
 });
 
