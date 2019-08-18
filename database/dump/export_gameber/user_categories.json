@@ -1,0 +1,15 @@
+{
+	"_id": {
+		"$oid": "5d59af4455e6a93460043585"
+	},
+	"user_id": {
+		"$oid": "5d3d99d1af14061e14e687ac"
+	},
+	"category_id": {
+		"$oid": "5d3d9c359eae4f18d02267d3"
+	},
+	"date_of_passing": {
+		"$date": "2019-08-18T20:04:20.744Z"
+	},
+	"__v": 0
+}

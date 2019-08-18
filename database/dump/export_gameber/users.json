@@ -2,9 +2,9 @@
 	"_id": {
 		"$oid": "5d3d99d1af14061e14e687ac"
 	},
-	"points_to_new_level": 100,
-	"level": 1,
-	"amount_of_coins": 100,
+	"points_to_new_level": 1238,
+	"level": 10,
+	"amount_of_coins": 841,
 	"is_daily_mission_completed": false,
 	"is_account_private": false,
 	"logging_streak": 1,
@@ -21,7 +21,8 @@
 	"date_of_creating_account": {
 		"$date": "2019-07-28T12:49:21.362Z"
 	},
-	"__v": 0
+	"__v": 0,
+	"points": 0
 }
 {
 	"_id": {
