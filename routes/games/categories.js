@@ -74,7 +74,7 @@ router.post('/finish', async function(req, res) {
             filter(x => x.category_id != null).
             length;
 
-        const gamesInCategory = await db.Games.
+            const gamesInCategory = await db.Games.
             find({category_id: categoryId}).
             count();
 
@@ -92,13 +92,13 @@ router.post('/finish', async function(req, res) {
                 find({category_id: categoryId}).
                 populate('achievement_id');
             
-            await achievements4Category.foreach(ac =>
+            await achievements4Category.forEach(ac =>
                 r.achievements.push({
-                    src: ac.achievement_img,
-                    name: ac.achievement_name})
+                    src: ac.achievement_id.achievement_img,
+                    name: ac.achievement_id.achievement_name})
             );
             r.coins = category.prize_coins;
-            r.experiencePoints = prize_points;
+            r.experiencePoints = category.prize_points;
 
             res.json(r);
         }
