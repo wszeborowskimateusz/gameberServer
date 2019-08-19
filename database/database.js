@@ -1,24 +1,24 @@
-var cfg = require('../config');
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-var connection = mongoose.connect(cfg.dbConnectionString, { useNewUrlParser: true });
-// var autoIncrement = require('mongoose-auto-increment');
+// To run db type "npm install run-rs -g" -> then "run-rs --mongod --dbpath c:\path_to_mongo_data\dbs -h "localhost" --keep"
 
-// autoIncrement.initialize(mongoose.connection);
-// Test Field
-
-
+const cfg = require('../config');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 // Test Field
-let experienceSchema = mongoose.Schema({
+
+
+
+// Test Field
+
+const experienceSchema = mongoose.Schema({
     earned_points: Number,
     subject: String,
     date_of_receiving: { type : Date, default: Date.now },
     user_id: { type: Schema.Types.ObjectId, ref: 'User' }
 });
-var Experience = mongoose.model("Experience", experienceSchema);
+const Experience = mongoose.model("Experience", experienceSchema);
 
-let userSchema = mongoose.Schema({
+const userSchema = mongoose.Schema({
     //user_id: Number,
     login: String,
     password: String,
@@ -36,50 +36,47 @@ let userSchema = mongoose.Schema({
     picked_avatar_id: { type: Schema.Types.ObjectId, ref: 'Avatars' },
     current_country_id: { type: Schema.Types.ObjectId, ref: 'Countries' }
 });
-//userSchema.plugin(autoIncrement.plugin, { model: 'User', field: 'user_id', startAt: 1 });
-var User = mongoose.model("User", userSchema);
+const User = mongoose.model("User", userSchema);
 
-let availableCountriesSchema = mongoose.Schema({
+const availableCountriesSchema = mongoose.Schema({
     user_id: { type: Schema.Types.ObjectId, ref: 'User' },
     country_id: { type: Schema.Types.ObjectId, ref: 'Countries' },
     level_of_advancement: Number,
     date_of_unlocking: { type : Date, default: Date.now },
     is_completed: Boolean
 });
-var AvailableCountries = mongoose.model("AvailableCountries", availableCountriesSchema);
+const AvailableCountries = mongoose.model("AvailableCountries", availableCountriesSchema);
 
-let countriesSchema = mongoose.Schema({
+const countriesSchema = mongoose.Schema({
     //country_id: Number,
     country_name: String,
     country_icon: String
 });
-//countriesSchema.plugin(autoIncrement.plugin, { model: 'Countries', field: 'country_id', startAt: 1 });
-var Countries = mongoose.model("Countries", countriesSchema);
+const Countries = mongoose.model("Countries", countriesSchema);
 
-let neighbouringCountriesSchema = mongoose.Schema({
+const neighbouringCountriesSchema = mongoose.Schema({
     country_1: { type: Schema.Types.ObjectId, ref: 'Countries' },
     country_2: { type: Schema.Types.ObjectId, ref: 'Countries' }
 });
-var NeighbouringCountries = mongoose.model("NeighbouringCountries", neighbouringCountriesSchema);
+const NeighbouringCountries = mongoose.model("NeighbouringCountries", neighbouringCountriesSchema);
 
-let user_AvatarsSchema = mongoose.Schema({
+const user_AvatarsSchema = mongoose.Schema({
     user_id: { type: Schema.Types.ObjectId, ref: 'User' },
     avatar_id: { type: Schema.Types.ObjectId, ref: 'Avatars' },
     date_of_reciving: { type : Date, default: Date.now },
 
 });
-var User_Avatar = mongoose.model("User_Avatar", user_AvatarsSchema);
+const User_Avatar = mongoose.model("User_Avatar", user_AvatarsSchema);
 
-let avatarsSchema = mongoose.Schema({
+const avatarsSchema = mongoose.Schema({
     //avatar_id: Number,
     avatar_name: String,
     avatar_img: String,
     price: Number
 });
-//avatarsSchema.plugin(autoIncrement.plugin, { model: 'Avatars', field: 'avatar_id', startAt: 1 });
-var Avatars = mongoose.model("Avatars", avatarsSchema);
+const Avatars = mongoose.model("Avatars", avatarsSchema);
 
-let messagesSchema = mongoose.Schema({
+const messagesSchema = mongoose.Schema({
     //message_id: Number,
     content: String,
     user_from_id: { type: Schema.Types.ObjectId, ref: 'User' },
@@ -87,74 +84,69 @@ let messagesSchema = mongoose.Schema({
     date_of_seeing: Date,
     date_of_sending: { type : Date, default: Date.now }
 });
-//messagesSchema.plugin(autoIncrement.plugin, { model: 'Messages', field: 'message_id', startAt: 1 });
-var Messages = mongoose.model("Messages", messagesSchema);
+const Messages = mongoose.model("Messages", messagesSchema);
 
-let user_QuestSchema = mongoose.Schema({
+const user_QuestSchema = mongoose.Schema({
     user_id: { type: Schema.Types.ObjectId, ref: 'User' },
     quest_id: { type: Schema.Types.ObjectId, ref: 'DailyQuest' },
     date_of_making: { type : Date, default: Date.now },
 
 });
-var User_Quest = mongoose.model("User_Quest", user_QuestSchema);
+const User_Quest = mongoose.model("User_Quest", user_QuestSchema);
 
-let dailyQuestsSchema = mongoose.Schema({
+const dailyQuestsSchema = mongoose.Schema({
     //quest_id: Number,
     name: String,
     due_date: Date,
 });
-//dailyQuestsSchema.plugin(autoIncrement.plugin, { model: 'DailyQuests', field: 'quest_id', startAt: 1 });
-var DailyQuests = mongoose.model("DailyQuests", dailyQuestsSchema);
+const DailyQuests = mongoose.model("DailyQuests", dailyQuestsSchema);
 
-let friendshipSchema = mongoose.Schema({
+const friendshipSchema = mongoose.Schema({
     user_from_id: { type: Schema.Types.ObjectId, ref: 'User' },
     user_to_id: { type: Schema.Types.ObjectId, ref: 'User' },
     date_of_beginning: Date,
     date_od_invitation: { type : Date, default: Date.now }
 });
-var Friendship = mongoose.model("Friendship", friendshipSchema);
+const Friendship = mongoose.model("Friendship", friendshipSchema);
 
-let backgroundImagesSchema = mongoose.Schema({
+const backgroundImagesSchema = mongoose.Schema({
     //image_id: Number,
     image_name: String,
     image_img: String,
     price: Number
 });
-//backgroundImagesSchema.plugin(autoIncrement.plugin, { model: 'BackgroundImages', field: 'image_id', startAt: 1 });
-var BackgroundImages = mongoose.model("BackgroundImages", backgroundImagesSchema);
+const BackgroundImages = mongoose.model("BackgroundImages", backgroundImagesSchema);
 
-let user_ImageSchema = mongoose.Schema({
+const user_ImageSchema = mongoose.Schema({
     user_id: { type: Schema.Types.ObjectId, ref: 'User' },
     image_id: { type: Schema.Types.ObjectId, ref: 'BackgroundImages' },
     date_of_reciving: { type : Date, default: Date.now },
 });
-var User_Image = mongoose.model("User_Image", user_ImageSchema);
+const User_Image = mongoose.model("User_Image", user_ImageSchema);
 
-let achievementsSchema = mongoose.Schema({
+const achievementsSchema = mongoose.Schema({
     //achievement_id: Number,
     achievement_name: String,
     achievement_img: String,
     achievement_description: String,
 });
-//achievementsSchema.plugin(autoIncrement.plugin, { model: 'Achievements', field: 'achievement_id', startAt: 1 });
-var Achievements = mongoose.model("Achievements", achievementsSchema);
+const Achievements = mongoose.model("Achievements", achievementsSchema);
 
-let user_AchievementSchema = mongoose.Schema({
+const user_AchievementSchema = mongoose.Schema({
     user_id: { type: Schema.Types.ObjectId, ref: 'User' },
     achievement_id: { type: Schema.Types.ObjectId, ref: 'Achievements' },
     date_of_reciving: { type : Date, default: Date.now },
 });
-var User_Achievement = mongoose.model("User_Achievement", user_AchievementSchema);
+const User_Achievement = mongoose.model("User_Achievement", user_AchievementSchema);
 
-let abstractCategorySchema = mongoose.Schema({
+const abstractCategorySchema = mongoose.Schema({
     //abstract_category_id: Number,
     name: String,
     description: String
 });
-//abstractCategorySchema.plugin(autoIncrement.plugin, { model: 'AbstractCategory', field: 'abstract_category_id', startAt: 1 });
-var AbstractCategory = mongoose.model("AbstractCategory", abstractCategorySchema);
+const AbstractCategory = mongoose.model("AbstractCategory", abstractCategorySchema);
 
-let categoriesSchema = mongoose.Schema({
+const categoriesSchema = mongoose.Schema({
     //category_id: Number,
     category_name: String,
     category_img: String,
@@ -165,53 +157,37 @@ let categoriesSchema = mongoose.Schema({
     country_id: { type: Schema.Types.ObjectId, ref: 'Countries' },
     abstract_category_id: { type: Schema.Types.ObjectId, ref: 'AbstractCategory' }
 });
-//categoriesSchema.plugin(autoIncrement.plugin, { model: 'Categories', field: 'category_id', startAt: 1 });
-var Categories = mongoose.model("Categories", categoriesSchema);
+const Categories = mongoose.model("Categories", categoriesSchema);
 
-let gamesSchema = mongoose.Schema({
+const gamesSchema = mongoose.Schema({
     //game_id: Number,
     game_name: String,
     game_info: String,
     correct_answer: String,
     category_id: { type: Schema.Types.ObjectId, ref: 'Categories' },
 });
-//gamesSchema.plugin(autoIncrement.plugin, { model: 'Games', field: 'game_id', startAt: 1 });
-var Games = mongoose.model("Games", gamesSchema);
+const Games = mongoose.model("Games", gamesSchema);
 
 const user_GameSchema = mongoose.Schema({
     game_id: { type: Schema.Types.ObjectId, ref: 'Games' },
     user_id: { type: Schema.Types.ObjectId, ref: 'User' },
     date_of_passing: { type : Date, default: Date.now },
 });
-//gamesSchema.plugin(autoIncrement.plugin, { model: 'Games', field: 'game_id', startAt: 1 });
-var User_Game = mongoose.model("User_Game", user_GameSchema);
+const User_Game = mongoose.model("User_Game", user_GameSchema);
 
 const user_CategorySchema = mongoose.Schema({
     category_id: { type: Schema.Types.ObjectId, ref: 'Categories' },
     user_id: { type: Schema.Types.ObjectId, ref: 'User' },
     date_of_passing: { type : Date, default: Date.now }
 });
-//gamesSchema.plugin(autoIncrement.plugin, { model: 'Games', field: 'game_id', startAt: 1 });
-var User_Category = mongoose.model("User_Category", user_CategorySchema);
+const User_Category = mongoose.model("User_Category", user_CategorySchema);
 
 const achievement_CategorySchema = mongoose.Schema({
     category_id: { type: Schema.Types.ObjectId, ref: 'Categories' },
     achievement_id: { type: Schema.Types.ObjectId, ref: 'Achievements' },
 });
-//gamesSchema.plugin(autoIncrement.plugin, { model: 'Games', field: 'game_id', startAt: 1 });
-var Achievement_Category = mongoose.model("Achievement_Category", achievement_CategorySchema);
+const Achievement_Category = mongoose.model("Achievement_Category", achievement_CategorySchema);
 
-// let gamesContentSchema = mongoose.Schema({
-//     //games_content_id: Number,
-//     image: String,
-//     learning_phrase: String,
-//     game_description: String,
-//     game_sound: String,
-//     correct_answer: String,
-//     game_id: { type: Schema.Types.ObjectId, ref: 'Games' },
-// });
-// //gamesContentSchema.plugin(autoIncrement.plugin, { model: 'GamesContent', field: 'games_content_id', startAt: 1 });
-// var GamesContent = mongoose.model("GamesContent", gamesContentSchema);
 
 module.exports = {
     User: User,
@@ -235,5 +211,4 @@ module.exports = {
     User_Game: User_Game,
     User_Category: User_Category,
     Achievement_Category: Achievement_Category
-    // GamesContent: GamesContent
 };
