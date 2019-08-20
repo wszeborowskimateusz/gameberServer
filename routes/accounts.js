@@ -1,9 +1,9 @@
-var cfg = require('../config');
-var express = require('express');
-var db = require('../' + cfg.dbPath);
-var router = express.Router();
-var passwordHash = require('password-hash');
-var jwt = require('jsonwebtoken');
+const cfg = require('../config');
+const express = require('express');
+const db = require('../' + cfg.dbPath);
+const router = express.Router();
+const passwordHash = require('password-hash');
+const jwt = require('jsonwebtoken');
 
 
 // /* GET users listing. */
@@ -12,8 +12,11 @@ var jwt = require('jsonwebtoken');
 // });
 
 // login, password, mail
-router.post('/signup', function(req, res){
-  var userData = req.body;
+router.post('/signup', async function(req, res){
+  const userData = req.body;
+  let errorMessage = "";
+  const session = await DB_CONNECTION.startSession();
+
   //Check if all fields are provided and are valid:
   if(!userData.login ||
      !userData.password ||
@@ -21,55 +24,59 @@ router.post('/signup', function(req, res){
       
      res.status(400).json({message: "Bad Request"});
   } else {
-    db.User.count({login: userData.login}, async function(err, response){
-      if (response != 0)
-        res.status(400).json({message: "Login exists"});
-      else{
-        //log
-        console.log("New user request");
+    try{
+      await session.startTransaction();
 
-        var defultAvatar = await db.Avatars.findOne({avatar_name: "default"});
-        var defultImage = await db.BackgroundImages.findOne({image_name: "default"});
-
-        if(!defultAvatar || !defultImage)
-          res.status(500).json({message: "Database error/n" + err.message, type: "error"});
-
-        var user = new db.User({
-          login: userData.login,
-          password: passwordHash.generate(userData.password),
-          mail: userData.mail,
-          picked_avatar_id: defultAvatar._id,
-          background_img_id: defultImage._id
-        });
-
-        db.User_Avatar.create({ user_id: user._id, avatar_id: defultAvatar._id }, function (err) {
-          if (err)
-              return res.status(500).json({message: "DB error"});
-        });
-
-        db.User_Image.create({ user_id: user._id, image_id: defultImage._id }, function (err) {
-          if (err)
-              return res.status(500).json({message: "DB error"});
-        });
-    
-        //log
-        console.log("New user created");
-
-        user.save(function(err, User){
-          if(err){
-            //log
-            console.log("Save error"); 
-            res.status(500).json({message: "Database error/n" + err.message, type: "error"});
-          }
-          else{
-            //log
-            console.log("New user saved");
-            res.status(201).json({message: "New user added", type: "success"});
-          }
-        });
+      const userLogins = await db.User.count({login: userData.login});
+      if (userLogins != 0) {
+        errorMessage = "Login exists";
+        throw Error;
       }
-    });
-  } 
+
+      const userMails = await db.User.count({mail: userData.mail});
+      if (userMails != 0) {
+        errorMessage = "Mail exists";
+        throw Error;
+      }
+
+      //log
+      console.log("New user request");
+
+      const defultAvatar = await db.Avatars.findOne({avatar_name: "default"});
+      const defultImage = await db.BackgroundImages.findOne({image_name: "default"});
+
+      if(!defultAvatar || !defultImage){
+        errorMessage = "Server error";
+        throw Error;
+      }
+
+      const user = new db.User({
+        login: userData.login,
+        password: await passwordHash.generate(userData.password),
+        mail: userData.mail,
+        picked_avatar_id: defultAvatar._id,
+        background_img_id: defultImage._id
+      });
+      await user.save({ session });
+
+      const defaultUserAvatar = new db.User_Avatar({ user_id: user._id, avatar_id: defultAvatar._id });
+      await defaultUserAvatar.save({ session });
+
+      const defaultUserBackground = new db.User_Image({ user_id: user._id, image_id: defultImage._id });
+      await defaultUserBackground.save({ session });
+
+      //log
+      console.log("New user created");
+
+      await session.commitTransaction();
+    } catch(err) {
+      await session.abortTransaction();
+      console.log(err);
+      res.status(500).json({message: errorMessage});
+    } finally {
+      await session.endSession();
+    }
+  }
 });
 
 router.post('/signin', function(req, res){
