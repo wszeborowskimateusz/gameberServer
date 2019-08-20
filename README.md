@@ -1,14 +1,14 @@
 # gameberServer
 Bachelor dissertation. Gameber = game + remember - a game for learning foreign languages.
 
-# database
+## database
 1. Install run-rs globally 
 ```
 npm install run-rs -g
 ```
 then run run-rs
 ```
-run-rs --mongod --dbpath c:\path_to_mongo_data\dbs -h "localhost" --keep"
+run-rs --mongod --dbpath c:\path_to_mongo_data\dbs -h "localhost" --keep
 ``` 
 ### run-rs params
 1. Specify --mongod if you dont use env.path for mongo.
