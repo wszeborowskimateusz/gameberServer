@@ -69,6 +69,7 @@ router.post('/signup', async function(req, res){
       console.log("New user created");
 
       await session.commitTransaction();
+      res.status(200).send();
     } catch(err) {
       await session.abortTransaction();
       console.log(err);
@@ -79,8 +80,10 @@ router.post('/signup', async function(req, res){
   }
 });
 
-router.post('/signin', function(req, res){
-  var userData = req.body;
+router.post('/signin', async function(req, res){
+  const userData = req.body;
+  const oneDayMS = 86400000;
+  let errorMessage = null;
 
   //log
   console.log(userData);  
@@ -91,21 +94,37 @@ router.post('/signin', function(req, res){
 
      res.status(400).json({message: "Bad Request"});
   } else {
+    try {
+      const user = await db.User.findOne({login: userData.login});
 
-    db.User.findOne({login: userData.login}, function(err, User){
-      if(err){
-        res.status(500).json({message: "Database error/n" + err.message, type: "error"});
+      if(user == null || !passwordHash.verify(userData.password, user.password)) {
+        errorMessage = "Unauthorised access";
+        throw error;
       }
-      else{
-        if(User == null || !passwordHash.verify(userData.password, User.password)) {
-          res.status(401).json({message: "Unauthorised access", type: "error"});
-        }
-        else {
-          var token = jwt.sign({ login: userData.login, user_id: User._id }, cfg.jwtSecret, { expiresIn: 129600 }); // 36h         
-          res.status(200).json({message: "Signed in", jwtToken:token, type: "success"});
-        }
-      }
-    });
+
+      const todayDate = new Date();
+      todayDate.setHours(0,0,0,0);
+
+      const lastLoginDate = user.date_of_last_login;
+      lastLoginDate.setHours(0,0,0,0);
+
+      const timeSinceLastLogin = todayDate - lastLoginDate;
+
+      if(timeSinceLastLogin == oneDayMS)
+        user.logging_streak++;
+      else if(timeSinceLastLogin > oneDayMS)
+        user.logging_streak = 1;
+
+      user.date_of_last_login = new Date();
+
+      await user.save();
+
+      var token = jwt.sign({ login: userData.login, user_id: user._id }, cfg.jwtSecret, { expiresIn: 129600 }); // 36h         
+      res.status(200).json({message: "Signed in", jwtToken:token, type: "success"});
+    }catch(err){
+      console.log(err);
+      res.status(500).json({message: errorMessage});
+    }
   }
 });
 
