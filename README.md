@@ -11,13 +11,13 @@ then run run-rs
 run-rs --mongod --dbpath c:\path_to_mongo_data\dbs -h "localhost" --keep"
 ``` 
 ### run-rs params
-1. Specify --mongod if you dont use env.path.
+1. Specify --mongod if you dont use env.path for mongo.
 ```
 --mongod .../mongod.exe
 ```
 otherwize just "--mongod" is enough.
 
-2. Specify --dbpath if you use not a standard localisation
+2. Specify --dbpath if you dont use a standard localisation of mongo databases
 ```
 --dbpath c:\path_to_mongo_data\dbs
 ```
