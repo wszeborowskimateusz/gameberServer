@@ -32,7 +32,7 @@ USER_ID = 0;
 
 
 //TEST FIELD - END
-
+app.use('/images', imagesRouter);
 app.use('/accounts', accountsRouter);
 app.use('/map', mapRouter);
 // Authentication
@@ -56,6 +56,5 @@ app.use(function(req, res, next){
 app.use('/users', usersRouter);
 app.use('/shop', shopRouter);
 app.use('/games', gamesRouter);
-//app.use('/images', imagesRouter);
 
 module.exports = app;

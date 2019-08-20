@@ -97,6 +97,7 @@ router.post('/buyCountry', async function(req, res){
 router.post('/countryCategories', async function(req, res)
 {
     let response = {
+        categories: [],
     };
     const data = req.body;
     const countryISO = data.countryISO;
@@ -104,7 +105,10 @@ router.post('/countryCategories', async function(req, res)
 
     try
     {
-        const categories = db.Categories.find({country_ISO: countryISO});
+        // get country
+        const country = await db.Countries.findOne({ISO: countryISO});
+        // get categories
+        const categories = await db.Categories.find({country_id: country._id});
         response.categories = categories;
         return res.json(response);
     }
