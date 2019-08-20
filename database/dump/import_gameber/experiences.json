@@ -1,0 +1,42 @@
+{
+	"_id": {
+		"$oid": "5d4f23944fa6524cdcd213eb"
+	},
+	"subject": "nothing",
+	"date_of_receiving": {
+		"$date": "2019-08-10T20:05:40.871Z"
+	},
+	"__v": 0,
+	"user_id": {
+		"$oid": "5d3d99d1af14061e14e687ac"
+	},
+	"earned_points": 30
+}
+{
+	"_id": {
+		"$oid": "5d4f272ef3bb312a4424fd38"
+	},
+	"subject": "nothing",
+	"date_of_receiving": {
+		"$date": "2019-08-09T20:05:40.871Z"
+	},
+	"__v": 0,
+	"user_id": {
+		"$oid": "5d3d99d1af14061e14e687ac"
+	},
+	"earned_points": 20
+}
+{
+	"_id": {
+		"$oid": "5d4f2737f3bb312a4424fd39"
+	},
+	"subject": "nothing",
+	"date_of_receiving": {
+		"$date": "2019-08-10T20:05:40.871Z"
+	},
+	"__v": 0,
+	"user_id": {
+		"$oid": "5d4ef3b3e94b403d0c3f8d54"
+	},
+	"earned_points": 40
+}

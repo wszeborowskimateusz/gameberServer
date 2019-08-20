@@ -1,0 +1,24 @@
+{
+	"_id": {
+		"$oid": "5d2a1ae51a8ff84968146176"
+	},
+	"avatar_name": "default",
+	"avatar_img": "default_avatar.jpg",
+	"price": 0
+}
+{
+	"_id": {
+		"$oid": "5d34754f68f5d6535c3034d3"
+	},
+	"avatar_name": "av1",
+	"avatar_img": "av1.jpg",
+	"price": 5
+}
+{
+	"_id": {
+		"$oid": "5d3475d9195a76535c21f04a"
+	},
+	"avatar_name": "av2",
+	"avatar_img": "av2.jpg",
+	"price": 10
+}

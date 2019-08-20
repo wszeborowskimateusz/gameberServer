@@ -1,0 +1,24 @@
+{
+	"_id": {
+		"$oid": "5d2a26a1d7d40557b42ab26f"
+	},
+	"image_name": "default",
+	"image_img": "default_background.jpg",
+	"price": 0
+}
+{
+	"_id": {
+		"$oid": "5d347658195a76535c21f04b"
+	},
+	"image_name": "bg1",
+	"image_img": "bg1.jpg",
+	"price": 5
+}
+{
+	"_id": {
+		"$oid": "5d347667195a76535c21f04c"
+	},
+	"image_name": "bg2",
+	"image_img": "bg2.jpg",
+	"price": 10
+}

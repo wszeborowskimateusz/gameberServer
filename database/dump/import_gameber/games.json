@@ -1,0 +1,99 @@
+{
+	"_id": {
+		"$oid": "5d3d9cbf9eae4f18d02267d4"
+	},
+	"game_name": "PhraseLearning",
+	"game_info": "{\"question\":\"How are you ?\",\"words\":[\"I\",\"all\",\"am\",\"right\"],\"correctOrder\":[\"I\",\"am\",\"all\",\"right\"]}",
+	"correct_answer": "I am all right",
+	"category_id": {
+		"$oid": "5d3d9c359eae4f18d02267d3"
+	}
+}
+{
+	"_id": {
+		"$oid": "5d4700ec37bacb3c08a7ffa1"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":true,\"polishName\": \"Jak się masz ?\",\"correctAnswer\":\"How are you ?\",\"answers\":[{\"img\":\"https://images.typeform.com/images/fxGsvvmE9wJZ/image/default\",\"name\":\"How are you ?\"},{\"img\":\"https://images-na.ssl-images-amazon.com/images/I/71dukCYi0aL._SX355_.jpg\",\"name\":\"Where is a toilete ?\"},{\"img\":\"https://static2.mytraintravel.com/local/cache-vignettes/L760xH505/netherlands-amsterdam_schipol_station-_c_wil_linssen_flickr-no_commercial_use-4642444031-08f3e.jpg\",\"name\":\"How can I get to the train station ?\"},{\"img\":\"https://static.wixstatic.com/media/384812_0ec71d8036a845d9bb9edbbe9bf73511~mv2.jpg\",\"name\":\"Are you ok ?\"}]}",
+	"correct_answer": "How are you?",
+	"category_id": {
+		"$oid": "5d3d9c359eae4f18d02267d3"
+	}
+}
+{
+	"_id": {
+		"$oid": "5d47018837bacb3c08a7ffa2"
+	},
+	"game_name": "StoryGame",
+	"game_info": "{\"stories\":[{\"img\":\"https://www.hakaimagazine.com/wp-content/uploads/header-polar-bear-conflict.jpg\",\"storyEnglish\":\"There was a bear called Ben\",\"storyPolish\":\"Był sobie niedźwiedź o imieniu Ben\"},{\"img\":\"https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2018/09/931/524/PolarBeariStock.jpg?ve=1\u0026tl=1\",\"storyEnglish\":\"Ben was a white polar bear\",\"storyPolish\":\"Ben był białym niedźwiedziem polarnym\"},{\"img\":\"https://images.unsplash.com/photo-1553425300-8bd56360f8eb?ixlib=rb-1.2.1\u0026ixid=eyJhcHBfaWQiOjEyMDd9\u0026w=1000\u0026q=80\",\"storyEnglish\":\"Ben had a brother named John\",\"storyPolish\":\"Ben miał brata Johna\"},{\"img\":\"http://www.skolaiimages.com/journal/wp-content/uploads/2012/10/12_oct15608.jpg\",\"storyEnglish\":\"Ben and John liked to play with each other\",\"storyPolish\":\"Ben i John lubili się ze sobą bawić\"},{\"img\":\"https://www.wwf.org.uk/sites/default/files/styles/social_share_image/public/2016-12/Original_WW22791.jpg?itok=Ouo7tsEJ\",\"storyEnglish\":\"Ben and John were best friends\",\"storyPolish\":\"Ben i John to byli swoi najlepsi przyjaciele\"}]}",
+	"correct_answer": "",
+	"category_id": {
+		"$oid": "5d3d9c359eae4f18d02267d3"
+	}
+}
+{
+	"_id": {
+		"$oid": "5d47021e37bacb3c08a7ffa3"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"https://www.seacoastsciencecenter.org/wp-content/themes/FoundationPress/img/seal%202.png\",\"correctAnswer\":\"seal\"}",
+	"correct_answer": "seal",
+	"category_id": {
+		"$oid": "5d3d9c359eae4f18d02267d3"
+	}
+}
+{
+	"_id": {
+		"$oid": "5d4705df37bacb3c08a7ffa4"
+	},
+	"game_name": "Crossword",
+	"game_info": "{\"words\":[{\"word\":\"penguin\",\"description\":\"Czarno białe zwierze\"},{\"word\":\"bear\",\"description\":\"Biały miś\"},{\"word\":\"seal\",\"description\":\"Patrz jak ... płacze\"},{\"word\":\"walrus\",\"description\":\"Gruby i wygląda jak foka z kłami\"},{\"word\":\"wolf\",\"description\":\"Taki większy pies\"},{\"word\":\"glacier\",\"description\":\"Góra lodowa\"},{\"word\":\"cold\",\"description\":\"Nie ciepło\"}]}",
+	"correct_answer": "",
+	"category_id": {
+		"$oid": "5d3d9c359eae4f18d02267d3"
+	}
+}
+{
+	"_id": {
+		"$oid": "5d47063437bacb3c08a7ffa5"
+	},
+	"game_name": "WordSearch",
+	"game_info": "{\"words\":[\"penguin\",\"bear\",\"seal\",\"walrus\",\"wolf\"]}",
+	"correct_answer": "",
+	"category_id": {
+		"$oid": "5d3d9c359eae4f18d02267d3"
+	}
+}
+{
+	"_id": {
+		"$oid": "5d47067337bacb3c08a7ffa6"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Pingwin\",\"correctAnswer\":\"Penguin\",\"answers\":[{\"img\":\"http://bi.gazeta.pl/im/3/11672/z11672953IER,Foka-grenlandzka.jpg\",\"name\":\"Seal\"},{\"img\":\"https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iKIWgaiJUtss/v2/1000x-1.jpg\",\"name\":\"Penguin\"},{\"img\":\"https://vignette.wikia.nocookie.net/harrypotter/images/2/25/POLAR.jpg/revision/latest?cb=20160925151133\u0026path-prefix=pl\",\"name\":\"Bear\"},{\"img\":\"https://upload.wikimedia.org/wikipedia/commons/2/22/Pacific_Walrus_-_Bull_%288247646168%29.jpg\",\"name\":\"Walrus\"}]}",
+	"correct_answer": "Penguin",
+	"category_id": {
+		"$oid": "5d3d9c359eae4f18d02267d3"
+	}
+}
+{
+	"_id": {
+		"$oid": "5d4706ab37bacb3c08a7ffa7"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"https://www.seacoastsciencecenter.org/wp-content/themes/FoundationPress/img/seal%202.png\",\"correctAnswer\":0,\"answers\":[\"Seal\",\"Bear\",\"Penguin\",\"Water\"]}",
+	"correct_answer": "",
+	"category_id": {
+		"$oid": "5d3d9c359eae4f18d02267d3"
+	}
+}
+{
+	"_id": {
+		"$oid": "5d47070237bacb3c08a7ffa8"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Foka\",\"englishName\":\"Seal\",\"img\":\"http://bi.gazeta.pl/im/3/11672/z11672953IER,Foka-grenlandzka.jpg\"}",
+	"correct_answer": "",
+	"category_id": {
+		"$oid": "5d3d9c359eae4f18d02267d3"
+	}
+}

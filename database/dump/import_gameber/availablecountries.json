@@ -1,0 +1,35 @@
+{
+	"_id": {
+		"$oid": "5d56af5114aa473964221e4a"
+	},
+	"user_id": {
+		"$oid": "5d4de24df9aa061340eb3635"
+	},
+	"country_id": {
+		"$oid": "5d5694ed14aa473964221e42"
+	},
+	"level_of_advancement": {
+		"$numberLong": "0"
+	},
+	"date_of_unlocking": {
+		"$date": "2019-08-17T22:00:00.000Z"
+	},
+	"is_completed": false
+}
+{
+	"_id": {
+		"$oid": "5d57fc4ca5e5f8358498d795"
+	},
+	"user_id": {
+		"$oid": "5d4de24df9aa061340eb3635"
+	},
+	"country_id": {
+		"$oid": "5d56962114aa473964221e43"
+	},
+	"level_of_advancement": 0,
+	"date_of_unlocking": {
+		"$date": "2019-08-17T13:08:28.886Z"
+	},
+	"is_completed": false,
+	"__v": 0
+}
