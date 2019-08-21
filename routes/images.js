@@ -8,8 +8,12 @@ var fs = fileSystem = require('fs');
 
 router.get('/:name', function(req,res){
     try{
-        res.setHeader("content-type", "image/jpeg");
-        fs.createReadStream('images/' + req.params.name).pipe(res);
+        const imageName = req.params.name;
+        const extension = imageName.split('.').pop();
+        let contentType = 'image/jpeg';
+        if (extension == 'png') contentType = 'image/png';
+        res.setHeader("content-type", contentType);
+        fs.createReadStream('images/' + imageName).pipe(res);
     } catch(err) {
         res.status(404).send('Image/File not found');
         console.log(err);
