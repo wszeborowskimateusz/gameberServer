@@ -48,10 +48,15 @@ const availableCountriesSchema = mongoose.Schema({
 const AvailableCountries = mongoose.model("AvailableCountries", availableCountriesSchema);
 
 const countriesSchema = mongoose.Schema({
-    //country_id: Number,
+    ISO: String,
     country_name: String,
+    price: Number,
+    centerLatitude: Number,
+    centerLongitude: Number,
     country_icon: String
+    //country_id: Number,
 });
+
 const Countries = mongoose.model("Countries", countriesSchema);
 
 const neighbouringCountriesSchema = mongoose.Schema({
