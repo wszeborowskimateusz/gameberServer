@@ -48,15 +48,10 @@ const availableCountriesSchema = mongoose.Schema({
 const AvailableCountries = mongoose.model("AvailableCountries", availableCountriesSchema);
 
 const countriesSchema = mongoose.Schema({
-    ISO: String,
-    country_name: String,
-    price: Number,
-    centerLatitude: Number,
-    centerLongitude: Number
     //country_id: Number,
-    //country_icon: String
+    country_name: String,
+    country_icon: String
 });
-
 const Countries = mongoose.model("Countries", countriesSchema);
 
 const neighbouringCountriesSchema = mongoose.Schema({
@@ -160,8 +155,7 @@ const categoriesSchema = mongoose.Schema({
     prize_coins: Number,
     //repetition_category_id: { type: Schema.Types.ObjectId, ref: 'Categories' },
     country_id: { type: Schema.Types.ObjectId, ref: 'Countries' },
-    abstract_category_id: { type: Schema.Types.ObjectId, ref: 'AbstractCategory' },
-    country_ISO: String
+    abstract_category_id: { type: Schema.Types.ObjectId, ref: 'AbstractCategory' }
 });
 const Categories = mongoose.model("Categories", categoriesSchema);
 

@@ -1,0 +1,13 @@
+{
+	"_id": {
+		"$oid": "5d3d9c359eae4f18d02267d3"
+	},
+	"category_name": "Zwierzęta Arktyki",
+	"category_img": "glownaKategoria.jpg",
+	"category_icon": "zwierzetaArktykiIcon.jpg",
+	"country_id": {
+		"$oid": "5d470809d46cba3c08e45d48"
+	},
+	"prize_coins": 57,
+	"prize_points": 67
+}

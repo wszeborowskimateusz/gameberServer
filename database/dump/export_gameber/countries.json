@@ -1,0 +1,7 @@
+{
+	"_id": {
+		"$oid": "5d470809d46cba3c08e45d48"
+	},
+	"country_name": "Russia",
+	"country_icon": "russia.jpg"
+}
