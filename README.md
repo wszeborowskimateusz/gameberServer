@@ -8,7 +8,7 @@ npm install run-rs -g
 ```
 then run run-rs
 ```
-run-rs --mongod --dbpath c:\path_to_mongo_data\dbs -h "localhost" --keep
+run-rs --mongod --dbpath c:\path_to_mongo_data\dbs -h "localhost" --keep --shell
 ``` 
 ### run-rs params
 1. Specify --mongod if you dont use env.path for mongo.
@@ -23,5 +23,5 @@ otherwize just "--mongod" is enough.
 ```
 3. Use 
 ```
--h "localhost" --keep
+-h "localhost" --keep --shell
 ```
