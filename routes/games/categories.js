@@ -53,8 +53,11 @@ router.post('/finish', async function(req, res) {
         achievements: []
     };
     const categoryId = req.body.categoryId;
+    const session = await DB_CONNECTION.startSession();
 
     try{
+        await session.startTransaction();
+
         const category = await db.Categories.
             findById(categoryId);
         if (!category)
@@ -74,7 +77,7 @@ router.post('/finish', async function(req, res) {
             filter(x => x.category_id != null).
             length;
 
-            const gamesInCategory = await db.Games.
+        const gamesInCategory = await db.Games.
             find({category_id: categoryId}).
             count();
 
@@ -83,10 +86,10 @@ router.post('/finish', async function(req, res) {
                 user_id: USER_ID,
                 category_id: categoryId
             })
-            newPassedCategory.save();
+            newPassedCategory.save({ session });
 
-            functions.giveCoinsToUserAsync(category.prize_coins, USER_ID)
-            functions.giveExperienceToUserAsync(category.prize_points, category.category_name, USER_ID)
+            await functions.giveCoinsToUserAsync(category.prize_coins, USER_ID, session)
+            await functions.giveExperienceToUserAsync(category.prize_points, category.category_name, USER_ID, session)
 
             const achievements4Category = await db.Achievement_Category.
                 find({category_id: categoryId}).
@@ -100,13 +103,17 @@ router.post('/finish', async function(req, res) {
             r.coins = category.prize_coins;
             r.experiencePoints = category.prize_points;
 
+            await session.commitTransaction();
             res.json(r);
         }
         else
             throw Error;
     }
     catch(err){
+        await session.abortTransaction();
         res.status(400).send();
+    } finally {
+        await session.endSession();
     }
 });
 

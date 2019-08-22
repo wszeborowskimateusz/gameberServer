@@ -50,13 +50,13 @@ module.exports.fillRankingAsync = async function (startYear, startMonth, startDa
 //#endregion
 
 //#region experience
-module.exports.giveExperienceToUserAsync = async function (experiencePoints, subject, userId){
+module.exports.giveExperienceToUserAsync = async function (experiencePoints, subject, userId, session){
     const newExperience = new db.Experience({
         earned_points: experiencePoints,
         subject: subject,
         user_id: userId
     })
-    await newExperience.save();
+    await newExperience.save({ session });
 
     const userExperience = await db.Experience.aggregate([      
         { $match: {
@@ -74,16 +74,16 @@ module.exports.giveExperienceToUserAsync = async function (experiencePoints, sub
         user.level++;
     }
 
-    user.save();
+    await user.save({ session });
 
 }
 //#endregion
 
 //#region coins
-module.exports.giveCoinsToUserAsync = async function (coins, userId){
+module.exports.giveCoinsToUserAsync = async function (coins, userId, session){
     const user = await db.User.findById(userId);
     
     user.amount_of_coins += coins;
-    user.save();
+    user.save({ session });
 }
 //#endregion
