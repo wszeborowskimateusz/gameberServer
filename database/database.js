@@ -29,9 +29,9 @@ const userSchema = mongoose.Schema({
     amount_of_coins: { type : Number, default: 100 },
     is_daily_mission_completed: { type : Boolean, default: false },
     is_account_private: { type : Boolean, default: false },
-    logging_streak: { type : Number, default: 1 },
+    logging_streak: { type : Number, default: 0 },
     date_of_creating_account: { type : Date, default: Date.now },
-    date_of_last_login: { type : Date, default: null },
+    date_of_last_login: { type : Date, default: "0-1-1" },
     background_img_id: { type: Schema.Types.ObjectId, ref: 'BackgroundImages' },
     picked_avatar_id: { type: Schema.Types.ObjectId, ref: 'Avatars' },
     current_country_id: { type: Schema.Types.ObjectId, ref: 'Countries' }

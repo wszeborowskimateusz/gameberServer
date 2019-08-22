@@ -1,9 +1,9 @@
-var cfg = require('../config');
-var express = require('express');
-var db = require('../' + cfg.dbPath);
-var router = express.Router();
-var passwordHash = require('password-hash');
-var jwt = require('jsonwebtoken');
+const cfg = require('../config');
+const express = require('express');
+const db = require('../' + cfg.dbPath);
+const router = express.Router();
+const passwordHash = require('password-hash');
+const jwt = require('jsonwebtoken');
 
 
 // /* GET users listing. */
@@ -12,8 +12,11 @@ var jwt = require('jsonwebtoken');
 // });
 
 // login, password, mail
-router.post('/signup', function(req, res){
-  var userData = req.body;
+router.post('/signup', async function(req, res){
+  const userData = req.body;
+  let errorMessage = "";
+  const session = await DB_CONNECTION.startSession();
+
   //Check if all fields are provided and are valid:
   if(!userData.login ||
      !userData.password ||
@@ -21,59 +24,66 @@ router.post('/signup', function(req, res){
       
      res.status(400).json({message: "Bad Request"});
   } else {
-    db.User.count({login: userData.login}, async function(err, response){
-      if (response != 0)
-        res.status(400).json({message: "Login exists"});
-      else{
-        //log
-        console.log("New user request");
+    try{
+      await session.startTransaction();
 
-        var defultAvatar = await db.Avatars.findOne({avatar_name: "default"});
-        var defultImage = await db.BackgroundImages.findOne({image_name: "default"});
-
-        if(!defultAvatar || !defultImage)
-          res.status(500).json({message: "Database error/n" + err.message, type: "error"});
-
-        var user = new db.User({
-          login: userData.login,
-          password: passwordHash.generate(userData.password),
-          mail: userData.mail,
-          picked_avatar_id: defultAvatar._id,
-          background_img_id: defultImage._id
-        });
-
-        db.User_Avatar.create({ user_id: user._id, avatar_id: defultAvatar._id }, function (err) {
-          if (err)
-              return res.status(500).json({message: "DB error"});
-        });
-
-        db.User_Image.create({ user_id: user._id, image_id: defultImage._id }, function (err) {
-          if (err)
-              return res.status(500).json({message: "DB error"});
-        });
-    
-        //log
-        console.log("New user created");
-
-        user.save(function(err, User){
-          if(err){
-            //log
-            console.log("Save error"); 
-            res.status(500).json({message: "Database error/n" + err.message, type: "error"});
-          }
-          else{
-            //log
-            console.log("New user saved");
-            res.status(201).json({message: "New user added", type: "success"});
-          }
-        });
+      const userLogins = await db.User.count({login: userData.login});
+      if (userLogins != 0) {
+        errorMessage = "Login exists";
+        throw Error;
       }
-    });
-  } 
+
+      const userMails = await db.User.count({mail: userData.mail});
+      if (userMails != 0) {
+        errorMessage = "Mail exists";
+        throw Error;
+      }
+
+      //log
+      console.log("New user request");
+
+      const defultAvatar = await db.Avatars.findOne({avatar_name: "default"});
+      const defultImage = await db.BackgroundImages.findOne({image_name: "default"});
+
+      if(!defultAvatar || !defultImage){
+        errorMessage = "Server error";
+        throw Error;
+      }
+
+      const user = new db.User({
+        login: userData.login,
+        password: await passwordHash.generate(userData.password),
+        mail: userData.mail,
+        picked_avatar_id: defultAvatar._id,
+        background_img_id: defultImage._id
+      });
+      await user.save({ session });
+
+      const defaultUserAvatar = new db.User_Avatar({ user_id: user._id, avatar_id: defultAvatar._id });
+      await defaultUserAvatar.save({ session });
+
+      const defaultUserBackground = new db.User_Image({ user_id: user._id, image_id: defultImage._id });
+      await defaultUserBackground.save({ session });
+
+      //log
+      console.log("New user created");
+
+      await session.commitTransaction();
+      res.status(200).send();
+    } catch(err) {
+      await session.abortTransaction();
+      console.log(err);
+      res.status(500).json({message: errorMessage});
+    } finally {
+      await session.endSession();
+    }
+  }
 });
 
-router.post('/signin', function(req, res){
-  var userData = req.body;
+router.post('/signin', async function(req, res){
+  const userData = req.body;
+  const oneDayMS = 86400000;
+  let errorMessage = null;
 
   //log
   console.log(userData);  
@@ -84,21 +94,37 @@ router.post('/signin', function(req, res){
 
      res.status(400).json({message: "Bad Request"});
   } else {
+    try {
+      const user = await db.User.findOne({login: userData.login});
 
-    db.User.findOne({login: userData.login}, function(err, User){
-      if(err){
-        res.status(500).json({message: "Database error/n" + err.message, type: "error"});
+      if(user == null || !passwordHash.verify(userData.password, user.password)) {
+        errorMessage = "Unauthorised access";
+        throw error;
       }
-      else{
-        if(User == null || !passwordHash.verify(userData.password, User.password)) {
-          res.status(401).json({message: "Unauthorised access", type: "error"});
-        }
-        else {
-          var token = jwt.sign({ login: userData.login, user_id: User._id }, cfg.jwtSecret, { expiresIn: 129600 }); // 36h         
-          res.status(200).json({message: "Signed in", jwtToken:token, type: "success"});
-        }
-      }
-    });
+
+      const todayDate = new Date();
+      todayDate.setHours(0,0,0,0);
+
+      const lastLoginDate = user.date_of_last_login;
+      lastLoginDate.setHours(0,0,0,0);
+
+      const timeSinceLastLogin = todayDate - lastLoginDate;
+
+      if(timeSinceLastLogin == oneDayMS)
+        user.logging_streak++;
+      else if(timeSinceLastLogin > oneDayMS)
+        user.logging_streak = 1;
+
+      user.date_of_last_login = new Date();
+
+      await user.save();
+
+      var token = jwt.sign({ login: userData.login, user_id: user._id }, cfg.jwtSecret, { expiresIn: 129600 }); // 36h         
+      res.status(200).json({message: "Signed in", jwtToken:token, type: "success"});
+    }catch(err){
+      console.log(err);
+      res.status(500).json({message: errorMessage});
+    }
   }
 });
 
