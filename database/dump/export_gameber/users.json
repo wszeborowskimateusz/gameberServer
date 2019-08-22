@@ -56,9 +56,10 @@
 	"_id": {
 		"$oid": "5d4ef3b3e94b403d0c3f8d54"
 	},
+	"exp_points": 0,
 	"points_to_new_level": 100,
 	"level": 1,
-	"amount_of_coins": 100,
+	"amount_of_coins": 65,
 	"is_daily_mission_completed": false,
 	"is_account_private": false,
 	"logging_streak": 1,
@@ -75,7 +76,7 @@
 		"$oid": "5d2a26a1d7d40557b42ab26f"
 	},
 	"date_of_creating_account": {
-		"$date": "2019-08-10T16:41:23.308Z"
+		"$date": "2019-08-09T21:14:53.651Z"
 	},
 	"__v": 0
 }

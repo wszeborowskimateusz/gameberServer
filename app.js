@@ -13,6 +13,7 @@ var usersRouter = require('./routes/users');
 var accountsRouter = require('./routes/accounts');
 var imagesRouter = require('./routes/images');
 var shopRouter = require('./routes/shop');
+var mapRouter = require('./routes/map');
 var gamesRouter = require('./routes/games');
 
 var app = express();
@@ -64,6 +65,7 @@ app.use(function(req, res, next){
     }
  });
 
+app.use('/map', mapRouter);
 app.use('/users', usersRouter);
 app.use('/shop', shopRouter);
 app.use('/games', gamesRouter);

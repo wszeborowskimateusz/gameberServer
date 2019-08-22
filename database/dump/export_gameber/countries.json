@@ -1,7 +1,66 @@
 {
 	"_id": {
-		"$oid": "5d470809d46cba3c08e45d48"
+		"$oid": "5d5694ed14aa473964221e42"
 	},
+	"ISO": "PL",
+	"country_name": "Poland",
+	"country_icon": "russia.jpg",
+	"price": "0",
+	"centerLatitude": 52.0,
+	"centerLongitude": 18.0
+}
+{
+	"_id": {
+		"$oid": "5d56962114aa473964221e43"
+	},
+	"ISO": "DE",
+	"country_name": "Germany",
+	"country_icon": "russia.jpg",
+	"price": 35,
+	"centerLatitude": 51.0,
+	"centerLongitude": 9.0
+}
+{
+	"_id": {
+		"$oid": "5d56965e14aa473964221e44"
+	},
+	"ISO": "FR",
+	"country_name": "France",
+	"country_icon": "russia.jpg",
+	"price": "120",
+	"centerLatitude": 46.0,
+	"centerLongitude": 2.0
+}
+{
+	"_id": {
+		"$oid": "5d56967214aa473964221e45"
+	},
+	"ISO": "RU",
 	"country_name": "Russia",
-	"country_icon": "russia.jpg"
+	"country_icon": "russia.jpg",
+	"price": "21",
+	"centerLatitude": 60.0,
+	"centerLongitude": 100.0
+}
+{
+	"_id": {
+		"$oid": "5d5696bf14aa473964221e46"
+	},
+	"ISO": "ES",
+	"country_name": "Spain",
+	"country_icon": "russia.jpg",
+	"price": "86",
+	"centerLatitude": 40.0,
+	"centerLongitude": -4.0
+}
+{
+	"_id": {
+		"$oid": "5d5696e714aa473964221e47"
+	},
+	"ISO": "US",
+	"country_name": "United States of America",
+	"country_icon": "russia.jpg",
+	"price": "65",
+	"centerLatitude": 38.0,
+	"centerLongitude": -97.0
 }
