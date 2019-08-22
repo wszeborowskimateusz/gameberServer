@@ -7,7 +7,9 @@
 	"category_icon": "zwierzetaArktykiIcon.png",
 	"country_id": {
 		"$oid": "5d5694ed14aa473964221e42"
-	}
+	},
+	"prize_coins": 57,
+	"prize_points": 67
 }
 {
 	"_id": {
@@ -18,7 +20,9 @@
 	"category_icon": "skuterIcon.png",
 	"country_id": {
 		"$oid": "5d5694ed14aa473964221e42"
-	}
+	},
+	"prize_coins": 57,
+	"prize_points": 67
 }
 {
 	"_id": {
@@ -29,5 +33,7 @@
 	"category_icon": "pierogiIcon.png",
 	"country_id": {
 		"$oid": "5d5694ed14aa473964221e42"
-	}
+	},
+	"prize_coins": 57,
+	"prize_points": 67
 }
