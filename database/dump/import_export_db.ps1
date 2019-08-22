@@ -36,6 +36,7 @@ foreach ($collection in $collections) {
         mongoexport /h "${ip}:${port}" /d $db /c $collection /o "./export_${db}/${collection}.json" --pretty 
     }
     elseif ($importOrExport -match "[iI]"){
+        mongo "gameber" --eval "db.dropDatabase()"
         Write-Output "./import_${db}/${collection}.json"
         mongoimport /h "${ip}:${port}" /d $db /c $collection /file "./import_${db}/${collection}.json"
     }
