@@ -30,8 +30,7 @@ router.get('/unlockedCountries', async function(req,res) {
 
     try
     {
-        var countries = await db.AvailableCountries.find({});
-        r.unlockedCountries = countries.filter(c => c.user_id == USER_ID);
+        r.unlockedCountries = await db.AvailableCountries.find({user_id: USER_ID});
         res.json(r);
     }
     catch(err)
@@ -45,9 +44,12 @@ router.post('/buyCountry', async function(req, res){
     let response = {
         status: false,
     };
+    const session = await DB_CONNECTION.startSession();
 
     try 
     {
+        await session.startTransaction();
+
         let data = req.body;
         let country = await db.Countries.findOne({ISO: data.countryISO});
 
@@ -60,7 +62,9 @@ router.post('/buyCountry', async function(req, res){
             if (country.price <= user.amount_of_coins)
             {
                 let new_amount_of_coins = user.amount_of_coins - country.price;
-                await db.User.findByIdAndUpdate(USER_ID, {amount_of_coins: new_amount_of_coins});
+                user.amount_of_coins = new_amount_of_coins;
+                await user.save({ session });
+                
                 let newCountryUnlock = new db.AvailableCountries({
                     user_id: USER_ID,
                     country_id: country._id,
@@ -68,29 +72,31 @@ router.post('/buyCountry', async function(req, res){
                     date_of_unlocking: Date.now(),
                     is_completed: false
                 });
-                newCountryUnlock.save();
+                newCountryUnlock.save({ session });
                 
                 response.status = true;
-                return res.json(response);
             }
             else
             {
                 response.status = false;
-                response.comment = 'user jest zbyt biedakiem';
-                return res.json(response);
+                response.comment = 'Not enough money';
             }
         }
         else
         {
             response.status = false;
             response.commend = 'Country alredy bought by user';
-            return res.json(response);
         }
+        await session.commitTransaction();
+        return res.json(response);
     }
     catch(err)
     {
+        await session.abortTransaction();
         console.log(err);
         return res.status(404);
+    } finally {
+        await session.endSession();
     }
 });
 

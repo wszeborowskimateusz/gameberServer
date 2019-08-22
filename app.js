@@ -45,9 +45,8 @@ app.use(async function(req, res, next){
   }
 });
 
-app.use('/images', imagesRouter);
 app.use('/accounts', accountsRouter);
-app.use('/map', mapRouter);
+
 // Authentication
 app.use(function(req, res, next){
     console.log("A new request received at " + Date.now());
@@ -66,8 +65,10 @@ app.use(function(req, res, next){
     }
  });
 
+app.use('/map', mapRouter);
 app.use('/users', usersRouter);
 app.use('/shop', shopRouter);
 app.use('/games', gamesRouter);
+//app.use('/images', imagesRouter);
 
 module.exports = app;
