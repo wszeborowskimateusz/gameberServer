@@ -9,6 +9,18 @@ const Schema = mongoose.Schema;
 
 
 // Test Field
+const notificationsSchema = mongoose.Schema({
+    type: String,
+    img: String,
+    date_of_receiving: { type : Date, default: Date.now },
+    title: String,
+    name: String,
+    description: String,
+    is_read: { type : Boolean, default: false },
+    is_deleted: { type : Boolean, default: false },
+    user_id: { type: Schema.Types.ObjectId, ref: 'User' }
+});
+const Notifications = mongoose.model("Notifications", notificationsSchema);
 
 const experienceSchema = mongoose.Schema({
     earned_points: Number,
@@ -56,7 +68,6 @@ const countriesSchema = mongoose.Schema({
     country_icon: String
     //country_id: Number,
 });
-
 const Countries = mongoose.model("Countries", countriesSchema);
 
 const neighbouringCountriesSchema = mongoose.Schema({
@@ -215,5 +226,6 @@ module.exports = {
     Experience: Experience,
     User_Game: User_Game,
     User_Category: User_Category,
-    Achievement_Category: Achievement_Category
+    Achievement_Category: Achievement_Category,
+    Notifications: Notifications
 };

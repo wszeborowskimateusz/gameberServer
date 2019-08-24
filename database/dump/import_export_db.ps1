@@ -26,7 +26,8 @@ $collections = @(
     "experiences",
     "user_games",
     "user_categories",
-    "achievement_categories")
+    "achievement_categories",
+    "notifications")
 
 $importOrExport = Read-Host "Export[e], Import[i]"
 
