@@ -39,6 +39,7 @@ DB_CONNECTION = null;
 app.use(async function(req, res, next){
     try {
       DB_CONNECTION = await mongoose.connect(cfg.dbConnectionString, { useNewUrlParser: true });
+      Object.freeze(DB_CONNECTION);
       next()
     } catch (err) {
       console.log(err.message);
@@ -57,6 +58,7 @@ app.use(function(req, res, next){
           throw Error;
         const decoded = jwt.verify(auth[1], cfg.jwtSecret);
         USER_ID = decoded.user_id;
+        Object.freeze(USER_ID);
         console.log("Zautentykowany " + Date.now());
         next()
       } catch (err) {

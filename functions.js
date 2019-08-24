@@ -98,6 +98,9 @@ module.exports.addNotificationAsync = async function (type, notificationImg, tit
         description: description,
         user_id: userId
     })
-    await newNotification.save({ session });
+    if (session != null)
+        await newNotification.save({ session });
+    else
+        await newNotification.save();
 }
 //#endregion
