@@ -19,15 +19,15 @@ router.use('/shop', shopRouter);
 router.use('/rankings', rankingsRouter);
 
 
-router.post('/add-to-friend', async function(req, res) {
+router.post('/add-to-friends', async function(req, res) {
     const userId = req.body.userId;
     const session = await DB_CONNECTION.startSession();
 
     try{
         await session.startTransaction();
 
-        const userFrom = db.Friendship.findOne({user_from_id: USER_ID, user_to_id: userId});
-        const userTo = db.Friendship.findOne({user_to_id: USER_ID, user_from_id: userId});
+        const userFrom = await db.Friendship.findOne({user_from_id: USER_ID, user_to_id: userId});
+        const userTo = await db.Friendship.findOne({user_to_id: USER_ID, user_from_id: userId});
         if (userFrom || userTo)
             throw Error;
         
@@ -36,7 +36,7 @@ router.post('/add-to-friend', async function(req, res) {
         const newFriendship = new db.Friendship({user_from_id: USER_ID, user_to_id: userId});
         await newFriendship.save();
 
-        await functions.addNotificationAsync(enums.NotificationType.MESSAGE, "", "New friend invitation", USER_ID.login, "New friend request from " + USER_ID.login, userId, session);
+        await functions.addNotificationAsync(enums.NotificationType.MESSAGE, "", "New friend invitation", requestSender.login, "New friend request from " + requestSender.login, userId, session);
 
         await session.commitTransaction();
         res.status(200).send("Sent");
