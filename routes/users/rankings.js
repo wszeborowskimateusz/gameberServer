@@ -20,7 +20,7 @@ router.get('/', async function(req, res){
         res.json(r);
     }catch(err){
         console.log(err);
-        return res.status(404);
+        return res.status(404).send();
     }
 });
 
