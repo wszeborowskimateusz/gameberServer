@@ -49,4 +49,45 @@ router.post('/add-to-friends', async function(req, res) {
     }
 });
 
+router.get('/friends', async function(req, res) {    
+    const r = {friends: []};
+
+    try{
+        const userFrom = await db.Friendship.
+            find({user_from_id: USER_ID, date_of_beginning: {$ne: null}}).
+            populate({
+                path: 'user_to_id',
+                populate: {path: 'picked_avatar_id'}
+            });
+    
+        const userTo = await db.Friendship.
+            find({user_to_id: USER_ID, date_of_beginning: {$ne: null}}).
+            populate({
+                path: 'user_from_id',
+                populate: {path: 'picked_avatar_id'}
+            });
+
+        for (const user of userFrom){
+            await r.friends.push({
+                id: user.user_to_id._id,
+                name: user.user_to_id.login,
+                avatar: cfg.imagesUrl + user.user_to_id.picked_avatar_id.avatar_img
+            })
+        }
+
+        for (const user of userTo){
+            await r.friends.push({
+                id: user.user_from_id._id,
+                name: user.user_from_id.login,
+                avatar: cfg.imagesUrl + user.user_from_id.picked_avatar_id.avatar_img
+            })
+        }
+
+        return res.json(r.friends);
+    }catch(err){
+        console.log(err);
+        return res.status(404).send();
+    } 
+});
+
 module.exports = router;
