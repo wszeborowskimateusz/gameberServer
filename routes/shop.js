@@ -2,9 +2,7 @@ var cfg = require('../config');
 var express = require('express');
 var db = require('../' + cfg.dbPath);
 var router = express.Router();
-var fs = fileSystem = require('fs');
 
-// unused
 
 router.get('/avatars', async function(req, res) {
     var r = {
@@ -30,7 +28,7 @@ router.get('/avatars', async function(req, res) {
 
     }catch(err){
         console.log(err);
-        return res.status(404);
+        return res.status(404).send();
     }
 });
 
@@ -56,7 +54,7 @@ router.get('/images', async function(req, res) {
         res.json(r);
     }catch(err){
         console.log(err);
-        return res.status(404);
+        return res.status(404).send();
     }
 });
 

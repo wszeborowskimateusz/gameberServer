@@ -1,22 +1,23 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var cfg = require('./config');
-var jwt = require('jsonwebtoken');
-var cors = require('cors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const cfg = require('./config');
+const jwt = require('jsonwebtoken');
+const cors = require('cors');
 const mongoose = require('mongoose');
 
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var accountsRouter = require('./routes/accounts');
-var imagesRouter = require('./routes/images');
-var shopRouter = require('./routes/shop');
-var mapRouter = require('./routes/map');
-var gamesRouter = require('./routes/games');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const accountsRouter = require('./routes/accounts');
+const imagesRouter = require('./routes/images');
+const shopRouter = require('./routes/shop');
+const mapRouter = require('./routes/map');
+const gamesRouter = require('./routes/games');
+const notificationsRouter = require('./routes/notifications');
 
-var app = express();
+const app = express();
 
 app.use(cors());
 app.use(logger('dev'));
@@ -38,6 +39,7 @@ DB_CONNECTION = null;
 app.use(async function(req, res, next){
     try {
       DB_CONNECTION = await mongoose.connect(cfg.dbConnectionString, { useNewUrlParser: true });
+      Object.freeze(DB_CONNECTION);
       next()
     } catch (err) {
       console.log(err.message);
@@ -51,11 +53,12 @@ app.use('/accounts', accountsRouter);
 app.use(function(req, res, next){
     console.log("A new request received at " + Date.now());
     try {
-        var auth = req.headers.authorization.split(" ");
+        const auth = req.headers.authorization.split(" ");
         if (auth[0] !== "Bearer")
           throw Error;
-        var decoded = jwt.verify(auth[1], cfg.jwtSecret);
+        const decoded = jwt.verify(auth[1], cfg.jwtSecret);
         USER_ID = decoded.user_id;
+        Object.freeze(USER_ID);
         console.log("Zautentykowany " + Date.now());
         next()
       } catch (err) {
@@ -69,6 +72,7 @@ app.use('/map', mapRouter);
 app.use('/users', usersRouter);
 app.use('/shop', shopRouter);
 app.use('/games', gamesRouter);
+app.use('/notifications', notificationsRouter);
 //app.use('/images', imagesRouter);
 
 module.exports = app;

@@ -84,6 +84,23 @@ module.exports.giveCoinsToUserAsync = async function (coins, userId, session){
     const user = await db.User.findById(userId);
     
     user.amount_of_coins += coins;
-    user.save({ session });
+    await user.save({ session });
+}
+//#endregion
+
+//#region notifications
+module.exports.addNotificationAsync = async function (type, notificationImg, title, name, description, userId, session){
+    const newNotification = new db.Notifications({
+        type: type,
+        notification_img: notificationImg,
+        title: title,
+        name: name,
+        description: description,
+        user_id: userId
+    })
+    if (session != null)
+        await newNotification.save({ session });
+    else
+        await newNotification.save();
 }
 //#endregion
