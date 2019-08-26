@@ -12,7 +12,29 @@ router.get('/:userId', async function(req, res) {
     r = { messages: [] };
 
     try{
+        const messagesFrom = await db.Messages.
+            find({user_from_id: USER_ID, user_to_id: userId}).
+            select('content date_of_sending').
+            map(m => {
+                m.date = m.date_of_sending;
+                delete m.date_of_sending;
+                m.isOurMessage = true;
+            });
 
+        const messagesTo = await db.Messages.
+            find({user_to_id: USER_ID, user_from_id: userId}).
+            select('content date_of_sending').
+            map(m => {
+                m.date = m.date_of_sending;
+                delete m.date_of_sending;
+                m.isOurMessage = false;
+            })
+
+        r.messages = await messagesFrom.
+            concat(messagesTo).
+            sort('-date').
+            skip(offset).
+            limit(limit);
 
         res.json(r.messages);
     }catch(err){
