@@ -12,29 +12,32 @@ router.get('/:userId', async function(req, res) {
     r = { messages: [] };
 
     try{
-        const messagesFrom = await db.Messages.
+        const messagesFrom = await (await db.Messages.
             find({user_from_id: USER_ID, user_to_id: userId}).
-            select('content date_of_sending').
+            select('content date_of_sending')).
             map(m => {
-                m.date = m.date_of_sending;
-                delete m.date_of_sending;
-                m.isOurMessage = true;
+                return {
+                    date: m.date_of_sending,
+                    content: m.content,
+                    isOurMessage: true
+                }
             });
 
-        const messagesTo = await db.Messages.
+        const messagesTo = await (await db.Messages.
             find({user_to_id: USER_ID, user_from_id: userId}).
-            select('content date_of_sending').
+            select('content date_of_sending')).
             map(m => {
-                m.date = m.date_of_sending;
-                delete m.date_of_sending;
-                m.isOurMessage = false;
+                return {
+                    date: m.date_of_sending,
+                    content: m.content,
+                    isOurMessage: false
+                }
             })
 
         r.messages = await messagesFrom.
             concat(messagesTo).
-            sort('-date').
-            skip(offset).
-            limit(limit);
+            sort((a, b) => a.date < b.date).
+            slice(offset, limit + offset);
 
         res.json(r.messages);
     }catch(err){
