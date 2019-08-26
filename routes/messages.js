@@ -1,5 +1,7 @@
 const cfg = require('../config');
 const express = require('express');
+const functions = require('../functions');
+const enums = require('../enums');
 const db = require('../' + cfg.dbPath);
 const router = express.Router();
 
@@ -46,14 +48,33 @@ router.get('/:userId', async function(req, res) {
     }
 });
 
-router.post('/remove', async function(req, res) {
-    try{
+router.post('/send/:userId', async function(req, res) {
+    const userId = req.params.userId;
+    const content = req.body.content;
+    const session = await DB_CONNECTION.startSession();
 
-        
-        res.status(200).send("Deleted");
+    try{
+        await session.startTransaction();
+
+        const sender = await db.User.findById(USER_ID);
+
+        const receiver = await db.User.findById(userId);
+        if (!receiver)
+            throw Error;
+
+        const newMessage = new db.Messages({user_from_id: USER_ID, user_to_id: userId, content: content});
+        await newMessage.save({ session });
+
+        await functions.addNotificationAsync(enums.NotificationType.NEW_MESSAGE, enums.NotificationImage.NEW_MESSAGE, "", sender.login, "", receiver._id, session);
+
+        await session.commitTransaction();
+        res.status(200).send("Sent");
     }catch(err){
+        await session.abortTransaction();
         console.log(err);
         return res.status(404).send();
+    }finally {
+        await session.endSession();
     }
 });
 

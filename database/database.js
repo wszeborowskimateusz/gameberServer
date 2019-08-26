@@ -12,7 +12,7 @@ const enums = require('../enums');
 // Test Field
 const notificationsSchema = mongoose.Schema({
     type: String,
-    img: String,
+    notification_img: String,
     date_of_receiving: { type : Date, default: Date.now },
     title: String,
     name: String,
