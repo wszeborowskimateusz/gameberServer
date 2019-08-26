@@ -1,5 +1,33 @@
 {
 	"_id": {
+		"$oid": "5d3d99d1af14061e14e687ac"
+	},
+	"points_to_new_level": 1238,
+	"level": 10,
+	"amount_of_coins": 841,
+	"is_daily_mission_completed": false,
+	"is_account_private": false,
+	"logging_streak": 1,
+	"date_of_last_login": {
+		"$date": "2019-08-24T19:42:21.572Z"
+	},
+	"login": "testtest",
+	"password": "sha1$53585937$1$2e9c7e4be3be410033081a8999a98ec1e97caf7b",
+	"mail": "test@test.test",
+	"picked_avatar_id": {
+		"$oid": "5d2a1ae51a8ff84968146176"
+	},
+	"background_img_id": {
+		"$oid": "5d2a26a1d7d40557b42ab26f"
+	},
+	"date_of_creating_account": {
+		"$date": "2019-07-28T12:49:21.362Z"
+	},
+	"__v": 0,
+	"points": 0
+}
+{
+	"_id": {
 		"$oid": "5d4de24df9aa061340eb3635"
 	},
 	"exp_points": 0,
@@ -23,34 +51,6 @@
 		"$date": "2019-08-09T21:14:53.651Z"
 	},
 	"__v": 0
-}
-{
-	"_id": {
-		"$oid": "5d3d99d1af14061e14e687ac"
-	},
-	"points_to_new_level": 1238,
-	"level": 10,
-	"amount_of_coins": 841,
-	"is_daily_mission_completed": false,
-	"is_account_private": false,
-	"logging_streak": 2,
-	"date_of_last_login": {
-		"$date": "2019-08-20T11:20:24.160Z"
-	},
-	"login": "testtest",
-	"password": "sha1$53585937$1$2e9c7e4be3be410033081a8999a98ec1e97caf7b",
-	"mail": "test@test.test",
-	"picked_avatar_id": {
-		"$oid": "5d2a1ae51a8ff84968146176"
-	},
-	"background_img_id": {
-		"$oid": "5d2a26a1d7d40557b42ab26f"
-	},
-	"date_of_creating_account": {
-		"$date": "2019-07-28T12:49:21.362Z"
-	},
-	"__v": 0,
-	"points": 0
 }
 {
 	"_id": {

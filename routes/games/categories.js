@@ -6,7 +6,6 @@ var router = express.Router();
 var mongoose = require('mongoose');
 
 router.get('/:categoryId', async function(req, res) {
-    console.log(req);
     var r = {
         games: [],
         categoryBackgroundImage: "",

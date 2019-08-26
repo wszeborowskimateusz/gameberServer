@@ -1,0 +1,120 @@
+{
+	"_id": {
+		"$oid": "5d616d3fbb6236c658521200"
+	},
+	"type": "Wiadomosc",
+	"notification_img": "notification.png",
+	"title": "Wiadomosc od kogos",
+	"name": "Ktos",
+	"description": "Wiadomosc ktos wysłał Tobie",
+	"user_id": {
+		"$oid": "5d4de24df9aa061340eb3635"
+	},
+	"is_read": true,
+	"is_deleted": true,
+	"date_of_receiving": {
+		"$date": "2019-08-24T17:22:40.774Z"
+	}
+}
+{
+	"_id": {
+		"$oid": "5d617091ee7890c65863eb37"
+	},
+	"type": "Test lol",
+	"notification_img": "notification.png",
+	"title": "Test od kogos",
+	"name": "Testy",
+	"description": "Test ktos wysłał Tobie",
+	"user_id": {
+		"$oid": "5d4de24df9aa061340eb3635"
+	},
+	"is_read": false,
+	"is_deleted": false
+}
+{
+	"_id": {
+		"$oid": "5d627398db34aad5ac8d68b3"
+	},
+	"is_read": false,
+	"is_deleted": false,
+	"title": "New friend invitation",
+	"description": "New friend request from undefined",
+	"user_id": {
+		"$oid": "5d5bd7d2f186662870f5bb04"
+	},
+	"date_of_receiving": {
+		"$date": "2019-08-25T11:40:08.777Z"
+	},
+	"__v": 0
+}
+{
+	"_id": {
+		"$oid": "5d62748fe2153cff1499ffb7"
+	},
+	"is_read": false,
+	"is_deleted": false,
+	"title": "New friend invitation",
+	"name": "e",
+	"description": "New friend request from e",
+	"user_id": {
+		"$oid": "5d5bd7d2f186662870f5bb04"
+	},
+	"date_of_receiving": {
+		"$date": "2019-08-25T11:44:15.170Z"
+	},
+	"__v": 0
+}
+{
+	"_id": {
+		"$oid": "5d627ecd13f171fa50798017"
+	},
+	"is_read": false,
+	"is_deleted": false,
+	"title": "New friend invitation",
+	"name": "e",
+	"description": "New friend request from e",
+	"user_id": {
+		"$oid": "5d5bc611f4e34cc164e6a3d4"
+	},
+	"date_of_receiving": {
+		"$date": "2019-08-25T12:27:57.937Z"
+	},
+	"__v": 0
+}
+{
+	"_id": {
+		"$oid": "5d63c52cca742bbac0a11043"
+	},
+	"is_read": false,
+	"is_deleted": false,
+	"type": "2",
+	"title": "",
+	"name": "e",
+	"description": "",
+	"user_id": {
+		"$oid": "5d5bd7d2f186662870f5bb04"
+	},
+	"date_of_receiving": {
+		"$date": "2019-08-26T11:40:28.333Z"
+	},
+	"__v": 0
+}
+{
+	"_id": {
+		"$oid": "5d63c66929cdc32d1dc9bea4"
+	},
+	"is_read": false,
+	"is_deleted": false,
+	"type": "2",
+	"notification_img": "new_message.jpg",
+	"title": "",
+	"name": "e",
+	"description": "",
+	"user_id": {
+		"$oid": "5d5bd7d2f186662870f5bb04"
+	},
+	"date_of_receiving": {
+		"$date": "2019-08-26T11:45:45.431Z"
+	},
+	"__v": 0
+}

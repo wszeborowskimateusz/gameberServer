@@ -3,6 +3,7 @@
 const cfg = require('../config');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const enums = require('../enums');
 
 // Test Field
 
@@ -11,7 +12,7 @@ const Schema = mongoose.Schema;
 // Test Field
 const notificationsSchema = mongoose.Schema({
     type: String,
-    img: String,
+    notification_img: String,
     date_of_receiving: { type : Date, default: Date.now },
     title: String,
     name: String,
@@ -121,7 +122,8 @@ const friendshipSchema = mongoose.Schema({
     user_from_id: { type: Schema.Types.ObjectId, ref: 'User' },
     user_to_id: { type: Schema.Types.ObjectId, ref: 'User' },
     date_of_beginning: Date,
-    date_od_invitation: { type : Date, default: Date.now }
+    date_od_invitation: { type : Date, default: Date.now },
+    //state: { type : String, default: enums.FriendshipRequestState.SENT },
 });
 const Friendship = mongoose.model("Friendship", friendshipSchema);
 

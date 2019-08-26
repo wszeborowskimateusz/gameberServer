@@ -16,6 +16,7 @@ const shopRouter = require('./routes/shop');
 const mapRouter = require('./routes/map');
 const gamesRouter = require('./routes/games');
 const notificationsRouter = require('./routes/notifications');
+const messagesRouter = require('./routes/messages');
 
 const app = express();
 
@@ -73,6 +74,7 @@ app.use('/users', usersRouter);
 app.use('/shop', shopRouter);
 app.use('/games', gamesRouter);
 app.use('/notifications', notificationsRouter);
+app.use('/messages', messagesRouter);
 //app.use('/images', imagesRouter);
 
 module.exports = app;
