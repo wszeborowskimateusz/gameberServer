@@ -60,7 +60,7 @@ router.get('/:user_id?', async function(req, res) {
                 })
             })
 
-            r.user.numberOfCoins = ua[0].user_id.amount_of_coins;
+            r.user.numberOfCoins = player_info.amount_of_coins;
         }
 
         const uach = await db.User_Achievement.
@@ -75,16 +75,17 @@ router.get('/:user_id?', async function(req, res) {
         })
 
         r.user = {
-            avatarId: player_info.picked_avatar_id._id,
-            avatars: avatarsArr,
-            username: player_info.login,
-            backgroundImageId: player_info.background_img_id._id,
-            backgroundImages: backgroundsArr,
-            level: player_info.level,
-            experiencePoints: player_info.exp_points,
-            pointsToAchieveNewLevel: player_info.points_to_new_level,
-            achievements: achievementsArr
-        }
+            ...r.user, ...{
+                avatarId: player_info.picked_avatar_id._id,
+                avatars: avatarsArr,
+                username: player_info.login,
+                backgroundImageId: player_info.background_img_id._id,
+                backgroundImages: backgroundsArr,
+                level: player_info.level,
+                experiencePoints: player_info.exp_points,
+                pointsToAchieveNewLevel: player_info.points_to_new_level,
+                achievements: achievementsArr
+        }}
 
         res.json(r);
     }catch(err){
