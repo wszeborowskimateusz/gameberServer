@@ -90,4 +90,25 @@ router.get('/friends', async function(req, res) {
     } 
 });
 
+router.get('/search', async function(req, res) {
+    const query = decodeURIComponent(req.query.query);
+    const r = { users: [] };
+
+    try{
+        r.users = await (await db.User.
+            find({login: {$regex: '.*' + query + '.*', $options: 'i'}})).
+            map(u => {
+                return {
+                    userId: u._id,
+                    userName: u.login
+                }
+            })
+        
+        res.json(r.users);
+    }catch(err){
+        console.log(err);
+        return res.status(404).send();
+    }
+});
+
 module.exports = router;
