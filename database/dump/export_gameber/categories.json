@@ -37,3 +37,78 @@
 	"prize_coins": 57,
 	"prize_points": 67
 }
+{
+	"_id": {
+		"$oid": "5d6abb7f34d3af401c26c3c9"
+	},
+	"category_name": "BegTest1",
+	"category_img": "test.jpg",
+	"category_icon": "test.png",
+	"country_id": {
+		"$oid": "5d5694ed14aa473964221e42"
+	},
+	"category_type": "B",
+	"category_order": 1,
+	"prize_coins": 57,
+	"prize_points": 67
+}
+{
+	"_id": {
+		"$oid": "5d6abb8c34d3af401c26c3ca"
+	},
+	"category_name": "BegTest0",
+	"category_img": "test.jpg",
+	"category_icon": "test.png",
+	"country_id": {
+		"$oid": "5d5694ed14aa473964221e42"
+	},
+	"category_type": "B",
+	"category_order": "0",
+	"prize_coins": 57,
+	"prize_points": 67
+}
+{
+	"_id": {
+		"$oid": "5d6abb9e34d3af401c26c3cb"
+	},
+	"category_name": "BegTest3",
+	"category_img": "test.jpg",
+	"category_icon": "test.png",
+	"country_id": {
+		"$oid": "5d5694ed14aa473964221e42"
+	},
+	"category_type": "B",
+	"category_order": 3,
+	"prize_coins": 57,
+	"prize_points": 67
+}
+{
+	"_id": {
+		"$oid": "5d6abba734d3af401c26c3cc"
+	},
+	"category_name": "BegTest2",
+	"category_img": "test.jpg",
+	"category_icon": "test.png",
+	"country_id": {
+		"$oid": "5d5694ed14aa473964221e42"
+	},
+	"category_type": "B",
+	"category_order": 2,
+	"prize_coins": 57,
+	"prize_points": 67
+}
+{
+	"_id": {
+		"$oid": "5d6abbb734d3af401c26c3cd"
+	},
+	"category_name": "Test",
+	"category_img": "test.jpg",
+	"category_icon": "test.png",
+	"country_id": {
+		"$oid": "5d5694ed14aa473964221e42"
+	},
+	"category_type": "BT",
+	"category_order": 2,
+	"prize_coins": 57,
+	"prize_points": 67
+}

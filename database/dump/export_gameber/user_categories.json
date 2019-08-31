@@ -13,3 +13,18 @@
 	},
 	"__v": 0
 }
+{
+	"_id": {
+		"$oid": "5d6abf6034d3af401c26c3ce"
+	},
+	"user_id": {
+		"$oid": "5d5bd7d2f186662870f5bb04"
+	},
+	"category_id": {
+		"$oid": "5d6abb7f34d3af401c26c3c9"
+	},
+	"date_of_passing": {
+		"$date": "2019-08-18T20:04:20.744Z"
+	},
+	"__v": 0
+}

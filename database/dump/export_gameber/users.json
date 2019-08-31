@@ -9,7 +9,7 @@
 	"is_account_private": false,
 	"logging_streak": 1,
 	"date_of_last_login": {
-		"$date": "2019-08-24T19:42:21.572Z"
+		"$date": "2019-08-30T18:17:11.222Z"
 	},
 	"login": "testtest",
 	"password": "sha1$53585937$1$2e9c7e4be3be410033081a8999a98ec1e97caf7b",
@@ -125,6 +125,7 @@
 	"login": "testtest4",
 	"password": "sha1$a74e174f$1$6e4defed47817678595535f4640dfbc3ba945ab3",
 	"mail": "test4@test.test",
+	"beginners_test_status": "beginner",
 	"picked_avatar_id": {
 		"$oid": "5d2a1ae51a8ff84968146176"
 	},
