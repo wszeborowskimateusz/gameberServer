@@ -67,7 +67,7 @@ router.post('/finish', async function(req, res) {
         if (isCategoryPassed)
             throw Error;
 
-        const passedGames = (await db.User_Game.
+        const passedGames = await (await db.User_Game.
             find({user_id: USER_ID}).
             populate({
                 path: 'game_id',

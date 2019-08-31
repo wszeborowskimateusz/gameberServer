@@ -111,4 +111,46 @@ router.get('/search', async function(req, res) {
     }
 });
 
+router.get('/status', async function(req, res) {    
+    const r = {};
+
+    try{
+        const user = await db.User.findById(USER_ID);
+        r.status = user.beginners_test_status
+
+        switch (r.status) {
+            case enums.BeginnersTestStatus.TEST:
+            case enums.BeginnersTestStatus.TEST_STARTED:
+                r.testCategoryId = (await db.Categories.
+                    findOne({category_type: enums.CategoryType.BEGINNER_TEST}))._id;
+                break;
+            case enums.BeginnersTestStatus.BEGINNER:
+                const numberOfPassedBeginnersCategories = await (await db.User_Category.
+                    find({user_id: USER_ID}).
+                    populate({
+                        path: 'category_id',
+                        match: {category_type: {$eq: enums.CategoryType.BEGINNER}}
+                    })).
+                    filter(x => x.category_id != null).
+                    length;
+
+                r.beginnersCategories = await (await db.Categories.
+                    find({category_type: enums.CategoryType.BEGINNER})).
+                    map(c => {
+                        return {
+                            id: c._id,
+                            img: c.category_img,
+                            name: c.category_name,
+                            isUnlocked: numberOfPassedBeginnersCategories >= c.category_order ? true : false
+                        }
+                    })
+                break;
+        }
+        return res.json(r);
+    }catch(err){
+        console.log(err);
+        return res.status(404).send();
+    } 
+});
+
 module.exports = router;
