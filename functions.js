@@ -60,14 +60,14 @@ module.exports.giveExperienceToUserAsync = async function (experiencePoints, sub
 
     const userExperience = await db.Experience.aggregate([      
         { $match: {
-            user_id: {$eq: mongoose.Types.ObjectId(USER_ID)}
+            user_id: {$eq: mongoose.Types.ObjectId(userId)}
         }},
         { $group: {
             _id: "$user_id",
             exp_points: { $sum: "$earned_points" }
-        }}]);
+        }}]).session(session);
 
-    const user = await db.User.findById(USER_ID);
+    const user = await db.User.findById(userId);
 
     while (userExperience[0].exp_points >= user.points_to_new_level){
         user.points_to_new_level = Math.floor(Math.pow(user.points_to_new_level, cfg.newLevelPower));

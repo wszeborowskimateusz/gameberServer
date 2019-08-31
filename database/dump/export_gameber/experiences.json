@@ -222,3 +222,17 @@
 	},
 	"__v": 0
 }
+{
+	"_id": {
+		"$oid": "5d6ae36dec533436307f7fae"
+	},
+	"earned_points": 67,
+	"subject": "Test",
+	"user_id": {
+		"$oid": "5d5bd7d2f186662870f5bb04"
+	},
+	"date_of_receiving": {
+		"$date": "2019-08-31T21:15:25.365Z"
+	},
+	"__v": 0
+}

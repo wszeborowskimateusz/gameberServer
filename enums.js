@@ -9,6 +9,24 @@ module.exports.NotificationType = Object.freeze({
 module.exports.NotificationImage = Object.freeze({
     NEW_MESSAGE: 'new_message.jpg'
 });
+//#endregion
+
+//#region beginnersTest
+module.exports.BeginnersTestStatus = Object.freeze({
+    MAP: 'map',
+    TEST: 'test',
+    BEGINNER: 'beginner',
+    TEST_STARTED: 'testStarted'
+});
+//#endregion
+
+//#region categories
+module.exports.CategoryType = Object.freeze({
+    BEGINNER_TEST: 'BT',
+    BEGINNER: 'B',
+    NORMAL: 'N'
+});
+//#endregion
 
 // //#region friendship
 // module.exports.FriendshipRequestState = Object.freeze({

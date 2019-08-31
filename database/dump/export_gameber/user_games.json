@@ -13,3 +13,48 @@
 	},
 	"__v": 0
 }
+{
+	"_id": {
+		"$oid": "5d6adce334d3af401c26c3d3"
+	},
+	"game_id": {
+		"$oid": "5d6adb3f34d3af401c26c3cf"
+	},
+	"user_id": {
+		"$oid": "5d5bd7d2f186662870f5bb04"
+	},
+	"date_of_passing": {
+		"$date": "2019-08-18T14:36:41.328Z"
+	},
+	"__v": 0
+}
+{
+	"_id": {
+		"$oid": "5d6adcec34d3af401c26c3d4"
+	},
+	"game_id": {
+		"$oid": "5d6adb4d34d3af401c26c3d0"
+	},
+	"user_id": {
+		"$oid": "5d5bd7d2f186662870f5bb04"
+	},
+	"date_of_passing": {
+		"$date": "2019-08-18T14:36:41.328Z"
+	},
+	"__v": 0
+}
+{
+	"_id": {
+		"$oid": "5d6adddd34d3af401c26c3d5"
+	},
+	"game_id": {
+		"$oid": "5d6adb5934d3af401c26c3d1"
+	},
+	"user_id": {
+		"$oid": "5d5bd7d2f186662870f5bb04"
+	},
+	"date_of_passing": {
+		"$date": "2019-08-18T14:36:41.328Z"
+	},
+	"__v": 0
+}
