@@ -1,9 +1,10 @@
-var cfg = require('../../config');
-var functions = require('../../functions');
-var express = require('express');
-var db = require('../../' + cfg.dbPath);
-var router = express.Router();
-var mongoose = require('mongoose');
+const cfg = require('../../config');
+const functions = require('../../functions');
+const enums = require('../../enums');
+const express = require('express');
+const db = require('../../' + cfg.dbPath);
+const router = express.Router();
+const mongoose = require('mongoose');
 
 router.get('/:categoryId', async function(req, res) {
     var r = {
@@ -61,6 +62,8 @@ router.post('/finish', async function(req, res) {
             findById(categoryId);
         if (!category)
             throw Error;
+        
+        const percentagePassTreshold = category.percentage_pass_treshold == null ? 100 : category.percentage_pass_treshold;
 
         const isCategoryPassed = await db.User_Category.
             findOne({user_id: USER_ID, category_id: categoryId});
@@ -73,14 +76,14 @@ router.post('/finish', async function(req, res) {
                 path: 'game_id',
                 match: {category_id: {$eq: categoryId}}
             })).
-            filter(x => x.category_id != null).
+            filter(x => x.game_id.category_id != null).
             length;
 
         const gamesInCategory = await db.Games.
             find({category_id: categoryId}).
             count();
 
-        if (passedGames >= gamesInCategory){
+        if ((passedGames/gamesInCategory)*100 >= percentagePassTreshold){
             const newPassedCategory = new db.User_Category({
                 user_id: USER_ID,
                 category_id: categoryId
@@ -102,11 +105,13 @@ router.post('/finish', async function(req, res) {
             r.coins = category.prize_coins;
             r.experiencePoints = category.prize_points;
 
-            await session.commitTransaction();
-            res.json(r);
+            r.isPassed = true;
         }
         else
-            throw Error;
+            r.isPassed = false;
+            
+        await session.commitTransaction();
+        res.json(r);
     }
     catch(err){
         await session.abortTransaction();

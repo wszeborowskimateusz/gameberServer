@@ -108,6 +108,7 @@
 		"$oid": "5d5694ed14aa473964221e42"
 	},
 	"category_type": "BT",
+	"percentage_pass_treshold": 75,
 	"category_order": 2,
 	"prize_coins": 57,
 	"prize_points": 67

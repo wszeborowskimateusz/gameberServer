@@ -97,3 +97,47 @@
 		"$oid": "5d3d9c359eae4f18d02267d3"
 	}
 }
+{
+	"_id": {
+		"$oid": "5d6adb3f34d3af401c26c3cf"
+	},
+	"game_name": "Testowa1",
+	"game_info": "{\"polishName\":\"Foka\",\"englishName\":\"Seal\",\"img\":\"http://bi.gazeta.pl/im/3/11672/z11672953IER,Foka-grenlandzka.jpg\"}",
+	"correct_answer": "",
+	"category_id": {
+		"$oid": "5d6abbb734d3af401c26c3cd"
+	}
+}
+{
+	"_id": {
+		"$oid": "5d6adb4d34d3af401c26c3d0"
+	},
+	"game_name": "Testowa2",
+	"game_info": "{\"polishName\":\"Foka\",\"englishName\":\"Seal\",\"img\":\"http://bi.gazeta.pl/im/3/11672/z11672953IER,Foka-grenlandzka.jpg\"}",
+	"correct_answer": "",
+	"category_id": {
+		"$oid": "5d6abbb734d3af401c26c3cd"
+	}
+}
+{
+	"_id": {
+		"$oid": "5d6adb5934d3af401c26c3d1"
+	},
+	"game_name": "Testowa3",
+	"game_info": "{\"polishName\":\"Foka\",\"englishName\":\"Seal\",\"img\":\"http://bi.gazeta.pl/im/3/11672/z11672953IER,Foka-grenlandzka.jpg\"}",
+	"correct_answer": "",
+	"category_id": {
+		"$oid": "5d6abbb734d3af401c26c3cd"
+	}
+}
+{
+	"_id": {
+		"$oid": "5d6adb5f34d3af401c26c3d2"
+	},
+	"game_name": "Testowa4",
+	"game_info": "{\"polishName\":\"Foka\",\"englishName\":\"Seal\",\"img\":\"http://bi.gazeta.pl/im/3/11672/z11672953IER,Foka-grenlandzka.jpg\"}",
+	"correct_answer": "",
+	"category_id": {
+		"$oid": "5d6abbb734d3af401c26c3cd"
+	}
+}

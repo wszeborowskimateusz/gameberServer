@@ -172,6 +172,7 @@ const categoriesSchema = mongoose.Schema({
     category_icon: String,
     category_type: String,
     category_order: Number,
+    percentage_pass_treshold: Number,
     prize_points: Number,
     prize_coins: Number,
     //repetition_category_id: { type: Schema.Types.ObjectId, ref: 'Categories' },
