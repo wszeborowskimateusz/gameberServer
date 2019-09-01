@@ -31,7 +31,7 @@ router.get('/:user_id?', async function(req, res) {
             const friendship = await db.Friendship.findOne({user_from: USER_ID, user_to: userId});
             const rev_friendship = await db.Friendship.findOne({user_to: USER_ID, user_from: userId});
             
-            r.user.isFriend = friendship || rev_friendship;
+            r.user.isFriend = friendship || rev_friendship ? true : false;
         }
         else{
             const ua = await db.User_Avatar.
