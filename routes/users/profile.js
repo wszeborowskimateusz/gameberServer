@@ -17,6 +17,8 @@ router.get('/:user_id?', async function(req, res) {
     const avatarsArr = [];
     const backgroundsArr = [];
     const achievementsArr = [];
+    let ui = [];
+    let ua = [];
 
     try{
         const player_info = await db.User.
@@ -25,8 +27,8 @@ router.get('/:user_id?', async function(req, res) {
             populate('background_img_id');
             
         if (otherPlayerProfile){            
-            avatarsArr.push(player_info.picked_avatar_id);
-            backgroundsArr.push(player_info.background_img_id);
+            ua.push({ avatar_id: player_info.picked_avatar_id });
+            ui.push({ image_id: player_info.background_img_id });
 
             const friendship = await db.Friendship.findOne({user_from: USER_ID, user_to: userId});
             const rev_friendship = await db.Friendship.findOne({user_to: USER_ID, user_from: userId});
@@ -34,34 +36,34 @@ router.get('/:user_id?', async function(req, res) {
             r.user.isFriend = friendship || rev_friendship ? true : false;
         }
         else{
-            const ua = await db.User_Avatar.
+            ua = await db.User_Avatar.
                 find({user_id: userId}).
                 populate('avatar_id');
         
-            await ua.forEach(a => {
-                avatarsArr.push({
-                    id: a.avatar_id._id,
-                    name: a.avatar_id.avatar_name,
-                    img: cfg.imagesUrl + a.avatar_id.avatar_img,
-                    price: a.avatar_id.price
-                })
-            })
-
-            const ui = await db.User_Image.
+            ui = await db.User_Image.
                 find({user_id: userId}).
                 populate('image_id');
 
-            await ui.forEach(i => {
-                backgroundsArr.push({
-                    id: i.image_id._id,
-                    name: i.image_id.image_name,
-                    img: cfg.imagesUrl + i.image_id.image_img,
-                    price: i.image_id.price
-                })
-            })
-
             r.user.numberOfCoins = player_info.amount_of_coins;
         }
+
+        await ui.forEach(i => {
+            backgroundsArr.push({
+                id: i.image_id._id,
+                name: i.image_id.image_name,
+                img: cfg.imagesUrl + i.image_id.image_img,
+                price: i.image_id.price
+            })
+        })
+
+        await ua.forEach(a => {
+            avatarsArr.push({
+                id: a.avatar_id._id,
+                name: a.avatar_id.avatar_name,
+                img: cfg.imagesUrl + a.avatar_id.avatar_img,
+                price: a.avatar_id.price
+            })
+        })
 
         const uach = await db.User_Achievement.
             find({user_id: userId}).
