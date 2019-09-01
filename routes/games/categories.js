@@ -106,7 +106,7 @@ router.post('/finish', async function(req, res) {
             );
 
             if (user.beginners_test_status == enums.BeginnersTestStatus.TEST_STARTED){
-                user.beginners_test_status = enums.BeginnersTestStatus.BEGINNER
+                user.beginners_test_status = enums.BeginnersTestStatus.MAP;
                 await user.save({ session });
             }
             else if (user.beginners_test_status == enums.BeginnersTestStatus.BEGINNER){
