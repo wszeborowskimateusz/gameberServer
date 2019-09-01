@@ -28,8 +28,8 @@ router.get('/:user_id?', async function(req, res) {
             avatarsArr.push(player_info.picked_avatar_id);
             backgroundsArr.push(player_info.background_img_id);
 
-            const friendship = await db.Friendship.FindOne({user_from: USER_ID, user_to: userId});
-            const rev_friendship = await db.Friendship.FindOne({user_to: USER_ID, user_from: userId});
+            const friendship = await db.Friendship.findOne({user_from: USER_ID, user_to: userId});
+            const rev_friendship = await db.Friendship.findOne({user_to: USER_ID, user_from: userId});
             
             r.user.isFriend = friendship || rev_friendship;
         }
