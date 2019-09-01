@@ -82,6 +82,8 @@ router.post('/finish', async function(req, res) {
         const gamesInCategory = await db.Games.
             find({category_id: categoryId}).
             count();
+        
+        const user = await db.User.findById(USER_ID);
 
         if ((passedGames/gamesInCategory)*100 >= percentagePassTreshold){
             const newPassedCategory = new db.User_Category({
@@ -102,13 +104,44 @@ router.post('/finish', async function(req, res) {
                     src: ac.achievement_id.achievement_img,
                     name: ac.achievement_id.achievement_name})
             );
+
+            if (user.beginners_test_status == enums.BeginnersTestStatus.TEST_STARTED){
+                user.beginners_test_status = enums.BeginnersTestStatus.BEGINNER
+                await user.save({ session });
+            }
+            else if (user.beginners_test_status == enums.BeginnersTestStatus.BEGINNER){
+                const beginnerCategories = await db.Categories.
+                    find({category_type: enums.CategoryType.BEGINNER}).
+                    countDocuments();
+
+                const passedBeginnerCategories = await (await db.User_Category.
+                    find({user_id: USER_ID}).
+                    session(session).
+                    populate({
+                        path: 'category_id',
+                        match: {category_type: {$eq: enums.CategoryType.BEGINNER}}
+                    })).
+                    filter(x => x.category_id != null).
+                    length;
+
+                if (passedBeginnerCategories >= beginnerCategories){
+                    user.beginners_test_status = enums.BeginnersTestStatus.MAP
+                    await user.save({ session });
+                }
+            }
+
             r.coins = category.prize_coins;
             r.experiencePoints = category.prize_points;
-
             r.isPassed = true;
         }
-        else
+        else{
+            if (user.beginners_test_status == enums.BeginnersTestStatus.TEST_STARTED){
+                user.beginners_test_status = enums.BeginnersTestStatus.BEGINNER
+                await user.save({ session });
+            } 
+
             r.isPassed = false;
+        }
             
         await session.commitTransaction();
         res.json(r);

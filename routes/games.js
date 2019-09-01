@@ -1,4 +1,5 @@
 const cfg = require('../config');
+const enums = require('../enums');
 const express = require('express');
 const db = require('../' + cfg.dbPath);
 const router = express.Router();
@@ -12,8 +13,17 @@ router.post('/check-answer', async function(req,res){
     const r = {};
     const gameId = req.body.gameId;
     const answer = req.body.answer;
+    const session = await DB_CONNECTION.startSession();
     
     try{
+        await session.startTransaction();
+
+        const user = await db.User.findById(USER_ID);
+        if (user.beginners_test_status == enums.BeginnersTestStatus.TEST){
+            user.beginners_test_status = enums.BeginnersTestStatus.TEST_STARTED;
+            await user.save({ session });
+        }
+
         const isPassed = await db.User_Game.findOne({game_id: gameId, user_id: USER_ID});
         if (isPassed)
             throw Error;
@@ -24,15 +34,19 @@ router.post('/check-answer', async function(req,res){
                 game_id: gameId,
                 user_id: USER_ID
             });
-            await newPassedGame.save();
+            await newPassedGame.save({ session });
             r.isCorrect = true;
         }
         else
             r.isCorrect = false;
         
+        await session.commitTransaction();
         res.status(200).json(r);
     } catch(err) {
+        await session.abortTransaction();
         res.status(400).send();
+    } finally {
+        await session.endSession();
     }
 });
 
