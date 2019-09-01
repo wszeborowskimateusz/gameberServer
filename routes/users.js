@@ -19,8 +19,8 @@ router.use('/shop', shopRouter);
 router.use('/rankings', rankingsRouter);
 
 
-router.post('/add-to-friends', async function(req, res) {
-    const userId = req.body.userId;
+router.post('/add-to-friends/:userId', async function(req, res) {
+    const userId = req.params.userId;
     const session = await DB_CONNECTION.startSession();
 
     try{
