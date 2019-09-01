@@ -14,9 +14,8 @@ const notificationsSchema = mongoose.Schema({
     type: String,
     notification_img: String,
     date_of_receiving: { type : Date, default: Date.now },
-    title: String,
     name: String,
-    description: String,
+    user_from_id: { type: Schema.Types.ObjectId, ref: 'User' },
     is_read: { type : Boolean, default: false },
     is_deleted: { type : Boolean, default: false },
     user_id: { type: Schema.Types.ObjectId, ref: 'User' }

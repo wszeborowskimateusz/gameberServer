@@ -15,10 +15,9 @@ router.get('/', async function(req, res) {
                 await r.notificationsArray.push({
                     id: n._id,
                     type: n.type,
+                    userId: n.user_from_id,
                     img: cfg.imagesUrl + n.notification_img,
-                    title: n.title,
                     name: n.name,
-                    description: n.description,
                     dateOfReceiving: n.date_of_receiving,
                     isRead: n.is_read
                 })

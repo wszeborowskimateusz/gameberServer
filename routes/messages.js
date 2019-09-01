@@ -65,7 +65,7 @@ router.post('/send/:userId', async function(req, res) {
         const newMessage = new db.Messages({user_from_id: USER_ID, user_to_id: userId, content: content});
         await newMessage.save({ session });
 
-        await functions.addNotificationAsync(enums.NotificationType.NEW_MESSAGE, enums.NotificationImage.NEW_MESSAGE, "", sender.login, "", receiver._id, session);
+        await functions.addNotificationAsync(enums.NotificationType.NEW_MESSAGE, enums.NotificationImage.NEW_MESSAGE, sender.login, receiver._id, sender._id, session);
 
         await session.commitTransaction();
         res.status(200).send("Sent");

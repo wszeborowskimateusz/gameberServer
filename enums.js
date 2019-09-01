@@ -7,7 +7,8 @@ module.exports.NotificationType = Object.freeze({
 });
 
 module.exports.NotificationImage = Object.freeze({
-    NEW_MESSAGE: 'new_message.jpg'
+    NEW_MESSAGE: 'new_message.jpg',
+    FRIEND_REQUEST: 'friend_request.jpg'
 });
 //#endregion
 

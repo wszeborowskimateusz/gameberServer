@@ -89,13 +89,12 @@ module.exports.giveCoinsToUserAsync = async function (coins, userId, session){
 //#endregion
 
 //#region notifications
-module.exports.addNotificationAsync = async function (type, notificationImg, title, name, description, userId, session){
+module.exports.addNotificationAsync = async function (type, notificationImg, name, userId, userFromId, session){
     const newNotification = new db.Notifications({
         type: type,
         notification_img: notificationImg,
-        title: title,
         name: name,
-        description: description,
+        user_from_id: userFromId,
         user_id: userId
     })
     if (session != null)
