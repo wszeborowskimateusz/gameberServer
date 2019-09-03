@@ -100,22 +100,20 @@ router.post('/buyCountry', async function(req, res){
     }
 });
 
-router.post('/countryCategories', async function(req, res)
+router.post('/getCategories', async function(req, res)
 {
     let response = {
         categories: [],
     };
     const data = req.body;
-    const countryISO = data.countryISO;
-    console.log('get categories for country: ' + countryISO);
-
+    const countriesIds = data.countriesIds;
     try
     {
-        // get country
-        const country = await db.Countries.findOne({ISO: countryISO});
-        // get categories
-        const categories = await db.Categories.find({country_id: country._id});
-        response.categories = categories;
+        for (const id of countriesIds)
+        {
+            const countryCategories = await db.Categories.find({country_id: id});
+            response.categories = response.categories.concat(countryCategories);
+        }
         return res.json(response);
     }
     catch(err)
