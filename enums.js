@@ -2,8 +2,8 @@ const express = require('express');
 
 //#region notifications
 module.exports.NotificationType = Object.freeze({
-    FRIEND_REQUEST: 1,
-    NEW_MESSAGE: 2
+    FRIEND_REQUEST: 'friendship_request',
+    NEW_MESSAGE: 'message_received'
 });
 
 module.exports.NotificationImage = Object.freeze({

@@ -184,6 +184,7 @@ const gamesSchema = mongoose.Schema({
     //game_id: Number,
     game_name: String,
     game_info: String,
+    game_order: Number,
     correct_answer: String,
     category_id: { type: Schema.Types.ObjectId, ref: 'Categories' },
 });
