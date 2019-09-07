@@ -22,11 +22,11 @@ router.post('/accept-request', async function(req, res) {
         await friendshipRequest.save({ session });
 
         await session.commitTransaction();
-        res.status(200).send("Accepted");
+        res.status(200).json("Accepted");
     }catch(err){
         await session.abortTransaction();
         console.log(err);
-        return res.status(404).send();
+        return res.status(404).json();
     }finally {
         await session.endSession();
     }
@@ -46,7 +46,7 @@ router.post('/decline-request', async function(req, res) {
         await friendshipRequest.remove({ session });
 
         await session.commitTransaction();
-        res.status(200).send("Declined");
+        res.status(200).json("Declined");
     }catch(err){
         await session.abortTransaction();
         console.log(err);

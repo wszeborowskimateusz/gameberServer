@@ -38,7 +38,7 @@ router.post('/mark-as-read', async function(req, res) {
         notification.is_read = true;
         await notification.save();
 
-        res.status(200).send("Marked as read");
+        res.status(200).json("Marked as read");
     }catch(err){
         console.log(err);
         return res.status(404).send();
@@ -49,7 +49,7 @@ router.post('/remove', async function(req, res) {
     const notificationId = req.body.notificationId;
     try{
         await functions.removeNotificationAsync(notificationId);
-        res.status(200).send("Deleted");
+        res.status(200).json("Deleted");
     }catch(err){
         console.log(err);
         return res.status(404).send();

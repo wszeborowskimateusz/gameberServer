@@ -68,7 +68,7 @@ router.post('/send/:userId', async function(req, res) {
         await functions.addNotificationAsync(enums.NotificationType.NEW_MESSAGE, enums.NotificationImage.NEW_MESSAGE, sender.login, receiver._id, sender._id, session);
 
         await session.commitTransaction();
-        res.status(200).send("Sent");
+        res.status(200).json("Sent");
     }catch(err){
         await session.abortTransaction();
         console.log(err);
