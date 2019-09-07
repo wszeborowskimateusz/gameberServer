@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 
 // /* GET users listing. */
 // router.get('/', function(req, res, next) {
-//   res.send('respond with a resource');
+//   res.json('respond with a resource');
 // });
 
 // login, password, mail

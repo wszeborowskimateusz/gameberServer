@@ -39,11 +39,11 @@ router.post('/add-to-friends/:userId', async function(req, res) {
         await newFriendship.save();
 
         await session.commitTransaction();
-        res.status(200).send("Sent");
+        res.status(200).json("Sent");
     }catch(err){
         await session.abortTransaction();
         console.log(err);
-        return res.status(404).send();
+        return res.status(400).send();
     } finally {
         await session.endSession();
     }
