@@ -5,7 +5,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 
 router.get('/:user_id?', async function(req, res) {
-    const otherPlayerProfile = req.params.user_id != USER_ID;
+    const otherPlayerProfile = req.params.user_id != USER_ID && req.params.user_id != null;
     const userId = otherPlayerProfile ? req.params.user_id : USER_ID;
     if (!mongoose.Types.ObjectId.isValid(userId))
         throw Error;
