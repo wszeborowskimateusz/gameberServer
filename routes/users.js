@@ -32,11 +32,11 @@ router.post('/add-to-friends/:userId', async function(req, res) {
             throw Error;
         
         const requestSender = await db.User.findById(USER_ID);
-        
-        const newFriendship = new db.Friendship({user_from_id: USER_ID, user_to_id: userId});
-        await newFriendship.save();
 
-        await functions.addNotificationAsync(enums.NotificationType.MESSAGE, "", "New friend invitation", requestSender.login, "New friend request from " + requestSender.login, userId, session);
+        const newNotificationId = await functions.addNotificationAsync(enums.NotificationType.FRIEND_REQUEST, enums.NotificationImage.FRIEND_REQUEST, requestSender.login, userId, requestSender._id, session);
+        
+        const newFriendship = new db.Friendship({user_from_id: USER_ID, user_to_id: userId, notification_id: newNotificationId});
+        await newFriendship.save();
 
         await session.commitTransaction();
         res.status(200).send("Sent");

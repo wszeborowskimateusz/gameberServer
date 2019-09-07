@@ -22,7 +22,17 @@ router.get('/:categoryId', async function(req, res) {
         populate({
             path: 'category_id',
             populate: {path: 'country_id'}
-        });
+        }).
+        sort('game_order'); // TODO: wyznaczenie aktualnej gry
+
+        let currentGameIndex = 0;
+        for (let i = 0; i < games.length; ++i){
+            let game = games[i];
+            if (!(await db.User_Game.findOne({game_id: game._id, user_id: USER_ID}))){
+                currentGameIndex = i;
+                break;
+            }
+        }
 
         if (!games.length)
             throw Error;
@@ -39,6 +49,8 @@ router.get('/:categoryId', async function(req, res) {
         r.categoryCountryIcon = cfg.imagesUrl +  games[0].category_id.country_id.country_icon;
         r.categoryIcon = cfg.imagesUrl +  games[0].category_id.category_icon;
         r.categoryName = games[0].category_id.category_name;
+        r.currentGameIndex = games[currentGameIndex]._id;
+        r.isTestCategory = games[0].category_id.category_type == enums.CategoryType.BEGINNER_TEST;
 
         res.json(r);
 

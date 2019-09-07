@@ -14,9 +14,8 @@ const notificationsSchema = mongoose.Schema({
     type: String,
     notification_img: String,
     date_of_receiving: { type : Date, default: Date.now },
-    title: String,
     name: String,
-    description: String,
+    user_from_id: { type: Schema.Types.ObjectId, ref: 'User' },
     is_read: { type : Boolean, default: false },
     is_deleted: { type : Boolean, default: false },
     user_id: { type: Schema.Types.ObjectId, ref: 'User' }
@@ -122,6 +121,7 @@ const DailyQuests = mongoose.model("DailyQuests", dailyQuestsSchema);
 const friendshipSchema = mongoose.Schema({
     user_from_id: { type: Schema.Types.ObjectId, ref: 'User' },
     user_to_id: { type: Schema.Types.ObjectId, ref: 'User' },
+    notification_id: { type: Schema.Types.ObjectId, ref: 'Notifications' },
     date_of_beginning: Date,
     date_od_invitation: { type : Date, default: Date.now },
     //state: { type : String, default: enums.FriendshipRequestState.SENT },
@@ -185,6 +185,7 @@ const gamesSchema = mongoose.Schema({
     //game_id: Number,
     game_name: String,
     game_info: String,
+    game_order: Number,
     correct_answer: String,
     category_id: { type: Schema.Types.ObjectId, ref: 'Categories' },
 });

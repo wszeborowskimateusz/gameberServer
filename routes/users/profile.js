@@ -5,7 +5,8 @@ const router = express.Router();
 const mongoose = require('mongoose');
 
 router.get('/:user_id?', async function(req, res) {
-    const otherPlayerProfile = req.params.user_id != null; 
+    const otherPlayerProfile = req.params.user_id != USER_ID;
+    r.isOurOwnProfile = otherPlayerProfile;
     const userId = otherPlayerProfile ? req.params.user_id : USER_ID;
     if (!mongoose.Types.ObjectId.isValid(userId))
         throw Error;
@@ -30,10 +31,12 @@ router.get('/:user_id?', async function(req, res) {
             ua.push({ avatar_id: player_info.picked_avatar_id });
             ui.push({ image_id: player_info.background_img_id });
 
-            const friendship = await db.Friendship.findOne({user_from: USER_ID, user_to: userId});
-            const rev_friendship = await db.Friendship.findOne({user_to: USER_ID, user_from: userId});
-            
+            const friendship = await db.Friendship.findOne({user_from_id: USER_ID, user_to_id: userId, date_of_beginning: {$ne: null}});
+            const rev_friendship = await db.Friendship.findOne({user_to_id: USER_ID, user_from_id: userId, date_of_beginning: {$ne: null}});
             r.user.isFriend = friendship || rev_friendship ? true : false;
+
+            const isFriendshipRequested = await db.Friendship.findOne({user_from_id: USER_ID, user_to_id: userId, date_of_beginning: null});
+            r.user.isFriendshipRequested = isFriendshipRequested ? true : false;
         }
         else{
             ua = await db.User_Avatar.
