@@ -101,6 +101,7 @@ module.exports.addNotificationAsync = async function (type, notificationImg, nam
         await newNotification.save({ session });
     else
         await newNotification.save();
+    return newNotification._id;
 }
 
 module.exports.removeNotificationAsync = async function (notificationId, session){
