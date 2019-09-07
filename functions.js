@@ -102,4 +102,13 @@ module.exports.addNotificationAsync = async function (type, notificationImg, nam
     else
         await newNotification.save();
 }
+
+module.exports.removeNotificationAsync = async function (notificationId, session){
+    const notification = await db.Notifications.findById(notificationId);
+    notification.is_deleted = true;
+    if (session != null)
+        await notification.save({ session });
+    else
+        await notification.save();
+}
 //#endregion

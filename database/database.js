@@ -121,6 +121,7 @@ const DailyQuests = mongoose.model("DailyQuests", dailyQuestsSchema);
 const friendshipSchema = mongoose.Schema({
     user_from_id: { type: Schema.Types.ObjectId, ref: 'User' },
     user_to_id: { type: Schema.Types.ObjectId, ref: 'User' },
+    notification_id: { type: Schema.Types.ObjectId, ref: 'Notifications' },
     date_of_beginning: Date,
     date_od_invitation: { type : Date, default: Date.now },
     //state: { type : String, default: enums.FriendshipRequestState.SENT },
