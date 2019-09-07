@@ -13,7 +13,7 @@ router.get('/:user_id?', async function(req, res) {
     const r = {
         user: {}
     };
-    r.user.isOurOwnProfile = otherPlayerProfile;
+    r.user.isOurOwnProfile = !otherPlayerProfile;
 
     const avatarsArr = [];
     const backgroundsArr = [];
