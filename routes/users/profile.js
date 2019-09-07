@@ -6,7 +6,6 @@ const mongoose = require('mongoose');
 
 router.get('/:user_id?', async function(req, res) {
     const otherPlayerProfile = req.params.user_id != USER_ID;
-    r.isOurOwnProfile = otherPlayerProfile;
     const userId = otherPlayerProfile ? req.params.user_id : USER_ID;
     if (!mongoose.Types.ObjectId.isValid(userId))
         throw Error;
@@ -14,6 +13,7 @@ router.get('/:user_id?', async function(req, res) {
     const r = {
         user: {}
     };
+    r.user.isOurOwnProfile = otherPlayerProfile;
 
     const avatarsArr = [];
     const backgroundsArr = [];
