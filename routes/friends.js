@@ -26,7 +26,7 @@ router.post('/accept-request', async function(req, res) {
     }catch(err){
         await session.abortTransaction();
         console.log(err);
-        return res.status(404).json();
+        return res.status(404).send();
     }finally {
         await session.endSession();
     }
