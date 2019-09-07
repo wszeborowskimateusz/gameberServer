@@ -1,4 +1,5 @@
 const cfg = require('../../config');
+const functions = require('../../functions');
 const express = require('express');
 const db = require('../../' + cfg.dbPath);
 const router = express.Router();
@@ -79,6 +80,8 @@ router.get('/:user_id?', async function(req, res) {
             })
         })
 
+        const userExperience = await functions.getUserExperienceAsync(USER_ID);
+
         r.user = {
             ...r.user, ...{
                 avatarId: player_info.picked_avatar_id._id,
@@ -87,7 +90,7 @@ router.get('/:user_id?', async function(req, res) {
                 backgroundImageId: player_info.background_img_id._id,
                 backgroundImages: backgroundsArr,
                 level: player_info.level,
-                experiencePoints: player_info.exp_points,
+                experiencePoints: userExperience,
                 pointsToAchieveNewLevel: player_info.points_to_new_level,
                 achievements: achievementsArr
         }}
