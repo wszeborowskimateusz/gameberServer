@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.disable('etag'); // disables 304 response
 
 
-USER_ID = '5d4de24df9aa061340eb3635';
+USER_ID = 0;
 DB_CONNECTION = null;
 
 //TEST FIELD
@@ -65,8 +65,8 @@ app.use(function(req, res, next){
         next()
       } catch (err) {
         console.log(err.message);
-        //res.status(401).json({message: "Unauthorised access", type: "error"});
-        next();
+        res.status(401).json({message: "Unauthorised access", type: "error"});
+        //next();
     }
  });
 
