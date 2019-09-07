@@ -10,7 +10,7 @@ router.get('/', async function(req, res) {
 
     try{
         const notifications = await db.Notifications.find({user_id: USER_ID});
-
+        
         for (const n of notifications){
             if (!n.is_deleted)
                 await r.notificationsArray.push({
