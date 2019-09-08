@@ -137,7 +137,8 @@ router.get('/status', async function(req, res) {
                     length;
 
                 r.beginnersCategories = await (await db.Categories.
-                    find({category_type: enums.CategoryType.BEGINNER})).
+                    find({category_type: enums.CategoryType.BEGINNER}).
+                    sort('category_order')).
                     map(c => {
                         return {
                             id: c._id,
