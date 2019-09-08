@@ -31,6 +31,12 @@ module.exports.CategoryType = Object.freeze({
 });
 //#endregion
 
+//#region experience
+module.exports.ExperienceSubject = Object.freeze({
+    LOGIN_STREAK: 'Login Streak'
+});
+//#endregion
+
 // //#region friendship
 // module.exports.FriendshipRequestState = Object.freeze({
 //     SENT: 1,

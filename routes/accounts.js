@@ -1,4 +1,6 @@
 const cfg = require('../config');
+const functions = require('../functions');
+const enums = require('../enums');
 const express = require('express');
 const db = require('../' + cfg.dbPath);
 const router = express.Router();
@@ -81,8 +83,10 @@ router.post('/signup', async function(req, res){
 });
 
 router.post('/signin', async function(req, res){
+  const session = await DB_CONNECTION.startSession();
   const userData = req.body;
   const oneDayMS = 86400000;
+  const r = {};
   let errorMessage = null;
 
   //log
@@ -95,6 +99,8 @@ router.post('/signin', async function(req, res){
      res.status(400).json({message: "Bad Request"});
   } else {
     try {
+      await session.startTransaction();
+
       const user = await db.User.findOne({login: userData.login});
 
       if(user == null || !passwordHash.verify(userData.password, user.password)) {
@@ -110,20 +116,39 @@ router.post('/signin', async function(req, res){
 
       const timeSinceLastLogin = todayDate - lastLoginDate;
 
-      if(timeSinceLastLogin == oneDayMS)
+      if (timeSinceLastLogin == oneDayMS) {
         user.logging_streak++;
+        if (user.logging_streak > 1) {
+          const coins = user.logging_streak * cfg.loginStreakCoinsMultiplier;
+          const experience = user.logging_streak * cfg.loginStreakExperienceMultiplier;
+          r.everydayAwards = {
+            loginStreak: user.logging_streak,
+            coins: coins,
+            experiencePoints: experience,
+            achievements: []
+          }
+          await functions.giveCoinsToUserAsync(coins, user._id, session);
+          await functions.giveExperienceToUserAsync(experience, enums.ExperienceSubject.LOGIN_STREAK, user._id, session);
+        }
+      }
       else if(timeSinceLastLogin > oneDayMS)
         user.logging_streak = 1;
 
       user.date_of_last_login = new Date();
 
-      await user.save();
+      await user.save({ session });
 
-      var token = jwt.sign({ login: userData.login, user_id: user._id }, cfg.jwtSecret, { expiresIn: 129600 }); // 36h         
-      res.status(200).json({message: "Signed in", jwtToken:token, type: "success"});
-    }catch(err){
+      r.jwtToken = jwt.sign({ login: userData.login, user_id: user._id }, cfg.jwtSecret, { expiresIn: 129600 }); // 36h
+      r.message = "Signed in";
+      r.type = "success"
+      await session.commitTransaction();
+      res.status(200).json(r);
+    } catch(err){
+      await session.abortTransaction();
       console.log(err);
       res.status(500).json({message: errorMessage});
+    } finally {
+      await session.endSession();
     }
   }
 });
