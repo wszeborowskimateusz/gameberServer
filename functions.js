@@ -1,4 +1,5 @@
 const cfg = require('./config');
+const enums = require('./enums');
 const express = require('express');
 const db = require('./' + cfg.dbPath);
 const mongoose = require('mongoose');
@@ -115,5 +116,23 @@ module.exports.removeNotificationAsync = async function (notificationId, session
         await notification.save({ session });
     else
         await notification.save();
+}
+//#endregion
+
+//#region achievements
+module.exports.giveAchievementToUserAsync = async function (achievementId, userId, session){
+    const existingAchievement = await db.User_Achievement.
+        findOne({user_id: userId, achievement_id: achievementId});
+    if (session == null || existingAchievement) 
+        throw Error;
+    const newAchievement = new db.User_Achievement({
+        user_id: userId,
+        achievement_id: achievementId
+    });
+    await newAchievement.save({ session });
+
+    const achievement = db.Achievements.findById(achievementId);
+    await this.addNotificationAsync(enums.NotificationType.NEW_ACHIEVEMENT, achievement.achievement_img,
+         achievement.achievement_name, userId, null, session);
 }
 //#endregion
