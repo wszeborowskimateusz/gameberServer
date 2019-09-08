@@ -73,14 +73,15 @@ module.exports.giveExperienceToUserAsync = async function (experiencePoints, sub
 }
 
 module.exports.getUserExperienceAsync = async function (userId, session){
-    return (await db.Experience.aggregate([      
+    const experience = await db.Experience.aggregate([      
         { $match: {
             user_id: {$eq: mongoose.Types.ObjectId(userId)}
         }},
         { $group: {
             _id: "$user_id",
             exp_points: { $sum: "$earned_points" }
-        }}]).session(session))[0].exp_points;
+        }}]).session(session)
+    return experience.length == 0 ? 0 : experience[0].exp_points;
 }
 //#endregion
 
