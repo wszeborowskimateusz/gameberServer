@@ -149,7 +149,9 @@ router.post('/finish', async function(req, res) {
             r.isPassed = true;
         }
         else{
-            if (user.beginners_test_status == enums.BeginnersTestStatus.TEST_STARTED){
+            if (user.beginners_test_status == enums.BeginnersTestStatus.TEST_STARTED || 
+                user.beginners_test_status == enums.BeginnersTestStatus.TEST)
+            {
                 user.beginners_test_status = enums.BeginnersTestStatus.BEGINNER
                 await user.save({ session });
             } 
