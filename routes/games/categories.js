@@ -114,7 +114,7 @@ router.post('/finish', async function(req, res) {
             for (const ac of achievements4Category){
                 await functions.giveAchievementToUserAsync(ac._id, USER_ID, session);
                 r.achievements.push({
-                    src: ac.achievement_id.achievement_img,
+                    src: cfg.imagesUrl + ac.achievement_id.achievement_img,
                     name: ac.achievement_id.achievement_name
                 });
             }

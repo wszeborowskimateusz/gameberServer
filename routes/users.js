@@ -141,7 +141,7 @@ router.get('/status', async function(req, res) {
                     map(c => {
                         return {
                             id: c._id,
-                            img: c.category_img,
+                            img: cfg.imagesUrl + c.category_img,
                             name: c.category_name,
                             isUnlocked: numberOfPassedBeginnersCategories >= c.category_order ? true : false
                         }
