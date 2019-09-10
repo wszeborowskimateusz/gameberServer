@@ -1,4 +1,5 @@
 const cfg = require('../config');
+const functions = require('../functions');
 const express = require('express');
 const db = require('../' + cfg.dbPath);
 const router = express.Router();
@@ -9,16 +10,15 @@ router.get('/', async function(req, res) {
 
     try{
         const notifications = await db.Notifications.find({user_id: USER_ID});
-
+        
         for (const n of notifications){
             if (!n.is_deleted)
                 await r.notificationsArray.push({
                     id: n._id,
                     type: n.type,
+                    userId: n.user_from_id,
                     img: cfg.imagesUrl + n.notification_img,
-                    title: n.title,
                     name: n.name,
-                    description: n.description,
                     dateOfReceiving: n.date_of_receiving,
                     isRead: n.is_read
                 })
@@ -38,7 +38,7 @@ router.post('/mark-as-read', async function(req, res) {
         notification.is_read = true;
         await notification.save();
 
-        res.status(200).send("Marked as read");
+        res.status(200).json("Marked as read");
     }catch(err){
         console.log(err);
         return res.status(404).send();
@@ -48,11 +48,8 @@ router.post('/mark-as-read', async function(req, res) {
 router.post('/remove', async function(req, res) {
     const notificationId = req.body.notificationId;
     try{
-        const notification = await db.Notifications.findById(notificationId);
-        notification.is_deleted = true;
-        await notification.save();
-        
-        res.status(200).send("Deleted");
+        await functions.removeNotificationAsync(notificationId);
+        res.status(200).json("Deleted");
     }catch(err){
         console.log(err);
         return res.status(404).send();

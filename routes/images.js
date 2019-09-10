@@ -15,7 +15,7 @@ router.get('/:name', function(req,res){
         res.setHeader("content-type", contentType);
         fs.createReadStream('images/' + imageName).pipe(res);
     } catch(err) {
-        res.status(404).send('Image/File not found');
+        res.status(404).json('Image/File not found');
         console.log(err);
     }
 });

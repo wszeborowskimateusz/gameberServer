@@ -2,12 +2,15 @@ const express = require('express');
 
 //#region notifications
 module.exports.NotificationType = Object.freeze({
-    FRIEND_REQUEST: 1,
-    NEW_MESSAGE: 2
+    FRIEND_REQUEST: 'friendship_request',
+    NEW_MESSAGE: 'message_received',
+    NEW_ACHIEVEMENT: 'achievement_received',
+    FRIEND_REQUEST_ACCEPTED: 'friendship_accepted'
 });
 
 module.exports.NotificationImage = Object.freeze({
-    NEW_MESSAGE: 'new_message.jpg'
+    NEW_MESSAGE: 'new_message.jpg',
+    FRIEND_REQUEST: 'friend_request.jpg'
 });
 //#endregion
 
@@ -25,6 +28,12 @@ module.exports.CategoryType = Object.freeze({
     BEGINNER_TEST: 'BT',
     BEGINNER: 'B',
     NORMAL: 'N'
+});
+//#endregion
+
+//#region experience
+module.exports.ExperienceSubject = Object.freeze({
+    LOGIN_STREAK: 'Login Streak'
 });
 //#endregion
 

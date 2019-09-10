@@ -1,4 +1,5 @@
 const cfg = require('./config');
+const enums = require('./enums');
 const express = require('express');
 const db = require('./' + cfg.dbPath);
 const mongoose = require('mongoose');
@@ -58,24 +59,29 @@ module.exports.giveExperienceToUserAsync = async function (experiencePoints, sub
     })
     await newExperience.save({ session });
 
-    const userExperience = await db.Experience.aggregate([      
-        { $match: {
-            user_id: {$eq: mongoose.Types.ObjectId(userId)}
-        }},
-        { $group: {
-            _id: "$user_id",
-            exp_points: { $sum: "$earned_points" }
-        }}]).session(session);
+    const userExperience = await this.getUserExperienceAsync(userId, session);
 
     const user = await db.User.findById(userId);
 
-    while (userExperience[0].exp_points >= user.points_to_new_level){
+    while (userExperience >= user.points_to_new_level){
         user.points_to_new_level = Math.floor(Math.pow(user.points_to_new_level, cfg.newLevelPower));
         user.level++;
     }
 
     await user.save({ session });
 
+}
+
+module.exports.getUserExperienceAsync = async function (userId, session){
+    const experience = await db.Experience.aggregate([      
+        { $match: {
+            user_id: {$eq: mongoose.Types.ObjectId(userId)}
+        }},
+        { $group: {
+            _id: "$user_id",
+            exp_points: { $sum: "$earned_points" }
+        }}]).session(session)
+    return experience.length == 0 ? 0 : experience[0].exp_points;
 }
 //#endregion
 
@@ -89,18 +95,45 @@ module.exports.giveCoinsToUserAsync = async function (coins, userId, session){
 //#endregion
 
 //#region notifications
-module.exports.addNotificationAsync = async function (type, notificationImg, title, name, description, userId, session){
+module.exports.addNotificationAsync = async function (type, notificationImg, name, userId, userFromId, session){
     const newNotification = new db.Notifications({
         type: type,
         notification_img: notificationImg,
-        title: title,
         name: name,
-        description: description,
+        user_from_id: userFromId,
         user_id: userId
     })
     if (session != null)
         await newNotification.save({ session });
     else
         await newNotification.save();
+    return newNotification._id;
+}
+
+module.exports.removeNotificationAsync = async function (notificationId, session){
+    const notification = await db.Notifications.findById(notificationId);
+    notification.is_deleted = true;
+    if (session != null)
+        await notification.save({ session });
+    else
+        await notification.save();
+}
+//#endregion
+
+//#region achievements
+module.exports.giveAchievementToUserAsync = async function (achievementId, userId, session){
+    const existingAchievement = await db.User_Achievement.
+        findOne({user_id: userId, achievement_id: achievementId});
+    if (session == null || existingAchievement) 
+        throw Error;
+    const newAchievement = new db.User_Achievement({
+        user_id: userId,
+        achievement_id: achievementId
+    });
+    await newAchievement.save({ session });
+
+    const achievement = db.Achievements.findById(achievementId);
+    await this.addNotificationAsync(enums.NotificationType.NEW_ACHIEVEMENT, achievement.achievement_img,
+         achievement.achievement_name, userId, null, session);
 }
 //#endregion

@@ -27,16 +27,17 @@ router.post('/check-answer', async function(req,res){
         }
 
         const isPassed = await db.User_Game.findOne({game_id: gameId, user_id: USER_ID});
-        if (isPassed)
-            throw Error;
+        r.wasAlreadySolved = isPassed == null ? false : true;
 
             const isCorrect = await db.Games.findOne({_id: gameId, correct_answer: answer});
         if (isCorrect){
-            const newPassedGame = new db.User_Game({
-                game_id: gameId,    
-                user_id: USER_ID
-            });
-            await newPassedGame.save({ session });
+            if (!isPassed){
+                const newPassedGame = new db.User_Game({
+                    game_id: gameId,
+                    user_id: USER_ID
+                });
+                await newPassedGame.save({ session });
+            }
             r.isCorrect = true;
         }
         else

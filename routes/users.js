@@ -31,19 +31,21 @@ router.post('/add-to-friends/:userId', async function(req, res) {
         if (userFrom || userTo)
             throw Error;
         
-        const requestSender = await db.User.findById(USER_ID);
+        const requestSender = await db.User.
+            findById(USER_ID).
+            populate('picked_avatar_id');
+
+        const newNotificationId = await functions.addNotificationAsync(enums.NotificationType.FRIEND_REQUEST, requestSender.picked_avatar_id.avatar_img, requestSender.login, userId, requestSender._id, session);
         
-        const newFriendship = new db.Friendship({user_from_id: USER_ID, user_to_id: userId});
+        const newFriendship = new db.Friendship({user_from_id: USER_ID, user_to_id: userId, notification_id: newNotificationId});
         await newFriendship.save();
 
-        await functions.addNotificationAsync(enums.NotificationType.MESSAGE, "", "New friend invitation", requestSender.login, "New friend request from " + requestSender.login, userId, session);
-
         await session.commitTransaction();
-        res.status(200).send("Sent");
+        res.status(200).json("Sent");
     }catch(err){
         await session.abortTransaction();
         console.log(err);
-        return res.status(404).send();
+        return res.status(400).send();
     } finally {
         await session.endSession();
     }
@@ -135,11 +137,12 @@ router.get('/status', async function(req, res) {
                     length;
 
                 r.beginnersCategories = await (await db.Categories.
-                    find({category_type: enums.CategoryType.BEGINNER})).
+                    find({category_type: enums.CategoryType.BEGINNER}).
+                    sort('category_order')).
                     map(c => {
                         return {
                             id: c._id,
-                            img: c.category_img,
+                            img: cfg.imagesUrl + c.category_img,
                             name: c.category_name,
                             isUnlocked: numberOfPassedBeginnersCategories >= c.category_order ? true : false
                         }
