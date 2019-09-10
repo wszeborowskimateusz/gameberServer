@@ -23,7 +23,7 @@ router.get('/:categoryId', async function(req, res) {
             path: 'category_id',
             populate: {path: 'country_id'}
         });
-
+        
         if (!games.length)
             throw Error;
         

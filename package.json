@@ -12,10 +12,10 @@
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.5.10",
+    "mongoose": "^5.2.18",
     "mongoose-auto-increment": "^5.0.1",
+    "moongoose": "0.0.5",
     "morgan": "~1.9.1",
-    "password-hash": "^1.2.2",
-    "run-rs": "^0.5.2"
+    "password-hash": "^1.2.2"
   }
 }

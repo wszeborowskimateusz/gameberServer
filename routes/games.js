@@ -12,7 +12,9 @@ router.use('/categories', categoriesRouter);
 router.post('/check-answer', async function(req,res){
     const r = {};
     const gameId = req.body.gameId;
-    const answer = req.body.answer;
+    let answer = req.body.answer;
+    if (answer.startsWith('"')) answer = answer.slice(1);
+    if (answer.endsWith('"')) answer = answer.slice(0, answer.length - 1);
     const session = await DB_CONNECTION.startSession();
     
     try{
@@ -28,10 +30,10 @@ router.post('/check-answer', async function(req,res){
         if (isPassed)
             throw Error;
 
-        const isCorrect = await db.Games.findOne({_id: gameId, correct_answer: answer});
+            const isCorrect = await db.Games.findOne({_id: gameId, correct_answer: answer});
         if (isCorrect){
             const newPassedGame = new db.User_Game({
-                game_id: gameId,
+                game_id: gameId,    
                 user_id: USER_ID
             });
             await newPassedGame.save({ session });
