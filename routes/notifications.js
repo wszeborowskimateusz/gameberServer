@@ -9,7 +9,9 @@ router.get('/', async function(req, res) {
     r = { notificationsArray: [] };
 
     try{
-        const notifications = await db.Notifications.find({user_id: USER_ID});
+        const notifications = await db.Notifications.
+            find({user_id: USER_ID}).
+            sort('-date_of_receiving');
         
         for (const n of notifications){
             if (!n.is_deleted)
