@@ -71,7 +71,7 @@ router.post('/images/buy', async function(req, res){
         await newUserImage.save({ session });
 
         mUser.amount_of_coins -= mImage.price;
-        mUser.save({ session });
+        await mUser.save({ session });
 
         await session.commitTransaction();
         res.status(200).json({message: "The background image has been bought"});
