@@ -18,12 +18,15 @@ router.get('/:categoryId', async function(req, res) {
 
     try{
         var games = await db.Games.
-        find({category_id: catId}).
-        populate({
-            path: 'category_id',
-            populate: {path: 'country_id'}
-        }).
-        sort('game_order');
+            find({category_id: catId}).
+            populate({
+                path: 'category_id',
+                populate: {path: 'country_id'}
+            }).
+            sort('game_order');
+        
+        if (!games.length)
+            throw Error;
 
         let currentGameIndex = 0;
         for (let i = 0; i < games.length; ++i){
@@ -33,9 +36,6 @@ router.get('/:categoryId', async function(req, res) {
                 break;
             }
         }
-        
-        if (!games.length)
-            throw Error;
         
         await games.forEach(game => {
             r.games.push({
