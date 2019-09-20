@@ -28,7 +28,7 @@ router.get('/:categoryId', async function(req, res) {
         if (!games.length)
             throw Error;
 
-        let currentGameIndex = 0;
+        let currentGameIndex = games.length - 1;
         for (let i = 0; i < games.length; ++i){
             let game = games[i];
             if (!(await db.User_Game.findOne({game_id: game._id, user_id: USER_ID}))){
@@ -164,6 +164,7 @@ router.post('/finish', async function(req, res) {
     }
     catch(err){
         await session.abortTransaction();
+        console.log(err);
         res.status(400).send();
     } finally {
         await session.endSession();
