@@ -51,7 +51,7 @@ router.post('/buyCountry', async function(req, res){
         await session.startTransaction();
 
         let data = req.body;
-        let country = await db.Countries.findOne({ISO: data.countryISO});
+        let country = await db.Countries.findById(data.countryId);
 
         // Check if user already bought country
         let isBought = await db.AvailableCountries.countDocuments({user_id: USER_ID, country_id: country._id});
@@ -72,7 +72,7 @@ router.post('/buyCountry', async function(req, res){
                     date_of_unlocking: Date.now(),
                     is_completed: false
                 });
-                newCountryUnlock.save({ session });
+                await newCountryUnlock.save({ session });
                 
                 response.status = true;
             }
@@ -100,22 +100,13 @@ router.post('/buyCountry', async function(req, res){
     }
 });
 
-router.post('/countryCategories', async function(req, res)
+router.post('/getCategories', async function(req, res)
 {
-    let response = {
-        categories: [],
-    };
-    const data = req.body;
-    const countryISO = data.countryISO;
-    console.log('get categories for country: ' + countryISO);
+    const response = {};
 
     try
     {
-        // get country
-        const country = await db.Countries.findOne({ISO: countryISO});
-        // get categories
-        const categories = await db.Categories.find({country_id: country._id});
-        response.categories = categories;
+        response.categories = await db.Categories.find({country_id: {$in: req.body.countriesIds}});
         return res.json(response);
     }
     catch(err)

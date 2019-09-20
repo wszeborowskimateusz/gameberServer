@@ -15,9 +15,35 @@
 	"_id": {
 		"$oid": "5d5984c414aa473964221e4d"
 	},
-	"category_name": "skutery",
-	"category_img": "glownaKategoria.jpg",
-	"category_icon": "skuterIcon.png",
+	"category_name": "Motoryzacja",
+	"category_img": "categories/motoryzacja/motoryzacjaBackground.jpg",
+	"category_icon": "categories/motoryzacja/motoryzacjaIcon.png",
+	"country_id": {
+		"$oid": "5d56962114aa473964221e43"
+	},
+	"prize_coins": 57,
+	"prize_points": 67
+}
+{
+	"_id": {
+		"$oid": "1205de2cb54c4bd2ada6de76"
+	},
+	"category_name": "Słodycze",
+	"category_img": "categories/slodycze/slodyczeBackground.jpg",
+	"category_icon": "categories/slodycze/slodyczeIcon.png",
+	"country_id": {
+		"$oid": "5d56962114aa473964221e43"
+	},
+	"prize_coins": 57,
+	"prize_points": 67
+}
+{
+	"_id": {
+		"$oid": "6da86d5f78cc4155a96bc885"
+	},
+	"category_name": "Rolnictwo",
+	"category_img": "categories/rolnictwo/rolnictwoBackground.jpg",
+	"category_icon": "categories/rolnictwo/rolnictwoIcon.png",
 	"country_id": {
 		"$oid": "5d5694ed14aa473964221e42"
 	},
@@ -28,9 +54,22 @@
 	"_id": {
 		"$oid": "5d59851614aa473964221e4f"
 	},
-	"category_name": "Food",
-	"category_img": "glownaKategoria.jpg",
-	"category_icon": "pierogiIcon.png",
+	"category_name": "Praca biurowa",
+	"category_img": "categories/biuro/biuroBackground.jpg",
+	"category_icon": "categories/biuro/biuroIcon.png",
+	"country_id": {
+		"$oid": "5d56962114aa473964221e43"
+	},
+	"prize_coins": 57,
+	"prize_points": 67
+}
+{
+	"_id": {
+		"$oid": "2b7ba4a531f1449993ef1688"
+	},
+	"category_name": "Zakupy",
+	"category_img": "categories/zakupy/zakupyBackground.jpg",
+	"category_icon": "categories/zakupy/zakupyIcon.png",
 	"country_id": {
 		"$oid": "5d5694ed14aa473964221e42"
 	},
@@ -39,77 +78,14 @@
 }
 {
 	"_id": {
-		"$oid": "5d6abb7f34d3af401c26c3c9"
+		"$oid": "7e50b24709164f44bdbdfed6"
 	},
-	"category_name": "BegTest1",
-	"category_img": "test.jpg",
-	"category_icon": "test.png",
+	"category_name": "Miasto",
+	"category_img": "categories/miasto/miastoBackground.jpg",
+	"category_icon": "categories/miasto/miastoIcon.png",
 	"country_id": {
-		"$oid": "5d5694ed14aa473964221e42"
+		"$oid": "5d56965e14aa473964221e44"
 	},
-	"category_type": "B",
-	"category_order": 1,
-	"prize_coins": 57,
-	"prize_points": 67
-}
-{
-	"_id": {
-		"$oid": "5d6abb8c34d3af401c26c3ca"
-	},
-	"category_name": "BegTest0",
-	"category_img": "test.jpg",
-	"category_icon": "test.png",
-	"country_id": {
-		"$oid": "5d5694ed14aa473964221e42"
-	},
-	"category_type": "B",
-	"category_order": "0",
-	"prize_coins": 57,
-	"prize_points": 67
-}
-{
-	"_id": {
-		"$oid": "5d6abb9e34d3af401c26c3cb"
-	},
-	"category_name": "BegTest3",
-	"category_img": "test.jpg",
-	"category_icon": "test.png",
-	"country_id": {
-		"$oid": "5d5694ed14aa473964221e42"
-	},
-	"category_type": "B",
-	"category_order": 3,
-	"prize_coins": 57,
-	"prize_points": 67
-}
-{
-	"_id": {
-		"$oid": "5d6abba734d3af401c26c3cc"
-	},
-	"category_name": "BegTest2",
-	"category_img": "test.jpg",
-	"category_icon": "test.png",
-	"country_id": {
-		"$oid": "5d5694ed14aa473964221e42"
-	},
-	"category_type": "B",
-	"category_order": 2,
-	"prize_coins": 57,
-	"prize_points": 67
-}
-{
-	"_id": {
-		"$oid": "5d6abbb734d3af401c26c3cd"
-	},
-	"category_name": "Test",
-	"category_img": "test.jpg",
-	"category_icon": "test.png",
-	"country_id": {
-		"$oid": "5d5694ed14aa473964221e42"
-	},
-	"category_type": "BT",
-	"percentage_pass_treshold": 75,
-	"category_order": 2,
 	"prize_coins": 57,
 	"prize_points": 67
 }

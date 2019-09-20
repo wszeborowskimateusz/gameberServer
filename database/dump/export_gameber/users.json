@@ -37,7 +37,9 @@
 	"is_daily_mission_completed": false,
 	"is_account_private": false,
 	"logging_streak": 1,
-	"date_of_last_login": null,
+	"date_of_last_login": {
+		"$date": "2019-08-30T18:17:11.222Z"
+	},
 	"login": "e",
 	"password": "sha1$85c99575$1$3fe3b27f3f661fab1963b34a5991a2506efb5d48",
 	"mail": "e@e.ee",
