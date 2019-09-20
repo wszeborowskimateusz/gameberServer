@@ -123,8 +123,10 @@ router.get('/status', async function(req, res) {
         switch (r.status) {
             case enums.BeginnersTestStatus.TEST:
             case enums.BeginnersTestStatus.TEST_STARTED:
-                r.testCategoryId = (await db.Categories.
-                    findOne({category_type: enums.CategoryType.BEGINNER_TEST}))._id;
+                var testCategory = await db.Categories.
+                    findOne({category_type: enums.CategoryType.BEGINNER_TEST})
+                if (testCategory != null)
+                    r.testCategoryId = testCategory._id;
                 break;
             case enums.BeginnersTestStatus.BEGINNER:
                 const numberOfPassedBeginnersCategories = await (await db.User_Category.
