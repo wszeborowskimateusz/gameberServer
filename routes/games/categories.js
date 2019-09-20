@@ -45,8 +45,10 @@ router.get('/:categoryId', async function(req, res) {
             })
         });
 
+        if (games[0].category_id.country_id != null)
+            r.categoryCountryIcon = cfg.imagesUrl +  games[0].category_id.country_id.country_icon;
+        
         r.categoryBackgroundImage = cfg.imagesUrl + games[0].category_id.category_img;
-        r.categoryCountryIcon = cfg.imagesUrl +  games[0].category_id.country_id.country_icon;
         r.categoryIcon = cfg.imagesUrl +  games[0].category_id.category_icon;
         r.categoryName = games[0].category_id.category_name;
         r.currentGameIndex = currentGameIndex;
