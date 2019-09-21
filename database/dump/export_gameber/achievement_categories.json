@@ -1,4 +1,4 @@
-{
+[{
 	"_id": {
 		"$oid": "5d595d8f8492ac62e413fd4a"
 	},
@@ -8,7 +8,7 @@
 	"achievement_id": {
 		"$oid": "5d595c2f8492ac62e413fd48"
 	}
-}
+},
 {
 	"_id": {
 		"$oid": "5d595da9cffa6362e467bb8b"
@@ -19,4 +19,5 @@
 	"achievement_id": {
 		"$oid": "5d595c9fcffa6362e467bb8a"
 	}
-}
+}]
+

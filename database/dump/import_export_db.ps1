@@ -34,7 +34,7 @@ $importOrExport = Read-Host "Export[e], Import[i]"
 if ($importOrExport -match "[eE]"){
 	foreach ($collection in $collections) {
 		Write-Output "./export_${db}/${collection}.json"
-        mongoexport /h "${ip}:${port}" /d $db /c $collection /o "./export_${db}/${collection}.json" --pretty 
+        mongoexport /h "${ip}:${port}" /d $db /c $collection /o "./export_${db}/${collection}.json" --pretty --jsonArray 
 	}
 }
 elseif ($importOrExport -match "[iI]"){

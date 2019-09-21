@@ -1,4 +1,4 @@
-{
+[{
 	"_id": {
 		"$oid": "5d56af5114aa473964221e4a"
 	},
@@ -15,7 +15,7 @@
 		"$date": "2019-08-17T22:00:00.000Z"
 	},
 	"is_completed": false
-}
+},
 {
 	"_id": {
 		"$oid": "5d57fc4ca5e5f8358498d795"
@@ -32,7 +32,7 @@
 	},
 	"is_completed": false,
 	"__v": 0
-}
+},
 {
 	"_id": {
 		"$oid": "bc49ef19d3a94afdb1bbe3d5"
@@ -49,4 +49,5 @@
 	},
 	"is_completed": false,
 	"__v": 0
-}
+}]
+
