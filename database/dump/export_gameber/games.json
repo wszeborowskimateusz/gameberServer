@@ -37,7 +37,7 @@
 	},
 	"game_name": "WordMatching",
 	"game_info": "{\"isPhrase\":false,\"polishName\":\"Ulica\",\"correctAnswer\":\"Street\",\"answers\":[{\"img\":\"games/miasto/cottage.jpg\",\"name\":\"Cottage\"},{\"img\":\"games/miasto/shop.jpg\",\"name\":\"Shop\"},{\"img\":\"games/miasto/street.jpg\",\"name\":\"Street\"},{\"img\":\"games/miasto/underground.jpg\",\"name\":\"Undergound\"}]}",
-	"correct_answer": "street",
+	"correct_answer": "\"street\"",
 	"category_id": {
 		"$oid": "7e50b24709164f44bdbdfed6"
 	}
@@ -58,8 +58,8 @@
 		"$oid": "36e6bb3e27e9407686518883"
 	},
 	"game_name": "WordMatching",
-	"game_info": "{\"isPhrase\":false,\"polishName\":\"Cukierki\",\"correctAnswer\":\"Candy\",\"answers\":[{\"img\":\"games/slodycze/candy.jpg\",\"name\":\"car keys\"},{\"img\":\"games/slodycze/chocolateBar.jpg\",\"name\":\"Chocolate\"}]}",
-	"correct_answer": "car keys",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Cukierki\",\"correctAnswer\":\"Candy\",\"answers\":[{\"img\":\"games/slodycze/candy.jpg\",\"name\":\"Candy\"},{\"img\":\"games/slodycze/chocolateBar.jpg\",\"name\":\"Chocolate\"}]}",
+	"correct_answer": "\"Candy\"",
 	"category_id": {
 		"$oid": "5d5984c414aa473964221e4d"
 	}
@@ -92,7 +92,7 @@
 	},
 	"game_name": "WordMatching",
 	"game_info": "{\"isPhrase\":false,\"polishName\":\"Karta kredytowa\",\"correctAnswer\":\"Credit card\",\"answers\":[{\"img\":\"games/motoryzacja/shoppingBag.jpg\",\"name\":\"Shopping bag\"},{\"img\":\"games/motoryzacja/creditCard.jpg\",\"name\":\"Credit card\"},{\"img\":\"games/motoryzacja/florist.jpg\",\"name\":\"florist\"},{\"img\":\"games/motoryzacja/shoppingCart.jpg\",\"name\":\"Shopping cart\"}]}",
-	"correct_answer": "Credit card",
+	"correct_answer": "\"Credit card\"",
 	"category_id": {
 		"$oid": "2b7ba4a531f1449993ef1688"
 	}
@@ -125,7 +125,7 @@
 	},
 	"game_name": "WordMatching",
 	"game_info": "{\"isPhrase\":true,\"polishName\": \"Jak się masz ?\",\"correctAnswer\":\"How are you ?\",\"answers\":[{\"img\":\"https://images.typeform.com/images/fxGsvvmE9wJZ/image/default\",\"name\":\"How are you ?\"},{\"img\":\"https://images-na.ssl-images-amazon.com/images/I/71dukCYi0aL._SX355_.jpg\",\"name\":\"Where is a toilete ?\"},{\"img\":\"https://static2.mytraintravel.com/local/cache-vignettes/L760xH505/netherlands-amsterdam_schipol_station-_c_wil_linssen_flickr-no_commercial_use-4642444031-08f3e.jpg\",\"name\":\"How can I get to the train station ?\"},{\"img\":\"https://static.wixstatic.com/media/384812_0ec71d8036a845d9bb9edbbe9bf73511~mv2.jpg\",\"name\":\"Are you ok ?\"}]}",
-	"correct_answer": "How are you?",
+	"correct_answer": "\"How are you?\"",
 	"category_id": {
 		"$oid": "5d3d9c359eae4f18d02267d3"
 	}
@@ -147,7 +147,7 @@
 	},
 	"game_name": "WordGuessing",
 	"game_info": "{\"img\":\"https://www.seacoastsciencecenter.org/wp-content/themes/FoundationPress/img/seal%202.png\",\"correctAnswer\":\"seal\"}",
-	"correct_answer": "seal",
+	"correct_answer": "\"seal\"",
 	"category_id": {
 		"$oid": "5d3d9c359eae4f18d02267d3"
 	}
@@ -180,7 +180,7 @@
 	},
 	"game_name": "WordMatching",
 	"game_info": "{\"isPhrase\":false,\"polishName\":\"Pingwin\",\"correctAnswer\":\"Penguin\",\"answers\":[{\"img\":\"http://bi.gazeta.pl/im/3/11672/z11672953IER,Foka-grenlandzka.jpg\",\"name\":\"Seal\"},{\"img\":\"https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iKIWgaiJUtss/v2/1000x-1.jpg\",\"name\":\"Penguin\"},{\"img\":\"https://vignette.wikia.nocookie.net/harrypotter/images/2/25/POLAR.jpg/revision/latest?cb=20160925151133\u0026path-prefix=pl\",\"name\":\"Bear\"},{\"img\":\"https://upload.wikimedia.org/wikipedia/commons/2/22/Pacific_Walrus_-_Bull_%288247646168%29.jpg\",\"name\":\"Walrus\"}]}",
-	"correct_answer": "Penguin",
+	"correct_answer": "\"Penguin\"",
 	"category_id": {
 		"$oid": "5d3d9c359eae4f18d02267d3"
 	}
@@ -213,7 +213,7 @@
 	},
 	"game_name": "PhraseLearning",
 	"game_info": "{\"question\":\"Here You are.\",\"words\":[\"You\",\"Thank\"],\"correctOrder\":[\"Thank\",\"You\"]}",
-	"correct_answer": "[\"Thank\", \"You\"]",
+	"correct_answer": "[\"Thank\",\"You\"]",
 	"category_id": {
 		"$oid": "1205de2cb54c4bd2ada6de76"
 	}
@@ -279,7 +279,7 @@
 	},
 	"game_name": "WordMatching",
 	"game_info": "{\"isPhrase\":false,\"polishName\":\"kluczyki do samochodu\",\"correctAnswer\":\"car keys\",\"answers\":[{\"img\":\"games/motoryzacja/carKeys.jpg\",\"name\":\"car keys\"},{\"img\":\"games/motoryzacja/mirror.jpg\",\"name\":\"mirror\"}]}",
-	"correct_answer": "car keys",
+	"correct_answer": "\"car keys\"",
 	"category_id": {
 		"$oid": "5d5984c414aa473964221e4d"
 	}
@@ -345,7 +345,7 @@
 	},
 	"game_name": "WordMatching",
 	"game_info": "{\"isPhrase\":false,\"polishName\":\"Babeczka\",\"correctAnswer\":\"Cupcake\",\"answers\":[{\"img\":\"games/slodycze/chocolateBar.jpg\",\"name\":\"chocolate\"},{\"img\":\"games/slodycze/cupcake.jpg\",\"name\":\"cupcake\"},{\"img\":\"games/slodycze/candy.jpg\",\"name\":\"candy\"},{\"img\":\"games/slodycze/lollipop.jpg\",\"name\":\"lollipop\"}]}",
-	"correct_answer": "cupcake",
+	"correct_answer": "\"cupcake\"",
 	"category_id": {
 		"$oid": "1205de2cb54c4bd2ada6de76"
 	}
@@ -355,8 +355,8 @@
 		"$oid": "a77cd893f4464a58be048306"
 	},
 	"game_name": "WordGuessing",
-	"game_info": "{\"img\":\"games/slodycze/lollipop.jpg\",\"correctAnswer\":\"Lollipop\"}",
-	"correct_answer": "lollipop",
+	"game_info": "{\"img\":\"games/slodycze/lollipop.jpg\",\"correctAnswer\":\"\"Lollipop\"\"}",
+	"correct_answer": "\"lollipop\"",
 	"category_id": {
 		"$oid": "1205de2cb54c4bd2ada6de76"
 	}
@@ -509,8 +509,8 @@
 		"$oid": "e7eaa5a494f74dc4b3300936"
 	},
 	"game_name": "WordGuessing",
-	"game_info": "{\"img\":\"games/motoryzacja/car2.jpg\",\"correctAnswer\":\"car\"}",
-	"correct_answer": "car",
+	"game_info": "{\"img\":\"games/motoryzacja/car2.jpg\",\"correctAnswer\":\"\"car\"\"}",
+	"correct_answer": "\"car\"",
 	"category_id": {
 		"$oid": "5d5984c414aa473964221e4d"
 	}
@@ -537,4 +537,3 @@
 		"$oid": "5d59851614aa473964221e4f"
 	}
 }]
-

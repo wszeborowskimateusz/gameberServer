@@ -38,11 +38,11 @@ if ($importOrExport -match "[eE]"){
 	}
 }
 elseif ($importOrExport -match "[iI]"){
-    mongo "gameber" --eval "db.dropDatabase()"
+    mongo "${ip}:${port}/${db}" --eval "db.dropDatabase()"
 
 	foreach ($collection in $collections) {  
 		Write-Output "./import_${db}/${collection}.json"
-		mongoimport /h "${ip}:${port}" /d $db /c $collection /file "./import_${db}/${collection}.json"
+		mongoimport /h "${ip}:${port}" /d $db /c $collection /file "./import_${db}/${collection}.json" --jsonArray
 	}
 }
 else {break}
