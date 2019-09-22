@@ -19,7 +19,6 @@ $collections = @(
     "backgroundimages",
     "user_images",
     "achievements",
-    "abstractcategories",
     "user_achievements",
     "categories",
     "games",
@@ -41,6 +40,7 @@ elseif ($importOrExport -match "[iI]"){
     mongo "${ip}:${port}/${db}" --eval "db.dropDatabase()"
 
 	foreach ($collection in $collections) {  
+        mongo "${ip}:${port}/${db}" --eval "db.createCollection('${collection}')"
 		Write-Output "./import_${db}/${collection}.json"
 		mongoimport /h "${ip}:${port}" /d $db /c $collection /file "./import_${db}/${collection}.json" --jsonArray
 	}

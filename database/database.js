@@ -5,11 +5,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const enums = require('../enums');
 
-// Test Field
 
-
-
-// Test Field
 const notificationsSchema = mongoose.Schema({
     type: String,
     notification_img: String,
@@ -31,7 +27,6 @@ const experienceSchema = mongoose.Schema({
 const Experience = mongoose.model("Experience", experienceSchema);
 
 const userSchema = mongoose.Schema({
-    //user_id: Number,
     login: String,
     password: String,
     mail: String,
@@ -67,7 +62,6 @@ const countriesSchema = mongoose.Schema({
     centerLatitude: Number,
     centerLongitude: Number,
     country_icon: String
-    //country_id: Number,
 });
 const Countries = mongoose.model("Countries", countriesSchema);
 
@@ -86,7 +80,6 @@ const user_AvatarsSchema = mongoose.Schema({
 const User_Avatar = mongoose.model("User_Avatar", user_AvatarsSchema);
 
 const avatarsSchema = mongoose.Schema({
-    //avatar_id: Number,
     avatar_name: String,
     avatar_img: String,
     price: Number
@@ -94,7 +87,6 @@ const avatarsSchema = mongoose.Schema({
 const Avatars = mongoose.model("Avatars", avatarsSchema);
 
 const messagesSchema = mongoose.Schema({
-    //message_id: Number,
     content: String,
     user_from_id: { type: Schema.Types.ObjectId, ref: 'User' },
     user_to_id: { type: Schema.Types.ObjectId, ref: 'User' },
@@ -112,7 +104,6 @@ const user_QuestSchema = mongoose.Schema({
 const User_Quest = mongoose.model("User_Quest", user_QuestSchema);
 
 const dailyQuestsSchema = mongoose.Schema({
-    //quest_id: Number,
     name: String,
     due_date: Date,
 });
@@ -124,12 +115,10 @@ const friendshipSchema = mongoose.Schema({
     notification_id: { type: Schema.Types.ObjectId, ref: 'Notifications' },
     date_of_beginning: Date,
     date_od_invitation: { type : Date, default: Date.now },
-    //state: { type : String, default: enums.FriendshipRequestState.SENT },
 });
 const Friendship = mongoose.model("Friendship", friendshipSchema);
 
 const backgroundImagesSchema = mongoose.Schema({
-    //image_id: Number,
     image_name: String,
     image_img: String,
     price: Number
@@ -144,7 +133,6 @@ const user_ImageSchema = mongoose.Schema({
 const User_Image = mongoose.model("User_Image", user_ImageSchema);
 
 const achievementsSchema = mongoose.Schema({
-    //achievement_id: Number,
     achievement_name: String,
     achievement_img: String,
     achievement_description: String,
@@ -158,15 +146,7 @@ const user_AchievementSchema = mongoose.Schema({
 });
 const User_Achievement = mongoose.model("User_Achievement", user_AchievementSchema);
 
-const abstractCategorySchema = mongoose.Schema({
-    //abstract_category_id: Number,
-    name: String,
-    description: String
-});
-const AbstractCategory = mongoose.model("AbstractCategory", abstractCategorySchema);
-
 const categoriesSchema = mongoose.Schema({
-    //category_id: Number,
     category_name: String,
     category_img: String,
     category_icon: String,
@@ -175,14 +155,11 @@ const categoriesSchema = mongoose.Schema({
     percentage_pass_treshold: Number,
     prize_points: Number,
     prize_coins: Number,
-    //repetition_category_id: { type: Schema.Types.ObjectId, ref: 'Categories' },
     country_id: { type: Schema.Types.ObjectId, ref: 'Countries' },
-    abstract_category_id: { type: Schema.Types.ObjectId, ref: 'AbstractCategory' }
 });
 const Categories = mongoose.model("Categories", categoriesSchema);
 
 const gamesSchema = mongoose.Schema({
-    //game_id: Number,
     game_name: String,
     game_info: String,
     game_order: Number,
@@ -226,7 +203,6 @@ module.exports = {
     BackgroundImages: BackgroundImages,
     User_Image: User_Image,
     Achievements: Achievements,
-    AbstractCategory: AbstractCategory,
     User_Achievement: User_Achievement,
     Categories: Categories,
     Games: Games,

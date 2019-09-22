@@ -33,14 +33,10 @@ app.disable('etag'); // disables 304 response
 USER_ID = 0;
 DB_CONNECTION = null;
 
-//TEST FIELD
-
-
-//TEST FIELD - END
 // Db connection
 app.use(async function(req, res, next){
     try {
-      DB_CONNECTION = await mongoose.connect(cfg.dbConnectionString, { useNewUrlParser: true });
+      DB_CONNECTION = await mongoose.connect(cfg.dbConnectionString, { useNewUrlParser: true, useUnifiedTopology: true });
       Object.freeze(DB_CONNECTION);
       next()
     } catch (err) {
@@ -78,5 +74,11 @@ app.use('/notifications', notificationsRouter);
 app.use('/messages', messagesRouter);
 app.use('/friends', friendsRouter);
 //app.use('/images', imagesRouter);
+
+// Global error handler - route handlers/middlewares which throw end up here
+app.use((err, req, res, next) => {
+  console.log(err.message);
+  res.status(500).send();
+});
 
 module.exports = app;
