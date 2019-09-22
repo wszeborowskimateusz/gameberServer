@@ -75,7 +75,7 @@ app.use('/messages', messagesRouter);
 app.use('/friends', friendsRouter);
 //app.use('/images', imagesRouter);
 
-// Global error handler - route handlers/middlewares which throw end up here
+// Global error handler
 app.use((err, req, res, next) => {
   console.log(err.message);
   res.status(500).send();
