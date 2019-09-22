@@ -9,5 +9,8 @@ module.exports = {
     imagesUrl: serwerUrl + '/images/',
     newLevelPower: 1.05,
     loginStreakCoinsMultiplier: 2,
-    loginStreakExperienceMultiplier: 2
+    loginStreakExperienceMultiplier: 2,
+    
+    defaultAvatarName: "Podstawowy",
+    defaultBackgroundName: "Podstawowy"
 };

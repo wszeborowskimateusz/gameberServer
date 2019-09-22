@@ -44,8 +44,8 @@ router.post('/signup', async function(req, res){
       //log
       console.log("New user request");
 
-      const defultAvatar = await db.Avatars.findOne({avatar_name: "Podstawowy"});
-      const defultImage = await db.BackgroundImages.findOne({image_name: "Podstawowy"});
+      const defultAvatar = await db.Avatars.findOne({avatar_name: cfg.defaultAvatarName});
+      const defultImage = await db.BackgroundImages.findOne({image_name: cfg.defaultBackgroundName});
 
       if(!defultAvatar || !defultImage){
         errorMessage = "Server error";
