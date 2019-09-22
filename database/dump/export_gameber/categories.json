@@ -97,7 +97,34 @@
 	"category_img": "categories/testWiedzy/testWiedzyBackground.jpg",
 	"category_icon": "categories/testWiedzy/testWiedzyIcon.png",
 	"category_type": "BT",
-	"prize_coins": 57,
-	"prize_points": 67
+	"percentage_pass_treshold": 70,
+	"prize_coins": 50,
+	"prize_points": 20
+},
+{
+	"_id": {
+		"$oid": "5d878eb2ea7897e835aea6f8"
+	},
+	"category_name": "Pierwsze słowa",
+	"category_img": "categories/pierwszeSlowa/pierwszeSlowaBackground.jpg",
+	"category_icon": "categories/pierwszeSlowa/pierwszeSlowaIcon.png",
+	"category_type": "B",
+	"category_order": 0,
+	"percentage_pass_treshold": 70,
+	"prize_coins": 10,
+	"prize_points": 10
+},
+{
+	"_id": {
+		"$oid": "5d8790e4ab3f86c2539d2d34"
+	},
+	"category_name": "Pierwsze zwroty",
+	"category_img": "categories/pierwszeZwroty/pierwszeZwrotyBackground.jpg",
+	"category_icon": "categories/pierwszeZwroty/pierwszeZwrotyIcon.png",
+	"category_type": "B",
+	"category_order": 1,
+	"percentage_pass_treshold": 70,
+	"prize_coins": 10,
+	"prize_points": 10
 }]
 

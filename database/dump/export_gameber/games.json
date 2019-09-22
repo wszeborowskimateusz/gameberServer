@@ -610,5 +610,29 @@
     "category_id": {
       "$oid": "5d87877b6aff08a2bd4d359f"
     }
+  },
+  {
+    "_id": {
+      "$oid": "5d878fee0db5b7db1c02930a"
+    },
+    "game_name": "WordLearning",
+    "game_info": "{\"polish_name\":\"Tak\",\"english_name\":\"Yes\",\"img\":\"games\/pierwszeSlowa\/yes.jpg\"}",
+	"correct_answer": "",
+	"game_order": 0,
+    "category_id": {
+      "$oid": "5d878eb2ea7897e835aea6f8"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5d8791c43765b4fbf20b1a47"
+    },
+    "game_name": "WordLearning",
+    "game_info": "{\"polish_name\":\"Lubi\u0119 to\",\"english_name\":\"I like it\",\"img\":\"games\/pierwszeZwroty\/likeIt.jpg\"}",
+	"correct_answer": "",
+	"game_order": 0,
+    "category_id": {
+      "$oid": "5d8790e4ab3f86c2539d2d34"
+    }
   }
 ]

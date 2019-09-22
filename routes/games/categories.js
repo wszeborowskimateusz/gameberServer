@@ -51,8 +51,8 @@ router.get('/:categoryId', async function(req, res) {
         r.currentGameIndex = currentGameIndex;
         r.isTestCategory = games[0].category_id.category_type == enums.CategoryType.BEGINNER_TEST;
 
-        r.categoryCountryIcon = cfg.imagesUrl + (games[0].category_id.country_id != null ? 
-            games[0].category_id.country_id.country_icon : r.categoryIcon);
+        r.categoryCountryIcon = games[0].category_id.country_id != null ? 
+            cfg.imagesUrl + games[0].category_id.country_id.country_icon : r.categoryIcon;
 
         res.json(r);
     }catch(err){
@@ -89,7 +89,7 @@ router.post('/finish', async function(req, res) {
                 path: 'game_id',
                 match: {category_id: {$eq: categoryId}}
             })).
-            filter(x => x.game_id.category_id != null).
+            filter(x => x.game_id != null).
             length;
 
         const gamesInCategory = await db.Games.
