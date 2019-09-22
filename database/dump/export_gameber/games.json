@@ -586,5 +586,29 @@
     "category_id": {
       "$oid": "1205de2cb54c4bd2ada6de76"
     }
+  },
+  {
+    "_id": {
+      "$oid": "5d8788fa14114d7b65e9699f"
+    },
+    "game_name": "WordMatching",
+    "game_info": "{\"isPhrase\":\"false\",\"polishName\":\"Tak\",\"answers\":[{\"img\":\"games\/testWiedzy\/yes.jpg\",\"name\":\"Yes\"},{\"img\":\"games\/testWiedzy\/thankYou.jpg\",\"name\":\"Thank you\"},{\"img\":\"games\/testWiedzy\/no.jpg\",\"name\":\"No\"},{\"img\":\"games\/testWiedzy\/please.jpg\",\"name\":\"Please\"}]}",
+	"correct_answer": "\"yes\"",
+	"game_order": 0,
+    "category_id": {
+      "$oid": "5d87877b6aff08a2bd4d359f"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5d878c1dca25a2ea10c7ac26"
+    },
+    "game_name": "WordPicker",
+    "game_info": "{\"img\":\"games\/testWiedzy\/baker.jpg\",\"answers\":[\"Fire\",\"Water\",\"Thank you\",\"Holiday\"]}",
+	"correct_answer": "2",
+	"game_order": 1,
+    "category_id": {
+      "$oid": "5d87877b6aff08a2bd4d359f"
+    }
   }
 ]

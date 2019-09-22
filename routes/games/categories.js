@@ -44,9 +44,6 @@ router.get('/:categoryId', async function(req, res) {
                 gameInfo: game.game_info
             })
         });
-
-        if (games[0].category_id.country_id != null)
-            r.categoryCountryIcon = cfg.imagesUrl +  games[0].category_id.country_id.country_icon;
         
         r.categoryBackgroundImage = cfg.imagesUrl + games[0].category_id.category_img;
         r.categoryIcon = cfg.imagesUrl +  games[0].category_id.category_icon;
@@ -54,8 +51,10 @@ router.get('/:categoryId', async function(req, res) {
         r.currentGameIndex = currentGameIndex;
         r.isTestCategory = games[0].category_id.category_type == enums.CategoryType.BEGINNER_TEST;
 
-        res.json(r);
+        r.categoryCountryIcon = cfg.imagesUrl + (games[0].category_id.country_id != null ? 
+            games[0].category_id.country_id.country_icon : r.categoryIcon);
 
+        res.json(r);
     }catch(err){
         console.log(err);
         res.status(404).send();
