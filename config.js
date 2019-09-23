@@ -10,6 +10,7 @@ module.exports = {
     newLevelPower: 1.05,
     loginStreakCoinsMultiplier: 2,
     loginStreakExperienceMultiplier: 2,
+    expirationTimeJWT: 900, // seconds
     
     defaultAvatarName: "Podstawowy",
     defaultBackgroundName: "Podstawowy"

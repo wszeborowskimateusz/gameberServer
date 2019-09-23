@@ -8,11 +8,6 @@ const passwordHash = require('password-hash');
 const jwt = require('jsonwebtoken');
 
 
-// /* GET users listing. */
-// router.get('/', function(req, res, next) {
-//   res.json('respond with a resource');
-// });
-
 // login, password, mail
 router.post('/signup', async function(req, res){
   const userData = req.body;
@@ -138,7 +133,7 @@ router.post('/signin', async function(req, res){
 
       await user.save({ session });
 
-      r.jwtToken = jwt.sign({ login: userData.login, user_id: user._id }, cfg.jwtSecret, { expiresIn: 129600 }); // 36h
+      r.jwtToken = jwt.sign({ login: userData.login, user_id: user._id }, cfg.jwtSecret, { expiresIn: cfg.expirationTimeJWT });
       r.message = "Signed in";
       r.type = "success"
       await session.commitTransaction();

@@ -58,6 +58,9 @@ app.use(function(req, res, next){
         USER_ID = decoded.user_id;
         Object.freeze(USER_ID);
         console.log("Zautentykowany " + Date.now());
+
+        const refreshedJwtToken = jwt.sign({ login: decoded.login, user_id: decoded.user_id }, cfg.jwtSecret, { expiresIn: cfg.expirationTimeJWT });
+        res.set('refreshedJwtToken', refreshedJwtToken);
         next()
       } catch (err) {
         console.log(err.message);
