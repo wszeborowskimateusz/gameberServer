@@ -97,8 +97,10 @@ router.post('/finish', async function(req, res) {
             count();
         
         const user = await db.User.findById(USER_ID);
-
-        if ((passedGames/gamesInCategory)*100 >= percentagePassTreshold){
+        
+        const percentageResult = (passedGames/gamesInCategory)*100;
+        r.percentage = percentageResult;
+        if (percentageResult >= percentagePassTreshold){
             const newPassedCategory = new db.User_Category({
                 user_id: USER_ID,
                 category_id: categoryId
