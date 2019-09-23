@@ -2,16 +2,32 @@
 	"_id": {
 		"$oid": "5d595c2f8492ac62e413fd48"
 	},
-	"achievement_img": "achievement1.jpg",
-	"achievement_name": "Achievement No.1",
-	"achievement_description": "bla bla"
+	"achievement_img": "achievements/login_streak_5.png",
+	"achievement_name": "5 dni z rzędu",
+	"achievement_description": "logowanie 5 dni z rzędu"
 },
 {
 	"_id": {
-		"$oid": "5d595c9fcffa6362e467bb8a"
+		"$oid": "5d88b17b731dd1a6266a44d9"
 	},
-	"achievement_img": "achievement2.png",
-	"achievement_name": "Achievement No.2",
-	"achievement_description": "bla bla"
+	"achievement_img": "achievements/login_streak_10.png",
+	"achievement_name": "10 dni z rzędu",
+	"achievement_description": "logowanie 10 dni z rzędu"
+},
+{
+	"_id": {
+		"$oid": "5d88b181322435bac8b87541"
+	},
+	"achievement_img": "achievements/login_streak_15.png",
+	"achievement_name": "15 dni z rzędu",
+	"achievement_description": "logowanie 15 dni z rzędu"
+},
+{
+	"_id": {
+		"$oid": "5d88b187ba1686eee93ecdc1"
+	},
+	"achievement_img": "achievements/login_streak_20.png",
+	"achievement_name": "20 dni z rzędu",
+	"achievement_description": "logowanie 20 dni z rzędu"
 }]
 

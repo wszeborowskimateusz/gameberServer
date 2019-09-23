@@ -124,6 +124,10 @@ router.post('/signin', async function(req, res){
           }
           await functions.giveCoinsToUserAsync(coins, user._id, session);
           await functions.giveExperienceToUserAsync(experience, enums.ExperienceSubject.LOGIN_STREAK, user._id, session);
+          
+          const loginStreakAchievement = await achievementForLoginStreak(user.logging_streak, session);
+          if (loginStreakAchievement)
+            r.everydayAwards.achievements.push(loginStreakAchievement);
         }
       }
       else if(timeSinceLastLogin > oneDayMS)
@@ -147,5 +151,20 @@ router.post('/signin', async function(req, res){
     }
   }
 });
+
+async function achievementForLoginStreak(loginStreak, session){
+  const newAchievementName = enums.Achievements['LOGIN_STREAK_' + loginStreak];
+  const newAchievement = await db.Achievements.findOne({achievement_name: newAchievementName});
+  if (!newAchievement)
+    return null;
+
+  const alreadyHas = await db.User_Achievement.findOne({user_id: USER_ID, achievement_id: newAchievement._id});
+  if (alreadyHas)
+    return null;
+
+  await functions.giveAchievementToUserAsync(newAchievement._id, USER_ID, session);
+  return  {name: newAchievement.achievement_name,
+           src: cfg.imagesUrl + newAchievement.achievement_img}
+}
 
 module.exports = router;

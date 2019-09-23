@@ -43,6 +43,15 @@ module.exports.ExperienceSubject = Object.freeze({
 });
 //#endregion
 
+//#region achievements
+module.exports.Achievements = Object.freeze({
+    LOGIN_STREAK_5: '5 dni z rzędu',
+    LOGIN_STREAK_10: '10 dni z rzędu',
+    LOGIN_STREAK_15: '15 dni z rzędu',
+    LOGIN_STREAK_20: '20 dni z rzędu',
+});
+//#endregion
+
 // //#region friendship
 // module.exports.FriendshipRequestState = Object.freeze({
 //     SENT: 1,
