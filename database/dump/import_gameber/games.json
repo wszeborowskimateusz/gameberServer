@@ -721,6 +721,90 @@
   },
   {
     "_id": {
+      "$oid": "5d8f7e465d6c80c478efb6d2"
+    },
+    "game_name": "WordLearning",
+    "game_info": "{\"polishName\":\"Nie\",\"englishName\":\"No\",\"img\":\"games\/pierwszeSlowa\/no.jpg\"}",
+	"correct_answer": "",
+	"game_order": 1,
+    "category_id": {
+      "$oid": "5d878eb2ea7897e835aea6f8"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5d8f7ed14b5c4b9a4c01ddac"
+    },
+    "game_name": "WordMatching",
+    "game_info": "{\"isPhrase\":\"false\",\"polishName\":\"Tak\",\"answers\":[{\"img\":\"games\/pierwszeSlowa\/no2.jpg\",\"name\":\"No\"},{\"img\":\"games\/pierwszeSlowa\/yes2.jpg\",\"name\":\"Yes\"},{\"img\":\"games\/pierwszeSlowa\/please.jpg\",\"name\":\"Please\"},{\"img\":\"games\/pierwszeSlowa\/no_problem.jpg\",\"name\":\"No problem\"}]}",
+	"correct_answer": "\"yes\"",
+	"game_order": 2,
+    "category_id": {
+      "$oid": "5d878eb2ea7897e835aea6f8"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5d8f81085deeaf0a827e1b59"
+    },
+    "game_name": "WordGuessing",
+    "game_info": "{\"img\":\"games\/pierwszeSlowa\/no3.jpg\"}",
+	"correct_answer": "\"no\"",
+	"game_order": 3,
+    "category_id": {
+      "$oid": "5d878eb2ea7897e835aea6f8"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5d8f8167740c833429e979d0"
+    },
+    "game_name": "WordLearning",
+    "game_info": "{\"polishName\":\"Dziękuję\",\"englishName\":\"Thank you\",\"img\":\"games\/pierwszeSlowa\/thank_you.jpg\"}",
+	"correct_answer": "",
+	"game_order": 4,
+    "category_id": {
+      "$oid": "5d878eb2ea7897e835aea6f8"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5d8f8230563749b29704e86d"
+    },
+    "game_name": "WordLearning",
+    "game_info": "{\"polishName\":\"Proszę (gdy kogoś o coś prosimy)\",\"englishName\":\"Please\",\"img\":\"games\/pierwszeSlowa\/please2.jpg\"}",
+	"correct_answer": "",
+	"game_order": 5,
+    "category_id": {
+      "$oid": "5d878eb2ea7897e835aea6f8"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5d8f8239fb6da2fa6253893c"
+    },
+    "game_name": "WordPicker",
+    "game_info": "{\"img\":\"games\/pierwszeSlowa\/thank_you2.jpg\",\"answers\":[\"I am old\",\"I have no idea\",\"I don't know\",\"Thank you\"]}",
+	"correct_answer": "3",
+	"game_order": 6,
+    "category_id": {
+      "$oid": "5d878eb2ea7897e835aea6f8"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5d8f831f285baa119e0226ad"
+    },
+    "game_name": "WordGuessing",
+    "game_info": "{\"img\":\"games\/pierwszeSlowa\/please.jpg\"}",
+	"correct_answer": "\"please\"",
+	"game_order": 7,
+    "category_id": {
+      "$oid": "5d878eb2ea7897e835aea6f8"
+    }
+  },
+  {
+    "_id": {
       "$oid": "5d8791c43765b4fbf20b1a47"
     },
     "game_name": "WordLearning",
