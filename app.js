@@ -18,6 +18,7 @@ const gamesRouter = require('./routes/games');
 const notificationsRouter = require('./routes/notifications');
 const messagesRouter = require('./routes/messages');
 const friendsRouter = require('./routes/friends');
+const multiplayerRouter = require('./routes/multiplayer');
 
 const app = express();
 
@@ -58,6 +59,9 @@ app.use(function(req, res, next){
         USER_ID = decoded.user_id;
         Object.freeze(USER_ID);
         console.log("Zautentykowany " + Date.now());
+
+        const refreshedJwtToken = jwt.sign({ login: decoded.login, user_id: decoded.user_id }, cfg.jwtSecret, { expiresIn: cfg.expirationTimeJWT });
+        res.set('refreshedJwtToken', refreshedJwtToken);
         next()
       } catch (err) {
         console.log(err.message);
@@ -73,7 +77,7 @@ app.use('/games', gamesRouter);
 app.use('/notifications', notificationsRouter);
 app.use('/messages', messagesRouter);
 app.use('/friends', friendsRouter);
-//app.use('/images', imagesRouter);
+app.use('/multiplayer', multiplayerRouter)
 
 // Global error handler
 app.use((err, req, res, next) => {

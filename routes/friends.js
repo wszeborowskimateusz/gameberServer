@@ -27,7 +27,8 @@ router.post('/accept-request', async function(req, res) {
         friendshipRequest.notification_id = null;
         await friendshipRequest.save({ session });
 
-        await functions.addNotificationAsync(enums.NotificationType.FRIEND_REQUEST_ACCEPTED, sender.picked_avatar_id.avatar_img, sender.login, userId, sender._id, session);
+        await functions.addNotificationAsync(enums.NotificationType.FRIEND_REQUEST_ACCEPTED,
+             sender.picked_avatar_id.avatar_img, sender.login, userId, sender._id, null, session);
 
         await session.commitTransaction();
         res.status(200).json("Accepted");

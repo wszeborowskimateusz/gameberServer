@@ -32,12 +32,15 @@ router.get('/:user_id?', async function(req, res) {
             ua.push({ avatar_id: player_info.picked_avatar_id });
             ui.push({ image_id: player_info.background_img_id });
 
-            const friendship = await db.Friendship.findOne({user_from_id: USER_ID, user_to_id: userId, date_of_beginning: {$ne: null}});
-            const rev_friendship = await db.Friendship.findOne({user_to_id: USER_ID, user_from_id: userId, date_of_beginning: {$ne: null}});
-            r.user.isFriend = friendship || rev_friendship ? true : false;
+            const checkBothDirections = {$or: [{user_from_id: USER_ID, user_to_id: userId},
+                                               {user_to_id: USER_ID, user_from_id: userId}]};
 
-            const isFriendshipRequested = await db.Friendship.findOne({user_from_id: USER_ID, user_to_id: userId, date_of_beginning: null});
-            r.user.isFriendshipRequested = isFriendshipRequested ? true : false;
+            const friendship = await db.Friendship.findOne({...checkBothDirections, date_of_beginning: {$ne: null}});
+            r.user.isFriend = friendship ? true : false;
+
+            const friendshipRequest = await db.Friendship.findOne({...checkBothDirections, date_of_beginning: null});
+            r.user.isFriendshipRequested = friendshipRequest != null && friendshipRequest.user_from_id == USER_ID ? true : false;
+            r.user.didUserFriendRequestedUs = friendshipRequest != null && r.user.isFriendshipRequested == false ? true : false;
         }
         else{
             ua = await db.User_Avatar.

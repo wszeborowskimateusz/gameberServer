@@ -21,6 +21,7 @@ router.get('/', async function(req, res) {
                     userId: n.user_from_id,
                     img: cfg.imagesUrl + n.notification_img,
                     name: n.name,
+                    data: n.data,
                     dateOfReceiving: n.date_of_receiving,
                     isRead: n.is_read
                 })

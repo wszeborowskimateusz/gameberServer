@@ -10,7 +10,12 @@ module.exports = {
     newLevelPower: 1.05,
     loginStreakCoinsMultiplier: 2,
     loginStreakExperienceMultiplier: 2,
+    expirationTimeJWT: 900, // seconds
     
     defaultAvatarName: "Podstawowy",
-    defaultBackgroundName: "Podstawowy"
+    defaultBackgroundName: "Podstawowy",
+
+    randomCategoryName: "Losowa kategoria",
+    randomCategoryImage: "categories/losowaKategoria/losowaKategoria.png",
+    randomCategoryId: "random_category_id"
 };

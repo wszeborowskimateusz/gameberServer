@@ -35,7 +35,8 @@ router.post('/add-to-friends/:userId', async function(req, res) {
             findById(USER_ID).
             populate('picked_avatar_id');
 
-        const newNotificationId = await functions.addNotificationAsync(enums.NotificationType.FRIEND_REQUEST, requestSender.picked_avatar_id.avatar_img, requestSender.login, userId, requestSender._id, session);
+        const newNotificationId = await functions.addNotificationAsync(enums.NotificationType.FRIEND_REQUEST,
+             requestSender.picked_avatar_id.avatar_img, requestSender.login, userId, requestSender._id, null, session);
         
         const newFriendship = new db.Friendship({user_from_id: USER_ID, user_to_id: userId, notification_id: newNotificationId});
         await newFriendship.save();
