@@ -192,7 +192,7 @@ const Achievement_Category = mongoose.model("Achievement_Category", achievement_
 const clashesSchema = mongoose.Schema({
     user_from_id: { type: Schema.Types.ObjectId, ref: 'User' },
     user_to_id: { type: Schema.Types.ObjectId, ref: 'User' },
-    date_of_beginning: { type : Date, default: Date.now },
+    date_of_request: { type : Date, default: Date.now },
     date_of_accepting: Date,
     user_from_percentage: Number,
     user_to_percentage: Number,

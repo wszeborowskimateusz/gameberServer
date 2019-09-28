@@ -9,7 +9,8 @@ module.exports.NotificationType = Object.freeze({
     CLASH_REQUEST: 'clash_request',
     CLASH_WON: 'clash_won',
     CLASH_LOST: 'clash_lost',
-    CLASH_DRAW: 'clash_draw'
+    CLASH_DRAW: 'clash_draw',
+    CLASH_ACCEPTED: 'clash_accepted'
 });
 
 module.exports.NotificationImage = Object.freeze({
