@@ -95,11 +95,12 @@ module.exports.giveCoinsToUserAsync = async function (coins, userId, session){
 //#endregion
 
 //#region notifications
-module.exports.addNotificationAsync = async function (type, notificationImg, name, userId, userFromId, session){
+module.exports.addNotificationAsync = async function (type, notificationImg, name, userId, userFromId, data, session){
     const newNotification = new db.Notifications({
         type: type,
         notification_img: notificationImg,
         name: name,
+        data: JSON.stringify(data),
         user_from_id: userFromId,
         user_id: userId
     })
@@ -134,6 +135,6 @@ module.exports.giveAchievementToUserAsync = async function (achievementId, userI
 
     const achievement = db.Achievements.findById(achievementId);
     await this.addNotificationAsync(enums.NotificationType.NEW_ACHIEVEMENT, achievement.achievement_img,
-         achievement.achievement_name, userId, null, session);
+         achievement.achievement_name, userId, null, null, session);
 }
 //#endregion

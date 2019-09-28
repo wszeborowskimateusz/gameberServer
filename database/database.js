@@ -11,6 +11,7 @@ const notificationsSchema = mongoose.Schema({
     notification_img: String,
     date_of_receiving: { type : Date, default: Date.now },
     name: String,
+    data: String,
     user_from_id: { type: Schema.Types.ObjectId, ref: 'User' },
     is_read: { type : Boolean, default: false },
     is_deleted: { type : Boolean, default: false },
@@ -188,6 +189,17 @@ const achievement_CategorySchema = mongoose.Schema({
 });
 const Achievement_Category = mongoose.model("Achievement_Category", achievement_CategorySchema);
 
+const clashesSchema = mongoose.Schema({
+    user_from_id: { type: Schema.Types.ObjectId, ref: 'User' },
+    user_to_id: { type: Schema.Types.ObjectId, ref: 'User' },
+    date_of_beginning: { type : Date, default: Date.now },
+    date_of_accepting: Date,
+    user_from_percentage: Number,
+    user_to_percentage: Number,
+    category_id: { type: Schema.Types.ObjectId, ref: 'Categories' },
+});
+const Clashes = mongoose.model("Clashes", clashesSchema);
+
 
 module.exports = {
     User: User,
@@ -210,5 +222,6 @@ module.exports = {
     User_Game: User_Game,
     User_Category: User_Category,
     Achievement_Category: Achievement_Category,
-    Notifications: Notifications
+    Notifications: Notifications,
+    Clashes: Clashes
 };

@@ -13,5 +13,9 @@ module.exports = {
     expirationTimeJWT: 900, // seconds
     
     defaultAvatarName: "Podstawowy",
-    defaultBackgroundName: "Podstawowy"
+    defaultBackgroundName: "Podstawowy",
+
+    randomCategoryName: "Losowa kategoria",
+    randomCategoryImage: "categories/losowaKategoria/losowaKategoria.png",
+    randomCategoryId: "random_category_id"
 };

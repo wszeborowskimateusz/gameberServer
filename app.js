@@ -18,6 +18,7 @@ const gamesRouter = require('./routes/games');
 const notificationsRouter = require('./routes/notifications');
 const messagesRouter = require('./routes/messages');
 const friendsRouter = require('./routes/friends');
+const multiplayerRouter = require('./routes/multiplayer');
 
 const app = express();
 
@@ -76,7 +77,7 @@ app.use('/games', gamesRouter);
 app.use('/notifications', notificationsRouter);
 app.use('/messages', messagesRouter);
 app.use('/friends', friendsRouter);
-//app.use('/images', imagesRouter);
+app.use('/multiplayer', multiplayerRouter)
 
 // Global error handler
 app.use((err, req, res, next) => {
