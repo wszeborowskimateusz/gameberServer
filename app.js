@@ -61,7 +61,8 @@ app.use(function(req, res, next){
         console.log("Zautentykowany " + Date.now());
 
         const refreshedJwtToken = jwt.sign({ login: decoded.login, user_id: decoded.user_id }, cfg.jwtSecret, { expiresIn: cfg.expirationTimeJWT });
-        res.set('refreshedJwtToken', refreshedJwtToken);
+        res.set('Refreshed-Jwt-Token', refreshedJwtToken);
+        res.set('Access-Control-Expose-Headers', 'Refreshed-Jwt-Token');
         next()
       } catch (err) {
         console.log(err.message);
