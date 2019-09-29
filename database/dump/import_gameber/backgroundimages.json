@@ -1,0 +1,137 @@
+[{
+	"_id": {
+		"$oid": "5d2a26a1d7d40557b42ab26f"
+	},
+	"image_name": "Podstawowy",
+	"image_img": "backgroundImages/default_background.jpg",
+	"price": 0
+},
+{
+	"_id": {
+		"$oid": "5d87b0d937ef00099c80fd76"
+	},
+	"image_name": "Kojąca rzeka",
+	"image_img": "backgroundImages/river.jpg",
+	"price": 35
+},
+{
+	"_id": {
+		"$oid": "5d87b0e02a84c87522b4aded"
+	},
+	"image_name": "Turkusowe jezioro",
+	"image_img": "backgroundImages/lake.jpg",
+	"price": 40
+},
+{
+	"_id": {
+		"$oid": "5d87b0e3046a94401b3c6fa9"
+	},
+	"image_name": "Zielona łąka",
+	"image_img": "backgroundImages/meadow.jpg",
+	"price": 35
+},
+{
+	"_id": {
+		"$oid": "5d87b0e62fea33874fb9c1c1"
+	},
+	"image_name": "Biały wodospad",
+	"image_img": "backgroundImages/waterfall.jpg",
+	"price": 50
+},
+{
+	"_id": {
+		"$oid": "5d87b0e90374aec2044d9ada"
+	},
+	"image_name": "Tajemniczy las",
+	"image_img": "backgroundImages/forest.jpg",
+	"price": 25
+},
+{
+	"_id": {
+		"$oid": "5d87b0ec0986cd44084c641d"
+	},
+	"image_name": "Ekspres do Hogwartu",
+	"image_img": "backgroundImages/train.jpg",
+	"price": 75
+},
+{
+	"_id": {
+		"$oid": "5d87b0ef8e580723ab4b7677"
+	},
+	"image_name": "Sama słodycz",
+	"image_img": "backgroundImages/sweets.jpg",
+	"price": 60
+},
+{
+	"_id": {
+		"$oid": "5d87b0f59b6253f42d67f034"
+	},
+	"image_name": "Spokojna plaża",
+	"image_img": "backgroundImages/beach.jpg",
+	"price": 55
+},
+{
+	"_id": {
+		"$oid": "5d87b0f9e6d2dd9aecc3f492"
+	},
+	"image_name": "New york",
+	"image_img": "backgroundImages/new_york.jpg",
+	"price": 70
+},
+{
+	"_id": {
+		"$oid": "5d87b0fe07dfb889db0b5a3e"
+	},
+	"image_name": "Balonowa zabawa",
+	"image_img": "backgroundImages/baloons.jpg",
+	"price": 30
+},
+{
+	"_id": {
+		"$oid": "5d87b1020546045a87d99b1e"
+	},
+	"image_name": "Ceglane akwarium",
+	"image_img": "backgroundImages/aquarium.jpg",
+	"price": 20
+},
+{
+	"_id": {
+		"$oid": "5d87b104b531c20d12cdd88d"
+	},
+	"image_name": "Lot balonem",
+	"image_img": "backgroundImages/baloon_flight.jpg",
+	"price": 15
+},
+{
+	"_id": {
+		"$oid": "5d87b108e2f908648b0d708b"
+	},
+	"image_name": "Lot nad miastem",
+	"image_img": "backgroundImages/heli.jpg",
+	"price": 55
+},
+{
+	"_id": {
+		"$oid": "5d87b10bdcdeb85656adf170"
+	},
+	"image_name": "Chińskie miasto",
+	"image_img": "backgroundImages/china.jpg",
+	"price": 150
+},
+{
+	"_id": {
+		"$oid": "5d87b10e4f39c98732a96d15"
+	},
+	"image_name": "Wznoszący ptak",
+	"image_img": "backgroundImages/airplane.jpg",
+	"price": 350
+},
+{
+	"_id": {
+		"$oid": "5d87b1125ed839287cae1e6a"
+	},
+	"image_name": "Czuwający pomnik",
+	"image_img": "backgroundImages/monument.jpg",
+	"price": 65
+}]
+
