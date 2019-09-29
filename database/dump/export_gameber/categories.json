@@ -126,5 +126,32 @@
 	"percentage_pass_treshold": 70,
 	"prize_coins": 10,
 	"prize_points": 10
-}]
+},
+{
+	"_id": {
+		"$oid": "5d8fa2fa4bc90fe5b08257be"
+	},
+	"category_name": "Palcem po mapie",
+	"category_img": "categories/palcemPoMapie/background.jpg",
+	"category_icon": "categories/palcemPoMapie/icon.png",
+	"category_type": "B",
+	"category_order": 2,
+	"percentage_pass_treshold": 70,
+	"prize_coins": 10,
+	"prize_points": 10
+},
+{
+	"_id": {
+		"$oid": "5d8fa70efbde270eca3b27d6"
+	},
+	"category_name": "Przydatne w podróży",
+	"category_img": "categories/journey/background.jpg",
+	"category_icon": "categories/journey/icon.png",
+	"category_type": "B",
+	"category_order": 3,
+	"percentage_pass_treshold": 70,
+	"prize_coins": 10,
+	"prize_points": 10
+}
+]
 
