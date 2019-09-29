@@ -103,6 +103,8 @@ router.post('/signin', async function(req, res){
         throw error;
       }
 
+      r.isFirstLoginAttempt = user.date_of_last_login.toISOString() == new Date("0-1-1").toISOString();
+
       const todayDate = new Date();
       todayDate.setHours(0,0,0,0);
 
