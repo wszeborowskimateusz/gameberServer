@@ -16,6 +16,6 @@ module.exports = {
     defaultBackgroundName: "Podstawowy",
 
     randomCategoryName: "Losowa kategoria",
-    randomCategoryImage: "categories/losowaKategoria/losowaKategoria.png",
+    randomCategoryImage: "categories/losowaKategoria/losowaKategoria.jpg",
     randomCategoryId: "random_category_id"
 };
