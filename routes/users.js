@@ -159,4 +159,25 @@ router.get('/status', async function(req, res) {
     } 
 });
 
+router.get('/new-notifications', async function(req, res) {    
+    const r = {};
+
+    try{
+        r.clashesNotFinishedByUsNumber = await db.Clashes.
+            countDocuments({$or: [
+                    {user_from_id: USER_ID, user_from_percentage: null},
+                    {user_to_id: USER_ID, user_to_percentage: null}],
+                date_of_accepting: {$ne: null}});
+
+        r.unreadNotificationsNumber = await db.Notifications.
+            countDocuments({user_id: USER_ID, is_read: false}).
+            sort('-date_of_receiving');
+
+        return res.json(r);
+    }catch(err){
+        console.log(err);
+        return res.status(404).send();
+    } 
+});
+
 module.exports = router;
