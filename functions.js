@@ -122,19 +122,25 @@ module.exports.removeNotificationAsync = async function (notificationId, session
 //#endregion
 
 //#region achievements
-module.exports.giveAchievementToUserAsync = async function (achievementId, userId, session){
+module.exports.giveAchievementToUserAsync = async function (achievementId, achievementSymbol, userId, session){
+    const achievement = achievementSymbol == null ? 
+        db.Achievements.findById(achievementId) :
+        db.Achievements.findOne({achievement_symbol: achievementSymbol});
+    
     const existingAchievement = await db.User_Achievement.
-        findOne({user_id: userId, achievement_id: achievementId});
+        findOne({user_id: userId, achievement_id: achievement._id});
     if (session == null || existingAchievement) 
         throw Error;
+
+    await this.addNotificationAsync(enums.NotificationType.NEW_ACHIEVEMENT, achievement.achievement_img,
+         achievement.achievement_name, userId, null, null, session);
+
     const newAchievement = new db.User_Achievement({
         user_id: userId,
-        achievement_id: achievementId
+        achievement_id: achievement._id
     });
     await newAchievement.save({ session });
 
-    const achievement = db.Achievements.findById(achievementId);
-    await this.addNotificationAsync(enums.NotificationType.NEW_ACHIEVEMENT, achievement.achievement_img,
-         achievement.achievement_name, userId, null, null, session);
+    return achievement;
 }
 //#endregion

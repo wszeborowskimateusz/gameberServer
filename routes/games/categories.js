@@ -115,7 +115,7 @@ router.post('/finish', async function(req, res) {
                 populate('achievement_id');
             
             for (const ac of achievements4Category){
-                await functions.giveAchievementToUserAsync(ac._id, USER_ID, session);
+                await functions.giveAchievementToUserAsync(ac._id, null, USER_ID, session);
                 r.achievements.push({
                     src: cfg.imagesUrl + ac.achievement_id.achievement_img,
                     name: ac.achievement_id.achievement_name
@@ -125,6 +125,7 @@ router.post('/finish', async function(req, res) {
             if (user.beginners_test_status == enums.BeginnersTestStatus.TEST_STARTED){
                 user.beginners_test_status = enums.BeginnersTestStatus.MAP;
                 await user.save({ session });
+                await functions.giveAchievementToUserAsync(null, enums.AchievementsSymbol.FIRST_STEP, USER_ID, session);
             }
             else if (user.beginners_test_status == enums.BeginnersTestStatus.BEGINNER){
                 const beginnerCategories = await db.Categories.
@@ -144,6 +145,7 @@ router.post('/finish', async function(req, res) {
                 if (passedBeginnerCategories >= beginnerCategories){
                     user.beginners_test_status = enums.BeginnersTestStatus.MAP
                     await user.save({ session });
+                    await functions.giveAchievementToUserAsync(null, enums.AchievementsSymbol.FIRST_STEP, USER_ID, session);
                 }
             }
 

@@ -135,6 +135,7 @@ const User_Image = mongoose.model("User_Image", user_ImageSchema);
 
 const achievementsSchema = mongoose.Schema({
     achievement_name: String,
+    achievement_symbol: String,
     achievement_img: String,
     achievement_description: String,
 });

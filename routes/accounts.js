@@ -155,16 +155,8 @@ router.post('/signin', async function(req, res){
 });
 
 async function achievementForLoginStreak(loginStreak, session){
-  const newAchievementName = enums.Achievements['LOGIN_STREAK_' + loginStreak];
-  const newAchievement = await db.Achievements.findOne({achievement_name: newAchievementName});
-  if (!newAchievement)
-    return null;
-
-  const alreadyHas = await db.User_Achievement.findOne({user_id: USER_ID, achievement_id: newAchievement._id});
-  if (alreadyHas)
-    return null;
-
-  await functions.giveAchievementToUserAsync(newAchievement._id, USER_ID, session);
+  const newAchievementSymbol = enums.AchievementsSymbol['LOGIN_STREAK_' + loginStreak];
+  const newAchievement = await functions.giveAchievementToUserAsync(null, newAchievementSymbol, USER_ID, session);
   return  {name: newAchievement.achievement_name,
            src: cfg.imagesUrl + newAchievement.achievement_img}
 }

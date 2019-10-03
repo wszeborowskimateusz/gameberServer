@@ -45,11 +45,12 @@ module.exports.ExperienceSubject = Object.freeze({
 //#endregion
 
 //#region achievements
-module.exports.Achievements = Object.freeze({
-    LOGIN_STREAK_5: '5 dni z rzędu',
-    LOGIN_STREAK_10: '10 dni z rzędu',
-    LOGIN_STREAK_15: '15 dni z rzędu',
-    LOGIN_STREAK_20: '20 dni z rzędu',
+module.exports.AchievementsSymbol = Object.freeze({
+    LOGIN_STREAK_5: 'login5',
+    LOGIN_STREAK_10: 'login10',
+    LOGIN_STREAK_15: 'login15',
+    LOGIN_STREAK_20: 'login20',
+    FIRST_STEP: 'first_step',
 });
 //#endregion
 
