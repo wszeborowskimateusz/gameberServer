@@ -161,7 +161,41 @@
 	"category_img": "categories/gry/background.jpg",
 	"category_icon": "categories/gry/icon.png",
 	"category_type": "C",
-	"category_order": 0,
+	"percentage_pass_treshold": 70,
+	"prize_coins": 30,
+	"prize_points": 25
+},
+{
+	"_id": {
+		"$oid": "5d98689db8dbbedbc13da163"
+	},
+	"category_name": "Zwierzęta",
+	"category_img": "categories/zwierzeta/background.jpg",
+	"category_icon": "categories/zwierzeta/icon.png",
+	"category_type": "C",
+	"percentage_pass_treshold": 70,
+	"prize_coins": 30,
+	"prize_points": 25
+},
+{
+	"_id": {
+		"$oid": "5d986c034a45d0ca80938997"
+	},
+	"category_name": "Emocje",
+	"category_img": "categories/emocje/background.jpg",
+	"category_icon": "categories/emocje/icon.png",
+	"category_type": "C",
+	"percentage_pass_treshold": 70,
+	"prize_coins": 30,
+	"prize_points": 25
+},
+{
+	"_id": {
+		"$oid": "5d986fdfb3cf5f30e6ce5dcf"
+	},
+	"category_name": "Przydatne zwroty",
+	"category_img": "categories/przydatneZwroty/background.jpg",
+	"category_icon": "categories/przydatneZwroty/icon.png",
 	"percentage_pass_treshold": 70,
 	"prize_coins": 30,
 	"prize_points": 25
