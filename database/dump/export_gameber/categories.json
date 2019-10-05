@@ -152,6 +152,19 @@
 	"percentage_pass_treshold": 70,
 	"prize_coins": 10,
 	"prize_points": 10
+},
+{
+	"_id": {
+		"$oid": "5d98566e22a8dc81c7468c69"
+	},
+	"category_name": "Gry",
+	"category_img": "categories/gry/background.jpg",
+	"category_icon": "categories/gry/icon.png",
+	"category_type": "C",
+	"category_order": 0,
+	"percentage_pass_treshold": 70,
+	"prize_coins": 30,
+	"prize_points": 25
 }
 ]
 

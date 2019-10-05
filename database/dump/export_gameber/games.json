@@ -1114,5 +1114,77 @@
     "category_id": {
       "$oid": "5d8fa70efbde270eca3b27d6"
     }
+  },
+  {
+    "_id": {
+      "$oid": "5d98580d6cd1ab3b2379b438"
+    },
+    "game_name": "WordMatching",
+    "game_info": "{\"isPhrase\":false,\"polishName\":\"Gra\",\"answers\":[{\"img\":\"games\/gry\/win.jpg\",\"name\":\"Win\"},{\"img\":\"games\/gry\/pad.jpg\",\"name\":\"Pad\"},{\"img\":\"games\/gry\/game.jpg\",\"name\":\"Game\"},{\"img\":\"games\/gry\/player.jpg\",\"name\":\"Player\"}]}",
+    "correct_answer": "\"game\"",
+	  "game_order": 0,
+    "category_id": {
+      "$oid": "5d98566e22a8dc81c7468c69"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5d98592d5446714a24b42986"
+    },
+    "game_name": "WordPicker",
+    "game_info": "{\"img\":\"games\/gry\/play.jpg\",\"answers\":[\"Cat\",\"Train\",\"Work\",\"Play\"]}",
+    "correct_answer": "3",
+	  "game_order": 1,
+    "category_id": {
+      "$oid": "5d98566e22a8dc81c7468c69"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5d9859ce19d43231cdf2df14"
+    },
+    "game_name": "WordGuessing",
+    "game_info": "{\"img\":\"games\/gry\/win2.jpg\"}",
+	  "correct_answer": "\"win\"",
+	  "game_order": 2,
+    "category_id": {
+      "$oid": "5d98566e22a8dc81c7468c69"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5d985a8c4c4de7c6ccf4dfa7"
+    },
+    "game_name": "WordPicker",
+    "game_info": "{\"img\":\"games\/gry\/lose.jpg\",\"answers\":[\"Win\",\"Lose\",\"Job\",\"Holiday\"]}",
+    "correct_answer": "1",
+	  "game_order": 3,
+    "category_id": {
+      "$oid": "5d98566e22a8dc81c7468c69"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5d985a90115fe2cfdd101a84"
+    },
+    "game_name": "WordMatching",
+    "game_info": "{\"isPhrase\":true,\"polishName\":\"Grać w grę\",\"answers\":[{\"img\":\"games\/gry\/play_a_game.jpg\",\"name\":\"Play a game\"},{\"img\":\"games\/gry\/win_a_match.jpg\",\"name\":\"Win a match\"},{\"img\":\"games\/gry\/go_home.jpg\",\"name\":\"Go home\"},{\"img\":\"games\/gry\/see_you_later.jpg\",\"name\":\"See you later\"}]}",
+    "correct_answer": "\"play a game\"",
+	  "game_order": 4,
+    "category_id": {
+      "$oid": "5d98566e22a8dc81c7468c69"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5d985b769b176d234d7a0445"
+    },
+    "game_name": "PhraseLearning",
+    "game_info": "{\"question\":\"Are you good at this game\",\"words\":[\"with\",\"win\",\"I\",\"everyone\"]}",
+	"correct_answer": "[\"I\",\"win\",\"with\",\"everyone\"]",
+	"game_order": 6,
+    "category_id": {
+      "$oid": "5d98566e22a8dc81c7468c69"
+    }
   }
 ]
