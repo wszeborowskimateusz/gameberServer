@@ -4,7 +4,7 @@ const express = require('express');
 module.exports.NotificationType = Object.freeze({
     FRIEND_REQUEST: 'friendship_request',
     NEW_MESSAGE: 'message_received',
-    NEW_ACHIEVEMENT: 'achievement_received',
+    NEW_ACHIEVEMENT: 'achievement_receive',
     FRIEND_REQUEST_ACCEPTED: 'friendship_accepted',
     CLASH_REQUEST: 'clash_request',
     CLASH_WON: 'clash_won',

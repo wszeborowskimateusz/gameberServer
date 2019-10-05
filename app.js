@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.disable('etag'); // disables 304 response
+//app.disable('etag'); // disables 304 response
 
 
 USER_ID = 0;
@@ -37,7 +37,18 @@ DB_CONNECTION = null;
 // Db connection
 app.use(async function(req, res, next){
     try {
-      DB_CONNECTION = await mongoose.connect(cfg.dbConnectionString, { useNewUrlParser: true, useUnifiedTopology: true });
+      if (mongoose.connection == null || mongoose.connection.readyState != 1)
+        DB_CONNECTION = await mongoose.connect(cfg.dbConnectionString, {
+          useNewUrlParser: true,
+          useUnifiedTopology: true,
+          poolSize: 30
+        });
+      else
+        DB_CONNECTION = mongoose;
+      
+
+      if (DB_CONNECTION.connection.readyState != 1) // 1 = connected
+        throw Error;
       Object.freeze(DB_CONNECTION);
       next()
     } catch (err) {
