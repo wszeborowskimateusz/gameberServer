@@ -196,9 +196,66 @@
 	"category_name": "Przydatne zwroty",
 	"category_img": "categories/przydatneZwroty/background.jpg",
 	"category_icon": "categories/przydatneZwroty/icon.png",
+	"category_type": "C",
 	"percentage_pass_treshold": 70,
 	"prize_coins": 30,
 	"prize_points": 25
+},
+{
+	"_id": {
+		"$oid": "5d989432cb7334b42d83df9c"
+	},
+	"category_name": "Boże narodzenie",
+	"category_img": "categories/bozeNarodzenie/background.jpg",
+	"category_icon": "categories/bozeNarodzenie/icon.png",
+	"category_type": "S",
+	"percentage_pass_treshold": 70,
+	"prize_coins": 30,
+	"prize_points": 25,
+	"date_from":"24.12",
+	"date_to": "31.12"
+},
+{
+	"_id": {
+		"$oid": "5d98a145c8ffddb877a4e050"
+	},
+	"category_name": "Wielkanoc",
+	"category_img": "categories/wielkanoc/background.jpg",
+	"category_icon": "categories/wielkanoc/icon.png",
+	"category_type": "S",
+	"percentage_pass_treshold": 70,
+	"prize_coins": 30,
+	"prize_points": 25,
+	"date_from":"22.04",
+	"date_to": "25.04"
+},
+{
+	"_id": {
+		"$oid": "5d98a505b414613215c5cce0"
+	},
+	"category_name": "Halloween",
+	"category_img": "categories/halloween/background.jpg",
+	"category_icon": "categories/halloween/icon.png",
+	"category_type": "S",
+	"percentage_pass_treshold": 70,
+	"prize_coins": 30,
+	"prize_points": 25,
+	"date_from":"31.10",
+	"date_to": "31.10"
+},
+{
+	"_id": {
+		"$oid": "5d98a8fbeea839c3faee35ed"
+	},
+	"category_name": "Dzień kobiet",
+	"category_img": "categories/dzienKobiet/background.jpg",
+	"category_icon": "categories/dzienKobiet/icon.png",
+	"category_type": "S",
+	"percentage_pass_treshold": 70,
+	"prize_coins": 30,
+	"prize_points": 25,
+	"date_from":"08.04",
+	"date_to": "08.04"
 }
 ]
 
