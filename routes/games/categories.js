@@ -96,7 +96,7 @@ router.post('/finish', async function(req, res) {
 
         const gamesInCategory = await db.Games.
             find({category_id: categoryId}).
-            count();
+            countDocuments();
         
         const user = await db.User.
             findById(USER_ID).

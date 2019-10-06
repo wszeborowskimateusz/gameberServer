@@ -24,13 +24,13 @@ router.post('/signup', async function(req, res){
     try{
       await session.startTransaction();
 
-      const userLogins = await db.User.count({login: userData.login});
+      const userLogins = await db.User.countDocuments({login: userData.login});
       if (userLogins != 0) {
         errorMessage = "Login exists";
         throw Error;
       }
 
-      const userMails = await db.User.count({mail: userData.mail});
+      const userMails = await db.User.countDocuments({mail: userData.mail});
       if (userMails != 0) {
         errorMessage = "Mail exists";
         throw Error;
@@ -156,6 +156,9 @@ router.post('/signin', async function(req, res){
 
 async function achievementForLoginStreak(loginStreak, session){
   const newAchievementSymbol = enums.AchievementsSymbol['LOGIN_STREAK_' + loginStreak];
+  if (!newAchievementSymbol)
+    return null
+
   const newAchievement = await functions.giveAchievementToUserAsync(null, newAchievementSymbol, USER_ID, session);
   return  {name: newAchievement.achievement_name,
            src: cfg.imagesUrl + newAchievement.achievement_img}
