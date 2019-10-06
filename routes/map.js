@@ -106,7 +106,23 @@ router.post('/getCategories', async function(req, res)
 
     try
     {
+        // get catgories
         response.categories = await db.Categories.find({country_id: {$in: req.body.countriesIds}});
+
+        // get category completition info
+        let completedCategories = await db.User_Category.find({user_id: USER_ID});
+
+        response.categories.forEach(c => {
+            if (completedCategories.some(e => JSON.stringify(e.category_id) === JSON.stringify(c._id)))
+            {
+                c._doc["is_completed"] = true;
+            }
+            else
+            {
+                c._doc["is_completed"] = false;
+            }
+        });
+        
         return res.json(response);
     }
     catch(err)

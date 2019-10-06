@@ -7,6 +7,21 @@ const router = express.Router();
 const mongoose = require('mongoose');
 
 router.get('/:categoryId', async function(req, res) {
+    var catId = req.params.categoryId;
+    // check if user has access to this category
+    // get country to which category is assigned
+    const category = await db.Categories.findById(catId);
+    if (category.category_type == "N")
+    {
+        // check if user has country available
+        if (0 == await db.AvailableCountries
+            .find({user_id: USER_ID, country_id: category.country_id})
+            .count())
+        {
+            res.status(401).send();
+        }
+    }
+
     var r = {
         games: [],
         categoryBackgroundImage: "",
@@ -14,7 +29,6 @@ router.get('/:categoryId', async function(req, res) {
         categoryCountryIcon: "",
         categoryIcon: ""
     };
-    var catId = req.params.categoryId;
 
     try{
         var games = await db.Games.
