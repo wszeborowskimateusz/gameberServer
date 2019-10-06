@@ -109,7 +109,7 @@ router.post('/accept-request', async function(req,res){
     try{
         await session.startTransaction();
 
-        const clash = await db.
+        const clash = await db.Clashes
             findById(clashId).
             populate('user_to_id');
         clash.date_of_accepting = new Date();
