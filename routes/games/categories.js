@@ -78,10 +78,12 @@ router.post('/finish', async function(req, res) {
         
         const percentagePassTreshold = category.percentage_pass_treshold == null ? 100 : category.percentage_pass_treshold;
 
-        const isCategoryPassed = await db.User_Category.
-            findOne({user_id: USER_ID, category_id: categoryId});
-        if (isCategoryPassed)
-            throw Error;
+        if (category.category_type != enums.CategoryType.CLASH){
+            const isCategoryPassed = await db.User_Category.
+                findOne({user_id: USER_ID, category_id: categoryId});
+            if (isCategoryPassed)
+                throw Error;
+        }
 
         const passedGames = await (await db.User_Game.
             find({user_id: USER_ID}).
@@ -96,11 +98,53 @@ router.post('/finish', async function(req, res) {
             find({category_id: categoryId}).
             count();
         
-        const user = await db.User.findById(USER_ID);
+        const user = await db.User.
+            findById(USER_ID).
+            populate('picked_avatar_id');
         
         const percentageResult = (passedGames/gamesInCategory)*100;
         r.percentage = percentageResult;
-        if (percentageResult >= percentagePassTreshold){
+
+        if (category.category_type == enums.CategoryType.CLASH){
+            const clashId = req.body.clashId;
+            let areWeTheWinner, isOpponentTheWinner, didOpponentFinished;
+
+            const clash = await db.Clashes.findOne({_id: clashId,
+                $or: [{user_from_percentage: null, user_from_id: USER_ID},
+                      {user_to_percentage: null, user_to_id: USER_ID}] });
+            if (!clash)
+                throw Error;
+            
+            const areWeUserFrom = clash.user_from_id == USER_ID;
+            if (areWeUserFrom){
+                clash.user_from_percentage = percentageResult;
+                didOpponentFinished = clash.user_to_percentage != null;
+                if (didOpponentFinished){
+                    areWeTheWinner = percentageResult > clash.user_to_percentage;
+                    isOpponentTheWinner = percentageResult < clash.user_to_percentage;
+                }
+            } else{
+                clash.user_to_percentage = percentageResult;
+                didOpponentFinished = clash.user_from_percentage != null;
+                if (didOpponentFinished)
+                    areWeTheWinner = percentageResult > clash.user_from_percentage;
+                    isOpponentTheWinner = percentageResult < clash.user_from_percentage;
+            }
+            await clash.save({ session });
+            
+            const opponent = await db.User.
+                findById(areWeUserFrom ? clash.user_to_id : clash.user_from_id).
+                populate('picked_avatar_id');
+            if (didOpponentFinished){
+                if (areWeTheWinner)
+                    await givePrizeForClash(user, opponent, category, false, session);
+                else if (isOpponentTheWinner)
+                    await givePrizeForClash(opponent, user, category, false, session);
+                else 
+                    await givePrizeForClash(user, opponent, category, true, session);
+            }
+        }
+        else if (percentageResult >= percentagePassTreshold){
             const newPassedCategory = new db.User_Category({
                 user_id: USER_ID,
                 category_id: categoryId
@@ -176,5 +220,22 @@ router.post('/finish', async function(req, res) {
     }
 });
 
+// Functions
+
+async function givePrizeForClash(winner, loser, category, isDraw, session){ // if isDraw then winner and loser are the same
+    const prize = isDraw ? {coinsPrize: category.prize_coins / 2, pointsPrize: category.prize_points / 2} :
+                           {coinsPrize: category.prize_coins, pointsPrize: category.prize_points}
+
+    await functions.giveCoinsToUserAsync(prize.coinsPrize, winner._id, session);
+    await functions.giveExperienceToUserAsync(prize.pointsPrize, enums.ExperienceSubject.CLASH, winner._id, session);
+    if (isDraw){
+        await functions.giveCoinsToUserAsync(prize.coinsPrize, loser._id, session);
+        await functions.giveExperienceToUserAsync(prize.pointsPrize, enums.ExperienceSubject.CLASH, loser._id, session);
+    }
+    await functions.addNotificationAsync(isDraw ? enums.NotificationType.CLASH_DRAW : enums.NotificationType.CLASH_WON, loser.picked_avatar_id.avatar_img,
+        loser.login, winner._id, loser._id, prize, session);
+    await functions.addNotificationAsync(isDraw ? enums.NotificationType.CLASH_DRAW : enums.NotificationType.CLASH_LOST, winner.picked_avatar_id.avatar_img,
+        winner.login, loser._id, winner._id, isDraw ? prize : {coinsPrize: 0, pointsPrize: 0}, session);
+}
 
 module.exports = router;

@@ -40,7 +40,8 @@ module.exports.CategoryType = Object.freeze({
 
 //#region experience
 module.exports.ExperienceSubject = Object.freeze({
-    LOGIN_STREAK: 'Login Streak'
+    LOGIN_STREAK: 'Login Streak',
+    CLASH: 'Clash'
 });
 //#endregion
 

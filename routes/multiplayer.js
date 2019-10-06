@@ -62,6 +62,14 @@ router.post('/challenge', async function(req,res){
     try{
         await session.startTransaction();
 
+        const alreadyChallenged = await db.Clashes.findOne({
+            $or: [{user_from_id: USER_ID, user_to_id: userId},
+                  {user_from_id: userId, user_to_id: USER_ID}],
+            $or: [{user_from_percentage: null},
+                  {user_to_percentage: null}]});
+        if (alreadyChallenged)
+            throw Error;
+
         const pickedCategoryId = await getCategoryId(categoryId);
         if (pickedCategoryId == null)
             throw Error;
