@@ -7,6 +7,21 @@ const router = express.Router();
 const mongoose = require('mongoose');
 
 router.get('/:categoryId', async function(req, res) {
+    var catId = req.params.categoryId;
+    // check if user has access to this category
+    // get country to which category is assigned
+    const category = await db.Categories.findById(catId);
+    if (category.category_type == "N")
+    {
+        // check if user has country available
+        if (0 == await db.AvailableCountries
+            .find({user_id: USER_ID, country_id: category.country_id})
+            .count())
+        {
+            res.status(401).send();
+        }
+    }
+
     var r = {
         games: [],
         categoryBackgroundImage: "",
@@ -14,18 +29,20 @@ router.get('/:categoryId', async function(req, res) {
         categoryCountryIcon: "",
         categoryIcon: ""
     };
-    var catId = req.params.categoryId;
 
     try{
         var games = await db.Games.
-        find({category_id: catId}).
-        populate({
-            path: 'category_id',
-            populate: {path: 'country_id'}
-        }).
-        sort('game_order');
+            find({category_id: catId}).
+            populate({
+                path: 'category_id',
+                populate: {path: 'country_id'}
+            }).
+            sort('game_order');
+        
+        if (!games.length)
+            throw Error;
 
-        let currentGameIndex = 0;
+        let currentGameIndex = games.length - 1;
         for (let i = 0; i < games.length; ++i){
             let game = games[i];
             if (!(await db.User_Game.findOne({game_id: game._id, user_id: USER_ID}))){
@@ -34,9 +51,6 @@ router.get('/:categoryId', async function(req, res) {
             }
         }
         
-        if (!games.length)
-            throw Error;
-        
         await games.forEach(game => {
             r.games.push({
                 name: game.game_name,
@@ -44,16 +58,17 @@ router.get('/:categoryId', async function(req, res) {
                 gameInfo: game.game_info
             })
         });
-
+        
         r.categoryBackgroundImage = cfg.imagesUrl + games[0].category_id.category_img;
-        r.categoryCountryIcon = cfg.imagesUrl +  games[0].category_id.country_id.country_icon;
         r.categoryIcon = cfg.imagesUrl +  games[0].category_id.category_icon;
         r.categoryName = games[0].category_id.category_name;
         r.currentGameIndex = currentGameIndex;
         r.isTestCategory = games[0].category_id.category_type == enums.CategoryType.BEGINNER_TEST;
 
-        res.json(r);
+        r.categoryCountryIcon = games[0].category_id.country_id != null ? 
+            cfg.imagesUrl + games[0].category_id.country_id.country_icon : r.categoryIcon;
 
+        res.json(r);
     }catch(err){
         console.log(err);
         res.status(404).send();
@@ -88,7 +103,7 @@ router.post('/finish', async function(req, res) {
                 path: 'game_id',
                 match: {category_id: {$eq: categoryId}}
             })).
-            filter(x => x.game_id.category_id != null).
+            filter(x => x.game_id != null).
             length;
 
         const gamesInCategory = await db.Games.
@@ -96,8 +111,10 @@ router.post('/finish', async function(req, res) {
             count();
         
         const user = await db.User.findById(USER_ID);
-
-        if ((passedGames/gamesInCategory)*100 >= percentagePassTreshold){
+        
+        const percentageResult = (passedGames/gamesInCategory)*100;
+        r.percentage = percentageResult;
+        if (percentageResult >= percentagePassTreshold){
             const newPassedCategory = new db.User_Category({
                 user_id: USER_ID,
                 category_id: categoryId
@@ -112,7 +129,7 @@ router.post('/finish', async function(req, res) {
                 populate('achievement_id');
             
             for (const ac of achievements4Category){
-                await functions.giveAchievementToUserAsync(ac._id, USER_ID, session);
+                await functions.giveAchievementToUserAsync(ac._id, null, USER_ID, session);
                 r.achievements.push({
                     src: cfg.imagesUrl + ac.achievement_id.achievement_img,
                     name: ac.achievement_id.achievement_name
@@ -122,6 +139,7 @@ router.post('/finish', async function(req, res) {
             if (user.beginners_test_status == enums.BeginnersTestStatus.TEST_STARTED){
                 user.beginners_test_status = enums.BeginnersTestStatus.MAP;
                 await user.save({ session });
+                await functions.giveAchievementToUserAsync(null, enums.AchievementsSymbol.FIRST_STEP, USER_ID, session);
             }
             else if (user.beginners_test_status == enums.BeginnersTestStatus.BEGINNER){
                 const beginnerCategories = await db.Categories.
@@ -141,6 +159,7 @@ router.post('/finish', async function(req, res) {
                 if (passedBeginnerCategories >= beginnerCategories){
                     user.beginners_test_status = enums.BeginnersTestStatus.MAP
                     await user.save({ session });
+                    await functions.giveAchievementToUserAsync(null, enums.AchievementsSymbol.FIRST_STEP, USER_ID, session);
                 }
             }
 
@@ -164,6 +183,7 @@ router.post('/finish', async function(req, res) {
     }
     catch(err){
         await session.abortTransaction();
+        console.log(err);
         res.status(400).send();
     } finally {
         await session.endSession();

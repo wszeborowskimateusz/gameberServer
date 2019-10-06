@@ -9,7 +9,9 @@ router.get('/', async function(req, res) {
     r = { notificationsArray: [] };
 
     try{
-        const notifications = await db.Notifications.find({user_id: USER_ID});
+        const notifications = await db.Notifications.
+            find({user_id: USER_ID}).
+            sort('-date_of_receiving');
         
         for (const n of notifications){
             if (!n.is_deleted)
@@ -19,6 +21,7 @@ router.get('/', async function(req, res) {
                     userId: n.user_from_id,
                     img: cfg.imagesUrl + n.notification_img,
                     name: n.name,
+                    data: n.data,
                     dateOfReceiving: n.date_of_receiving,
                     isRead: n.is_read
                 })

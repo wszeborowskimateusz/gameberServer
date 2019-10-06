@@ -18,6 +18,7 @@ const gamesRouter = require('./routes/games');
 const notificationsRouter = require('./routes/notifications');
 const messagesRouter = require('./routes/messages');
 const friendsRouter = require('./routes/friends');
+const multiplayerRouter = require('./routes/multiplayer');
 
 const app = express();
 
@@ -27,20 +28,27 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.disable('etag'); // disables 304 response
+//app.disable('etag'); // disables 304 response
 
 
 USER_ID = 0;
 DB_CONNECTION = null;
 
-//TEST FIELD
-
-
-//TEST FIELD - END
 // Db connection
 app.use(async function(req, res, next){
     try {
-      DB_CONNECTION = await mongoose.connect(cfg.dbConnectionString, { useNewUrlParser: true });
+      if (mongoose.connection == null || mongoose.connection.readyState != 1)
+        DB_CONNECTION = await mongoose.connect(cfg.dbConnectionString, {
+          useNewUrlParser: true,
+          useUnifiedTopology: true,
+          poolSize: 30
+        });
+      else
+        DB_CONNECTION = mongoose;
+      
+
+      if (DB_CONNECTION.connection.readyState != 1) // 1 = connected
+        throw Error;
       Object.freeze(DB_CONNECTION);
       next()
     } catch (err) {
@@ -62,6 +70,10 @@ app.use(function(req, res, next){
         USER_ID = decoded.user_id;
         Object.freeze(USER_ID);
         console.log("Zautentykowany " + Date.now());
+
+        const refreshedJwtToken = jwt.sign({ login: decoded.login, user_id: decoded.user_id }, cfg.jwtSecret, { expiresIn: cfg.expirationTimeJWT });
+        res.set('Refreshed-Jwt-Token', refreshedJwtToken);
+        res.set('Access-Control-Expose-Headers', 'Refreshed-Jwt-Token');
         next()
       } catch (err) {
         console.log(err.message);
@@ -77,6 +89,12 @@ app.use('/games', gamesRouter);
 app.use('/notifications', notificationsRouter);
 app.use('/messages', messagesRouter);
 app.use('/friends', friendsRouter);
-//app.use('/images', imagesRouter);
+app.use('/multiplayer', multiplayerRouter)
+
+// Global error handler
+app.use((err, req, res, next) => {
+  console.log(err.message);
+  res.status(500).send();
+});
 
 module.exports = app;

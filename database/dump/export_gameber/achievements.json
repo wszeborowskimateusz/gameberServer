@@ -1,16 +1,46 @@
-{
+[{
 	"_id": {
 		"$oid": "5d595c2f8492ac62e413fd48"
 	},
-	"achievement_img": "achievement1.jpg",
-	"achievement_name": "Achievement No.1",
-	"achievement_description": "bla bla"
-}
+	"achievement_img": "achievements/login_streak_5.png",
+	"achievement_symbol": "login5",
+	"achievement_name": "5 dni z rzędu",
+	"achievement_description": "Logowanie 5 dni z rzędu"
+},
 {
 	"_id": {
-		"$oid": "5d595c9fcffa6362e467bb8a"
+		"$oid": "5d88b17b731dd1a6266a44d9"
 	},
-	"achievement_img": "achievement2.png",
-	"achievement_name": "Achievement No.2",
-	"achievement_description": "bla bla"
-}
+	"achievement_img": "achievements/login_streak_10.png",
+	"achievement_symbol": "login10",
+	"achievement_name": "10 dni z rzędu",
+	"achievement_description": "Logowanie 10 dni z rzędu"
+},
+{
+	"_id": {
+		"$oid": "5d88b181322435bac8b87541"
+	},
+	"achievement_img": "achievements/login_streak_15.png",
+	"achievement_symbol": "login15",
+	"achievement_name": "15 dni z rzędu",
+	"achievement_description": "Logowanie 15 dni z rzędu"
+},
+{
+	"_id": {
+		"$oid": "5d88b187ba1686eee93ecdc1"
+	},
+	"achievement_img": "achievements/login_streak_20.png",
+	"achievement_symbol": "login20",
+	"achievement_name": "20 dni z rzędu",
+	"achievement_description": "Logowanie 20 dni z rzędu"
+},
+{
+	"_id": {
+		"$oid": "5d9638665036ec3083a0cf1e"
+	},
+	"achievement_img": "achievements/first_step.png",
+	"achievement_symbol": "first_step",
+	"achievement_name": "Pierwszy krok",
+	"achievement_description": "Przejście testu dla początkujących lub kategorii dla początkujących"
+}]
+

@@ -1,24 +1,138 @@
-{
+[{
 	"_id": {
 		"$oid": "5d2a1ae51a8ff84968146176"
 	},
-	"avatar_name": "default",
-	"avatar_img": "default_avatar.jpg",
+	"avatar_name": "Podstawowy",
+	"avatar_img": "avatars/default_avatar.jpg",
 	"price": 0
-}
+},
 {
 	"_id": {
-		"$oid": "5d34754f68f5d6535c3034d3"
+		"$oid": "5d87ab4cac685fb280cee795"
 	},
-	"avatar_name": "av1",
-	"avatar_img": "av1.jpg",
-	"price": 5
-}
+	"avatar_name": "Elegancki ptak",
+	"avatar_img": "avatars/elegant_bird.jpg",
+	"price": 40
+},
 {
 	"_id": {
-		"$oid": "5d3475d9195a76535c21f04a"
+		"$oid": "5d87ab55d2b582428f95d571"
 	},
-	"avatar_name": "av2",
-	"avatar_img": "av2.jpg",
-	"price": 10
+	"avatar_name": "Dexter wynalazca",
+	"avatar_img": "avatars/dexter.jpg",
+	"price": 60
+},
+{
+	"_id": {
+		"$oid": "5d87ab5915210fe0210ae69f"
+	},
+	"avatar_name": "Groot",
+	"avatar_img": "avatars/groot.jpg",
+	"price": 55
+},
+{
+	"_id": {
+		"$oid": "5d87ab5e35f646cb9dd357b3"
+	},
+	"avatar_name": "Biały wojownik",
+	"avatar_img": "avatars/white_warrior.jpg",
+	"price": 35
+},
+{
+	"_id": {
+		"$oid": "5d87ab6281a481ae9a956839"
+	},
+	"avatar_name": "Grzywiasty zwycięzca",
+	"avatar_img": "avatars/lion.jpg",
+	"price": 150
+},
+{
+	"_id": {
+		"$oid": "5d87ab66ce8683e016509fb2"
+	},
+	"avatar_name": "Spokojny przeżuwacz ",
+	"avatar_img": "avatars/giraffe.jpg",
+	"price": 40
+},
+{
+	"_id": {
+		"$oid": "5d87ab6a3b374234bbadf696"
+	},
+	"avatar_name": "Dostojny piękniś",
+	"avatar_img": "avatars/peacock.jpg",
+	"price": 75
+},
+{
+	"_id": {
+		"$oid": "5d87ab74fa03525fcbbae2aa"
+	},
+	"avatar_name": "Spokojny mędrzec",
+	"avatar_img": "avatars/gold_guy.jpg",
+	"price": 55
+},
+{
+	"_id": {
+		"$oid": "5d87ab7f486ab8ca93a7895c"
+	},
+	"avatar_name": "Orzeł zdobywca",
+	"avatar_img": "avatars/eagle.jpg",
+	"price": 90
+},
+{
+	"_id": {
+		"$oid": "5d87ab879c018ff0d57bd7b5"
+	},
+	"avatar_name": "Śpiący drań",
+	"avatar_img": "avatars/monkey.jpg",
+	"price": 20
+},
+{
+	"_id": {
+		"$oid": "5d87ab8c2f111e3a33eecd94"
+	},
+	"avatar_name": "Spiczasty dziób",
+	"avatar_img": "avatars/bird_guy.jpg",
+	"price": 25
+},
+{
+	"_id": {
+		"$oid": "5d87ab8f9788568a419a3c7e"
+	},
+	"avatar_name": "Skryty zabójca",
+	"avatar_img": "avatars/cat.jpg",
+	"price": 60
+},
+{
+	"_id": {
+		"$oid": "5d87ab9337744776dfd348fd"
+	},
+	"avatar_name": "Włochaty rogacz",
+	"avatar_img": "avatars/cow.jpg",
+	"price": 50
+},
+{
+	"_id": {
+		"$oid": "5d87ab96c4e55c586d354ae4"
+	},
+	"avatar_name": "Biały król",
+	"avatar_img": "avatars/dog.jpg",
+	"price": 75
+},
+{
+	"_id": {
+		"$oid": "5d87ab9bb5bb1446ff1eded9"
+	},
+	"avatar_name": "Puszysty król",
+	"avatar_img": "avatars/small_dog.jpg",
+	"price": 350
+},
+{
+	"_id": {
+		"$oid": "5d87ab9ea4d3085bf28d4ce0"
+	},
+	"avatar_name": "Okularnik",
+	"avatar_img": "avatars/glasses_dog.jpg",
+	"price": 65
 }
+]
+

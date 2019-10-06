@@ -8,11 +8,6 @@ const passwordHash = require('password-hash');
 const jwt = require('jsonwebtoken');
 
 
-// /* GET users listing. */
-// router.get('/', function(req, res, next) {
-//   res.json('respond with a resource');
-// });
-
 // login, password, mail
 router.post('/signup', async function(req, res){
   const userData = req.body;
@@ -44,8 +39,8 @@ router.post('/signup', async function(req, res){
       //log
       console.log("New user request");
 
-      const defultAvatar = await db.Avatars.findOne({avatar_name: "default"});
-      const defultImage = await db.BackgroundImages.findOne({image_name: "default"});
+      const defultAvatar = await db.Avatars.findOne({avatar_name: cfg.defaultAvatarName});
+      const defultImage = await db.BackgroundImages.findOne({image_name: cfg.defaultBackgroundName});
 
       if(!defultAvatar || !defultImage){
         errorMessage = "Server error";
@@ -108,6 +103,8 @@ router.post('/signin', async function(req, res){
         throw error;
       }
 
+      r.isFirstLoginAttempt = user.date_of_last_login.toISOString() == new Date("0-1-1").toISOString();
+
       const todayDate = new Date();
       todayDate.setHours(0,0,0,0);
 
@@ -129,6 +126,10 @@ router.post('/signin', async function(req, res){
           }
           await functions.giveCoinsToUserAsync(coins, user._id, session);
           await functions.giveExperienceToUserAsync(experience, enums.ExperienceSubject.LOGIN_STREAK, user._id, session);
+          
+          const loginStreakAchievement = await achievementForLoginStreak(user.logging_streak, session);
+          if (loginStreakAchievement)
+            r.everydayAwards.achievements.push(loginStreakAchievement);
         }
       }
       else if(timeSinceLastLogin > oneDayMS)
@@ -138,7 +139,7 @@ router.post('/signin', async function(req, res){
 
       await user.save({ session });
 
-      r.jwtToken = jwt.sign({ login: userData.login, user_id: user._id }, cfg.jwtSecret, { expiresIn: 129600 }); // 36h
+      r.jwtToken = jwt.sign({ login: userData.login, user_id: user._id }, cfg.jwtSecret, { expiresIn: cfg.expirationTimeJWT });
       r.message = "Signed in";
       r.type = "success"
       await session.commitTransaction();
@@ -152,5 +153,12 @@ router.post('/signin', async function(req, res){
     }
   }
 });
+
+async function achievementForLoginStreak(loginStreak, session){
+  const newAchievementSymbol = enums.AchievementsSymbol['LOGIN_STREAK_' + loginStreak];
+  const newAchievement = await functions.giveAchievementToUserAsync(null, newAchievementSymbol, USER_ID, session);
+  return  {name: newAchievement.achievement_name,
+           src: cfg.imagesUrl + newAchievement.achievement_img}
+}
 
 module.exports = router;

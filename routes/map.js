@@ -51,7 +51,7 @@ router.post('/buyCountry', async function(req, res){
         await session.startTransaction();
 
         let data = req.body;
-        let country = await db.Countries.findOne({ISO: data.countryISO});
+        let country = await db.Countries.findById(data.countryId);
 
         // Check if user already bought country
         let isBought = await db.AvailableCountries.countDocuments({user_id: USER_ID, country_id: country._id});
@@ -72,7 +72,7 @@ router.post('/buyCountry', async function(req, res){
                     date_of_unlocking: Date.now(),
                     is_completed: false
                 });
-                newCountryUnlock.save({ session });
+                await newCountryUnlock.save({ session });
                 
                 response.status = true;
             }
@@ -102,18 +102,27 @@ router.post('/buyCountry', async function(req, res){
 
 router.post('/getCategories', async function(req, res)
 {
-    let response = {
-        categories: [],
-    };
-    const data = req.body;
-    const countriesIds = data.countriesIds;
+    const response = {};
+
     try
     {
-        for (const id of countriesIds)
-        {
-            const countryCategories = await db.Categories.find({country_id: id});
-            response.categories = response.categories.concat(countryCategories);
-        }
+        // get catgories
+        response.categories = await db.Categories.find({country_id: {$in: req.body.countriesIds}});
+
+        // get category completition info
+        let completedCategories = await db.User_Category.find({user_id: USER_ID});
+
+        response.categories.forEach(c => {
+            if (completedCategories.some(e => JSON.stringify(e.category_id) === JSON.stringify(c._id)))
+            {
+                c._doc["is_completed"] = true;
+            }
+            else
+            {
+                c._doc["is_completed"] = false;
+            }
+        });
+        
         return res.json(response);
     }
     catch(err)
