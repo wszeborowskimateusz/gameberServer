@@ -39,12 +39,12 @@ router.get('/clashes', async function(req, res) {
             await r.clashes.push({
                 userId: userId,
                 userName: user.login,
-                userAvatar: user.picked_avatar_id.avatar_img,
+                userAvatar: cfg.imagesUrl + user.picked_avatar_id.avatar_img,
                 categoryId: clash.category_id._id,
                 percentage: areWeUserFrom ? clash.user_from_percentage : clash.user_to_percentage, 
                 opponentsPercentage: areWeUserFrom ? clash.user_to_percentage : clash.user_from_percentage, 
                 categoryName: clash.category_id.category_name,
-                categoryIcon: clash.category_id.category_icon
+                categoryIcon: cfg.imagesUrl + clash.category_id.category_icon
             })
         }
 
@@ -109,7 +109,7 @@ router.post('/accept-request', async function(req,res){
     try{
         await session.startTransaction();
 
-        const clash = await db.Clashes
+        const clash = await db.Clashes.
             findById(clashId).
             populate('user_to_id');
         clash.date_of_accepting = new Date();
