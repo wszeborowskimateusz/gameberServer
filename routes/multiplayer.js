@@ -35,7 +35,7 @@ router.get('/clashes', async function(req, res) {
             const user = await db.User.
                 findById(userId).
                 populate('picked_avatar_id')
-            console.log(clash)
+
             await r.clashes.push({
                 clashId: clash._id,
                 userId: userId,
