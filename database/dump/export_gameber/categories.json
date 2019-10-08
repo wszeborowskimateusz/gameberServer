@@ -5,6 +5,7 @@
 	"category_name": "Słodycze",
 	"category_img": "categories/slodycze/slodyczeBackground.jpg",
 	"category_icon": "categories/slodycze/slodyczeIcon.png",
+	"category_type": "N",
 	"country_id": {
 		"$oid": "5d56962114aa473964221e43"
 	},
@@ -18,19 +19,7 @@
 	"category_name": "Zakupy",
 	"category_img": "categories/zakupy/zakupyBackground.jpg",
 	"category_icon": "categories/zakupy/zakupyIcon.png",
-	"country_id": {
-		"$oid": "5d5694ed14aa473964221e42"
-	},
-	"prize_coins": 57,
-	"prize_points": 67
-},
-{
-	"_id": {
-		"$oid": "5d3d9c359eae4f18d02267d3"
-	},
-	"category_name": "Zwierzęta Arktyki",
-	"category_img": "glownaKategoria.jpg",
-	"category_icon": "zwierzetaArktykiIcon.png",
+	"category_type": "N",
 	"country_id": {
 		"$oid": "5d5694ed14aa473964221e42"
 	},
@@ -44,6 +33,7 @@
 	"category_name": "Motoryzacja",
 	"category_img": "categories/motoryzacja/motoryzacjaBackground.jpg",
 	"category_icon": "categories/motoryzacja/motoryzacjaIcon.png",
+	"category_type": "N",
 	"country_id": {
 		"$oid": "5d56962114aa473964221e43"
 	},
@@ -57,6 +47,7 @@
 	"category_name": "Praca biurowa",
 	"category_img": "categories/biuro/biuroBackground.jpg",
 	"category_icon": "categories/biuro/biuroIcon.png",
+	"category_type": "N",
 	"country_id": {
 		"$oid": "5d56962114aa473964221e43"
 	},
@@ -70,6 +61,7 @@
 	"category_name": "Rolnictwo",
 	"category_img": "categories/rolnictwo/rolnictwoBackground.jpg",
 	"category_icon": "categories/rolnictwo/rolnictwoIcon.png",
+	"category_type": "N",
 	"country_id": {
 		"$oid": "5d5694ed14aa473964221e42"
 	},
@@ -83,6 +75,7 @@
 	"category_name": "Miasto",
 	"category_img": "categories/miasto/miastoBackground.jpg",
 	"category_icon": "categories/miasto/miastoIcon.png",
+	"category_type": "N",
 	"country_id": {
 		"$oid": "5d56965e14aa473964221e44"
 	},
@@ -196,6 +189,7 @@
 	"category_name": "Przydatne zwroty",
 	"category_img": "categories/przydatneZwroty/background.jpg",
 	"category_icon": "categories/przydatneZwroty/icon.png",
+	"category_type": "C",
 	"percentage_pass_treshold": 70,
 	"prize_coins": 30,
 	"prize_points": 25
