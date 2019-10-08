@@ -112,14 +112,16 @@ router.post('/getCategories', async function(req, res)
         // get category completition info
         let completedCategories = await db.User_Category.find({user_id: USER_ID});
 
+
         response.categories.forEach(c => {
-            if (completedCategories.some(e => JSON.stringify(e.category_id) === JSON.stringify(c._id)))
-            {
-                c._doc["is_completed"] = true;
+            if (completedCategories.some(e => JSON.stringify(e.category_id) === JSON.stringify(c._id))) {
+                c._doc["status"] = "completed";
             }
-            else
-            {
-                c._doc["is_completed"] = false;
+            else if (/* CATEGORY IS STARTED*/true) {
+                c._doc["status"] = "started";
+            }
+            else{
+                c._doc["status"] = "";
             }
         });
         
