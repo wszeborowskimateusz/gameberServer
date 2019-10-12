@@ -15,7 +15,7 @@ router.get('/:categoryId', async function(req, res) {
         categoryIcon: ""
     };
     var catId = req.params.categoryId;
-
+    
     try{
         var games = await db.Games.
             find({category_id: catId}).
@@ -27,6 +27,16 @@ router.get('/:categoryId', async function(req, res) {
         
         if (!games.length)
             throw Error;
+
+        if (games[0].category_id.category_type == "N")
+        {
+            // check if user has country available
+            if (await db.AvailableCountries
+                .findOne({user_id: USER_ID, country_id: games[0].category_id.country_id}) == null)
+            {
+                throw Error;
+            }
+        }
 
         let currentGameIndex = games.length - 1;
         for (let i = 0; i < games.length; ++i){
