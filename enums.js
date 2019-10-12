@@ -34,7 +34,8 @@ module.exports.CategoryType = Object.freeze({
     BEGINNER_TEST: 'BT',
     BEGINNER: 'B',
     NORMAL: 'N',
-    CLASH: 'C'
+    CLASH: 'C',
+    SEASONAL: 'S'
 });
 //#endregion
 
