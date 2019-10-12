@@ -91,10 +91,9 @@ router.post('/finish', async function(req, res) {
                 path: 'game_id',
                 match: {category_id: {$eq: categoryId}}
             })).
-            filter(x => x.game_id != null).
-            length;
+            filter(x => x.game_id != null);
 
-        const gamesInCategory = await db.Games.
+        const gamesInCategoryNumber = await db.Games.
             find({category_id: categoryId}).
             countDocuments();
         
@@ -102,7 +101,7 @@ router.post('/finish', async function(req, res) {
             findById(USER_ID).
             populate('picked_avatar_id');
         
-        const percentageResult = (passedGames/gamesInCategory)*100;
+        const percentageResult = (passedGames.length/gamesInCategoryNumber)*100;
         r.percentage = percentageResult;
 
         if (category.category_type == enums.CategoryType.CLASH){
@@ -143,6 +142,9 @@ router.post('/finish', async function(req, res) {
                 else 
                     await givePrizeForClash(user, opponent, category, true, session);
             }
+
+            for (const passedGame of passedGames)
+                await passedGame.remove({ session });
         }
         else if (percentageResult >= percentagePassTreshold){
             const newPassedCategory = new db.User_Category({
