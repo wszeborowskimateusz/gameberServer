@@ -4,7 +4,7 @@
       "$oid": "935afc712154443b98730a5d"
     },
     "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/zakupy/shoppingBag.jpg\",\"correctAnswer\":\"Shopping Bag\",\"answers\":[\"Shopping bag\",\"Escalator\",\"Shopping Mall\",\"Clothes\"]}",
+    "game_info": "{\"img\":\"games/zakupy/shoppingBag.jpg\",\"answers\":[\"Shopping bag\",\"Escalator\",\"Shopping Mall\",\"Clothes\"]}",
 	"correct_answer": "0",
 	"game_order": 0,
     "category_id": {
@@ -52,7 +52,7 @@
       "$oid": "4a1cfc1f0be84542b0543ad7"
     },
     "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":false,\"polishName\":\"Karta kredytowa\",\"correctAnswer\":\"Credit card\",\"answers\":[{\"img\":\"games/zakupy/shoppingBag.jpg\",\"name\":\"Shopping bag\"},{\"img\":\"games/zakupy/creditCard.jpg\",\"name\":\"Credit card\"},{\"img\":\"games/zakupy/florist.jpg\",\"name\":\"Florist\"},{\"img\":\"games/zakupy/shoppingCart.jpg\",\"name\":\"Shopping cart\"}]}",
+    "game_info": "{\"isPhrase\":false,\"polishName\":\"Karta kredytowa\",\"answers\":[{\"img\":\"games/zakupy/shoppingBag.jpg\",\"name\":\"Shopping bag\"},{\"img\":\"games/zakupy/creditCard.jpg\",\"name\":\"Credit card\"},{\"img\":\"games/zakupy/florist.jpg\",\"name\":\"Florist\"},{\"img\":\"games/zakupy/shoppingCart.jpg\",\"name\":\"Shopping cart\"}]}",
 	"correct_answer": "\"credit card\"",
 	"game_order": 4,
     "category_id": {
@@ -88,7 +88,7 @@
       "$oid": "e7eaa5a494f74dc4b3300936"
     },
     "game_name": "WordGuessing",
-    "game_info": "{\"img\":\"games/motoryzacja/car2.jpg\",\"correctAnswer\":\"car\"}",
+    "game_info": "{\"img\":\"games/motoryzacja/car2.jpg\"}",
 	"correct_answer": "\"car\"",
 	"game_order": 0,
     "category_id": {
@@ -124,7 +124,7 @@
       "$oid": "8cf7af1708ef4c799df8de78"
     },
     "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":false,\"polishName\":\"kluczyki do samochodu\",\"correctAnswer\":\"car keys\",\"answers\":[{\"img\":\"games/motoryzacja/carKeys.jpg\",\"name\":\"car keys\"},{\"img\":\"games/motoryzacja/mirror.jpg\",\"name\":\"mirror\"}]}",
+    "game_info": "{\"isPhrase\":false,\"polishName\":\"kluczyki do samochodu\",\"answers\":[{\"img\":\"games/motoryzacja/carKeys.jpg\",\"name\":\"car keys\"},{\"img\":\"games/motoryzacja/mirror.jpg\",\"name\":\"mirror\"}]}",
 	"correct_answer": "\"car keys\"",
 	"game_order": 4,
     "category_id": {
@@ -172,7 +172,7 @@
       "$oid": "b138e44a27264d62914cd33a"
     },
     "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/biuro/meeting.jpg\",\"correctAnswer\":\"meeting\",\"answers\":[\"office building\",\"bus\",\"notes\",\"meeting\"]}",
+    "game_info": "{\"img\":\"games/biuro/meeting.jpg\",\"answers\":[\"office building\",\"bus\",\"notes\",\"meeting\"]}",
 	"correct_answer": "3",
 	"game_order": 1,
     "category_id": {
@@ -196,7 +196,7 @@
       "$oid": "7aa58ac4659b4a65a5350c0f"
     },
     "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/biuro/stairs.jpg\",\"correctAnswer\":\"stairs\",\"answers\":[\"stairs\",\"meeting\",\"notes\",\"bus\"]}",
+    "game_info": "{\"img\":\"games/biuro/stairs.jpg\",\"answers\":[\"stairs\",\"meeting\",\"notes\",\"bus\"]}",
 	"correct_answer": "0",
 	"game_order": 3,
     "category_id": {
@@ -220,7 +220,7 @@
       "$oid": "a875ec298ad44ff9a12ca15b"
     },
     "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/biuro/computer.jpg\",\"correctAnswer\":\"computer\",\"answers\":[\"Book\",\"Computer\",\"Person\",\"Stairs\"]}",
+    "game_info": "{\"img\":\"games/biuro/computer.jpg\",\"answers\":[\"Book\",\"Computer\",\"Person\",\"Stairs\"]}",
 	"correct_answer": "1",
 	"game_order": 5,
     "category_id": {
@@ -268,7 +268,7 @@
       "$oid": "1498b7c9f518425d9f603734"
     },
     "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/rolnictwo/chicken.jpg\",\"correctAnswer\":\"chicken\",\"answers\":[\"Crop\",\"Goat\",\"Chicken\",\"Field\"]}",
+    "game_info": "{\"img\":\"games/rolnictwo/chicken.jpg\",\"answers\":[\"Crop\",\"Goat\",\"Chicken\",\"Field\"]}",
 	"correct_answer": "2",
 	"game_order": 1,
     "category_id": {
@@ -280,7 +280,7 @@
       "$oid": "7de30f6001064f5b91d996f1"
     },
     "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/rolnictwo/sheep.jpg\",\"correctAnswer\":\"sheep\",\"answers\":[\"Sheep\",\"Harvester\",\"Chicken\",\"Grain\"]}",
+    "game_info": "{\"img\":\"games/rolnictwo/sheep.jpg\",\"answers\":[\"Sheep\",\"Harvester\",\"Chicken\",\"Grain\"]}",
 	"correct_answer": "0",
 	"game_order": 2,
     "category_id": {
@@ -328,7 +328,7 @@
       "$oid": "7a119cf0225146678a9527b2"
     },
     "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/miasto/underground.jpg\",\"correctAnswer\":3,\"answers\":[\"Car\",\"Pavement\",\"Street\",\"Undergound\"]}",
+    "game_info": "{\"img\":\"games/miasto/underground.jpg\",\"answers\":[\"Car\",\"Pavement\",\"Street\",\"Undergound\"]}",
 	"correct_answer": "3",
 	"game_order": 0,
     "category_id": {
@@ -352,7 +352,7 @@
       "$oid": "32467a2371274daf8c7b030d"
     },
     "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":false,\"polishName\":\"Ulica\",\"correctAnswer\":\"Street\",\"answers\":[{\"img\":\"games/miasto/cottage.jpg\",\"name\":\"Cottage\"},{\"img\":\"games/miasto/shop.jpg\",\"name\":\"Shop\"},{\"img\":\"games/miasto/street.jpg\",\"name\":\"Street\"},{\"img\":\"games/miasto/underground.jpg\",\"name\":\"Undergound\"}]}",
+    "game_info": "{\"isPhrase\":false,\"polishName\":\"Ulica\",\"answers\":[{\"img\":\"games/miasto/cottage.jpg\",\"name\":\"Cottage\"},{\"img\":\"games/miasto/shop.jpg\",\"name\":\"Shop\"},{\"img\":\"games/miasto/street.jpg\",\"name\":\"Street\"},{\"img\":\"games/miasto/underground.jpg\",\"name\":\"Undergound\"}]}",
 	"correct_answer": "\"street\"",
 	"game_order": 2,
     "category_id": {
@@ -376,7 +376,7 @@
       "$oid": "a2a4c08ec83b4c4794d976c5"
     },
     "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/miasto/trafficLight.jpg\",\"correctAnswer\":3,\"answers\":[\"Street\",\"Traffic light\",\"Street\",\"Shop\"]}",
+    "game_info": "{\"img\":\"games/miasto/trafficLight.jpg\",\"answers\":[\"Street\",\"Traffic light\",\"Street\",\"Shop\"]}",
 	"correct_answer": "1",
 	"game_order": 4,
     "category_id": {
@@ -436,7 +436,7 @@
       "$oid": "a42c58ddde1c4950bb99598e"
     },
     "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":false,\"polishName\":\"Babeczka\",\"correctAnswer\":\"Cupcake\",\"answers\":[{\"img\":\"games/slodycze/chocolateBar.jpg\",\"name\":\"chocolate\"},{\"img\":\"games/slodycze/cupcake.jpg\",\"name\":\"cupcake\"},{\"img\":\"games/slodycze/candy.jpg\",\"name\":\"candy\"},{\"img\":\"games/slodycze/lollipop.jpg\",\"name\":\"lollipop\"}]}",
+    "game_info": "{\"isPhrase\":false,\"polishName\":\"Babeczka\",\"answers\":[{\"img\":\"games/slodycze/chocolateBar.jpg\",\"name\":\"chocolate\"},{\"img\":\"games/slodycze/cupcake.jpg\",\"name\":\"cupcake\"},{\"img\":\"games/slodycze/candy.jpg\",\"name\":\"candy\"},{\"img\":\"games/slodycze/lollipop.jpg\",\"name\":\"lollipop\"}]}",
 	"correct_answer": "\"cupcake\"",
 	"game_order": 2,
     "category_id": {
@@ -448,7 +448,7 @@
       "$oid": "a77cd893f4464a58be048306"
     },
     "game_name": "WordGuessing",
-    "game_info": "{\"img\":\"games/slodycze/lollipop.jpg\",\"correctAnswer\":\"Lollipop\"}",
+    "game_info": "{\"img\":\"games/slodycze/lollipop.jpg\"}",
 	"correct_answer": "\"lollipop\"",
 	"game_order": 3,
     "category_id": {
@@ -820,7 +820,7 @@
       "$oid": "5d8fa4c8f99f6c7ce3461fdb"
     },
     "game_name": "WordGuessing",
-    "game_info": "{\"img\":\"games/palcemPoMapie/water1.jpg\",\"correctAnswer\":\"seal\"}",
+    "game_info": "{\"img\":\"games/palcemPoMapie/water1.jpg\"}",
 	"correct_answer": "\"water\"",
 	"game_order": 3,
     "category_id": {

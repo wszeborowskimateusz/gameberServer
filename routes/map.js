@@ -114,14 +114,13 @@ router.post('/getCategories', async function(req, res)
 
 
         response.categories.forEach(c => {
+            c._doc["status"] = "";
+
             if (completedCategories.some(e => JSON.stringify(e.category_id) === JSON.stringify(c._id))) {
                 c._doc["status"] = "completed";
             }
             else if (/* CATEGORY IS STARTED*/true) {
                 c._doc["status"] = "started";
-            }
-            else{
-                c._doc["status"] = "";
             }
         });
         
