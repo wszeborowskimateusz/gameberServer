@@ -1204,7 +1204,7 @@
       "$oid": "5d986f34cdb976ac281e7997"
     },
     "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":false,\"polishName\":\"Śmiać się\",\"answers\":[{\"img\":\"games\/emocje\/drive.jpg\",\"name\":\"Drive\"},{\"img\":\"games\/emcje\/run.jpg\",\"name\":\"Run\"},{\"img\":\"games\/emocje\/laugh.jpg\",\"name\":\"Laugh\"},{\"img\":\"games\/emocje\/cry.jpg\",\"name\":\"Cry\"}]}",
+    "game_info": "{\"isPhrase\":false,\"polishName\":\"Śmiać się\",\"answers\":[{\"img\":\"games\/emocje\/drive.jpg\",\"name\":\"Drive\"},{\"img\":\"games\/emocje\/run.jpg\",\"name\":\"Run\"},{\"img\":\"games\/emocje\/laugh.jpg\",\"name\":\"Laugh\"},{\"img\":\"games\/emocje\/cry.jpg\",\"name\":\"Cry\"}]}",
     "correct_answer": "\"laugh\"",
 	  "game_order": 5,
     "category_id": {

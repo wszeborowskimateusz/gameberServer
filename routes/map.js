@@ -102,28 +102,37 @@ router.post('/buyCountry', async function(req, res){
 
 router.post('/getCategories', async function(req, res)
 {
-    const response = {};
+    const response = {
+        categories: []
+    };
 
     try
     {
-        // get catgories
-        response.categories = await db.Categories.find({country_id: {$in: req.body.countriesIds}});
-
         // get category completition info
-        let completedCategories = await db.User_Category.find({user_id: USER_ID});
+        const completedCategories = await db.User_Category.
+            find({user_id: USER_ID});
 
-
-        response.categories.forEach(c => {
-            c._doc["status"] = "";
-
-            if (completedCategories.some(e => JSON.stringify(e.category_id) === JSON.stringify(c._id))) {
-                c._doc["status"] = "completed";
-            }
-            else if (/* CATEGORY IS STARTED*/true) {
-                c._doc["status"] = "started";
-            }
-        });
+        // get games completition info
+        const completedGames = await db.User_Game.
+            find({user_id: USER_ID}).
+            populate('game_id');
         
+        // get catgories
+        const categories = await db.Categories.
+            find({country_id: {$in: req.body.countriesIds}});
+
+        for (const c of categories){
+            let status = "";
+            
+            if (await completedCategories.some(e => JSON.stringify(e.category_id) === JSON.stringify(c._id))) {
+                status= "completed";
+            }
+            else if (await completedGames.some(e => JSON.stringify(e.game_id.category_id) === JSON.stringify(c._id))) {
+                status = "started";
+            }
+
+            response.categories.push({...c.toObject(), status: status})
+        }
         return res.json(response);
     }
     catch(err)
