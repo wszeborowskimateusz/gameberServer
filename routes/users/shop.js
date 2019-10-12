@@ -20,7 +20,7 @@ router.post('/avatars/buy', async function(req, res){
             throw Error;
         }
 
-        var foundAvatar = await db.User_Avatar.count({user_id: USER_ID, avatar_id: mAvatar._id});
+        var foundAvatar = await db.User_Avatar.countDocuments({user_id: USER_ID, avatar_id: mAvatar._id});
 
         if (mUser.amount_of_coins < mAvatar.price || foundAvatar) {
             errorMessage = "Not acceptable";
@@ -60,7 +60,7 @@ router.post('/images/buy', async function(req, res){
             throw Error;
         }
 
-        var foundImage = await db.User_Image.count({user_id: USER_ID, image_id: mImage._id});
+        var foundImage = await db.User_Image.countDocuments({user_id: USER_ID, image_id: mImage._id});
 
         if (mUser.amount_of_coins < mImage.price || foundImage) {
             errorMessage = "Not acceptable";

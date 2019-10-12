@@ -124,8 +124,8 @@ module.exports.removeNotificationAsync = async function (notificationId, session
 //#region achievements
 module.exports.giveAchievementToUserAsync = async function (achievementId, achievementSymbol, userId, session){
     const achievement = achievementSymbol == null ? 
-        db.Achievements.findById(achievementId) :
-        db.Achievements.findOne({achievement_symbol: achievementSymbol});
+        await db.Achievements.findById(achievementId) :
+        await db.Achievements.findOne({achievement_symbol: achievementSymbol});
     
     const existingAchievement = await db.User_Achievement.
         findOne({user_id: userId, achievement_id: achievement._id});
