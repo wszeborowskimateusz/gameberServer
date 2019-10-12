@@ -114,15 +114,18 @@ router.post('/accept-request', async function(req,res){
 
         const clash = await db.Clashes.
             findById(clashId).
-            populate('user_to_id');
+            populate({
+                path: 'user_to_id',
+                populate: {path: 'picked_avatar_id'}
+            })
+
         clash.date_of_accepting = new Date();
         await clash.save({ session });
-
         await functions.removeNotificationAsync(clash.notification_id, session);
-            
+           
         await functions.addNotificationAsync(
             enums.NotificationType.CLASH_ACCEPTED,
-            null,
+            clash.user_to_id.picked_avatar_id.avatar_img,
             clash.user_to_id.login,
             clash.user_from_id,
             clash.user_to_id,
