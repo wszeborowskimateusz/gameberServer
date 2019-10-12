@@ -170,7 +170,7 @@ router.get('/new-notifications', async function(req, res) {
                 date_of_accepting: {$ne: null}});
 
         r.unreadNotificationsNumber = await db.Notifications.
-            countDocuments({user_id: USER_ID, is_read: false}).
+            countDocuments({user_id: USER_ID, is_deleted: false}).
             sort('-date_of_receiving');
 
         return res.json(r);
