@@ -183,7 +183,7 @@ async function checkForSeasonalCategory(userId){
   return {
     seasonalCategoryId: seasonalCategory != null ? seasonalCategory._id : null,
     seasonalCategoryName: seasonalCategory != null ? seasonalCategory.category_name : null,
-    seasonalCategoryImg: seasonalCategory != null ? seasonalCategory.category_img : null
+    seasonalCategoryImg: seasonalCategory != null ? cfg.imagesUrl + seasonalCategory.category_img : null
   }
 }
 
