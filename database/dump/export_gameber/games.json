@@ -1282,5 +1282,247 @@
     "category_id": {
       "$oid": "5d986fdfb3cf5f30e6ce5dcf"
     }
+  },
+  {
+    "_id": {
+      "$oid": "94c94921982368c9b1d33f94"
+    },
+    "game_name": "WordLearning",
+    "game_info": "{\"polishName\":\"Leżaki plażowe\",\"englishName\":\"Sunbeds\",\"img\":\"games/wakacje/sunbeds.jpg\"}",
+	"correct_answer": "",
+    "category_id": {
+      "$oid": "bffb4a548d2978cdd72a2d9a"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "11c3458f9a57a98f134f301f"
+    },
+    "game_name": "WordLearning",
+    "game_info": "{\"polishName\":\"Palmy\",\"englishName\":\"Palm trees\",\"img\":\"games/wakacje/palmTrees.jpg\"}",
+	"correct_answer": "",
+    "category_id": {
+      "$oid": "bffb4a548d2978cdd72a2d9a"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "60274dc5b4c7856b7c1c7f3c"
+    },
+    "game_name": "WordLearning",
+    "game_info": "{\"polishName\":\"Plaża\",\"englishName\":\"Beach\",\"img\":\"games/wakacje/beach.jpg\"}",
+	"correct_answer": "",
+    "category_id": {
+      "$oid": "bffb4a548d2978cdd72a2d9a"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "66c2410382be0fcd1abc8946"
+    },
+    "game_name": "WordLearning",
+    "game_info": "{\"polishName\":\"Kokos\",\"englishName\":\"Coconut\",\"img\":\"games/wakacje/coconut.jpg\"}",
+	"correct_answer": "",
+    "category_id": {
+      "$oid": "bffb4a548d2978cdd72a2d9a"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d82e4ea29ed1473643b73eb7"
+    },
+    "game_name": "WordMatching",
+    "game_info": "{\"isPhrase\":true,\"polishName\":\"Palmy\",\"answers\":[{\"img\":\"games/wakacje/sunbeds.jpg\",\"name\":\"Sunbeds\"},{\"img\":\"games/wakacje/palmTrees.jpg\",\"name\":\"Palm trees\"},{\"img\":\"games/wakacje/coconut.jpg\",\"name\":\"Coconut\"},{\"img\":\"games/wakacje/swimmingPool.jpg\",\"name\":\"Swimming pool\"}]}",
+    "correct_answer": "\"palm trees\"",
+    "category_id": {
+      "$oid": "bffb4a548d2978cdd72a2d9a"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "3b254a32a34327995c6d2112"
+    },
+    "game_name": "WordMatching",
+    "game_info": "{\"isPhrase\":false,\"polishName\":\"Plaża\",\"answers\":[{\"img\":\"games/wakacje/sunbeds.jpg\",\"name\":\"Sunbeds\"},{\"img\":\"games/wakacje/palmTrees.jpg\",\"name\":\"Palm trees\"},{\"img\":\"games/wakacje/beach.jpg\",\"name\":\"Beach\"},{\"img\":\"games/wakacje/swimmingPool.jpg\",\"name\":\"Swimming pool\"}]}",
+    "correct_answer": "\"beach\"",
+    "category_id": {
+      "$oid": "bffb4a548d2978cdd72a2d9a"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "4c304d8c883aa6a050f181bd"
+    },
+    "game_name": "WordPicker",
+    "game_info": "{\"img\":\"games/wakacje/plane.jpg\",\"answers\":[\"Coconut\",\"Elevator\",\"Plane\",\"Sunbed\"]}",
+    "correct_answer": "2",
+    "category_id": {
+      "$oid": "bffb4a548d2978cdd72a2d9a"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e4f24fc48427ac8bc0a3068c"
+    },
+    "game_name": "WordGuessing",
+    "game_info": "{\"img\":\"games/wakacje/beach.jpg\"}",
+	"correct_answer": "\"beach\"",
+    "category_id": {
+      "$oid": "bffb4a548d2978cdd72a2d9a"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a38246b18d2d304364b8c857"
+    },
+    "game_name": "WordSearch",
+    "game_info": "{\"words\":[\"beach\",\"plane\",\"coconut\",\"sunbed\"]}",
+	"correct_answer": "",
+    "category_id": {
+      "$oid": "bffb4a548d2978cdd72a2d9a"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "730945a2bc9ba07fb77e11a2"
+    },
+    "game_name": "WordLearning",
+    "game_info": "{\"polishName\":\"Pies\",\"englishName\":\"Dog\",\"img\":\"games/zwierzetaDomowe/dog.jpg\"}",
+	"correct_answer": "",
+    "category_id": {
+      "$oid": "00c448518a6571d6a5e4a694"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e4004389ab8556d1b1a8d1de"
+    },
+    "game_name": "WordLearning",
+    "game_info": "{\"polishName\":\"Kot\",\"englishName\":\"Cat\",\"img\":\"games/zwierzetaDomowe/cat.jpg\"}",
+	"correct_answer": "",
+    "category_id": {
+      "$oid": "00c448518a6571d6a5e4a694"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6f8947668d735f410cd692e4"
+    },
+    "game_name": "WordLearning",
+    "game_info": "{\"polishName\":\"Chomik\",\"englishName\":\"Hamster\",\"img\":\"games/zwierzetaDomowe/hamster.jpg\"}",
+	"correct_answer": "",
+    "category_id": {
+      "$oid": "00c448518a6571d6a5e4a694"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "27be4302b49a20fdfc2bd0e8"
+    },
+    "game_name": "WordLearning",
+    "game_info": "{\"polishName\":\"Papuga\",\"englishName\":\"Parrot\",\"img\":\"games/zwierzetaDomowe/parrot.jpg\"}",
+	"correct_answer": "",
+    "category_id": {
+      "$oid": "00c448518a6571d6a5e4a694"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "32f0406eb44e90e0be3c8976"
+    },
+    "game_name": "WordLearning",
+    "game_info": "{\"polishName\":\"Złota rybka\",\"englishName\":\"Gold fish\",\"img\":\"games/zwierzetaDomowe/goldFish.jpg\"}",
+	"correct_answer": "",
+    "category_id": {
+      "$oid": "00c448518a6571d6a5e4a694"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "da59447b9cf2dbf5c3a13d1b"
+    },
+    "game_name": "WordLearning",
+    "game_info": "{\"polishName\":\"Karmienie\",\"englishName\":\"Feeding\",\"img\":\"games/zwierzetaDomowe/dogFeeding.jpg\"}",
+	"correct_answer": "",
+    "category_id": {
+      "$oid": "00c448518a6571d6a5e4a694"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "967640b4819a47963263fccf"
+    },
+    "game_name": "WordLearning",
+    "game_info": "{\"polishName\":\"Królik\",\"englishName\":\"Rabbit\",\"img\":\"games/zwierzetaDomowe/rabbit.jpg\"}",
+	"correct_answer": "",
+    "category_id": {
+      "$oid": "00c448518a6571d6a5e4a694"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "90ce4e67ad17a777d9ee976d"
+    },
+    "game_name": "WordPicker",
+    "game_info": "{\"img\":\"games/zwierzetaDomowe/Hamster.jpg\",\"answers\":[\"Gold fish\",\"Cat\",\"Dog\",\"Hamster\"]}",
+    "correct_answer": "3",
+    "category_id": {
+      "$oid": "00c448518a6571d6a5e4a694"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "ee4143f795e29795298849e2"
+    },
+    "game_name": "WordPicker",
+    "game_info": "{\"img\":\"games/zwierzetaDomowe/Parrot.jpg\",\"answers\":[\"Cat\",\"Parrot\",\"Dog\",\"Gold Fish\"]}",
+    "correct_answer": "1",
+    "category_id": {
+      "$oid": "00c448518a6571d6a5e4a694"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "57434305b40c707f0a015ca5"
+    },
+    "game_name": "WordPicker",
+    "game_info": "{\"img\":\"games/zwierzetaDomowe/Turtle.jpg\",\"answers\":[\"Hamster\",\"Dog\",\"Parrot\",\"Turtle\"]}",
+    "correct_answer": "3",
+    "category_id": {
+      "$oid": "00c448518a6571d6a5e4a694"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "0d9040a3a39336d2959493a3"
+    },
+    "game_name": "WordGuessing",
+    "game_info": "{\"img\":\"games/zwierzetaDomowe/dog.jpg\"}",
+	"correct_answer": "\"dog\"",
+    "category_id": {
+      "$oid": "00c448518a6571d6a5e4a694"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e08f4e34822785ac6fe55dc4"
+    },
+    "game_name": "WordGuessing",
+    "game_info": "{\"img\":\"games/zwierzetaDomowe/cat.jpg\"}",
+	"correct_answer": "\"cat\"",
+    "category_id": {
+      "$oid": "00c448518a6571d6a5e4a694"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "94164a52aa799a72fb9acdf2"
+    },
+    "game_name": "Crossword",
+    "game_info": "{\"words\":[{\"word\":\"cat\",\"description\":\"Chodzi własnymi drogami\"},{\"word\":\"dog\",\"description\":\"Najlepszy przyjaciel człowieka\"},{\"word\":\"parrot\",\"description\":\"kolorowy ptak\"},{\"word\":\"feeding\",\"description\":\"karmienie zwierzaka\"},{\"word\":\"hamster\",\"description\":\"Biega w kole\"},{\"word\":\"rabbit\",\"description\":\"Skacze i ma długie uszy\"},{\"word\":\"turtle\",\"description\":\"Chroni go skorupa\"}]}",
+	"correct_answer": "",
+    "category_id": {
+      "$oid": "00c448518a6571d6a5e4a694"
+    }
   }
 ]
