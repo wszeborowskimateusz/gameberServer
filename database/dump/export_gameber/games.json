@@ -75,7 +75,7 @@
 		"$oid": "3b254a32a34327995c6d2112"
 	},
 	"game_name": "WordMatching",
-	"game_info": "{\"isPhrase\":false,\"polishName\":\"Plaża\",\"answers\":[{\"img\":\"games/wakacje/sunbeds.jpg\",\"name\":\"Sunbeds\"},{\"img\":\"games/wakacje/palmTrees.jpg\",\"name\":\"Palm trees\"},{\"img\":\"games/wakacje/beach.jpg\",\"name\":\"Beach\"},{\"img\":\"games/wakacje/swimmingPool.jpg\",\"name\":\"Swimming pool\"}]}",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Plaża\",\"answers\":[{\"img\":\"games/wakacje/sunbeds.jpg\",\"name\":\"Sunbeds\"},{\"img\":\"games/wakacje/palmTrees_2.jpg\",\"name\":\"Palm trees\"},{\"img\":\"games/wakacje/beach_2.jpg\",\"name\":\"Beach\"},{\"img\":\"games/wakacje/swimmingPool.jpg\",\"name\":\"Swimming pool\"}]}",
 	"correct_answer": "\"beach\"",
 	"game_order": 6,
 	"category_id": {
@@ -975,7 +975,7 @@
 		"$oid": "60274dc5b4c7856b7c1c7f3c"
 	},
 	"game_name": "WordLearning",
-	"game_info": "{\"polishName\":\"Plaża\",\"englishName\":\"Beach\",\"img\":\"games/wakacje/beach.jpg\"}",
+	"game_info": "{\"polishName\":\"Plaża\",\"englishName\":\"Beach\",\"img\":\"games/wakacje/beach_3.jpg\"}",
 	"correct_answer": "",
 	"game_order": 3,
 	"category_id": {
@@ -1299,7 +1299,7 @@
 		"$oid": "d82e4ea29ed1473643b73eb7"
 	},
 	"game_name": "WordMatching",
-	"game_info": "{\"isPhrase\":true,\"polishName\":\"Palmy\",\"answers\":[{\"img\":\"games/wakacje/sunbeds.jpg\",\"name\":\"Sunbeds\"},{\"img\":\"games/wakacje/palmTrees.jpg\",\"name\":\"Palm trees\"},{\"img\":\"games/wakacje/coconut.jpg\",\"name\":\"Coconut\"},{\"img\":\"games/wakacje/swimmingPool.jpg\",\"name\":\"Swimming pool\"}]}",
+	"game_info": "{\"isPhrase\":true,\"polishName\":\"Palmy\",\"answers\":[{\"img\":\"games/wakacje/sunbeds.jpg\",\"name\":\"Sunbeds\"},{\"img\":\"games/wakacje/palmTrees_3.jpg\",\"name\":\"Palm trees\"},{\"img\":\"games/wakacje/coconut.jpg\",\"name\":\"Coconut\"},{\"img\":\"games/wakacje/swimmingPool.jpg\",\"name\":\"Swimming pool\"}]}",
 	"correct_answer": "\"palm trees\"",
 	"game_order": 2,
 	"category_id": {
@@ -1419,7 +1419,7 @@
 		"$oid": "0d9040a3a39336d2959493a3"
 	},
 	"game_name": "WordGuessing",
-	"game_info": "{\"img\":\"games/zwierzetaDomowe/dog.jpg\"}",
+	"game_info": "{\"img\":\"games/zwierzetaDomowe/dog_2.jpg\"}",
 	"correct_answer": "\"dog\"",
 	"game_order": 2,
 	"category_id": {
@@ -1575,7 +1575,7 @@
 		"$oid": "78f84382abccab1cdd775137"
 	},
 	"game_name": "WordMatching",
-	"game_info": "{\"isPhrase\":false,\"polishName\":\"Kapelusz\",\"answers\":[{\"img\":\"games/ubrania/Sweater.jpg\",\"name\":\"sweater\"},{\"img\":\"games/ubrania/sunglasses.jpg\",\"name\":\"sunglasses\"},{\"img\":\"games/ubrania/hat.jpg\",\"name\":\"hat\"},{\"img\":\"games/ubrania/shoes.jpg\",\"name\":\"shoes\"}]}",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Kapelusz\",\"answers\":[{\"img\":\"games/ubrania/Sweater.jpg\",\"name\":\"sweater\"},{\"img\":\"games/ubrania/sunglasses_3.jpg\",\"name\":\"sunglasses\"},{\"img\":\"games/ubrania/hat_2.jpg\",\"name\":\"hat\"},{\"img\":\"games/ubrania/shoes.jpg\",\"name\":\"shoes\"}]}",
 	"correct_answer": "\"hat\"",
 	"game_order": 2,
 	"category_id": {
@@ -1647,7 +1647,7 @@
 		"$oid": "184f4c138629a39fa995a471"
 	},
 	"game_name": "StoryGame",
-	"game_info": "{\"stories\":[{\"img\":\"games/ubrania/hat.jpg\",\"storyEnglish\":\"When the sun is shining we wear a hat.\",\"storyPolish\":\"Gdy świeci słońce nosimy kapelusz\"},{\"img\":\"games/ubrania/sunglasses.jpg\",\"storyEnglish\":\"We also put on a pair of sunglasses\",\"storyPolish\":\"Zakładamy także parę okularow przeciwslonecznych\"},{\"img\":\"games/ubrania/sweater.jpg\",\"storyEnglish\":\"When it gets colder we wear a sweater\",\"storyPolish\":\"Gdy robi się chłodniej nosimy sweter\"},{\"img\":\"games/ubrania/gloves.jpg\",\"storyEnglish\":\"Gloves are keeping out hands warm\",\"storyPolish\":\"Rękawiczki utrzymują nasze dłonie w cieple\"}]}",
+	"game_info": "{\"stories\":[{\"img\":\"games/ubrania/hat.jpg\",\"storyEnglish\":\"When the sun is shining we wear a hat.\",\"storyPolish\":\"Gdy świeci słońce nosimy kapelusz\"},{\"img\":\"games/ubrania/sunglasses_2.jpg\",\"storyEnglish\":\"We also put on a pair of sunglasses\",\"storyPolish\":\"Zakładamy także parę okularow przeciwslonecznych\"},{\"img\":\"games/ubrania/sweater.jpg\",\"storyEnglish\":\"When it gets colder we wear a sweater\",\"storyPolish\":\"Gdy robi się chłodniej nosimy sweter\"},{\"img\":\"games/ubrania/gloves.jpg\",\"storyEnglish\":\"Gloves are keeping out hands warm\",\"storyPolish\":\"Rękawiczki utrzymują nasze dłonie w cieple\"}]}",
 	"correct_answer": "",
 	"game_order": 8,
 	"category_id": {
