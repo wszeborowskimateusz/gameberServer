@@ -35,16 +35,17 @@ router.get('/clashes', async function(req, res) {
             const user = await db.User.
                 findById(userId).
                 populate('picked_avatar_id')
-            
+
             await r.clashes.push({
+                clashId: clash._id,
                 userId: userId,
                 userName: user.login,
-                userAvatar: user.picked_avatar_id.avatar_img,
+                userAvatar: cfg.imagesUrl + user.picked_avatar_id.avatar_img,
                 categoryId: clash.category_id._id,
                 percentage: areWeUserFrom ? clash.user_from_percentage : clash.user_to_percentage, 
                 opponentsPercentage: areWeUserFrom ? clash.user_to_percentage : clash.user_from_percentage, 
                 categoryName: clash.category_id.category_name,
-                categoryIcon: clash.category_id.category_icon
+                categoryIcon: cfg.imagesUrl + clash.category_id.category_icon
             })
         }
 
@@ -62,20 +63,27 @@ router.post('/challenge', async function(req,res){
     try{
         await session.startTransaction();
 
+        const alreadyChallenged = await db.Clashes.findOne({
+            $or: [{user_from_id: USER_ID, user_to_id: userId},
+                  {user_from_id: userId, user_to_id: USER_ID}],
+            $or: [{user_from_percentage: null},
+                  {user_to_percentage: null}]});
+        if (alreadyChallenged)
+            throw Error;
+
         const pickedCategoryId = await getCategoryId(categoryId);
         if (pickedCategoryId == null)
             throw Error;
-
+ 
+        const userFrom = await db.User.findById(USER_ID);
+        
         const newClash = new db.Clashes({
             user_from_id: USER_ID,
             user_to_id: userId,
             category_id: pickedCategoryId
         })
-        await newClash.save({ session });
 
-        const userFrom = await db.User.findById(USER_ID);
-
-        await functions.addNotificationAsync(
+        const notificationId = await functions.addNotificationAsync(
             enums.NotificationType.CLASH_REQUEST,
             cfg.randomCategoryImage,
             userFrom.login,
@@ -84,6 +92,9 @@ router.post('/challenge', async function(req,res){
             {clashId: newClash._id},
             session);
             
+        newClash.notification_id = notificationId;
+        await newClash.save({ session });
+
         await session.commitTransaction();
         res.status(200).send();
     } catch(err) {
@@ -101,15 +112,20 @@ router.post('/accept-request', async function(req,res){
     try{
         await session.startTransaction();
 
-        const clash = await db.
+        const clash = await db.Clashes.
             findById(clashId).
-            populate('user_to_id');
+            populate({
+                path: 'user_to_id',
+                populate: {path: 'picked_avatar_id'}
+            })
+
         clash.date_of_accepting = new Date();
         await clash.save({ session });
-            
+        await functions.removeNotificationAsync(clash.notification_id, session);
+           
         await functions.addNotificationAsync(
             enums.NotificationType.CLASH_ACCEPTED,
-            null,
+            clash.user_to_id.picked_avatar_id.avatar_img,
             clash.user_to_id.login,
             clash.user_from_id,
             clash.user_to_id,
@@ -131,6 +147,8 @@ router.post('/decline-request', async function(req,res){
 
     try{
         const clash = await db.Clashes.findById(clashId);
+
+        await functions.removeNotificationAsync(clash.notification_id, session);
         await clash.remove();
 
         res.status(200).send();

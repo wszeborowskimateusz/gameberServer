@@ -34,13 +34,15 @@ module.exports.CategoryType = Object.freeze({
     BEGINNER_TEST: 'BT',
     BEGINNER: 'B',
     NORMAL: 'N',
-    CLASH: 'C'
+    CLASH: 'C',
+    SEASONAL: 'S'
 });
 //#endregion
 
 //#region experience
 module.exports.ExperienceSubject = Object.freeze({
-    LOGIN_STREAK: 'Login Streak'
+    LOGIN_STREAK: 'Login Streak',
+    CLASH: 'Clash'
 });
 //#endregion
 

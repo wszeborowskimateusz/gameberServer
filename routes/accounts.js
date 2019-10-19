@@ -24,13 +24,13 @@ router.post('/signup', async function(req, res){
     try{
       await session.startTransaction();
 
-      const userLogins = await db.User.count({login: userData.login});
+      const userLogins = await db.User.countDocuments({login: userData.login});
       if (userLogins != 0) {
         errorMessage = "Login exists";
         throw Error;
       }
 
-      const userMails = await db.User.count({mail: userData.mail});
+      const userMails = await db.User.countDocuments({mail: userData.mail});
       if (userMails != 0) {
         errorMessage = "Mail exists";
         throw Error;
@@ -81,7 +81,7 @@ router.post('/signin', async function(req, res){
   const session = await DB_CONNECTION.startSession();
   const userData = req.body;
   const oneDayMS = 86400000;
-  const r = {};
+  let r = {};
   let errorMessage = null;
 
   //log
@@ -136,8 +136,10 @@ router.post('/signin', async function(req, res){
         user.logging_streak = 1;
 
       user.date_of_last_login = new Date();
-
       await user.save({ session });
+
+      const seasonalCategory = await checkForSeasonalCategory(user._id);
+      r = {...r, ...seasonalCategory};
 
       r.jwtToken = jwt.sign({ login: userData.login, user_id: user._id }, cfg.jwtSecret, { expiresIn: cfg.expirationTimeJWT });
       r.message = "Signed in";
@@ -156,9 +158,33 @@ router.post('/signin', async function(req, res){
 
 async function achievementForLoginStreak(loginStreak, session){
   const newAchievementSymbol = enums.AchievementsSymbol['LOGIN_STREAK_' + loginStreak];
+  if (!newAchievementSymbol)
+    return null
+
   const newAchievement = await functions.giveAchievementToUserAsync(null, newAchievementSymbol, USER_ID, session);
   return  {name: newAchievement.achievement_name,
            src: cfg.imagesUrl + newAchievement.achievement_img}
+}
+
+async function checkForSeasonalCategory(userId){
+  const currentDate = new Date();
+
+  const passedCategoriesIds = await (await db.User_Category.
+    find({user_id: userId})).
+    map(c => c.category_id);
+
+  const seasonalCategory = await db.Categories.findOne({
+    category_type: enums.CategoryType.SEASONAL,
+    date_from: {$lte: currentDate},
+    date_to: {$gte: currentDate },
+    _id: {$nin: passedCategoriesIds}
+  });
+
+  return {
+    seasonalCategoryId: seasonalCategory != null ? seasonalCategory._id : null,
+    seasonalCategoryName: seasonalCategory != null ? seasonalCategory.category_name : null,
+    seasonalCategoryImg: seasonalCategory != null ? cfg.imagesUrl + seasonalCategory.category_img : null
+  }
 }
 
 module.exports = router;

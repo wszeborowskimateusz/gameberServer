@@ -148,5 +148,72 @@
 	},
 	"prize_coins": 57,
 	"prize_points": 67
+},
+{
+	"_id": {
+		"$oid": "5d986fdfb3cf5f30e6ce5dcf"
+	},
+	"category_name": "Przydatne zwroty",
+	"category_img": "categories/przydatneZwroty/background.jpg",
+	"category_icon": "categories/przydatneZwroty/icon.png",
+	"category_type": "C",
+	"percentage_pass_treshold": 70,
+	"prize_coins": 30,
+	"prize_points": 25
+},
+{
+	"_id": {
+		"$oid": "5d989432cb7334b42d83df9c"
+	},
+	"category_name": "Boże narodzenie",
+	"category_img": "categories/bozeNarodzenie/background.jpg",
+	"category_icon": "categories/bozeNarodzenie/icon.png",
+	"category_type": "S",
+	"percentage_pass_treshold": 70,
+	"prize_coins": 30,
+	"prize_points": 25,
+	"date_from": ISODate("2020-12-24T00:00:00Z"),
+	"date_to": ISODate("2020-12-31T23:59:59Z")
+},
+{
+	"_id": {
+		"$oid": "5d98a145c8ffddb877a4e050"
+	},
+	"category_name": "Wielkanoc",
+	"category_img": "categories/wielkanoc/background.jpg",
+	"category_icon": "categories/wielkanoc/icon.png",
+	"category_type": "S",
+	"percentage_pass_treshold": 70,
+	"prize_coins": 30,
+	"prize_points": 25,
+	"date_from": ISODate("2020-04-22T00:00:00Z"),
+	"date_to": ISODate("2020-04-25T00:00:00Z")
+},
+{
+	"_id": {
+		"$oid": "5d98a505b414613215c5cce0"
+	},
+	"category_name": "Halloween",
+	"category_img": "categories/halloween/background.jpg",
+	"category_icon": "categories/halloween/icon.png",
+	"category_type": "S",
+	"percentage_pass_treshold": 70,
+	"prize_coins": 30,
+	"prize_points": 25,
+	"date_from": ISODate("2019-10-31T00:00:00Z"),
+	"date_to": ISODate("2019-10-31T23:59:59Z")
+},
+{
+	"_id": {
+		"$oid": "5d98a8fbeea839c3faee35ed"
+	},
+	"category_name": "Dzień kobiet",
+	"category_img": "categories/dzienKobiet/background.jpg",
+	"category_icon": "categories/dzienKobiet/icon.png",
+	"category_type": "S",
+	"percentage_pass_treshold": 70,
+	"prize_coins": 30,
+	"prize_points": 25,
+	"date_from": ISODate("2020-04-08T00:00:00Z"),
+	"date_to": ISODate("2020-04-09T00:00:00Z")
 }]
-
