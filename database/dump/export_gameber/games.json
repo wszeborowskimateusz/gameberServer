@@ -51,7 +51,7 @@
 		"$oid": "32467a2371274daf8c7b030d"
 	},
 	"game_name": "WordMatching",
-	"game_info": "{\"isPhrase\":false,\"polishName\":\"Ulica\",\"answers\":[{\"img\":\"games/miasto/cottage.jpg\",\"name\":\"Cottage\"},{\"img\":\"games/miasto/shop.jpg\",\"name\":\"Shop\"},{\"img\":\"games/miasto/street.jpg\",\"name\":\"Street\"},{\"img\":\"games/miasto/underground.jpg\",\"name\":\"Undergound\"}]}",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Ulica\",\"answers\":[{\"img\":\"games/miasto/cottage.jpg\",\"name\":\"Cottage\"},{\"img\":\"games/miasto/shop.jpg\",\"name\":\"Shop\"},{\"img\":\"games/miasto/street.jpg\",\"name\":\"Street\"},{\"img\":\"games/miasto/underground.jpg\",\"name\":\"Underground\"}]}",
 	"correct_answer": "\"street\"",
 	"game_order": 2,
 	"category_id": {
@@ -999,7 +999,7 @@
 		"$oid": "7a119cf0225146678a9527b2"
 	},
 	"game_name": "WordPicker",
-	"game_info": "{\"img\":\"games/miasto/underground.jpg\",\"answers\":[\"Car\",\"Pavement\",\"Street\",\"Undergound\"]}",
+	"game_info": "{\"img\":\"games/miasto/underground.jpg\",\"answers\":[\"Car\",\"Pavement\",\"Street\",\"Underground\"]}",
 	"correct_answer": "3",
 	"game_order": 0,
 	"category_id": {
@@ -1095,7 +1095,7 @@
 		"$oid": "93ab6f5dcc284dbaaa058ad9"
 	},
 	"game_name": "WordLearning",
-	"game_info": "{\"polishName\":\"Skrzyżowanie ulic\",\"englishName\":\"Crossroad\",\"img\":\"games/miasto/crossroad.jpg\"}",
+	"game_info": "{\"polishName\":\"Skrzyżowanie ulic\",\"englishName\":\"intersection\",\"img\":\"games/miasto/intersection.jpg\"}",
 	"correct_answer": "",
 	"game_order": 6,
 	"category_id": {
@@ -1287,7 +1287,7 @@
 		"$oid": "d1ac0a99e44348b9ad164d61"
 	},
 	"game_name": "Crossword",
-	"game_info": "{\"words\":[{\"word\":\"crossing\",\"description\":\"Piesi przechodzą w tym miejscu przez ulicę\"},{\"word\":\"skyscraper\",\"description\":\"Bardzo wysoki budynek sięgający chmur\"},{\"word\":\"underground\",\"description\":\"Pociag jeżdżący pod ziemią\"},{\"word\":\"street\",\"description\":\"Jeżdżą po niej samochody\"},{\"word\":\"crossroad\",\"description\":\"Ulice sie krzyżują\"}]}",
+	"game_info": "{\"words\":[{\"word\":\"crossing\",\"description\":\"Piesi przechodzą w tym miejscu przez ulicę\"},{\"word\":\"skyscraper\",\"description\":\"Bardzo wysoki budynek sięgający chmur\"},{\"word\":\"underground\",\"description\":\"Pociag jeżdżący pod ziemią\"},{\"word\":\"street\",\"description\":\"Jeżdżą po niej samochody\"},{\"word\":\"intersection\",\"description\":\"Ulice sie krzyżują\"}]}",
 	"correct_answer": "",
 	"game_order": 5,
 	"category_id": {
@@ -1544,6 +1544,150 @@
 	"game_order": 12,
 	"category_id": {
 		"$oid": "00c448518a6571d6a5e4a694"
+	}
+},
+{
+	"_id": {
+		"$oid": "ffbc4580958c8f562e66c833"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Kapelusz\",\"englishName\":\"Hat\",\"img\":\"games/ubrania/hat.jpg\"}",
+	"correct_answer": "",
+	"game_order": 0,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "3185410aac74c7f6fff50d66"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Sweter\",\"englishName\":\"Sweater\",\"img\":\"games/ubrania/sweater.jpg\"}",
+	"correct_answer": "",
+	"game_order": 1,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "78f84382abccab1cdd775137"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Kapelusz\",\"answers\":[{\"img\":\"games/ubrania/Sweater.jpg\",\"name\":\"sweater\"},{\"img\":\"games/ubrania/sunglasses.jpg\",\"name\":\"sunglasses\"},{\"img\":\"games/ubrania/hat.jpg\",\"name\":\"hat\"},{\"img\":\"games/ubrania/shoes.jpg\",\"name\":\"shoes\"}]}",
+	"correct_answer": "\"hat\"",
+	"game_order": 2,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "648f404bb24f541b13d1a7b9"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Rękawiczki\",\"englishName\":\"Gloves\",\"img\":\"games/ubrania/gloves.jpg\"}",
+	"correct_answer": "",
+	"game_order": 3,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "72284492aefc64853bc08318"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/ubrania/sweater.jpg\",\"answers\":[\"Gloves\",\"Suit\",\"Hat\",\"Sweater\"]}",
+	"correct_answer": "3",
+	"game_order": 4,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "c76f47b78bb6c9ec9907a6ff"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Okulary przeciwsłoneczne\",\"englishName\":\"Sunglasses\",\"img\":\"games/ubrania/sunglasses.jpg\"}",
+	"correct_answer": "",
+	"game_order": 5,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "80fe4463b516b2e4072bbdeb"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Rękawiczki\",\"answers\":[{\"img\":\"games/ubrania/dress.jpg\",\"name\":\"dress\"},{\"img\":\"games/ubrania/gloves.jpg\",\"name\":\"gloves\"},{\"img\":\"games/ubrania/suit.jpg\",\"name\":\"suit\"},{\"img\":\"games/ubrania/shoes.jpg\",\"name\":\"shoes\"}]}",
+	"correct_answer": "\"gloves\"",
+	"game_order": 6,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "2bc245c9a68ed56e807d2f48"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Sukienka\",\"englishName\":\"Dress\",\"img\":\"games/ubrania/dress.jpg\"}",
+	"correct_answer": "",
+	"game_order": 7,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "184f4c138629a39fa995a471"
+	},
+	"game_name": "StoryGame",
+	"game_info": "{\"stories\":[{\"img\":\"games/ubrania/hat.jpg\",\"storyEnglish\":\"When the sun is shining we wear a hat.\",\"storyPolish\":\"Gdy świeci słońce nosimy kapelusz\"},{\"img\":\"games/ubrania/sunglasses.jpg\",\"storyEnglish\":\"We also put on a pair of sunglasses\",\"storyPolish\":\"Zakładamy także parę okularow przeciwslonecznych\"},{\"img\":\"games/ubrania/sweater.jpg\",\"storyEnglish\":\"When it gets colder we wear a sweater\",\"storyPolish\":\"Gdy robi się chłodniej nosimy sweter\"},{\"img\":\"games/ubrania/gloves.jpg\",\"storyEnglish\":\"Gloves are keeping out hands warm\",\"storyPolish\":\"Rękawiczki utrzymują nasze dłonie w cieple\"}]}",
+	"correct_answer": "",
+	"game_order": 8,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "c8204b3cb1b29aebb1658e88"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Buty\",\"englishName\":\"Shoes\",\"img\":\"games/ubrania/shoes.jpg\"}",
+	"correct_answer": "",
+	"game_order": 9,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "45a94996bd3a27b47464b25c"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/ubrania/dress.jpg\"}",
+	"correct_answer": "\"dress\"",
+	"game_order": 10,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "a3674ca7a1407e9b4dc4fd33"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Garnitur\",\"englishName\":\"Suit\",\"img\":\"games/ubrania/suit.jpg\"}",
+	"correct_answer": "",
+	"game_order": 11,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
 	}
 }]
 

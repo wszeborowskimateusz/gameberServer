@@ -1,5 +1,19 @@
 [{
 	"_id": {
+		"$oid": "00c448518a6571d6a5e4a694"
+	},
+	"category_name": "Zwierzęta domowe",
+	"category_img": "categories/zwierzetaDomowe/zwierzetaDomoweBackground.jpg",
+	"category_icon": "categories/zwierzetaDomowe/zwierzetaDomoweIcon.png",
+	"category_type": "N",
+	"country_id": {
+		"$oid": "5d5696bf14aa473964221e46"
+	},
+	"prize_coins": 57,
+	"prize_points": 67
+},
+{
+	"_id": {
 		"$oid": "1205de2cb54c4bd2ada6de76"
 	},
 	"category_name": "Słodycze",
@@ -56,6 +70,31 @@
 },
 {
 	"_id": {
+		"$oid": "5d87877b6aff08a2bd4d359f"
+	},
+	"category_name": "Test wiedzy",
+	"category_img": "categories/testWiedzy/testWiedzyBackground.jpg",
+	"category_icon": "categories/testWiedzy/testWiedzyIcon.png",
+	"category_type": "BT",
+	"percentage_pass_treshold": 70,
+	"prize_coins": 50,
+	"prize_points": 20
+},
+{
+	"_id": {
+		"$oid": "5d878eb2ea7897e835aea6f8"
+	},
+	"category_name": "Pierwsze słowa",
+	"category_img": "categories/pierwszeSlowa/pierwszeSlowaBackground.jpg",
+	"category_icon": "categories/pierwszeSlowa/pierwszeSlowaIcon.png",
+	"category_type": "B",
+	"category_order": 0,
+	"percentage_pass_treshold": 70,
+	"prize_coins": 10,
+	"prize_points": 10
+},
+{
+	"_id": {
 		"$oid": "6da86d5f78cc4155a96bc885"
 	},
 	"category_name": "Rolnictwo",
@@ -98,127 +137,16 @@
 },
 {
 	"_id": {
-		"$oid": "00c448518a6571d6a5e4a694"
+		"$oid": "691a40bf868a71e0a2e17595"
 	},
-	"category_name": "Zwierzęta domowe",
-	"category_img": "categories/zwierzetaDomowe/zwierzetaDomoweBackground.jpg",
-	"category_icon": "categories/zwierzetaDomowe/zwierzetaDomoweIcon.png",
+	"category_name": "Ubrania",
+	"category_img": "categories/ubrania/ubraniaBackground.jpg",
+	"category_icon": "categories/ubrania/ubraniaIcon.png",
 	"category_type": "N",
 	"country_id": {
-		"$oid": "5d5696bf14aa473964221e46"
+		"$oid": "5d56965e14aa473964221e44"
 	},
 	"prize_coins": 57,
 	"prize_points": 67
-},
-{
-	"_id": {
-		"$oid": "5d87877b6aff08a2bd4d359f"
-	},
-	"category_name": "Test wiedzy",
-	"category_img": "categories/testWiedzy/testWiedzyBackground.jpg",
-	"category_icon": "categories/testWiedzy/testWiedzyIcon.png",
-	"category_type": "BT",
-	"percentage_pass_treshold": 70,
-	"prize_coins": 50,
-	"prize_points": 20
-},
-{
-	"_id": {
-		"$oid": "5d878eb2ea7897e835aea6f8"
-	},
-	"category_name": "Pierwsze słowa",
-	"category_img": "categories/pierwszeSlowa/pierwszeSlowaBackground.jpg",
-	"category_icon": "categories/pierwszeSlowa/pierwszeSlowaIcon.png",
-	"category_type": "B",
-	"category_order": 0,
-	"percentage_pass_treshold": 70,
-	"prize_coins": 10,
-	"prize_points": 10
-},
-{
-	"_id": {
-		"$oid": "5d8790e4ab3f86c2539d2d34"
-	},
-	"category_name": "Pierwsze zwroty",
-	"category_img": "categories/pierwszeZwroty/pierwszeZwrotyBackground.jpg",
-	"category_icon": "categories/pierwszeZwroty/pierwszeZwrotyIcon.png",
-	"category_type": "B",
-	"category_order": 1,
-	"percentage_pass_treshold": 70,
-	"prize_coins": 10,
-	"prize_points": 10
-},
-{
-	"_id": {
-		"$oid": "5d8fa2fa4bc90fe5b08257be"
-	},
-	"category_name": "Palcem po mapie",
-	"category_img": "categories/palcemPoMapie/background.jpg",
-	"category_icon": "categories/palcemPoMapie/icon.png",
-	"category_type": "B",
-	"category_order": 2,
-	"percentage_pass_treshold": 70,
-	"prize_coins": 10,
-	"prize_points": 10
-},
-{
-	"_id": {
-		"$oid": "5d8fa70efbde270eca3b27d6"
-	},
-	"category_name": "Przydatne w podróży",
-	"category_img": "categories/journey/background.jpg",
-	"category_icon": "categories/journey/icon.png",
-	"category_type": "B",
-	"category_order": 3,
-	"percentage_pass_treshold": 70,
-	"prize_coins": 10,
-	"prize_points": 10
-},
-{
-	"_id": {
-		"$oid": "5d98566e22a8dc81c7468c69"
-	},
-	"category_name": "Gry",
-	"category_img": "categories/gry/background.jpg",
-	"category_icon": "categories/gry/icon.png",
-	"category_type": "C",
-	"percentage_pass_treshold": 70,
-	"prize_coins": 30,
-	"prize_points": 25
-},
-{
-	"_id": {
-		"$oid": "5d98689db8dbbedbc13da163"
-	},
-	"category_name": "Zwierzęta",
-	"category_img": "categories/zwierzeta/background.jpg",
-	"category_icon": "categories/zwierzeta/icon.png",
-	"category_type": "C",
-	"percentage_pass_treshold": 70,
-	"prize_coins": 30,
-	"prize_points": 25
-},
-{
-	"_id": {
-		"$oid": "5d986c034a45d0ca80938997"
-	},
-	"category_name": "Emocje",
-	"category_img": "categories/emocje/background.jpg",
-	"category_icon": "categories/emocje/icon.png",
-	"category_type": "C",
-	"percentage_pass_treshold": 70,
-	"prize_coins": 30,
-	"prize_points": 25
-},
-{
-	"_id": {
-		"$oid": "5d986fdfb3cf5f30e6ce5dcf"
-	},
-	"category_name": "Przydatne zwroty",
-	"category_img": "categories/przydatneZwroty/background.jpg",
-	"category_icon": "categories/przydatneZwroty/icon.png",
-	"category_type": "C",
-	"percentage_pass_treshold": 70,
-	"prize_coins": 30,
-	"prize_points": 25
 }]
+
