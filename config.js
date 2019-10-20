@@ -17,5 +17,9 @@ module.exports = {
 
     randomCategoryName: "Losowa kategoria",
     randomCategoryImage: "categories/losowaKategoria/losowaKategoria.jpg",
-    randomCategoryId: "random_category_id"
+    randomCategoryId: "random_category_id",
+
+    google_client_id: "925243319638-ttosmhr4pf4ada5i37ve5gbsggo5isgm.apps.googleusercontent.com",
+    google_client_secret: "dbLc9FzmOLj_uL1ad7jRIeqt",
+    google_redirect_url: "http://localhost:8080"
 };

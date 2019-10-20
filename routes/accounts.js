@@ -6,11 +6,14 @@ const db = require('../' + cfg.dbPath);
 const router = express.Router();
 const passwordHash = require('password-hash');
 const jwt = require('jsonwebtoken');
+const url = require('url');    
+const {google} = require('googleapis');
+
 
 
 // login, password, mail
 router.post('/signup', async function(req, res){
-  const userData = req.body;
+  const userData = req.query == null || Object.keys(req.query).length === 0 ? req.body : req.query;
   let errorMessage = "";
   const session = await DB_CONNECTION.startSession();
 
@@ -79,7 +82,7 @@ router.post('/signup', async function(req, res){
 
 router.post('/signin', async function(req, res){
   const session = await DB_CONNECTION.startSession();
-  const userData = req.body;
+  const userData = req.query == null || Object.keys(req.query).length === 0 ? req.body : req.query;
   const oneDayMS = 86400000;
   let r = {};
   let errorMessage = null;
@@ -155,6 +158,51 @@ router.post('/signin', async function(req, res){
     }
   }
 });
+
+router.post('/signin/google', async function(req, res){
+  const authCode = req.body.authCode;
+
+  try {
+    const oauth2Client = new google.auth.OAuth2(
+      cfg.google_client_id,
+      cfg.google_client_secret,
+      cfg.google_redirect_url
+    );
+
+    const {tokens} = await oauth2Client.getToken(authCode)
+    oauth2Client.setCredentials(tokens);
+
+    const oauth2 = google.oauth2({
+      auth: oauth2Client,
+      version: 'v2'
+    });
+    const userInfo = (await oauth2.userinfo.get()).data;
+    const user = await db.User.findOne({login: userInfo.name});
+
+    const userData = {};
+    if (user == null){
+      userData.login = userInfo.name;
+      userData.password = userInfo.id;
+      userData.mail = userInfo.email;
+
+      res.redirect(307, url.format({
+        pathname:"/accounts/signup",
+        query:userData}));
+    } else{
+      userData.login = userInfo.name;
+      userData.password = userInfo.id;
+
+      res.redirect(307, url.format({
+        pathname:"/accounts/signin",
+        query:userData}));
+    }
+  } catch(err){
+  console.log(err);
+    res.status(500).json({message: errorMessage});
+  }
+});
+
+// Functions
 
 async function achievementForLoginStreak(loginStreak, session){
   const newAchievementSymbol = enums.AchievementsSymbol['LOGIN_STREAK_' + loginStreak];
