@@ -31,6 +31,28 @@
         "achievement_id": {
             "$oid": "5dac378aa2e6d81653d5679c"
         }
+    },
+    {
+        "_id": {
+            "$oid": "5dac417eed490455b8c2e6a3"
+        },
+        "category_id": {
+            "$oid": "5d989432cb7334b42d83df9c"
+        },
+        "achievement_id": {
+            "$oid": "5dac40937087c656da3d9ea4"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5dac418256fbff6f7dbe467f"
+        },
+        "category_id": {
+            "$oid": "5d98a505b414613215c5cce0"
+        },
+        "achievement_id": {
+            "$oid": "5dac40ba3df6195ecb28d5e7"
+        }
     }
 ]
 

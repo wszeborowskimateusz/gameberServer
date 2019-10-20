@@ -66,6 +66,22 @@
 	"achievement_img": "achievements/city.png",
 	"achievement_name": "Wielki mieszczanin",
 	"achievement_description": "Ukończenie kategorii Misto"
+},
+{
+	"_id": {
+		"$oid": "5dac40937087c656da3d9ea4"
+	},
+	"achievement_img": "achievements/santaClaus.png",
+	"achievement_name": "Święty Mikołaj",
+	"achievement_description": "Ukończenie kategorii Boże narodzenie"
+},
+{
+	"_id": {
+		"$oid": "5dac40ba3df6195ecb28d5e7"
+	},
+	"achievement_img": "achievements/pumpkin.png",
+	"achievement_name": "Straszna dynia",
+	"achievement_description": "Ukończenie kategorii Halloween"
 }
 ]
 
