@@ -42,5 +42,30 @@
 	"achievement_symbol": "first_step",
 	"achievement_name": "Pierwszy krok",
 	"achievement_description": "Przejście testu dla początkujących lub kategorii dla początkujących"
-}]
+},
+{
+	"_id": {
+		"$oid": "5dac361d26a9f20ac29f4ad8"
+	},
+	"achievement_img": "achievements/farmer.png",
+	"achievement_name": "Mistrz rolników",
+	"achievement_description": "Ukończenie kategorii Rolnictwo"
+},
+{
+	"_id": {
+		"$oid": "5dac37247cb7d42870360d9c"
+	},
+	"achievement_img": "achievements/car.png",
+	"achievement_name": "Król szos",
+	"achievement_description": "Ukończenie kategorii Motoryzacja"
+},
+{
+	"_id": {
+		"$oid": "5dac378aa2e6d81653d5679c"
+	},
+	"achievement_img": "achievements/city.png",
+	"achievement_name": "Wielki mieszczanin",
+	"achievement_description": "Ukończenie kategorii Misto"
+}
+]
 

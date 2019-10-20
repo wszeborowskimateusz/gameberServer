@@ -1,2 +1,36 @@
-[]
+[
+    {
+        "_id": {
+            "$oid": "5dac384bf2689e4c2e0b7bc6"
+        },
+        "category_id": {
+            "$oid": "6da86d5f78cc4155a96bc885"
+        },
+        "achievement_id": {
+            "$oid": "5dac361d26a9f20ac29f4ad8"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5dac3853a4306f45bf281b07"
+        },
+        "category_id": {
+            "$oid": "5d5984c414aa473964221e4d"
+        },
+        "achievement_id": {
+            "$oid": "5dac37247cb7d42870360d9c"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5dac3858163b5cf5e27420b2"
+        },
+        "category_id": {
+            "$oid": "7e50b24709164f44bdbdfed6"
+        },
+        "achievement_id": {
+            "$oid": "5dac378aa2e6d81653d5679c"
+        }
+    }
+]
 

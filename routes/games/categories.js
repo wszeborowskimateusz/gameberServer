@@ -171,7 +171,7 @@ router.post('/finish', async function(req, res) {
                 populate('achievement_id');
             
             for (const ac of achievements4Category){
-                await functions.giveAchievementToUserAsync(ac._id, null, USER_ID, session);
+                await functions.giveAchievementToUserAsync(ac.achievement_id, null, USER_ID, session);
                 r.achievements.push({
                     src: cfg.imagesUrl + ac.achievement_id.achievement_img,
                     name: ac.achievement_id.achievement_name
