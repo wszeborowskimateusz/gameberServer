@@ -19,20 +19,20 @@ router.post('/signup', async function(req, res){
      !userData.password ||
      !userData.mail){  
       
-     res.status(400).json({message: "Bad Request"});
+     res.status(400).json({message: enums.Message.BAD_REQUEST});
   } else {
     try{
       await session.startTransaction();
 
       const userLogins = await db.User.countDocuments({login: userData.login});
       if (userLogins != 0) {
-        errorMessage = "Login exists";
+        errorMessage = enums.Message.LOGIN_EXISTS;
         throw Error;
       }
 
       const userMails = await db.User.countDocuments({mail: userData.mail});
       if (userMails != 0) {
-        errorMessage = "Mail exists";
+        errorMessage = enums.Message.MAIL_EXISTS;
         throw Error;
       }
 
@@ -43,7 +43,7 @@ router.post('/signup', async function(req, res){
       const defultImage = await db.BackgroundImages.findOne({image_name: cfg.defaultBackgroundName});
 
       if(!defultAvatar || !defultImage){
-        errorMessage = "Server error";
+        errorMessage = enums.Message.SERVER_ERROR;
         throw Error;
       }
 
@@ -91,7 +91,7 @@ router.post('/signin', async function(req, res){
   if(!userData.login ||
      !userData.password){  
 
-     res.status(400).json({message: "Bad Request"});
+     res.status(400).json({message: enums.Message.BAD_REQUEST});
   } else {
     try {
       await session.startTransaction();
@@ -99,7 +99,7 @@ router.post('/signin', async function(req, res){
       const user = await db.User.findOne({login: userData.login});
 
       if(user == null || !passwordHash.verify(userData.password, user.password)) {
-        errorMessage = "Unauthorised access";
+        errorMessage = enums.Message.UNAUTHORISED_ACCESS;
         throw error;
       }
 
@@ -142,7 +142,7 @@ router.post('/signin', async function(req, res){
       r = {...r, ...seasonalCategory};
 
       r.jwtToken = jwt.sign({ login: userData.login, user_id: user._id }, cfg.jwtSecret, { expiresIn: cfg.expirationTimeJWT });
-      r.message = "Signed in";
+      r.message = enums.Message.SUCCESS_LOGIN;
       r.type = "success"
       await session.commitTransaction();
       res.status(200).json(r);

@@ -56,9 +56,14 @@ module.exports.AchievementsSymbol = Object.freeze({
 });
 //#endregion
 
-// //#region friendship
-// module.exports.FriendshipRequestState = Object.freeze({
-//     SENT: 1,
-//     ACCEPTED: 2,
-//     DECLINED: 3
-// });
+//#region messages
+module.exports.Message = Object.freeze({
+    BAD_REQUEST: "Błędne żądanie",
+    LOGIN_EXISTS: "Login jest zajęty. Wybierz inny",
+    MAIL_EXISTS: "Adres e-mail jest zajęty. Wybierz inny",
+    SERVER_ERROR: "Błąd serwera",
+    UNAUTHORISED_ACCESS: "Nieprawidłowe dane logowania",
+    SUCCESS_LOGIN: "Zalogowano"
+});
+//#endregion
+
