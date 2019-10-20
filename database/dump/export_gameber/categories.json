@@ -35,7 +35,7 @@
 	"category_icon": "categories/zakupy/zakupyIcon.png",
 	"category_type": "N",
 	"country_id": {
-		"$oid": "5d5694ed14aa473964221e42"
+		"$oid": "5d56967214aa473964221e45"
 	},
 	"prize_coins": 57,
 	"prize_points": 67
@@ -102,7 +102,7 @@
 	"category_icon": "categories/rolnictwo/rolnictwoIcon.png",
 	"category_type": "N",
 	"country_id": {
-		"$oid": "5d5694ed14aa473964221e42"
+		"$oid": "5d56967214aa473964221e45"
 	},
 	"prize_coins": 57,
 	"prize_points": 67
@@ -116,7 +116,7 @@
 	"category_icon": "categories/miasto/miastoIcon.png",
 	"category_type": "N",
 	"country_id": {
-		"$oid": "5d56965e14aa473964221e44"
+		"$oid": "d8b94e4680d34cd9006e6e54"
 	},
 	"prize_coins": 57,
 	"prize_points": 67
@@ -130,7 +130,7 @@
 	"category_icon": "categories/wakacje/wakacjeIcon.png",
 	"category_type": "N",
 	"country_id": {
-		"$oid": "5d5696bf14aa473964221e46"
+		"$oid": "d8b94e4680d34cd9006e6e54"
 	},
 	"prize_coins": 57,
 	"prize_points": 67
