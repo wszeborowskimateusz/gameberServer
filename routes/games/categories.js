@@ -28,7 +28,7 @@ router.get('/:categoryId', async function(req, res) {
         if (!games.length)
             throw Error;
 
-        if (games[0].category_id.category_type == "N")
+        if (games[0].category_id.category_type == enums.CategoryType.NORMAL)
         {
             // check if user has country available
             if (await db.AvailableCountries
@@ -36,6 +36,15 @@ router.get('/:categoryId', async function(req, res) {
             {
                 throw Error;
             }
+        } else if (games[0].category_id.category_type == enums.CategoryType.CLASH){
+            const clash = await db.Clashes.findOne({
+                date_of_accepting: {$ne: null},
+                category_id: catId,
+                $or: [{user_from_percentage: null, user_from_id: USER_ID},
+                      {user_to_percentage: null, user_to_id: USER_ID}] });
+
+            if (clash == null)
+                throw Error;
         }
 
         let currentGameIndex = games.length - 1;

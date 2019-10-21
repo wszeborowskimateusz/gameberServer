@@ -39,9 +39,6 @@ router.post('/signup', async function(req, res){
         throw Error;
       }
 
-      //log
-      console.log("New user request");
-
       const defultAvatar = await db.Avatars.findOne({avatar_name: cfg.defaultAvatarName});
       const defultImage = await db.BackgroundImages.findOne({image_name: cfg.defaultBackgroundName});
 
@@ -65,15 +62,12 @@ router.post('/signup', async function(req, res){
       const defaultUserBackground = new db.User_Image({ user_id: user._id, image_id: defultImage._id });
       await defaultUserBackground.save({ session });
 
-      //log
-      console.log("New user created");
-
       await session.commitTransaction();
       res.status(200).send();
     } catch(err) {
       await session.abortTransaction();
       console.log(err);
-      res.status(500).json({message: errorMessage});
+      res.status(400).json({message: errorMessage});
     } finally {
       await session.endSession();
     }
@@ -87,8 +81,6 @@ router.post('/signin', async function(req, res){
   let r = {};
   let errorMessage = null;
 
-  //log
-  console.log(userData);  
 
   //Check if all fields are provided and are valid:
   if(!userData.login ||
@@ -152,7 +144,7 @@ router.post('/signin', async function(req, res){
     } catch(err){
       await session.abortTransaction();
       console.log(err);
-      res.status(500).json({message: errorMessage});
+      res.status(400).json({message: errorMessage});
     } finally {
       await session.endSession();
     }
@@ -198,7 +190,7 @@ router.post('/signin/google', async function(req, res){
     }
   } catch(err){
   console.log(err);
-    res.status(500).json({message: errorMessage});
+    res.status(400).json({message: errorMessage});
   }
 });
 
