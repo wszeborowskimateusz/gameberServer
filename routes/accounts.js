@@ -63,8 +63,14 @@ router.post('/signup', async function(req, res){
       await defaultUserBackground.save({ session });
 
       await session.commitTransaction();
-      res.status(200).send();
-    } catch(err) {
+
+      if (userData.isGoogle == "true")
+        res.redirect(307, url.format({
+          pathname:"/accounts/signin",
+          query:userData}));
+      else
+        res.status(200).send();
+      } catch(err) {
       await session.abortTransaction();
       console.log(err);
       res.status(400).json({message: errorMessage});
@@ -176,6 +182,7 @@ router.post('/signin/google', async function(req, res){
       userData.login = userInfo.name;
       userData.password = userInfo.id;
       userData.mail = userInfo.email;
+      userData.isGoogle = true;
 
       res.redirect(307, url.format({
         pathname:"/accounts/signup",
