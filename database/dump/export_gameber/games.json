@@ -1107,7 +1107,7 @@
 		"$oid": "94c94921982368c9b1d33f94"
 	},
 	"game_name": "WordLearning",
-	"game_info": "{\"polishName\":\"Leżaki plażowe\",\"englishName\":\"Sunbeds\",\"img\":\"games/wakacje/sunbeds.jpg\"}",
+	"game_info": "{\"polishName\":\"Leżaki plażowe\",\"englishName\":\"Sunbeds\",\"img\":\"games/wakacje/sunbeds_2.jpg\"}",
 	"correct_answer": "",
 	"game_order": 1,
 	"category_id": {
@@ -1119,7 +1119,7 @@
 		"$oid": "9ad8bd87d2334c5aaebc03bf"
 	},
 	"game_name": "StoryGame",
-	"game_info": "{\"stories\":[{\"img\":\"games/biuro/bus.jpg\",\"storyEnglish\":\"John arrives to work by bus\",\"storyPolish\":\"John przyjeżdża do pracy autobusem\"},{\"img\":\"games/biuro/officeBuilding.jpg\",\"storyEnglish\":\"He enters his office building\",\"storyPolish\":\"Wchodzi do swojego biurowca\"},{\"img\":\"games/biuro/stairs.jpg\",\"storyEnglish\":\"He goes up the stairs\",\"storyPolish\":\"Wchodzi po schodach\"},{\"img\":\"games/biuro/meeting.jpg\",\"storyEnglish\":\"John goes to his planned meeting\",\"storyPolish\":\"John wchodzi na swoje zaplanowane spotkanie\"}]}",
+	"game_info": "{\"stories\":[{\"img\":\"games/biuro/bus.jpg\",\"storyEnglish\":\"John arrives to work by bus\",\"storyPolish\":\"John przyjeżdża do pracy autobusem\"},{\"img\":\"games/biuro/officeBuilding.jpg\",\"storyEnglish\":\"He enters his office building\",\"storyPolish\":\"Wchodzi do swojego biurowca\"},{\"img\":\"games/biuro/stairs.jpg\",\"storyEnglish\":\"He goes up the stairs\",\"storyPolish\":\"Wchodzi po schodach\"},{\"img\":\"games/biuro/meeting_2.jpg\",\"storyEnglish\":\"John goes to his planned meeting\",\"storyPolish\":\"John wchodzi na swoje zaplanowane spotkanie\"}]}",
 	"correct_answer": "",
 	"game_order": 6,
 	"category_id": {
@@ -1167,7 +1167,7 @@
 		"$oid": "a77cd893f4464a58be048306"
 	},
 	"game_name": "WordGuessing",
-	"game_info": "{\"img\":\"games/slodycze/lollipop.jpg\"}",
+	"game_info": "{\"img\":\"games/slodycze/lollipop_2.jpg\"}",
 	"correct_answer": "\"lollipop\"",
 	"game_order": 3,
 	"category_id": {
@@ -1203,7 +1203,7 @@
 		"$oid": "b138e44a27264d62914cd33a"
 	},
 	"game_name": "WordPicker",
-	"game_info": "{\"img\":\"games/biuro/meeting.jpg\",\"answers\":[\"office building\",\"bus\",\"notes\",\"meeting\"]}",
+	"game_info": "{\"img\":\"games/biuro/meeting_3.jpg\",\"answers\":[\"office building\",\"bus\",\"notes\",\"meeting\"]}",
 	"correct_answer": "3",
 	"game_order": 1,
 	"category_id": {
@@ -1275,7 +1275,7 @@
 		"$oid": "cef9292dc1ba48b0a04e2c2c"
 	},
 	"game_name": "WordLearning",
-	"game_info": "{\"polishName\":\"Czekolada\",\"englishName\":\"Chocolate\",\"img\":\"games/slodycze/chocolatebar.jpg\"}",
+	"game_info": "{\"polishName\":\"Czekolada\",\"englishName\":\"Chocolate\",\"img\":\"games/slodycze/chocolateBar_2.jpg\"}",
 	"correct_answer": "",
 	"game_order": 0,
 	"category_id": {
@@ -1299,7 +1299,7 @@
 		"$oid": "d82e4ea29ed1473643b73eb7"
 	},
 	"game_name": "WordMatching",
-	"game_info": "{\"isPhrase\":true,\"polishName\":\"Palmy\",\"answers\":[{\"img\":\"games/wakacje/sunbeds.jpg\",\"name\":\"Sunbeds\"},{\"img\":\"games/wakacje/palmTrees_3.jpg\",\"name\":\"Palm trees\"},{\"img\":\"games/wakacje/coconut.jpg\",\"name\":\"Coconut\"},{\"img\":\"games/wakacje/swimmingPool.jpg\",\"name\":\"Swimming pool\"}]}",
+	"game_info": "{\"isPhrase\":true,\"polishName\":\"Palmy\",\"answers\":[{\"img\":\"games/wakacje/sunbeds.jpg\",\"name\":\"Sunbeds\"},{\"img\":\"games/wakacje/palmTrees_3.jpg\",\"name\":\"Palm trees\"},{\"img\":\"games/wakacje/coconut.jpg\",\"name\":\"Coconut\"},{\"img\":\"games/wakacje/swimmingPool_2.jpg\",\"name\":\"Swimming pool\"}]}",
 	"correct_answer": "\"palm trees\"",
 	"game_order": 2,
 	"category_id": {
@@ -1443,7 +1443,7 @@
 		"$oid": "90ce4e67ad17a777d9ee976d"
 	},
 	"game_name": "WordPicker",
-	"game_info": "{\"img\":\"games/zwierzetaDomowe/cat.jpg\",\"answers\":[\"Gold fish\",\"Cat\",\"Dog\",\"Hamster\"]}",
+	"game_info": "{\"img\":\"games/zwierzetaDomowe/cat_2.jpg\",\"answers\":[\"Gold fish\",\"Cat\",\"Dog\",\"Hamster\"]}",
 	"correct_answer": "1",
 	"game_order": 4,
 	"category_id": {
@@ -1467,7 +1467,7 @@
 		"$oid": "ee4143f795e29795298849e2"
 	},
 	"game_name": "WordPicker",
-	"game_info": "{\"img\":\"games/zwierzetaDomowe/Parrot.jpg\",\"answers\":[\"Cat\",\"Parrot\",\"Dog\",\"Gold Fish\"]}",
+	"game_info": "{\"img\":\"games/zwierzetaDomowe/parrot_2.jpg\",\"answers\":[\"Cat\",\"Parrot\",\"Dog\",\"Gold Fish\"]}",
 	"correct_answer": "1",
 	"game_order": 6,
 	"category_id": {
@@ -1491,7 +1491,7 @@
 		"$oid": "e08f4e34822785ac6fe55dc4"
 	},
 	"game_name": "WordGuessing",
-	"game_info": "{\"img\":\"games/zwierzetaDomowe/cat.jpg\"}",
+	"game_info": "{\"img\":\"games/zwierzetaDomowe/cat_3.jpg\"}",
 	"correct_answer": "\"cat\"",
 	"game_order": 8,
 	"category_id": {
@@ -1575,7 +1575,7 @@
 		"$oid": "78f84382abccab1cdd775137"
 	},
 	"game_name": "WordMatching",
-	"game_info": "{\"isPhrase\":false,\"polishName\":\"Kapelusz\",\"answers\":[{\"img\":\"games/ubrania/Sweater.jpg\",\"name\":\"sweater\"},{\"img\":\"games/ubrania/sunglasses_3.jpg\",\"name\":\"sunglasses\"},{\"img\":\"games/ubrania/hat_2.jpg\",\"name\":\"hat\"},{\"img\":\"games/ubrania/shoes.jpg\",\"name\":\"shoes\"}]}",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Kapelusz\",\"answers\":[{\"img\":\"games/ubrania/sweater_2.jpg\",\"name\":\"sweater\"},{\"img\":\"games/ubrania/sunglasses_3.jpg\",\"name\":\"sunglasses\"},{\"img\":\"games/ubrania/hat_2.jpg\",\"name\":\"hat\"},{\"img\":\"games/ubrania/shoes_3.jpg\",\"name\":\"shoes\"}]}",
 	"correct_answer": "\"hat\"",
 	"game_order": 2,
 	"category_id": {
@@ -1587,7 +1587,7 @@
 		"$oid": "648f404bb24f541b13d1a7b9"
 	},
 	"game_name": "WordLearning",
-	"game_info": "{\"polishName\":\"Rękawiczki\",\"englishName\":\"Gloves\",\"img\":\"games/ubrania/gloves.jpg\"}",
+	"game_info": "{\"polishName\":\"Rękawiczki\",\"englishName\":\"Gloves\",\"img\":\"games/ubrania/gloves_3.jpg\"}",
 	"correct_answer": "",
 	"game_order": 3,
 	"category_id": {
@@ -1599,7 +1599,7 @@
 		"$oid": "72284492aefc64853bc08318"
 	},
 	"game_name": "WordPicker",
-	"game_info": "{\"img\":\"games/ubrania/sweater.jpg\",\"answers\":[\"Gloves\",\"Suit\",\"Hat\",\"Sweater\"]}",
+	"game_info": "{\"img\":\"games/ubrania/sweater_3.jpg\",\"answers\":[\"Gloves\",\"Suit\",\"Hat\",\"Sweater\"]}",
 	"correct_answer": "3",
 	"game_order": 4,
 	"category_id": {
@@ -1623,7 +1623,7 @@
 		"$oid": "80fe4463b516b2e4072bbdeb"
 	},
 	"game_name": "WordMatching",
-	"game_info": "{\"isPhrase\":false,\"polishName\":\"Rękawiczki\",\"answers\":[{\"img\":\"games/ubrania/dress.jpg\",\"name\":\"dress\"},{\"img\":\"games/ubrania/gloves.jpg\",\"name\":\"gloves\"},{\"img\":\"games/ubrania/suit.jpg\",\"name\":\"suit\"},{\"img\":\"games/ubrania/shoes.jpg\",\"name\":\"shoes\"}]}",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Rękawiczki\",\"answers\":[{\"img\":\"games/ubrania/dress_3.jpg\",\"name\":\"dress\"},{\"img\":\"games/ubrania/gloves.jpg\",\"name\":\"gloves\"},{\"img\":\"games/ubrania/suit.jpg\",\"name\":\"suit\"},{\"img\":\"games/ubrania/shoes.jpg\",\"name\":\"shoes\"}]}",
 	"correct_answer": "\"gloves\"",
 	"game_order": 6,
 	"category_id": {
@@ -1647,7 +1647,7 @@
 		"$oid": "184f4c138629a39fa995a471"
 	},
 	"game_name": "StoryGame",
-	"game_info": "{\"stories\":[{\"img\":\"games/ubrania/hat.jpg\",\"storyEnglish\":\"When the sun is shining we wear a hat.\",\"storyPolish\":\"Gdy świeci słońce nosimy kapelusz\"},{\"img\":\"games/ubrania/sunglasses_2.jpg\",\"storyEnglish\":\"We also put on a pair of sunglasses\",\"storyPolish\":\"Zakładamy także parę okularow przeciwslonecznych\"},{\"img\":\"games/ubrania/sweater.jpg\",\"storyEnglish\":\"When it gets colder we wear a sweater\",\"storyPolish\":\"Gdy robi się chłodniej nosimy sweter\"},{\"img\":\"games/ubrania/gloves.jpg\",\"storyEnglish\":\"Gloves are keeping out hands warm\",\"storyPolish\":\"Rękawiczki utrzymują nasze dłonie w cieple\"}]}",
+	"game_info": "{\"stories\":[{\"img\":\"games/ubrania/hat_3.jpg\",\"storyEnglish\":\"When the sun is shining we wear a hat.\",\"storyPolish\":\"Gdy świeci słońce nosimy kapelusz\"},{\"img\":\"games/ubrania/sunglasses_2.jpg\",\"storyEnglish\":\"We also put on a pair of sunglasses\",\"storyPolish\":\"Zakładamy także parę okularow przeciwslonecznych\"},{\"img\":\"games/ubrania/sweater_4.jpg\",\"storyEnglish\":\"When it gets colder we wear a sweater\",\"storyPolish\":\"Gdy robi się chłodniej nosimy sweter\"},{\"img\":\"games/ubrania/gloves_2.jpg\",\"storyEnglish\":\"Gloves are keeping out hands warm\",\"storyPolish\":\"Rękawiczki utrzymują nasze dłonie w cieple\"}]}",
 	"correct_answer": "",
 	"game_order": 8,
 	"category_id": {
@@ -1659,7 +1659,7 @@
 		"$oid": "c8204b3cb1b29aebb1658e88"
 	},
 	"game_name": "WordLearning",
-	"game_info": "{\"polishName\":\"Buty\",\"englishName\":\"Shoes\",\"img\":\"games/ubrania/shoes.jpg\"}",
+	"game_info": "{\"polishName\":\"Buty\",\"englishName\":\"Shoes\",\"img\":\"games/ubrania/shoes_2.jpg\"}",
 	"correct_answer": "",
 	"game_order": 9,
 	"category_id": {
@@ -1671,7 +1671,7 @@
 		"$oid": "45a94996bd3a27b47464b25c"
 	},
 	"game_name": "WordGuessing",
-	"game_info": "{\"img\":\"games/ubrania/dress.jpg\"}",
+	"game_info": "{\"img\":\"games/ubrania/dress_2.jpg\"}",
 	"correct_answer": "\"dress\"",
 	"game_order": 10,
 	"category_id": {
@@ -1683,7 +1683,7 @@
 		"$oid": "a3674ca7a1407e9b4dc4fd33"
 	},
 	"game_name": "WordLearning",
-	"game_info": "{\"polishName\":\"Garnitur\",\"englishName\":\"Suit\",\"img\":\"games/ubrania/suit.jpg\"}",
+	"game_info": "{\"polishName\":\"Garnitur\",\"englishName\":\"Suit\",\"img\":\"games/ubrania/suit_2.jpg\"}",
 	"correct_answer": "",
 	"game_order": 11,
 	"category_id": {
@@ -2235,7 +2235,7 @@
       "$oid": "5d98a7a998a9c417d7a35b47"
     },
     "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Cukierek\",\"englishName\":\"Candy\",\"img\":\"games\/halloween\/candy.jpg\"}",
+    "game_info": "{\"polishName\":\"Cukierek\",\"englishName\":\"Candy\",\"img\":\"games\/halloween\/candy_2.jpg\"}",
 	  "correct_answer": "",
 	  "game_order": 4,
     "category_id": {
