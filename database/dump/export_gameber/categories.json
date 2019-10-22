@@ -1,5 +1,19 @@
 [{
 	"_id": {
+		"$oid": "00c448518a6571d6a5e4a694"
+	},
+	"category_name": "Zwierzęta domowe",
+	"category_img": "categories/zwierzetaDomowe/zwierzetaDomoweBackground.jpg",
+	"category_icon": "categories/zwierzetaDomowe/zwierzetaDomoweIcon.png",
+	"category_type": "N",
+	"country_id": {
+		"$oid": "5d5696bf14aa473964221e46"
+	},
+	"prize_coins": 57,
+	"prize_points": 67
+},
+{
+	"_id": {
 		"$oid": "1205de2cb54c4bd2ada6de76"
 	},
 	"category_name": "Słodycze",
@@ -56,34 +70,6 @@
 },
 {
 	"_id": {
-		"$oid": "6da86d5f78cc4155a96bc885"
-	},
-	"category_name": "Rolnictwo",
-	"category_img": "categories/rolnictwo/rolnictwoBackground.jpg",
-	"category_icon": "categories/rolnictwo/rolnictwoIcon.png",
-	"category_type": "N",
-	"country_id": {
-		"$oid": "5d5694ed14aa473964221e42"
-	},
-	"prize_coins": 57,
-	"prize_points": 67
-},
-{
-	"_id": {
-		"$oid": "7e50b24709164f44bdbdfed6"
-	},
-	"category_name": "Miasto",
-	"category_img": "categories/miasto/miastoBackground.jpg",
-	"category_icon": "categories/miasto/miastoIcon.png",
-	"category_type": "N",
-	"country_id": {
-		"$oid": "5d56965e14aa473964221e44"
-	},
-	"prize_coins": 57,
-	"prize_points": 67
-},
-{
-	"_id": {
 		"$oid": "5d87877b6aff08a2bd4d359f"
 	},
 	"category_name": "Test wiedzy",
@@ -107,6 +93,7 @@
 	"prize_coins": 10,
 	"prize_points": 10
 },
+
 {
 	"_id": {
 		"$oid": "5d8790e4ab3f86c2539d2d34"
@@ -146,6 +133,63 @@
 	"prize_coins": 10,
 	"prize_points": 10
 },
+{
+	"_id": {
+		"$oid": "6da86d5f78cc4155a96bc885"
+	},
+	"category_name": "Rolnictwo",
+	"category_img": "categories/rolnictwo/rolnictwoBackground.jpg",
+	"category_icon": "categories/rolnictwo/rolnictwoIcon.png",
+	"category_type": "N",
+	"country_id": {
+		"$oid": "5d5694ed14aa473964221e42"
+	},
+	"prize_coins": 57,
+	"prize_points": 67
+},
+{
+	"_id": {
+		"$oid": "7e50b24709164f44bdbdfed6"
+	},
+	"category_name": "Miasto",
+	"category_img": "categories/miasto/miastoBackground.jpg",
+	"category_icon": "categories/miasto/miastoIcon.png",
+	"category_type": "N",
+	"country_id": {
+		"$oid": "5d56965e14aa473964221e44"
+	},
+	"prize_coins": 57,
+	"prize_points": 67
+},
+{
+	"_id": {
+		"$oid": "bffb4a548d2978cdd72a2d9a"
+	},
+	"category_name": "Wakacje",
+	"category_img": "categories/wakacje/wakacjeBackground.jpg",
+	"category_icon": "categories/wakacje/wakacjeIcon.png",
+	"category_type": "N",
+	"country_id": {
+		"$oid": "5d5696bf14aa473964221e46"
+	},
+	"prize_coins": 57,
+	"prize_points": 67
+},
+{
+	"_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	},
+	"category_name": "Ubrania",
+	"category_img": "categories/ubrania/ubraniaBackground.jpg",
+	"category_icon": "categories/ubrania/ubraniaIcon.png",
+	"category_type": "N",
+	"country_id": {
+		"$oid": "5d56965e14aa473964221e44"
+	},
+	"prize_coins": 57,
+	"prize_points": 67
+},
+
 {
 	"_id": {
 		"$oid": "5d98566e22a8dc81c7468c69"

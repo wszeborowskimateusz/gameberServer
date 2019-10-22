@@ -1,1288 +1,1695 @@
-[
-  {
-    "_id": {
-      "$oid": "935afc712154443b98730a5d"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/zakupy/shoppingBag.jpg\",\"answers\":[\"Shopping bag\",\"Escalator\",\"Shopping Mall\",\"Clothes\"]}",
-	"correct_answer": "0",
-	"game_order": 0,
-    "category_id": {
-      "$oid": "2b7ba4a531f1449993ef1688"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3403a10df4ca4148a6f71888"
-    },
-    "game_name": "WordSearch",
-    "game_info": "{\"words\":[\"shop\",\"florist\",\"escalator\",\"bag\",\"card\"]}",
-	"correct_answer": "",
-	"game_order": 1,
-    "category_id": {
-      "$oid": "2b7ba4a531f1449993ef1688"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "baa4faaf65b54b7d80b0ac0e"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Kwiaciarnia\",\"englishName\":\"Florist\",\"img\":\"games/zakupy/florist.jpg\"}",
-	"correct_answer": "",
-	"game_order": 2,
-    "category_id": {
-      "$oid": "2b7ba4a531f1449993ef1688"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c180b59eb9db4af195627067"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Schody ruchome\",\"englishName\":\"Escalator\",\"img\":\"games/zakupy/escalator.jpg\"}",
+[{
+	"_id": {
+		"$oid": "00a9d5dec1534a99aa4d15f5"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"droga\",\"englishName\":\"road\",\"img\":\"games/motoryzacja/straightRoad.jpg\"}",
 	"correct_answer": "",
 	"game_order": 3,
-    "category_id": {
-      "$oid": "2b7ba4a531f1449993ef1688"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "4a1cfc1f0be84542b0543ad7"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":false,\"polishName\":\"Karta kredytowa\",\"answers\":[{\"img\":\"games/zakupy/shoppingBag.jpg\",\"name\":\"Shopping bag\"},{\"img\":\"games/zakupy/creditCard.jpg\",\"name\":\"Credit card\"},{\"img\":\"games/zakupy/florist.jpg\",\"name\":\"Florist\"},{\"img\":\"games/zakupy/shoppingCart.jpg\",\"name\":\"Shopping cart\"}]}",
-	"correct_answer": "\"credit card\"",
-	"game_order": 4,
-    "category_id": {
-      "$oid": "2b7ba4a531f1449993ef1688"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e1d3e6934c624cb59962b92f"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Sklep spożywczy\",\"englishName\":\"Grocery store\",\"img\":\"games/zakupy/grocery.jpg\"}",
-	"correct_answer": "",
-	"game_order": 5,
-    "category_id": {
-      "$oid": "2b7ba4a531f1449993ef1688"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c46f4b1da58a4c07bd893166"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Idę na zakupy\",\"englishName\":\"I am going shopping\",\"img\":\"games/zakupy/goingShopping.jpg\"}",
-	"correct_answer": "",
-	"game_order": 6,
-    "category_id": {
-      "$oid": "2b7ba4a531f1449993ef1688"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e7eaa5a494f74dc4b3300936"
-    },
-    "game_name": "WordGuessing",
-    "game_info": "{\"img\":\"games/motoryzacja/car2.jpg\"}",
-	"correct_answer": "\"car\"",
-	"game_order": 0,
-    "category_id": {
-      "$oid": "5d5984c414aa473964221e4d"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "404ae9aec10e45ac92d0d08c"
-    },
-    "game_name": "StoryGame",
-    "game_info": "{\"stories\":[{\"img\":\"games/motoryzacja/car1.jpg\",\"storyEnglish\":\"This is a car\",\"storyPolish\":\"To jest samochód\"},{\"img\":\"games/motoryzacja/fastYellowCar.jpg\",\"storyEnglish\":\"This car is fast\",\"storyPolish\":\"Ten samochód jest szybki\"},{\"img\":\"games/motoryzacja/oldCar.jpg\",\"storyEnglish\":\"This car is old\",\"storyPolish\":\"Ten samochód jest stary\"},{\"img\":\"games/motoryzacja/brokenCar.jpg\",\"storyEnglish\":\"This car is broken\",\"storyPolish\":\"Ten samochód jest zepsuty\"}]}",
-	"correct_answer": "",
-	"game_order": 1,
-    "category_id": {
-      "$oid": "5d5984c414aa473964221e4d"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7d5e04a793a6438b97c5d2d9"
-    },
-    "game_name": "StoryGame",
-    "game_info": "{\"stories\":[{\"img\":\"games/motoryzacja/straightRoad.jpg\",\"storyEnglish\":\"This road is straight\",\"storyPolish\":\"Ta droga jest prosta\"},{\"img\":\"games/motoryzacja/curvyRoad.jpg\",\"storyEnglish\":\"This road is curvy\",\"storyPolish\":\"Ta droga jest kręta\"}]}",
-	"correct_answer": "",
-	"game_order": 2,
-    "category_id": {
-      "$oid": "5d5984c414aa473964221e4d"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8cf7af1708ef4c799df8de78"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":false,\"polishName\":\"kluczyki do samochodu\",\"answers\":[{\"img\":\"games/motoryzacja/carKeys.jpg\",\"name\":\"car keys\"},{\"img\":\"games/motoryzacja/mirror.jpg\",\"name\":\"mirror\"}]}",
-	"correct_answer": "\"car keys\"",
-	"game_order": 4,
-    "category_id": {
-      "$oid": "5d5984c414aa473964221e4d"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "90f0aaab97394f1596bb27b2"
-    },
-    "game_name": "WordSearch",
-    "game_info": "{\"words\":[\"car\",\"road\",\"fast\",\"straight\"]}",
-	"correct_answer": "",
-	"game_order": 5,
-    "category_id": {
-      "$oid": "5d5984c414aa473964221e4d"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "00a9d5dec1534a99aa4d15f5"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"droga\",\"englishName\":\"road\",\"img\":\"games/motoryzacja/straightRoad.jpg\"}",
-	"correct_answer": "",
-	"game_order": 6,
-    "category_id": {
-      "$oid": "5d5984c414aa473964221e4d"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1978b0831a83419d82b84188"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Korytarz\",\"englishName\":\"Hallway\",\"img\":\"games/biuro/hallway.jpg\"}",
+	"category_id": {
+		"$oid": "5d5984c414aa473964221e4d"
+	}
+},
+{
+	"_id": {
+		"$oid": "11c3458f9a57a98f134f301f"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Palmy\",\"englishName\":\"Palm trees\",\"img\":\"games/wakacje/palmTrees.jpg\"}",
 	"correct_answer": "",
 	"game_order": 0,
-    "category_id": {
-      "$oid": "5d59851614aa473964221e4f"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b138e44a27264d62914cd33a"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/biuro/meeting.jpg\",\"answers\":[\"office building\",\"bus\",\"notes\",\"meeting\"]}",
-	"correct_answer": "3",
-	"game_order": 1,
-    "category_id": {
-      "$oid": "5d59851614aa473964221e4f"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f7ff8a4eff884ec691f9be30"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Spotkanie\",\"englishName\":\"Meeting\",\"img\":\"games/biuro/meeting.jpg\"}",
-	"correct_answer": "",
-	"game_order": 2,
-    "category_id": {
-      "$oid": "5d59851614aa473964221e4f"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7aa58ac4659b4a65a5350c0f"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/biuro/stairs.jpg\",\"answers\":[\"stairs\",\"meeting\",\"notes\",\"bus\"]}",
-	"correct_answer": "0",
-	"game_order": 3,
-    "category_id": {
-      "$oid": "5d59851614aa473964221e4f"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e44ea1c384ac4001a367a408"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Spotkanie\",\"englishName\":\"Office building\",\"img\":\"games/biuro/officeBuilding.jpg\"}",
-	"correct_answer": "",
-	"game_order": 4,
-    "category_id": {
-      "$oid": "5d59851614aa473964221e4f"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "a875ec298ad44ff9a12ca15b"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/biuro/computer.jpg\",\"answers\":[\"Book\",\"Computer\",\"Person\",\"Stairs\"]}",
-	"correct_answer": "1",
-	"game_order": 5,
-    "category_id": {
-      "$oid": "5d59851614aa473964221e4f"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9ad8bd87d2334c5aaebc03bf"
-    },
-    "game_name": "StoryGame",
-    "game_info": "{\"stories\":[{\"img\":\"games/biuro/bus.jpg\",\"storyEnglish\":\"John arrives to work by bus\",\"storyPolish\":\"John przyjeżdża do pracy autobusem\"},{\"img\":\"games/biuro/officeBuilding.jpg\",\"storyEnglish\":\"He enters his office building\",\"storyPolish\":\"Wchodzi do swojego biurowca\"},{\"img\":\"games/biuro/stairs.jpg\",\"storyEnglish\":\"He goes up the stairs\",\"storyPolish\":\"Wchodzi po schodach\"},{\"img\":\"games/biuro/meeting.jpg\",\"storyEnglish\":\"John goes to his planned meeting\",\"storyPolish\":\"John wchodzi na swoje zaplanowane spotkanie\"}]}",
-	"correct_answer": "",
-	"game_order": 6,
-    "category_id": {
-      "$oid": "5d59851614aa473964221e4f"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "81e0a96d878a4720b9d3166a"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Schody\",\"englishName\":\"Stairs\",\"img\":\"games/biuro/stairs.jpg\"}",
-	"correct_answer": "",
-	"game_order": 7,
-    "category_id": {
-      "$oid": "5d59851614aa473964221e4f"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e9804d22decf47749cb9ac1c"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Podlewanie\",\"englishName\":\"Watering\",\"img\":\"games/rolnictwo/watering.jpg\"}",
-	"correct_answer": "",
-	"game_order": 0,
-    "category_id": {
-      "$oid": "6da86d5f78cc4155a96bc885"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1498b7c9f518425d9f603734"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/rolnictwo/chicken.jpg\",\"answers\":[\"Crop\",\"Goat\",\"Chicken\",\"Field\"]}",
+	"category_id": {
+		"$oid": "bffb4a548d2978cdd72a2d9a"
+	}
+},
+{
+	"_id": {
+		"$oid": "1498b7c9f518425d9f603734"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/rolnictwo/chicken.jpg\",\"answers\":[\"Crop\",\"Goat\",\"Chicken\",\"Field\"]}",
 	"correct_answer": "2",
 	"game_order": 1,
-    "category_id": {
-      "$oid": "6da86d5f78cc4155a96bc885"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7de30f6001064f5b91d996f1"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/rolnictwo/sheep.jpg\",\"answers\":[\"Sheep\",\"Harvester\",\"Chicken\",\"Grain\"]}",
-	"correct_answer": "0",
-	"game_order": 2,
-    "category_id": {
-      "$oid": "6da86d5f78cc4155a96bc885"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c39b4f41fb204523bcf60e2a"
-    },
-    "game_name": "Crossword",
-    "game_info": "{\"words\":[{\"word\":\"cow\",\"description\":\"Czarno białe zwierze\"},{\"word\":\"chicken\",\"description\":\"Kurczak\"},{\"word\":\"watering\",\"description\":\"Podlewanie\"},{\"word\":\"sheep\",\"description\":\"Owca\"},{\"word\":\"harvester\",\"description\":\"Maszyna zbierająca zboże\"},{\"word\":\"grain\",\"description\":\"Ziarno lub zboże\"}]}",
+	"category_id": {
+		"$oid": "6da86d5f78cc4155a96bc885"
+	}
+},
+{
+	"_id": {
+		"$oid": "1978b0831a83419d82b84188"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Korytarz\",\"englishName\":\"Hallway\",\"img\":\"games/biuro/hallway.jpg\"}",
 	"correct_answer": "",
-	"game_order": 3,
-    "category_id": {
-      "$oid": "6da86d5f78cc4155a96bc885"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3e1d2b43a6314ed38905cc03"
-    },
-    "game_name": "StoryGame",
-    "game_info": "{\"stories\":[{\"img\":\"games/rolnictwo/field.jpg\",\"storyEnglish\":\"Grain is growing on a field\",\"storyPolish\":\"Zboże rośnie na polu\"},{\"img\":\"games/rolnictwo/harvester.jpg\",\"storyEnglish\":\"Harvester collects the crop\",\"storyPolish\":\"Kombajn zbiera plony\"},{\"img\":\"games/rolnictwo/grain.jpg\",\"storyEnglish\":\"We have ready grain\",\"storyPolish\":\"Mamy gotowe ziarno\"}]}",
-	"correct_answer": "",
-	"game_order": 4,
-    "category_id": {
-      "$oid": "6da86d5f78cc4155a96bc885"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5651b0650faa4a4ca19bb12d"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Krowa\",\"englishName\":\"Cow\",\"img\":\"games/rolnictwo/cow.jpg\"}",
-	"correct_answer": "",
-	"game_order": 5,
-    "category_id": {
-      "$oid": "6da86d5f78cc4155a96bc885"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7a119cf0225146678a9527b2"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/miasto/underground.jpg\",\"answers\":[\"Car\",\"Pavement\",\"Street\",\"Undergound\"]}",
-	"correct_answer": "3",
 	"game_order": 0,
-    "category_id": {
-      "$oid": "7e50b24709164f44bdbdfed6"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b0c304cce8bf49f3a7495c58"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Przejście dla pieszych\",\"englishName\":\"Crossing\",\"img\":\"games/miasto/crossing.jpg\"}",
-	"correct_answer": "",
-	"game_order": 1,
-    "category_id": {
-      "$oid": "7e50b24709164f44bdbdfed6"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "32467a2371274daf8c7b030d"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":false,\"polishName\":\"Ulica\",\"answers\":[{\"img\":\"games/miasto/cottage.jpg\",\"name\":\"Cottage\"},{\"img\":\"games/miasto/shop.jpg\",\"name\":\"Shop\"},{\"img\":\"games/miasto/street.jpg\",\"name\":\"Street\"},{\"img\":\"games/miasto/underground.jpg\",\"name\":\"Undergound\"}]}",
+	"category_id": {
+		"$oid": "5d59851614aa473964221e4f"
+	}
+},
+{
+	"_id": {
+		"$oid": "32467a2371274daf8c7b030d"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Ulica\",\"answers\":[{\"img\":\"games/miasto/cottage.jpg\",\"name\":\"Cottage\"},{\"img\":\"games/miasto/shop.jpg\",\"name\":\"Shop\"},{\"img\":\"games/miasto/street.jpg\",\"name\":\"Street\"},{\"img\":\"games/miasto/underground.jpg\",\"name\":\"Underground\"}]}",
 	"correct_answer": "\"street\"",
 	"game_order": 2,
-    "category_id": {
-      "$oid": "7e50b24709164f44bdbdfed6"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e4eeb118fd8f4a15862e8d28"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Drapacz chmur\",\"englishName\":\"Skyscraper\",\"img\":\"games/miasto/skyscraper.jpg\"}",
-	"correct_answer": "",
-	"game_order": 3,
-    "category_id": {
-      "$oid": "7e50b24709164f44bdbdfed6"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "a2a4c08ec83b4c4794d976c5"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/miasto/trafficLight.jpg\",\"answers\":[\"Street\",\"Traffic light\",\"Street\",\"Shop\"]}",
-	"correct_answer": "1",
-	"game_order": 4,
-    "category_id": {
-      "$oid": "7e50b24709164f44bdbdfed6"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d1ac0a99e44348b9ad164d61"
-    },
-    "game_name": "Crossword",
-    "game_info": "{\"words\":[{\"word\":\"crossing\",\"description\":\"Piesi przechodzą w tym miejscu przez ulicę\"},{\"word\":\"skyscraper\",\"description\":\"Bardzo wysoki budynek sięgający chmur\"},{\"word\":\"underground\",\"description\":\"Pociag jeżdżący pod ziemią\"},{\"word\":\"street\",\"description\":\"Jeżdżą po niej samochody\"},{\"word\":\"crossroad\",\"description\":\"Ulice sie krzyżują\"}]}",
-	"correct_answer": "",
-	"game_order": 5,
-    "category_id": {
-      "$oid": "7e50b24709164f44bdbdfed6"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "93ab6f5dcc284dbaaa058ad9"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Skrzyżowanie ulic\",\"englishName\":\"Crossroad\",\"img\":\"games/miasto/crossroad.jpg\"}",
-	"correct_answer": "",
-	"game_order": 6,
-    "category_id": {
-      "$oid": "7e50b24709164f44bdbdfed6"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "cef9292dc1ba48b0a04e2c2c"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Czekolada\",\"englishName\":\"Chocolate\",\"img\":\"games/slodycze/chocolatebar.jpg\"}",
-	"correct_answer": "",
-	"game_order": 0,
-    "category_id": {
-      "$oid": "1205de2cb54c4bd2ada6de76"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c925f574123b4f9190be9c77"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Lody\",\"englishName\":\"Ice cream\",\"img\":\"games/slodycze/iceCream.jpg\"}",
+	"category_id": {
+		"$oid": "7e50b24709164f44bdbdfed6"
+	}
+},
+{
+	"_id": {
+		"$oid": "3403a10df4ca4148a6f71888"
+	},
+	"game_name": "WordSearch",
+	"game_info": "{\"words\":[\"shop\",\"florist\",\"escalator\",\"bag\",\"card\"]}",
 	"correct_answer": "",
 	"game_order": 1,
-    "category_id": {
-      "$oid": "1205de2cb54c4bd2ada6de76"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "a42c58ddde1c4950bb99598e"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":false,\"polishName\":\"Babeczka\",\"answers\":[{\"img\":\"games/slodycze/chocolateBar.jpg\",\"name\":\"chocolate\"},{\"img\":\"games/slodycze/cupcake.jpg\",\"name\":\"cupcake\"},{\"img\":\"games/slodycze/candy.jpg\",\"name\":\"candy\"},{\"img\":\"games/slodycze/lollipop.jpg\",\"name\":\"lollipop\"}]}",
-	"correct_answer": "\"cupcake\"",
-	"game_order": 2,
-    "category_id": {
-      "$oid": "1205de2cb54c4bd2ada6de76"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "a77cd893f4464a58be048306"
-    },
-    "game_name": "WordGuessing",
-    "game_info": "{\"img\":\"games/slodycze/lollipop.jpg\"}",
-	"correct_answer": "\"lollipop\"",
-	"game_order": 3,
-    "category_id": {
-      "$oid": "1205de2cb54c4bd2ada6de76"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5fcc27b5108c4049a6ac5766"
-    },
-    "game_name": "PhraseLearning",
-    "game_info": "{\"question\":\"Here You are.\",\"words\":[\"You\",\"Thank\"],\"correctOrder\":[\"Thank\",\"You\"]}",
-	"correct_answer": "[\"Thank\",\"You\"]",
+	"category_id": {
+		"$oid": "2b7ba4a531f1449993ef1688"
+	}
+},
+{
+	"_id": {
+		"$oid": "3b254a32a34327995c6d2112"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Plaża\",\"answers\":[{\"img\":\"games/wakacje/sunbeds.jpg\",\"name\":\"Sunbeds\"},{\"img\":\"games/wakacje/palmTrees_2.jpg\",\"name\":\"Palm trees\"},{\"img\":\"games/wakacje/beach_2.jpg\",\"name\":\"Beach\"},{\"img\":\"games/wakacje/swimmingPool.jpg\",\"name\":\"Swimming pool\"}]}",
+	"correct_answer": "\"beach\"",
+	"game_order": 6,
+	"category_id": {
+		"$oid": "bffb4a548d2978cdd72a2d9a"
+	}
+},
+{
+	"_id": {
+		"$oid": "3e1d2b43a6314ed38905cc03"
+	},
+	"game_name": "StoryGame",
+	"game_info": "{\"stories\":[{\"img\":\"games/rolnictwo/field.jpg\",\"storyEnglish\":\"Grain is growing on a field\",\"storyPolish\":\"Zboże rośnie na polu\"},{\"img\":\"games/rolnictwo/harvester.jpg\",\"storyEnglish\":\"Harvester collects the crop\",\"storyPolish\":\"Kombajn zbiera plony\"},{\"img\":\"games/rolnictwo/grain.jpg\",\"storyEnglish\":\"We have ready grain\",\"storyPolish\":\"Mamy gotowe ziarno\"}]}",
+	"correct_answer": "",
 	"game_order": 4,
-    "category_id": {
-      "$oid": "1205de2cb54c4bd2ada6de76"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8788fa14114d7b65e9699f"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":false,\"polishName\":\"Tak\",\"answers\":[{\"img\":\"games\/testWiedzy\/yes.jpg\",\"name\":\"Yes\"},{\"img\":\"games\/testWiedzy\/thankYou.jpg\",\"name\":\"Thank you\"},{\"img\":\"games\/testWiedzy\/no.jpg\",\"name\":\"No\"},{\"img\":\"games\/testWiedzy\/please.jpg\",\"name\":\"Please\"}]}",
+	"category_id": {
+		"$oid": "6da86d5f78cc4155a96bc885"
+	}
+},
+{
+	"_id": {
+		"$oid": "404ae9aec10e45ac92d0d08c"
+	},
+	"game_name": "StoryGame",
+	"game_info": "{\"stories\":[{\"img\":\"games/motoryzacja/car1.jpg\",\"storyEnglish\":\"This is a car\",\"storyPolish\":\"To jest samochód\"},{\"img\":\"games/motoryzacja/fastYellowCar.jpg\",\"storyEnglish\":\"This car is fast\",\"storyPolish\":\"Ten samochód jest szybki\"},{\"img\":\"games/motoryzacja/oldCar.jpg\",\"storyEnglish\":\"This car is old\",\"storyPolish\":\"Ten samochód jest stary\"},{\"img\":\"games/motoryzacja/brokenCar.jpg\",\"storyEnglish\":\"This car is broken\",\"storyPolish\":\"Ten samochód jest zepsuty\"}]}",
+	"correct_answer": "",
+	"game_order": 0,
+	"category_id": {
+		"$oid": "5d5984c414aa473964221e4d"
+	}
+},
+{
+	"_id": {
+		"$oid": "4a1cfc1f0be84542b0543ad7"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Karta kredytowa\",\"answers\":[{\"img\":\"games/zakupy/shoppingBag.jpg\",\"name\":\"Shopping bag\"},{\"img\":\"games/zakupy/creditCard.jpg\",\"name\":\"Credit card\"},{\"img\":\"games/zakupy/florist.jpg\",\"name\":\"Florist\"},{\"img\":\"games/zakupy/shoppingCart.jpg\",\"name\":\"Shopping cart\"}]}",
+	"correct_answer": "\"credit card\"",
+	"game_order": 4,
+	"category_id": {
+		"$oid": "2b7ba4a531f1449993ef1688"
+	}
+},
+{
+	"_id": {
+		"$oid": "4c304d8c883aa6a050f181bd"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/wakacje/plane.jpg\",\"answers\":[\"Coconut\",\"Elevator\",\"Plane\",\"Sunbed\"]}",
+	"correct_answer": "2",
+	"game_order": 5,
+	"category_id": {
+		"$oid": "bffb4a548d2978cdd72a2d9a"
+	}
+},
+{
+	"_id": {
+		"$oid": "5651b0650faa4a4ca19bb12d"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Krowa\",\"englishName\":\"Cow\",\"img\":\"games/rolnictwo/cow.jpg\"}",
+	"correct_answer": "",
+	"game_order": 5,
+	"category_id": {
+		"$oid": "6da86d5f78cc4155a96bc885"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8788fa14114d7b65e9699f"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Tak\",\"answers\":[{\"img\":\"games/testWiedzy/yes.jpg\",\"name\":\"Yes\"},{\"img\":\"games/testWiedzy/thankYou.jpg\",\"name\":\"Thank you\"},{\"img\":\"games/testWiedzy/no.jpg\",\"name\":\"No\"},{\"img\":\"games/testWiedzy/please.jpg\",\"name\":\"Please\"}]}",
 	"correct_answer": "\"yes\"",
 	"game_order": 0,
-    "category_id": {
-      "$oid": "5d87877b6aff08a2bd4d359f"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d878c1dca25a2ea10c7ac26"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games\/testWiedzy\/baker.jpg\",\"answers\":[\"Fire\",\"Water\",\"Thank you\",\"Holiday\"]}",
+	"category_id": {
+		"$oid": "5d87877b6aff08a2bd4d359f"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d878c1dca25a2ea10c7ac26"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/testWiedzy/baker.jpg\",\"answers\":[\"Fire\",\"Water\",\"Thank you\",\"Holiday\"]}",
 	"correct_answer": "2",
 	"game_order": 1,
-    "category_id": {
-      "$oid": "5d87877b6aff08a2bd4d359f"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f6eb8ba203e8f736ac0cf"
-    },
-    "game_name": "PhraseLearning",
-    "game_info": "{\"question\":\"What was first, egg or a chicken\",\"words\":[\"don't\",\"know\",\"I\"]}",
-	"correct_answer": "[\"I\",\"don't\",\"know\"]",
-	"game_order": 2,
-    "category_id": {
-      "$oid": "5d87877b6aff08a2bd4d359f"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f6da1b2e0b277118acd2c"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games\/testWiedzy\/please_girl.jpg\",\"answers\":[\"Thank you\",\"Yes\",\"No\",\"Please\"]}",
+	"category_id": {
+		"$oid": "5d87877b6aff08a2bd4d359f"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d878fee0db5b7db1c02930a"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Tak\",\"englishName\":\"Yes\",\"img\":\"games/pierwszeSlowa/yes.jpg\"}",
+	"correct_answer": "",
+	"game_order": 0,
+	"category_id": {
+		"$oid": "5d878eb2ea7897e835aea6f8"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8791c43765b4fbf20b1a47"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Lubię to\",\"englishName\":\"I like it\",\"img\":\"games/pierwszeZwroty/likeIt.jpg\"}",
+	"correct_answer": "",
+	"game_order": 0,
+	"category_id": {
+		"$oid": "5d8790e4ab3f86c2539d2d34"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f6da1b2e0b277118acd2c"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/testWiedzy/please_girl.jpg\",\"answers\":[\"Thank you\",\"Yes\",\"No\",\"Please\"]}",
 	"correct_answer": "3",
 	"game_order": 3,
-    "category_id": {
-      "$oid": "5d87877b6aff08a2bd4d359f"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f6fdb91e2a02b9d2d0ecc"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":true,\"polishName\":\"Przepraszam\",\"answers\":[{\"img\":\"games\/testWiedzy\/yes.jpg\",\"name\":\"Yes\"},{\"img\":\"games\/testWiedzy\/thankYou.jpg\",\"name\":\"Thank you\"},{\"img\":\"games\/testWiedzy\/i_am_sorry.jpg\",\"name\":\"I am sorry\"},{\"img\":\"games\/testWiedzy\/please.jpg\",\"name\":\"Please\"}]}",
+	"category_id": {
+		"$oid": "5d87877b6aff08a2bd4d359f"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f6eb8ba203e8f736ac0cf"
+	},
+	"game_name": "PhraseLearning",
+	"game_info": "{\"question\":\"What was first, egg or a chicken\",\"words\":[\"don't\",\"know\",\"I\"]}",
+	"correct_answer": "[\"I\",\"don't\",\"know\"]",
+	"game_order": 2,
+	"category_id": {
+		"$oid": "5d87877b6aff08a2bd4d359f"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f6fdb91e2a02b9d2d0ecc"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":true,\"polishName\":\"Przepraszam\",\"answers\":[{\"img\":\"games/testWiedzy/yes.jpg\",\"name\":\"Yes\"},{\"img\":\"games/testWiedzy/thankYou.jpg\",\"name\":\"Thank you\"},{\"img\":\"games/testWiedzy/i_am_sorry.jpg\",\"name\":\"I am sorry\"},{\"img\":\"games/testWiedzy/please.jpg\",\"name\":\"Please\"}]}",
 	"correct_answer": "\"i am sorry\"",
 	"game_order": 4,
-    "category_id": {
-      "$oid": "5d87877b6aff08a2bd4d359f"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f71051f9246bd4d1bb90d"
-    },
-    "game_name": "PhraseLearning",
-    "game_info": "{\"question\":\"Do you like giving presents\",\"words\":[\"like\",\"I\",\"it\"]}",
-	"correct_answer": "[\"I\",\"like\",\"it\"]",
-	"game_order": 5,
-    "category_id": {
-      "$oid": "5d87877b6aff08a2bd4d359f"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f707034ca7ed3e210b40b"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":true,\"polishName\":\"Nie ma problemu\",\"answers\":[{\"img\":\"games\/testWiedzy\/no_problem.jpg\",\"name\":\"No problem\"},{\"img\":\"games\/testWiedzy\/thankYou.jpg\",\"name\":\"Thank you\"},{\"img\":\"games\/testWiedzy\/i_am_sorry.jpg\",\"name\":\"I am sorry\"},{\"img\":\"games\/testWiedzy\/please.jpg\",\"name\":\"Please\"}]}",
+	"category_id": {
+		"$oid": "5d87877b6aff08a2bd4d359f"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f707034ca7ed3e210b40b"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":true,\"polishName\":\"Nie ma problemu\",\"answers\":[{\"img\":\"games/testWiedzy/no_problem.jpg\",\"name\":\"No problem\"},{\"img\":\"games/testWiedzy/thankYou.jpg\",\"name\":\"Thank you\"},{\"img\":\"games/testWiedzy/i_am_sorry.jpg\",\"name\":\"I am sorry\"},{\"img\":\"games/testWiedzy/please.jpg\",\"name\":\"Please\"}]}",
 	"correct_answer": "\"no problem\"",
 	"game_order": 6,
-    "category_id": {
-      "$oid": "5d87877b6aff08a2bd4d359f"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f71f87b5957cab08b8c85"
-    },
-    "game_name": "WordGuessing",
-    "game_info": "{\"img\":\"games\/testWiedzy\/water.jpg\"}",
-	"correct_answer": "\"water\"",
-	"game_order": 7,
-    "category_id": {
-      "$oid": "5d87877b6aff08a2bd4d359f"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f714531adcf998f7e1f29"
-    },
-    "game_name": "PhraseLearning",
-    "game_info": "{\"question\":\"Where do you need to go\",\"words\":[\"the\",\"need\",\"go\",\"I\",\"toilet\",\"to\",\"to\"]}",
+	"category_id": {
+		"$oid": "5d87877b6aff08a2bd4d359f"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f71051f9246bd4d1bb90d"
+	},
+	"game_name": "PhraseLearning",
+	"game_info": "{\"question\":\"Do you like giving presents\",\"words\":[\"like\",\"I\",\"it\"]}",
+	"correct_answer": "[\"I\",\"like\",\"it\"]",
+	"game_order": 5,
+	"category_id": {
+		"$oid": "5d87877b6aff08a2bd4d359f"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f714531adcf998f7e1f29"
+	},
+	"game_name": "PhraseLearning",
+	"game_info": "{\"question\":\"Where do you need to go\",\"words\":[\"the\",\"need\",\"go\",\"I\",\"toilet\",\"to\",\"to\"]}",
 	"correct_answer": "[\"I\",\"need\",\"to\",\"go\",\"to\",\"the\",\"toilet\"]",
 	"game_order": 8,
-    "category_id": {
-      "$oid": "5d87877b6aff08a2bd4d359f"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f7271c65c4466a7ca31d0"
-    },
-    "game_name": "WordGuessing",
-    "game_info": "{\"img\":\"games\/testWiedzy\/holiday.jpg\"}",
+	"category_id": {
+		"$oid": "5d87877b6aff08a2bd4d359f"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f71f87b5957cab08b8c85"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/testWiedzy/water.jpg\"}",
+	"correct_answer": "\"water\"",
+	"game_order": 7,
+	"category_id": {
+		"$oid": "5d87877b6aff08a2bd4d359f"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f7271c65c4466a7ca31d0"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/testWiedzy/holiday.jpg\"}",
 	"correct_answer": "\"holiday\"",
 	"game_order": 9,
-    "category_id": {
-      "$oid": "5d87877b6aff08a2bd4d359f"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d878fee0db5b7db1c02930a"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Tak\",\"englishName\":\"Yes\",\"img\":\"games\/pierwszeSlowa\/yes.jpg\"}",
-	"correct_answer": "",
-	"game_order": 0,
-    "category_id": {
-      "$oid": "5d878eb2ea7897e835aea6f8"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f7e465d6c80c478efb6d2"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Nie\",\"englishName\":\"No\",\"img\":\"games\/pierwszeSlowa\/no.jpg\"}",
+	"category_id": {
+		"$oid": "5d87877b6aff08a2bd4d359f"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f7e465d6c80c478efb6d2"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Nie\",\"englishName\":\"No\",\"img\":\"games/pierwszeSlowa/no.jpg\"}",
 	"correct_answer": "",
 	"game_order": 1,
-    "category_id": {
-      "$oid": "5d878eb2ea7897e835aea6f8"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f7ed14b5c4b9a4c01ddac"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":false,\"polishName\":\"Tak\",\"answers\":[{\"img\":\"games\/pierwszeSlowa\/no2.jpg\",\"name\":\"No\"},{\"img\":\"games\/pierwszeSlowa\/yes2.jpg\",\"name\":\"Yes\"},{\"img\":\"games\/pierwszeSlowa\/please.jpg\",\"name\":\"Please\"},{\"img\":\"games\/pierwszeSlowa\/no_problem.jpg\",\"name\":\"No problem\"}]}",
+	"category_id": {
+		"$oid": "5d878eb2ea7897e835aea6f8"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f7ed14b5c4b9a4c01ddac"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Tak\",\"answers\":[{\"img\":\"games/pierwszeSlowa/no2.jpg\",\"name\":\"No\"},{\"img\":\"games/pierwszeSlowa/yes2.jpg\",\"name\":\"Yes\"},{\"img\":\"games/pierwszeSlowa/please.jpg\",\"name\":\"Please\"},{\"img\":\"games/pierwszeSlowa/no_problem.jpg\",\"name\":\"No problem\"}]}",
 	"correct_answer": "\"yes\"",
 	"game_order": 2,
-    "category_id": {
-      "$oid": "5d878eb2ea7897e835aea6f8"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f81085deeaf0a827e1b59"
-    },
-    "game_name": "WordGuessing",
-    "game_info": "{\"img\":\"games\/pierwszeSlowa\/no3.jpg\"}",
+	"category_id": {
+		"$oid": "5d878eb2ea7897e835aea6f8"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f81085deeaf0a827e1b59"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/pierwszeSlowa/no3.jpg\"}",
 	"correct_answer": "\"no\"",
 	"game_order": 3,
-    "category_id": {
-      "$oid": "5d878eb2ea7897e835aea6f8"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f8167740c833429e979d0"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Dziękuję\",\"englishName\":\"Thank you\",\"img\":\"games\/pierwszeSlowa\/thank_you.jpg\"}",
+	"category_id": {
+		"$oid": "5d878eb2ea7897e835aea6f8"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f8167740c833429e979d0"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Dziękuję\",\"englishName\":\"Thank you\",\"img\":\"games/pierwszeSlowa/thank_you.jpg\"}",
 	"correct_answer": "",
 	"game_order": 4,
-    "category_id": {
-      "$oid": "5d878eb2ea7897e835aea6f8"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f8230563749b29704e86d"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Proszę (gdy kogoś o coś prosimy)\",\"englishName\":\"Please\",\"img\":\"games\/pierwszeSlowa\/please2.jpg\"}",
+	"category_id": {
+		"$oid": "5d878eb2ea7897e835aea6f8"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f8230563749b29704e86d"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Proszę (gdy kogoś o coś prosimy)\",\"englishName\":\"Please\",\"img\":\"games/pierwszeSlowa/please2.jpg\"}",
 	"correct_answer": "",
 	"game_order": 5,
-    "category_id": {
-      "$oid": "5d878eb2ea7897e835aea6f8"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f8239fb6da2fa6253893c"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games\/pierwszeSlowa\/thank_you2.jpg\",\"answers\":[\"I am old\",\"I have no idea\",\"I don't know\",\"Thank you\"]}",
+	"category_id": {
+		"$oid": "5d878eb2ea7897e835aea6f8"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f8239fb6da2fa6253893c"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/pierwszeSlowa/thank_you2.jpg\",\"answers\":[\"I am old\",\"I have no idea\",\"I don't know\",\"Thank you\"]}",
 	"correct_answer": "3",
 	"game_order": 6,
-    "category_id": {
-      "$oid": "5d878eb2ea7897e835aea6f8"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f831f285baa119e0226ad"
-    },
-    "game_name": "WordGuessing",
-    "game_info": "{\"img\":\"games\/pierwszeSlowa\/please.jpg\"}",
+	"category_id": {
+		"$oid": "5d878eb2ea7897e835aea6f8"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f831f285baa119e0226ad"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/pierwszeSlowa/please.jpg\"}",
 	"correct_answer": "\"please\"",
 	"game_order": 7,
-    "category_id": {
-      "$oid": "5d878eb2ea7897e835aea6f8"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8791c43765b4fbf20b1a47"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Lubi\u0119 to\",\"englishName\":\"I like it\",\"img\":\"games\/pierwszeZwroty\/likeIt.jpg\"}",
-	"correct_answer": "",
-	"game_order": 0,
-    "category_id": {
-      "$oid": "5d8790e4ab3f86c2539d2d34"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f9942054c868f6f9f47d5"
-    },
-    "game_name": "StoryGame",
-    "game_info": "{\"stories\":[{\"img\":\"games\/pierwszeZwroty\/coffee_story_1.jpg\",\"storyEnglish\":\"Matt and Samantha met at the cofee shop\",\"storyPolish\":\"Matt i Samanta spotkali się w kawiarni\"},{\"img\":\"games\/pierwszeZwroty\/coffee_story_2.jpg\",\"storyEnglish\":\"Samantha accidentally spilled coffee on Matt\",\"storyPolish\":\"Samanta przez przypadek wylał kawę na Mata\"},{\"img\":\"games\/pierwszeZwroty\/coffee_story_3.jpg\",\"storyEnglish\":\"Samantha said: I am sorry Matt\",\"storyPolish\":\"Samanta powiedział: przepraszam Matt\"},{\"img\":\"games\/pierwszeZwroty\/coffee_story_4.jpg\",\"storyEnglish\":\"Matt replied: no problem\",\"storyPolish\":\"Matt odpowiedział: nie ma problemu\"}]}",
+	"category_id": {
+		"$oid": "5d878eb2ea7897e835aea6f8"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f9942054c868f6f9f47d5"
+	},
+	"game_name": "StoryGame",
+	"game_info": "{\"stories\":[{\"img\":\"games/pierwszeZwroty/coffee_story_1.jpg\",\"storyEnglish\":\"Matt and Samantha met at the cofee shop\",\"storyPolish\":\"Matt i Samanta spotkali się w kawiarni\"},{\"img\":\"games/pierwszeZwroty/coffee_story_2.jpg\",\"storyEnglish\":\"Samantha accidentally spilled coffee on Matt\",\"storyPolish\":\"Samanta przez przypadek wylał kawę na Mata\"},{\"img\":\"games/pierwszeZwroty/coffee_story_3.jpg\",\"storyEnglish\":\"Samantha said: I am sorry Matt\",\"storyPolish\":\"Samanta powiedział: przepraszam Matt\"},{\"img\":\"games/pierwszeZwroty/coffee_story_4.jpg\",\"storyEnglish\":\"Matt replied: no problem\",\"storyPolish\":\"Matt odpowiedział: nie ma problemu\"}]}",
 	"correct_answer": "",
 	"game_order": 1,
-    "category_id": {
-      "$oid": "5d8790e4ab3f86c2539d2d34"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f9afed497dd1cd1c1ad5d"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":false,\"polishName\":\"Lubię to\",\"answers\":[{\"img\":\"games\/pierwszeZwroty\/i_like_it.jpg\",\"name\":\"I like it\"},{\"img\":\"games\/pierwszeZwroty\/i_am_sorry.jpg\",\"name\":\"I am sorry\"},{\"img\":\"games\/pierwszeZwroty\/i_dont_know.jpg\",\"name\":\"I don't know\"},{\"img\":\"games\/pierwszeZwroty\/no_problem.jpg\",\"name\":\"No problem\"}]}",
+	"category_id": {
+		"$oid": "5d8790e4ab3f86c2539d2d34"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f9afed497dd1cd1c1ad5d"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Lubię to\",\"answers\":[{\"img\":\"games/pierwszeZwroty/i_like_it.jpg\",\"name\":\"I like it\"},{\"img\":\"games/pierwszeZwroty/i_am_sorry.jpg\",\"name\":\"I am sorry\"},{\"img\":\"games/pierwszeZwroty/i_dont_know.jpg\",\"name\":\"I don't know\"},{\"img\":\"games/pierwszeZwroty/no_problem.jpg\",\"name\":\"No problem\"}]}",
 	"correct_answer": "\"i like it\"",
 	"game_order": 2,
-    "category_id": {
-      "$oid": "5d8790e4ab3f86c2539d2d34"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f9dad8f9995b01348d9f3"
-    },
-    "game_name": "PhraseLearning",
-    "game_info": "{\"question\":\"What do you say after you do something bad\",\"words\":[\"I\",\"am\",\"sorry\"]}",
+	"category_id": {
+		"$oid": "5d8790e4ab3f86c2539d2d34"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f9dad8f9995b01348d9f3"
+	},
+	"game_name": "PhraseLearning",
+	"game_info": "{\"question\":\"What do you say after you do something bad\",\"words\":[\"I\",\"am\",\"sorry\"]}",
 	"correct_answer": "[\"I\",\"am\",\"sorry\"]",
 	"game_order": 3,
-    "category_id": {
-      "$oid": "5d8790e4ab3f86c2539d2d34"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f9e59cc1a8f8c561935ec"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/pierwszeZwroty/abc.jpg\",\"answers\":[\"Do what you want\",\"No problem\",\"I have no idea\",\"Thank you\"]}",
+	"category_id": {
+		"$oid": "5d8790e4ab3f86c2539d2d34"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f9e59cc1a8f8c561935ec"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/pierwszeZwroty/abc.jpg\",\"answers\":[\"Do what you want\",\"No problem\",\"I have no idea\",\"Thank you\"]}",
 	"correct_answer": "1",
 	"game_order": 4,
-    "category_id": {
-      "$oid": "5d8790e4ab3f86c2539d2d34"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f9ee5cabe9e2010583d05"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Nie wiem\",\"englishName\":\"I don't know\",\"img\":\"games/pierwszeZwroty/rubic.jpg\"}",
+	"category_id": {
+		"$oid": "5d8790e4ab3f86c2539d2d34"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f9ee5cabe9e2010583d05"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Nie wiem\",\"englishName\":\"I don't know\",\"img\":\"games/pierwszeZwroty/rubic.jpg\"}",
 	"correct_answer": "",
 	"game_order": 5,
-    "category_id": {
-      "$oid": "5d8790e4ab3f86c2539d2d34"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f9f5b67b0127c5b3c8de4"
-    },
-    "game_name": "PhraseLearning",
-    "game_info": "{\"question\":\"Do you know who was the third president of the USA\",\"words\":[\"don't\",\"know\",\"I\"]}",
+	"category_id": {
+		"$oid": "5d8790e4ab3f86c2539d2d34"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f9f5b67b0127c5b3c8de4"
+	},
+	"game_name": "PhraseLearning",
+	"game_info": "{\"question\":\"Do you know who was the third president of the USA\",\"words\":[\"don't\",\"know\",\"I\"]}",
 	"correct_answer": "[\"I\",\"don't\",\"know\"]",
 	"game_order": 6,
-    "category_id": {
-      "$oid": "5d8790e4ab3f86c2539d2d34"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8f9f8a1b48152f3639cb6f"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":false,\"polishName\":\"Nie wiem\",\"answers\":[{\"img\":\"games\/pierwszeZwroty\/i_like_it.jpg\",\"name\":\"I like it\"},{\"img\":\"games\/pierwszeZwroty\/i_am_sorry.jpg\",\"name\":\"I am sorry\"},{\"img\":\"games\/pierwszeZwroty\/i_dont_know.jpg\",\"name\":\"I don't know\"},{\"img\":\"games\/pierwszeZwroty\/no_problem.jpg\",\"name\":\"No problem\"}]}",
+	"category_id": {
+		"$oid": "5d8790e4ab3f86c2539d2d34"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8f9f8a1b48152f3639cb6f"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Nie wiem\",\"answers\":[{\"img\":\"games/pierwszeZwroty/i_like_it.jpg\",\"name\":\"I like it\"},{\"img\":\"games/pierwszeZwroty/i_am_sorry.jpg\",\"name\":\"I am sorry\"},{\"img\":\"games/pierwszeZwroty/i_dont_know.jpg\",\"name\":\"I don't know\"},{\"img\":\"games/pierwszeZwroty/no_problem.jpg\",\"name\":\"No problem\"}]}",
 	"correct_answer": "\"i don't know\"",
 	"game_order": 7,
-    "category_id": {
-      "$oid": "5d8790e4ab3f86c2539d2d34"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8fa3b10df0e821400b8ed9"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Wakacje\",\"englishName\":\"Holiday\",\"img\":\"games/palcemPoMapie/holiday.jpg\"}",
+	"category_id": {
+		"$oid": "5d8790e4ab3f86c2539d2d34"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8fa3b10df0e821400b8ed9"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Wakacje\",\"englishName\":\"Holiday\",\"img\":\"games/palcemPoMapie/holiday.jpg\"}",
 	"correct_answer": "",
 	"game_order": 0,
-    "category_id": {
-      "$oid": "5d8fa2fa4bc90fe5b08257be"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8fa425e0ac5914bcad41b7"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Woda\",\"englishName\":\"Water\",\"img\":\"games/palcemPoMapie/water.jpg\"}",
+	"category_id": {
+		"$oid": "5d8fa2fa4bc90fe5b08257be"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8fa425e0ac5914bcad41b7"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Woda\",\"englishName\":\"Water\",\"img\":\"games/palcemPoMapie/water.jpg\"}",
 	"correct_answer": "",
 	"game_order": 1,
-    "category_id": {
-      "$oid": "5d8fa2fa4bc90fe5b08257be"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8fa4bd31d0e21cd2810ae3"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/palcemPoMapie/holiday1.jpg\",\"answers\":[\"Holiday\",\"Hotel\",\"Sun\",\"Oven\"]}",
+	"category_id": {
+		"$oid": "5d8fa2fa4bc90fe5b08257be"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8fa4bd31d0e21cd2810ae3"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/palcemPoMapie/holiday1.jpg\",\"answers\":[\"Holiday\",\"Hotel\",\"Sun\",\"Oven\"]}",
 	"correct_answer": "0",
 	"game_order": 2,
-    "category_id": {
-      "$oid": "5d8fa2fa4bc90fe5b08257be"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8fa4c8f99f6c7ce3461fdb"
-    },
-    "game_name": "WordGuessing",
-    "game_info": "{\"img\":\"games/palcemPoMapie/water1.jpg\"}",
+	"category_id": {
+		"$oid": "5d8fa2fa4bc90fe5b08257be"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8fa4c8f99f6c7ce3461fdb"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/palcemPoMapie/water1.jpg\"}",
 	"correct_answer": "\"water\"",
 	"game_order": 3,
-    "category_id": {
-      "$oid": "5d8fa2fa4bc90fe5b08257be"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8fa51943423132da889c15"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Mapa\",\"englishName\":\"Map\",\"img\":\"games/palcemPoMapie/map.jpg\"}",
+	"category_id": {
+		"$oid": "5d8fa2fa4bc90fe5b08257be"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8fa51943423132da889c15"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Mapa\",\"englishName\":\"Map\",\"img\":\"games/palcemPoMapie/map.jpg\"}",
 	"correct_answer": "",
 	"game_order": 4,
-    "category_id": {
-      "$oid": "5d8fa2fa4bc90fe5b08257be"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8fa599dae65cd84f19a4da"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Kraj\",\"englishName\":\"Country\",\"img\":\"games/palcemPoMapie/country.jpg\"}",
+	"category_id": {
+		"$oid": "5d8fa2fa4bc90fe5b08257be"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8fa599dae65cd84f19a4da"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Kraj\",\"englishName\":\"Country\",\"img\":\"games/palcemPoMapie/country.jpg\"}",
 	"correct_answer": "",
 	"game_order": 5,
-    "category_id": {
-      "$oid": "5d8fa2fa4bc90fe5b08257be"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8fa5ddff41d04489d775d2"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":false,\"polishName\":\"Kraj\",\"answers\":[{\"img\":\"games\/palcemPoMapie\/country1.jpg\",\"name\":\"Country\"},{\"img\":\"games\/palcemPoMapie\/airplane.jpg\",\"name\":\"Airplane\"},{\"img\":\"games\/palcemPoMapie\/city.jpg\",\"name\":\"City\"},{\"img\":\"games\/palcemPoMapie\/train.jpg\",\"name\":\"Train\"}]}",
+	"category_id": {
+		"$oid": "5d8fa2fa4bc90fe5b08257be"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8fa5ddff41d04489d775d2"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Kraj\",\"answers\":[{\"img\":\"games/palcemPoMapie/country1.jpg\",\"name\":\"Country\"},{\"img\":\"games/palcemPoMapie/airplane.jpg\",\"name\":\"Airplane\"},{\"img\":\"games/palcemPoMapie/city.jpg\",\"name\":\"City\"},{\"img\":\"games/palcemPoMapie/train.jpg\",\"name\":\"Train\"}]}",
 	"correct_answer": "\"country\"",
 	"game_order": 6,
-    "category_id": {
-      "$oid": "5d8fa2fa4bc90fe5b08257be"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8fa6d689084596064222f4"
-    },
-    "game_name": "WordSearch",
-    "game_info": "{\"words\":[\"holiday\",\"water\",\"map\",\"country\"]}",
+	"category_id": {
+		"$oid": "5d8fa2fa4bc90fe5b08257be"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8fa6d689084596064222f4"
+	},
+	"game_name": "WordSearch",
+	"game_info": "{\"words\":[\"holiday\",\"water\",\"map\",\"country\"]}",
 	"correct_answer": "",
 	"game_order": 7,
-    "category_id": {
-      "$oid": "5d8fa2fa4bc90fe5b08257be"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8fa77f54bb1f77304a31ed"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Toaleta\",\"englishName\":\"Toilet\",\"img\":\"games/journey/toilet.jpg\"}",
+	"category_id": {
+		"$oid": "5d8fa2fa4bc90fe5b08257be"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8fa77f54bb1f77304a31ed"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Toaleta\",\"englishName\":\"Toilet\",\"img\":\"games/journey/toilet.jpg\"}",
 	"correct_answer": "",
 	"game_order": 0,
-    "category_id": {
-      "$oid": "5d8fa70efbde270eca3b27d6"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8fa7d682ba21bcad55f328"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Hotel\",\"englishName\":\"Hotel\",\"img\":\"games/journey/hotel.jpg\"}",
+	"category_id": {
+		"$oid": "5d8fa70efbde270eca3b27d6"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8fa7d682ba21bcad55f328"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Hotel\",\"englishName\":\"Hotel\",\"img\":\"games/journey/hotel.jpg\"}",
 	"correct_answer": "",
 	"game_order": 1,
-    "category_id": {
-      "$oid": "5d8fa70efbde270eca3b27d6"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8fa8155dda11b107d447a4"
-    },
-    "game_name": "WordGuessing",
-    "game_info": "{\"img\":\"games/journey/toilet1.jpg\"}",
+	"category_id": {
+		"$oid": "5d8fa70efbde270eca3b27d6"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8fa8155dda11b107d447a4"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/journey/toilet1.jpg\"}",
 	"correct_answer": "\"toilet\"",
 	"game_order": 2,
-    "category_id": {
-      "$oid": "5d8fa70efbde270eca3b27d6"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8fa8702e13f978593dd8ea"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games/journey/hotel1.jpg\",\"answers\":[\"Map\",\"Train\",\"Hotel\",\"Road\"]}",
-    "correct_answer": "2",
+	"category_id": {
+		"$oid": "5d8fa70efbde270eca3b27d6"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8fa8702e13f978593dd8ea"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/journey/hotel1.jpg\",\"answers\":[\"Map\",\"Train\",\"Hotel\",\"Road\"]}",
+	"correct_answer": "2",
 	"game_order": 3,
-    "category_id": {
-      "$oid": "5d8fa70efbde270eca3b27d6"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8fa8e1a73be2bbbac78580"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Zwiedzanie\",\"englishName\":\"Sightseeing\",\"img\":\"games/journey/sighseeing.jpg\"}",
+	"category_id": {
+		"$oid": "5d8fa70efbde270eca3b27d6"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8fa8e1a73be2bbbac78580"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Zwiedzanie\",\"englishName\":\"Sightseeing\",\"img\":\"games/journey/sighseeing.jpg\"}",
 	"correct_answer": "",
 	"game_order": 4,
-    "category_id": {
-      "$oid": "5d8fa70efbde270eca3b27d6"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8fa8e40e04129e093b2805"
-    },
-    "game_name": "WordLearning",
-    "game_info": "{\"polishName\":\"Lotnisko\",\"englishName\":\"Airport\",\"img\":\"games/journey/airport.jpg\"}",
+	"category_id": {
+		"$oid": "5d8fa70efbde270eca3b27d6"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8fa8e40e04129e093b2805"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Lotnisko\",\"englishName\":\"Airport\",\"img\":\"games/journey/airport.jpg\"}",
 	"correct_answer": "",
 	"game_order": 5,
-    "category_id": {
-      "$oid": "5d8fa70efbde270eca3b27d6"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8fa959e6dbdd9585826d43"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":false,\"polishName\":\"Zwiedzanie\",\"answers\":[{\"img\":\"games\/journey\/tower.jpg\",\"name\":\"Tower\"},{\"img\":\"games\/journey\/airplane1.jpg\",\"name\":\"Airplane\"},{\"img\":\"games\/journey\/sightseeing1.jpg\",\"name\":\"Sightseeing\"},{\"img\":\"games\/journey\/train.jpg\",\"name\":\"Train\"}]}",
-    "correct_answer": "\"sightseeing\"",
+	"category_id": {
+		"$oid": "5d8fa70efbde270eca3b27d6"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8fa959e6dbdd9585826d43"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Zwiedzanie\",\"answers\":[{\"img\":\"games/journey/tower.jpg\",\"name\":\"Tower\"},{\"img\":\"games/journey/airplane1.jpg\",\"name\":\"Airplane\"},{\"img\":\"games/journey/sightseeing1.jpg\",\"name\":\"Sightseeing\"},{\"img\":\"games/journey/train.jpg\",\"name\":\"Train\"}]}",
+	"correct_answer": "\"sightseeing\"",
 	"game_order": 6,
-    "category_id": {
-      "$oid": "5d8fa70efbde270eca3b27d6"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8faa6170b57d30b7ec406a"
-    },
-    "game_name": "WordGuessing",
-    "game_info": "{\"img\":\"games/journey/airport2.jpg\"}",
+	"category_id": {
+		"$oid": "5d8fa70efbde270eca3b27d6"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8faa6170b57d30b7ec406a"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/journey/airport2.jpg\"}",
 	"correct_answer": "\"airport\"",
 	"game_order": 7,
-    "category_id": {
-      "$oid": "5d8fa70efbde270eca3b27d6"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8faaa1a109c047c47625b7"
-    },
-    "game_name": "Crossword",
-    "game_info": "{\"words\":[{\"word\":\"water\",\"description\":\"Co pije krowa\"},{\"word\":\"please\",\"description\":\"Co mówisz jak coś komuś dajesz\"},{\"word\":\"toilet\",\"description\":\"Idziesz tam za potrzebą\"},{\"word\":\"hotel\",\"description\":\"Miejsce do spania w podróży\"},{\"word\":\"airport\",\"description\":\"Dom samolotów\"}]}",
+	"category_id": {
+		"$oid": "5d8fa70efbde270eca3b27d6"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8faaa1a109c047c47625b7"
+	},
+	"game_name": "Crossword",
+	"game_info": "{\"words\":[{\"word\":\"water\",\"description\":\"Co pije krowa\"},{\"word\":\"please\",\"description\":\"Co mówisz jak coś komuś dajesz\"},{\"word\":\"toilet\",\"description\":\"Idziesz tam za potrzebą\"},{\"word\":\"hotel\",\"description\":\"Miejsce do spania w podróży\"},{\"word\":\"airport\",\"description\":\"Dom samolotów\"}]}",
 	"correct_answer": "",
 	"game_order": 8,
-    "category_id": {
-      "$oid": "5d8fa70efbde270eca3b27d6"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d8fab25bca4d6e948a911a2"
-    },
-    "game_name": "WordSearch",
-    "game_info": "{\"words\":[\"yes\",\"no\",\"please\",\"country\",\"map\",\"holiday\"]}",
+	"category_id": {
+		"$oid": "5d8fa70efbde270eca3b27d6"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d8fab25bca4d6e948a911a2"
+	},
+	"game_name": "WordSearch",
+	"game_info": "{\"words\":[\"yes\",\"no\",\"please\",\"country\",\"map\",\"holiday\"]}",
 	"correct_answer": "",
 	"game_order": 9,
-    "category_id": {
-      "$oid": "5d8fa70efbde270eca3b27d6"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d98580d6cd1ab3b2379b438"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":false,\"polishName\":\"Gra\",\"answers\":[{\"img\":\"games\/gry\/win.jpg\",\"name\":\"Win\"},{\"img\":\"games\/gry\/pad.jpg\",\"name\":\"Pad\"},{\"img\":\"games\/gry\/game.jpg\",\"name\":\"Game\"},{\"img\":\"games\/gry\/player.jpg\",\"name\":\"Player\"}]}",
-    "correct_answer": "\"game\"",
-	  "game_order": 0,
-    "category_id": {
-      "$oid": "5d98566e22a8dc81c7468c69"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d98592d5446714a24b42986"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games\/gry\/play.jpg\",\"answers\":[\"Cat\",\"Train\",\"Work\",\"Play\"]}",
-    "correct_answer": "3",
-	  "game_order": 1,
-    "category_id": {
-      "$oid": "5d98566e22a8dc81c7468c69"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d9859ce19d43231cdf2df14"
-    },
-    "game_name": "WordGuessing",
-    "game_info": "{\"img\":\"games\/gry\/win2.jpg\"}",
-	  "correct_answer": "\"win\"",
-	  "game_order": 2,
-    "category_id": {
-      "$oid": "5d98566e22a8dc81c7468c69"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d985a8c4c4de7c6ccf4dfa7"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games\/gry\/lose.jpg\",\"answers\":[\"Win\",\"Lose\",\"Job\",\"Holiday\"]}",
-    "correct_answer": "1",
-	  "game_order": 3,
-    "category_id": {
-      "$oid": "5d98566e22a8dc81c7468c69"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d985a90115fe2cfdd101a84"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":true,\"polishName\":\"Grać w grę\",\"answers\":[{\"img\":\"games\/gry\/play_a_game.jpg\",\"name\":\"Play a game\"},{\"img\":\"games\/gry\/win_a_match.jpg\",\"name\":\"Win a match\"},{\"img\":\"games\/gry\/go_home.jpg\",\"name\":\"Go home\"},{\"img\":\"games\/gry\/see_you_later.jpg\",\"name\":\"See you later\"}]}",
-    "correct_answer": "\"play a game\"",
-	  "game_order": 4,
-    "category_id": {
-      "$oid": "5d98566e22a8dc81c7468c69"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d985b769b176d234d7a0445"
-    },
-    "game_name": "PhraseLearning",
-    "game_info": "{\"question\":\"Are you good at this game\",\"words\":[\"with\",\"win\",\"I\",\"everyone\"]}",
+	"category_id": {
+		"$oid": "5d8fa70efbde270eca3b27d6"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d98580d6cd1ab3b2379b438"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Gra\",\"answers\":[{\"img\":\"games/gry/win.jpg\",\"name\":\"Win\"},{\"img\":\"games/gry/pad.jpg\",\"name\":\"Pad\"},{\"img\":\"games/gry/game.jpg\",\"name\":\"Game\"},{\"img\":\"games/gry/player.jpg\",\"name\":\"Player\"}]}",
+	"correct_answer": "\"game\"",
+	"game_order": 0,
+	"category_id": {
+		"$oid": "5d98566e22a8dc81c7468c69"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d98592d5446714a24b42986"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/gry/play.jpg\",\"answers\":[\"Cat\",\"Train\",\"Work\",\"Play\"]}",
+	"correct_answer": "3",
+	"game_order": 1,
+	"category_id": {
+		"$oid": "5d98566e22a8dc81c7468c69"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d9859ce19d43231cdf2df14"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/gry/win2.jpg\"}",
+	"correct_answer": "\"win\"",
+	"game_order": 2,
+	"category_id": {
+		"$oid": "5d98566e22a8dc81c7468c69"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d985a8c4c4de7c6ccf4dfa7"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/gry/lose.jpg\",\"answers\":[\"Win\",\"Lose\",\"Job\",\"Holiday\"]}",
+	"correct_answer": "1",
+	"game_order": 3,
+	"category_id": {
+		"$oid": "5d98566e22a8dc81c7468c69"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d985a90115fe2cfdd101a84"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":true,\"polishName\":\"Grać w grę\",\"answers\":[{\"img\":\"games/gry/play_a_game.jpg\",\"name\":\"Play a game\"},{\"img\":\"games/gry/win_a_match.jpg\",\"name\":\"Win a match\"},{\"img\":\"games/gry/go_home.jpg\",\"name\":\"Go home\"},{\"img\":\"games/gry/see_you_later.jpg\",\"name\":\"See you later\"}]}",
+	"correct_answer": "\"play a game\"",
+	"game_order": 4,
+	"category_id": {
+		"$oid": "5d98566e22a8dc81c7468c69"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d985b769b176d234d7a0445"
+	},
+	"game_name": "PhraseLearning",
+	"game_info": "{\"question\":\"Are you good at this game\",\"words\":[\"with\",\"win\",\"I\",\"everyone\"]}",
 	"correct_answer": "[\"I\",\"win\",\"with\",\"everyone\"]",
 	"game_order": 5,
-    "category_id": {
-      "$oid": "5d98566e22a8dc81c7468c69"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d986951e91a33176423b78f"
-    },
-    "game_name": "WordGuessing",
-    "game_info": "{\"img\":\"games\/zwierzeta\/tiger.jpg\"}",
-	  "correct_answer": "\"tiger\"",
-	  "game_order": 0,
-    "category_id": {
-      "$oid": "5d98689db8dbbedbc13da163"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d9869c7465a9899334fd118"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games\/zwierzeta\/dog.jpg\",\"answers\":[\"Dog\",\"Cat\",\"Journey\",\"Driver\"]}",
-    "correct_answer": "0",
-	  "game_order": 1,
-    "category_id": {
-      "$oid": "5d98689db8dbbedbc13da163"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d986a2ec121fe1a28d27a25"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":true,\"polishName\":\"Wyprowadzać na spacer\",\"answers\":[{\"img\":\"games\/zwierzeta\/walk.jpg\",\"name\":\"Walk\"},{\"img\":\"games\/zwierzeta\/i_dont_know.jpg\",\"name\":\"I don't know\"},{\"img\":\"games\/zwierzeta\/maybe_later.jpg\",\"name\":\"Maybe later\"},{\"img\":\"games\/zwierzeta\/i_am_good.jpg\",\"name\":\"I am good\"}]}",
-    "correct_answer": "\"walk\"",
-	  "game_order": 2,
-    "category_id": {
-      "$oid": "5d98689db8dbbedbc13da163"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d986b21c71ea249e00ead6e"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games\/zwierzeta\/pet.jpg\",\"answers\":[\"Walk\",\"Carry\",\"Pet\",\"Go\"]}",
-    "correct_answer": "2",
-	  "game_order": 3,
-    "category_id": {
-      "$oid": "5d98689db8dbbedbc13da163"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d986b74d0691735eea50443"
-    },
-    "game_name": "WordGuessing",
-    "game_info": "{\"img\":\"games\/zwierzeta\/pet2.jpg\"}",
-	  "correct_answer": "\"pet\"",
-	  "game_order": 4,
-    "category_id": {
-      "$oid": "5d98689db8dbbedbc13da163"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d986bcc03cea0792d4c9e3e"
-    },
-    "game_name": "PhraseLearning",
-    "game_info": "{\"question\":\"Who do you love\",\"words\":[\"I\",\"cat\",\"my\",\"love\"]}",
-	  "correct_answer": "[\"I\",\"love\",\"my\",\"cat\"]",
-	  "game_order": 5,
-    "category_id": {
-      "$oid": "5d98689db8dbbedbc13da163"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d986c77923687212d4123ec"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games\/emocje\/happy.jpg\",\"answers\":[\"Happy\",\"Sad\",\"Angry\",\"Wild\"]}",
-    "correct_answer": "0",
-	  "game_order": 0,
-    "category_id": {
-      "$oid": "5d986c034a45d0ca80938997"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d986cd02131234d35c5f254"
-    },
-    "game_name": "WordGuessing",
-    "game_info": "{\"img\":\"games\/emocje\/angry.jpg\"}",
-	  "correct_answer": "\"angry\"",
-	  "game_order": 1,
-    "category_id": {
-      "$oid": "5d986c034a45d0ca80938997"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d986d097f83afbeac535182"
-    },
-    "game_name": "PhraseLearning",
-    "game_info": "{\"question\":\"What are you interested in\",\"words\":[\"I\",\"sport\",\"in\",\"am\",\"interested\"]}",
-	  "correct_answer": "[\"I\",\"am\",\"interested\",\"in\",\"sport\"]",
-	  "game_order": 2,
-    "category_id": {
-      "$oid": "5d986c034a45d0ca80938997"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d986d54242476017975c3d3"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":false,\"polishName\":\"Płakać\",\"answers\":[{\"img\":\"games\/emocje\/drive.jpg\",\"name\":\"Drive\"},{\"img\":\"games\/emocje\/run.jpg\",\"name\":\"Run\"},{\"img\":\"games\/emocje\/laugh.jpg\",\"name\":\"Laugh\"},{\"img\":\"games\/emocje\/cry.jpg\",\"name\":\"Cry\"}]}",
-    "correct_answer": "\"cry\"",
-	  "game_order": 3,
-    "category_id": {
-      "$oid": "5d986c034a45d0ca80938997"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d986ebbf83bf69f89039d9d"
-    },
-    "game_name": "PhraseLearning",
-    "game_info": "{\"question\":\"Who are you proud of\",\"words\":[\"I\",\"am\",\"son\",\"proud\",\"my\",\"of\"]}",
-	  "correct_answer": "[\"I\",\"am\",\"proud\",\"of\",\"my\",\"son\"]",
-	  "game_order": 4,
-    "category_id": {
-      "$oid": "5d986c034a45d0ca80938997"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d986f34cdb976ac281e7997"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":false,\"polishName\":\"Śmiać się\",\"answers\":[{\"img\":\"games\/emocje\/drive.jpg\",\"name\":\"Drive\"},{\"img\":\"games\/emocje\/run.jpg\",\"name\":\"Run\"},{\"img\":\"games\/emocje\/laugh.jpg\",\"name\":\"Laugh\"},{\"img\":\"games\/emocje\/cry.jpg\",\"name\":\"Cry\"}]}",
-    "correct_answer": "\"laugh\"",
-	  "game_order": 5,
-    "category_id": {
-      "$oid": "5d986c034a45d0ca80938997"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d98709d9448c7385cb00057"
-    },
-    "game_name": "PhraseLearning",
-    "game_info": "{\"question\":\"How are you\",\"words\":[\"I\",\"am\",\"right\",\"all\"]}",
-	  "correct_answer": "[\"I\",\"am\",\"all\",\"right\"]",
-	  "game_order": 0,
-    "category_id": {
-      "$oid": "5d986fdfb3cf5f30e6ce5dcf"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d9870e5f555b8f27dcc6fbb"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":true,\"polishName\":\"Dzień dobry\",\"answers\":[{\"img\":\"games\/przydatneZwroty\/good_morning.jpg\",\"name\":\"Good morning\"},{\"img\":\"games\/przydatneZwroty\/hi.jpg\",\"name\":\"Hi\"},{\"img\":\"games\/przydatneZwroty\/good_evening.jpg\",\"name\":\"Good evening\"},{\"img\":\"games\/przydatneZwroty\/i_am_all_right.jpg\",\"name\":\"I am all right\"}]}",
-    "correct_answer": "\"good morning\"",
-	  "game_order": 1,
-    "category_id": {
-      "$oid": "5d986fdfb3cf5f30e6ce5dcf"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d987160f5789d5e349bc44b"
-    },
-    "game_name": "WordGuessing",
-    "game_info": "{\"img\":\"games\/przydatneZwroty\/the_end.jpg\"}",
-	  "correct_answer": "\"the end\"",
-	  "game_order": 2,
-    "category_id": {
-      "$oid": "5d986fdfb3cf5f30e6ce5dcf"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d9871876068bd8b2b0a9ac6"
-    },
-    "game_name": "WordPicker",
-    "game_info": "{\"img\":\"games\/przydatneZwroty\/its_raining.jpg\",\"answers\":[\"It's raining\",\"It's sunny\",\"It's windy\",\"It's foggy\"]}",
-    "correct_answer": "0",
-	  "game_order": 3,
-    "category_id": {
-      "$oid": "5d986fdfb3cf5f30e6ce5dcf"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d9871d4d68d91db2cc0e17e"
-    },
-    "game_name": "PhraseLearning",
-    "game_info": "{\"question\":\"What are you doing\",\"words\":[\"shower\",\"a\",\"taking\",\"am\",\"I\"]}",
-	  "correct_answer": "[\"I\",\"am\",\"taking\",\"a\",\"shower\"]",
-	  "game_order": 4,
-    "category_id": {
-      "$oid": "5d986fdfb3cf5f30e6ce5dcf"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5d98723d86cad8f851fe3667"
-    },
-    "game_name": "WordMatching",
-    "game_info": "{\"isPhrase\":true,\"polishName\":\"Jest gorąco\",\"answers\":[{\"img\":\"games\/przydatneZwroty\/i_am_hot.jpg\",\"name\":\"I am hot\"},{\"img\":\"games\/przydatneZwroty\/it_is_hot.jpg\",\"name\":\"It is hot\"},{\"img\":\"games\/przydatneZwroty\/it_is_cold.jpg\",\"name\":\"It is cold\"},{\"img\":\"games\/przydatneZwroty\/i_am_cold.jpg\",\"name\":\"I am cold\"}]}",
-    "correct_answer": "\"it is hot\"",
-	  "game_order": 5,
-    "category_id": {
-      "$oid": "5d986fdfb3cf5f30e6ce5dcf"
-    }
-  },
+	"category_id": {
+		"$oid": "5d98566e22a8dc81c7468c69"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d986951e91a33176423b78f"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/zwierzeta/tiger.jpg\"}",
+	"correct_answer": "\"tiger\"",
+	"game_order": 0,
+	"category_id": {
+		"$oid": "5d98689db8dbbedbc13da163"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d9869c7465a9899334fd118"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/zwierzeta/dog.jpg\",\"answers\":[\"Dog\",\"Cat\",\"Journey\",\"Driver\"]}",
+	"correct_answer": "0",
+	"game_order": 1,
+	"category_id": {
+		"$oid": "5d98689db8dbbedbc13da163"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d986a2ec121fe1a28d27a25"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":true,\"polishName\":\"Wyprowadzać na spacer\",\"answers\":[{\"img\":\"games/zwierzeta/walk.jpg\",\"name\":\"Walk\"},{\"img\":\"games/zwierzeta/i_dont_know.jpg\",\"name\":\"I don't know\"},{\"img\":\"games/zwierzeta/maybe_later.jpg\",\"name\":\"Maybe later\"},{\"img\":\"games/zwierzeta/i_am_good.jpg\",\"name\":\"I am good\"}]}",
+	"correct_answer": "\"walk\"",
+	"game_order": 2,
+	"category_id": {
+		"$oid": "5d98689db8dbbedbc13da163"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d986b21c71ea249e00ead6e"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/zwierzeta/pet.jpg\",\"answers\":[\"Walk\",\"Carry\",\"Pet\",\"Go\"]}",
+	"correct_answer": "2",
+	"game_order": 3,
+	"category_id": {
+		"$oid": "5d98689db8dbbedbc13da163"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d986b74d0691735eea50443"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/zwierzeta/pet2.jpg\"}",
+	"correct_answer": "\"pet\"",
+	"game_order": 4,
+	"category_id": {
+		"$oid": "5d98689db8dbbedbc13da163"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d986bcc03cea0792d4c9e3e"
+	},
+	"game_name": "PhraseLearning",
+	"game_info": "{\"question\":\"Who do you love\",\"words\":[\"I\",\"cat\",\"my\",\"love\"]}",
+	"correct_answer": "[\"I\",\"love\",\"my\",\"cat\"]",
+	"game_order": 5,
+	"category_id": {
+		"$oid": "5d98689db8dbbedbc13da163"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d986c77923687212d4123ec"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/emocje/happy.jpg\",\"answers\":[\"Happy\",\"Sad\",\"Angry\",\"Wild\"]}",
+	"correct_answer": "0",
+	"game_order": 0,
+	"category_id": {
+		"$oid": "5d986c034a45d0ca80938997"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d986cd02131234d35c5f254"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/emocje/angry.jpg\"}",
+	"correct_answer": "\"angry\"",
+	"game_order": 1,
+	"category_id": {
+		"$oid": "5d986c034a45d0ca80938997"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d986d097f83afbeac535182"
+	},
+	"game_name": "PhraseLearning",
+	"game_info": "{\"question\":\"What are you interested in\",\"words\":[\"I\",\"sport\",\"in\",\"am\",\"interested\"]}",
+	"correct_answer": "[\"I\",\"am\",\"interested\",\"in\",\"sport\"]",
+	"game_order": 2,
+	"category_id": {
+		"$oid": "5d986c034a45d0ca80938997"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d986d54242476017975c3d3"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Płakać\",\"answers\":[{\"img\":\"games/emocje/drive.jpg\",\"name\":\"Drive\"},{\"img\":\"games/emocje/run.jpg\",\"name\":\"Run\"},{\"img\":\"games/emocje/laugh.jpg\",\"name\":\"Laugh\"},{\"img\":\"games/emocje/cry.jpg\",\"name\":\"Cry\"}]}",
+	"correct_answer": "\"cry\"",
+	"game_order": 3,
+	"category_id": {
+		"$oid": "5d986c034a45d0ca80938997"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d986ebbf83bf69f89039d9d"
+	},
+	"game_name": "PhraseLearning",
+	"game_info": "{\"question\":\"Who are you proud of\",\"words\":[\"I\",\"am\",\"son\",\"proud\",\"my\",\"of\"]}",
+	"correct_answer": "[\"I\",\"am\",\"proud\",\"of\",\"my\",\"son\"]",
+	"game_order": 4,
+	"category_id": {
+		"$oid": "5d986c034a45d0ca80938997"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d986f34cdb976ac281e7997"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Śmiać się\",\"answers\":[{\"img\":\"games/emocje/drive.jpg\",\"name\":\"Drive\"},{\"img\":\"games/emocje/run.jpg\",\"name\":\"Run\"},{\"img\":\"games/emocje/laugh.jpg\",\"name\":\"Laugh\"},{\"img\":\"games/emocje/cry.jpg\",\"name\":\"Cry\"}]}",
+	"correct_answer": "\"laugh\"",
+	"game_order": 5,
+	"category_id": {
+		"$oid": "5d986c034a45d0ca80938997"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d98709d9448c7385cb00057"
+	},
+	"game_name": "PhraseLearning",
+	"game_info": "{\"question\":\"How are you\",\"words\":[\"I\",\"am\",\"right\",\"all\"]}",
+	"correct_answer": "[\"I\",\"am\",\"all\",\"right\"]",
+	"game_order": 0,
+	"category_id": {
+		"$oid": "5d986fdfb3cf5f30e6ce5dcf"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d9870e5f555b8f27dcc6fbb"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":true,\"polishName\":\"Dzień dobry\",\"answers\":[{\"img\":\"games/przydatneZwroty/good_morning.jpg\",\"name\":\"Good morning\"},{\"img\":\"games/przydatneZwroty/hi.jpg\",\"name\":\"Hi\"},{\"img\":\"games/przydatneZwroty/good_evening.jpg\",\"name\":\"Good evening\"},{\"img\":\"games/przydatneZwroty/i_am_all_right.jpg\",\"name\":\"I am all right\"}]}",
+	"correct_answer": "\"good morning\"",
+	"game_order": 1,
+	"category_id": {
+		"$oid": "5d986fdfb3cf5f30e6ce5dcf"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d987160f5789d5e349bc44b"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/przydatneZwroty/the_end.jpg\"}",
+	"correct_answer": "\"the end\"",
+	"game_order": 2,
+	"category_id": {
+		"$oid": "5d986fdfb3cf5f30e6ce5dcf"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d9871876068bd8b2b0a9ac6"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/przydatneZwroty/its_raining.jpg\",\"answers\":[\"It's raining\",\"It's sunny\",\"It's windy\",\"It's foggy\"]}",
+	"correct_answer": "0",
+	"game_order": 3,
+	"category_id": {
+		"$oid": "5d986fdfb3cf5f30e6ce5dcf"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d9871d4d68d91db2cc0e17e"
+	},
+	"game_name": "PhraseLearning",
+	"game_info": "{\"question\":\"What are you doing\",\"words\":[\"shower\",\"a\",\"taking\",\"am\",\"I\"]}",
+	"correct_answer": "[\"I\",\"am\",\"taking\",\"a\",\"shower\"]",
+	"game_order": 4,
+	"category_id": {
+		"$oid": "5d986fdfb3cf5f30e6ce5dcf"
+	}
+},
+{
+	"_id": {
+		"$oid": "5d98723d86cad8f851fe3667"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":true,\"polishName\":\"Jest gorąco\",\"answers\":[{\"img\":\"games/przydatneZwroty/i_am_hot.jpg\",\"name\":\"I am hot\"},{\"img\":\"games/przydatneZwroty/it_is_hot.jpg\",\"name\":\"It is hot\"},{\"img\":\"games/przydatneZwroty/it_is_cold.jpg\",\"name\":\"It is cold\"},{\"img\":\"games/przydatneZwroty/i_am_cold.jpg\",\"name\":\"I am cold\"}]}",
+	"correct_answer": "\"it is hot\"",
+	"game_order": 5,
+	"category_id": {
+		"$oid": "5d986fdfb3cf5f30e6ce5dcf"
+	}
+},
+{
+	"_id": {
+		"$oid": "5fcc27b5108c4049a6ac5766"
+	},
+	"game_name": "PhraseLearning",
+	"game_info": "{\"question\":\"Here You are.\",\"words\":[\"You\",\"Thank\"],\"correctOrder\":[\"Thank\",\"You\"]}",
+	"correct_answer": "[\"Thank\",\"You\"]",
+	"game_order": 4,
+	"category_id": {
+		"$oid": "1205de2cb54c4bd2ada6de76"
+	}
+},
+{
+	"_id": {
+		"$oid": "60274dc5b4c7856b7c1c7f3c"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Plaża\",\"englishName\":\"Beach\",\"img\":\"games/wakacje/beach_3.jpg\"}",
+	"correct_answer": "",
+	"game_order": 3,
+	"category_id": {
+		"$oid": "bffb4a548d2978cdd72a2d9a"
+	}
+},
+{
+	"_id": {
+		"$oid": "66c2410382be0fcd1abc8946"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Kokos\",\"englishName\":\"Coconut\",\"img\":\"games/wakacje/coconut.jpg\"}",
+	"correct_answer": "",
+	"game_order": 4,
+	"category_id": {
+		"$oid": "bffb4a548d2978cdd72a2d9a"
+	}
+},
+{
+	"_id": {
+		"$oid": "7a119cf0225146678a9527b2"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/miasto/underground.jpg\",\"answers\":[\"Car\",\"Pavement\",\"Street\",\"Underground\"]}",
+	"correct_answer": "3",
+	"game_order": 0,
+	"category_id": {
+		"$oid": "7e50b24709164f44bdbdfed6"
+	}
+},
+{
+	"_id": {
+		"$oid": "7aa58ac4659b4a65a5350c0f"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/biuro/stairs.jpg\",\"answers\":[\"stairs\",\"meeting\",\"notes\",\"bus\"]}",
+	"correct_answer": "0",
+	"game_order": 3,
+	"category_id": {
+		"$oid": "5d59851614aa473964221e4f"
+	}
+},
+{
+	"_id": {
+		"$oid": "7d5e04a793a6438b97c5d2d9"
+	},
+	"game_name": "StoryGame",
+	"game_info": "{\"stories\":[{\"img\":\"games/motoryzacja/straightRoad.jpg\",\"storyEnglish\":\"This road is straight\",\"storyPolish\":\"Ta droga jest prosta\"},{\"img\":\"games/motoryzacja/curvyRoad.jpg\",\"storyEnglish\":\"This road is curvy\",\"storyPolish\":\"Ta droga jest kręta\"}]}",
+	"correct_answer": "",
+	"game_order": 5,
+	"category_id": {
+		"$oid": "5d5984c414aa473964221e4d"
+	}
+},
+{
+	"_id": {
+		"$oid": "7de30f6001064f5b91d996f1"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/rolnictwo/sheep.jpg\",\"answers\":[\"Sheep\",\"Harvester\",\"Chicken\",\"Grain\"]}",
+	"correct_answer": "0",
+	"game_order": 2,
+	"category_id": {
+		"$oid": "6da86d5f78cc4155a96bc885"
+	}
+},
+{
+	"_id": {
+		"$oid": "81e0a96d878a4720b9d3166a"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Schody\",\"englishName\":\"Stairs\",\"img\":\"games/biuro/stairs.jpg\"}",
+	"correct_answer": "",
+	"game_order": 7,
+	"category_id": {
+		"$oid": "5d59851614aa473964221e4f"
+	}
+},
+{
+	"_id": {
+		"$oid": "8cf7af1708ef4c799df8de78"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"kluczyki do samochodu\",\"answers\":[{\"img\":\"games/motoryzacja/carKeys.jpg\",\"name\":\"car keys\"},{\"img\":\"games/motoryzacja/mirror.jpg\",\"name\":\"mirror\"}]}",
+	"correct_answer": "\"car keys\"",
+	"game_order": 2,
+	"category_id": {
+		"$oid": "5d5984c414aa473964221e4d"
+	}
+},
+{
+	"_id": {
+		"$oid": "90f0aaab97394f1596bb27b2"
+	},
+	"game_name": "WordSearch",
+	"game_info": "{\"words\":[\"car\",\"road\",\"fast\",\"straight\"]}",
+	"correct_answer": "",
+	"game_order": 4,
+	"category_id": {
+		"$oid": "5d5984c414aa473964221e4d"
+	}
+},
+{
+	"_id": {
+		"$oid": "935afc712154443b98730a5d"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/zakupy/shoppingBag.jpg\",\"answers\":[\"Shopping bag\",\"Escalator\",\"Shopping Mall\",\"Clothes\"]}",
+	"correct_answer": "0",
+	"game_order": 0,
+	"category_id": {
+		"$oid": "2b7ba4a531f1449993ef1688"
+	}
+},
+{
+	"_id": {
+		"$oid": "93ab6f5dcc284dbaaa058ad9"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Skrzyżowanie ulic\",\"englishName\":\"Intersection\",\"img\":\"games/miasto/intersection.jpg\"}",
+	"correct_answer": "",
+	"game_order": 6,
+	"category_id": {
+		"$oid": "7e50b24709164f44bdbdfed6"
+	}
+},
+{
+	"_id": {
+		"$oid": "94c94921982368c9b1d33f94"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Leżaki plażowe\",\"englishName\":\"Sunbeds\",\"img\":\"games/wakacje/sunbeds_2.jpg\"}",
+	"correct_answer": "",
+	"game_order": 1,
+	"category_id": {
+		"$oid": "bffb4a548d2978cdd72a2d9a"
+	}
+},
+{
+	"_id": {
+		"$oid": "9ad8bd87d2334c5aaebc03bf"
+	},
+	"game_name": "StoryGame",
+	"game_info": "{\"stories\":[{\"img\":\"games/biuro/bus.jpg\",\"storyEnglish\":\"John arrives to work by bus\",\"storyPolish\":\"John przyjeżdża do pracy autobusem\"},{\"img\":\"games/biuro/officeBuilding.jpg\",\"storyEnglish\":\"He enters his office building\",\"storyPolish\":\"Wchodzi do swojego biurowca\"},{\"img\":\"games/biuro/stairs.jpg\",\"storyEnglish\":\"He goes up the stairs\",\"storyPolish\":\"Wchodzi po schodach\"},{\"img\":\"games/biuro/meeting_2.jpg\",\"storyEnglish\":\"John goes to his planned meeting\",\"storyPolish\":\"John wchodzi na swoje zaplanowane spotkanie\"}]}",
+	"correct_answer": "",
+	"game_order": 6,
+	"category_id": {
+		"$oid": "5d59851614aa473964221e4f"
+	}
+},
+{
+	"_id": {
+		"$oid": "a2a4c08ec83b4c4794d976c5"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/miasto/trafficLight.jpg\",\"answers\":[\"Street\",\"Traffic light\",\"Street\",\"Shop\"]}",
+	"correct_answer": "1",
+	"game_order": 4,
+	"category_id": {
+		"$oid": "7e50b24709164f44bdbdfed6"
+	}
+},
+{
+	"_id": {
+		"$oid": "a38246b18d2d304364b8c857"
+	},
+	"game_name": "WordSearch",
+	"game_info": "{\"words\":[\"beach\",\"plane\",\"coconut\",\"sunbed\"]}",
+	"correct_answer": "",
+	"game_order": 8,
+	"category_id": {
+		"$oid": "bffb4a548d2978cdd72a2d9a"
+	}
+},
+{
+	"_id": {
+		"$oid": "a42c58ddde1c4950bb99598e"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Babeczka\",\"answers\":[{\"img\":\"games/slodycze/chocolateBar.jpg\",\"name\":\"chocolate\"},{\"img\":\"games/slodycze/cupcake.jpg\",\"name\":\"cupcake\"},{\"img\":\"games/slodycze/candy.jpg\",\"name\":\"candy\"},{\"img\":\"games/slodycze/lollipop.jpg\",\"name\":\"lollipop\"}]}",
+	"correct_answer": "\"cupcake\"",
+	"game_order": 2,
+	"category_id": {
+		"$oid": "1205de2cb54c4bd2ada6de76"
+	}
+},
+{
+	"_id": {
+		"$oid": "a77cd893f4464a58be048306"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/slodycze/lollipop_2.jpg\"}",
+	"correct_answer": "\"lollipop\"",
+	"game_order": 3,
+	"category_id": {
+		"$oid": "1205de2cb54c4bd2ada6de76"
+	}
+},
+{
+	"_id": {
+		"$oid": "a875ec298ad44ff9a12ca15b"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/biuro/computer.jpg\",\"answers\":[\"Book\",\"Computer\",\"Person\",\"Stairs\"]}",
+	"correct_answer": "1",
+	"game_order": 5,
+	"category_id": {
+		"$oid": "5d59851614aa473964221e4f"
+	}
+},
+{
+	"_id": {
+		"$oid": "b0c304cce8bf49f3a7495c58"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Przejście dla pieszych\",\"englishName\":\"Crossing\",\"img\":\"games/miasto/crossing.jpg\"}",
+	"correct_answer": "",
+	"game_order": 1,
+	"category_id": {
+		"$oid": "7e50b24709164f44bdbdfed6"
+	}
+},
+{
+	"_id": {
+		"$oid": "b138e44a27264d62914cd33a"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/biuro/meeting_3.jpg\",\"answers\":[\"office building\",\"bus\",\"notes\",\"meeting\"]}",
+	"correct_answer": "3",
+	"game_order": 1,
+	"category_id": {
+		"$oid": "5d59851614aa473964221e4f"
+	}
+},
+{
+	"_id": {
+		"$oid": "baa4faaf65b54b7d80b0ac0e"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Kwiaciarnia\",\"englishName\":\"Florist\",\"img\":\"games/zakupy/florist.jpg\"}",
+	"correct_answer": "",
+	"game_order": 2,
+	"category_id": {
+		"$oid": "2b7ba4a531f1449993ef1688"
+	}
+},
+{
+	"_id": {
+		"$oid": "c180b59eb9db4af195627067"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Schody ruchome\",\"englishName\":\"Escalator\",\"img\":\"games/zakupy/escalator.jpg\"}",
+	"correct_answer": "",
+	"game_order": 3,
+	"category_id": {
+		"$oid": "2b7ba4a531f1449993ef1688"
+	}
+},
+{
+	"_id": {
+		"$oid": "c39b4f41fb204523bcf60e2a"
+	},
+	"game_name": "Crossword",
+	"game_info": "{\"words\":[{\"word\":\"cow\",\"description\":\"Czarno białe zwierze\"},{\"word\":\"chicken\",\"description\":\"Kurczak\"},{\"word\":\"watering\",\"description\":\"Podlewanie\"},{\"word\":\"sheep\",\"description\":\"Owca\"},{\"word\":\"harvester\",\"description\":\"Maszyna zbierająca zboże\"},{\"word\":\"grain\",\"description\":\"Ziarno lub zboże\"}]}",
+	"correct_answer": "",
+	"game_order": 3,
+	"category_id": {
+		"$oid": "6da86d5f78cc4155a96bc885"
+	}
+},
+{
+	"_id": {
+		"$oid": "c46f4b1da58a4c07bd893166"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Idę na zakupy\",\"englishName\":\"I am going shopping\",\"img\":\"games/zakupy/goingShopping.jpg\"}",
+	"correct_answer": "",
+	"game_order": 6,
+	"category_id": {
+		"$oid": "2b7ba4a531f1449993ef1688"
+	}
+},
+{
+	"_id": {
+		"$oid": "c925f574123b4f9190be9c77"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Lody\",\"englishName\":\"Ice cream\",\"img\":\"games/slodycze/iceCream.jpg\"}",
+	"correct_answer": "",
+	"game_order": 1,
+	"category_id": {
+		"$oid": "1205de2cb54c4bd2ada6de76"
+	}
+},
+{
+	"_id": {
+		"$oid": "cef9292dc1ba48b0a04e2c2c"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Czekolada\",\"englishName\":\"Chocolate\",\"img\":\"games/slodycze/chocolateBar_2.jpg\"}",
+	"correct_answer": "",
+	"game_order": 0,
+	"category_id": {
+		"$oid": "1205de2cb54c4bd2ada6de76"
+	}
+},
+{
+	"_id": {
+		"$oid": "d1ac0a99e44348b9ad164d61"
+	},
+	"game_name": "Crossword",
+	"game_info": "{\"words\":[{\"word\":\"crossing\",\"description\":\"Piesi przechodzą w tym miejscu przez ulicę\"},{\"word\":\"skyscraper\",\"description\":\"Bardzo wysoki budynek sięgający chmur\"},{\"word\":\"underground\",\"description\":\"Pociag jeżdżący pod ziemią\"},{\"word\":\"street\",\"description\":\"Jeżdżą po niej samochody\"},{\"word\":\"intersection\",\"description\":\"Ulice sie krzyżują\"}]}",
+	"correct_answer": "",
+	"game_order": 5,
+	"category_id": {
+		"$oid": "7e50b24709164f44bdbdfed6"
+	}
+},
+{
+	"_id": {
+		"$oid": "d82e4ea29ed1473643b73eb7"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":true,\"polishName\":\"Palmy\",\"answers\":[{\"img\":\"games/wakacje/sunbeds.jpg\",\"name\":\"Sunbeds\"},{\"img\":\"games/wakacje/palmTrees_3.jpg\",\"name\":\"Palm trees\"},{\"img\":\"games/wakacje/coconut.jpg\",\"name\":\"Coconut\"},{\"img\":\"games/wakacje/swimmingPool_2.jpg\",\"name\":\"Swimming pool\"}]}",
+	"correct_answer": "\"palm trees\"",
+	"game_order": 2,
+	"category_id": {
+		"$oid": "bffb4a548d2978cdd72a2d9a"
+	}
+},
+{
+	"_id": {
+		"$oid": "e1d3e6934c624cb59962b92f"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Sklep spożywczy\",\"englishName\":\"Grocery store\",\"img\":\"games/zakupy/grocery.jpg\"}",
+	"correct_answer": "",
+	"game_order": 5,
+	"category_id": {
+		"$oid": "2b7ba4a531f1449993ef1688"
+	}
+},
+{
+	"_id": {
+		"$oid": "e44ea1c384ac4001a367a408"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Spotkanie\",\"englishName\":\"Office building\",\"img\":\"games/biuro/officeBuilding.jpg\"}",
+	"correct_answer": "",
+	"game_order": 4,
+	"category_id": {
+		"$oid": "5d59851614aa473964221e4f"
+	}
+},
+{
+	"_id": {
+		"$oid": "e4eeb118fd8f4a15862e8d28"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Drapacz chmur\",\"englishName\":\"Skyscraper\",\"img\":\"games/miasto/skyscraper.jpg\"}",
+	"correct_answer": "",
+	"game_order": 3,
+	"category_id": {
+		"$oid": "7e50b24709164f44bdbdfed6"
+	}
+},
+{
+	"_id": {
+		"$oid": "e4f24fc48427ac8bc0a3068c"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/wakacje/beach.jpg\"}",
+	"correct_answer": "\"beach\"",
+	"game_order": 7,
+	"category_id": {
+		"$oid": "bffb4a548d2978cdd72a2d9a"
+	}
+},
+{
+	"_id": {
+		"$oid": "e7eaa5a494f74dc4b3300936"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/motoryzacja/car2.jpg\"}",
+	"correct_answer": "\"car\"",
+	"game_order": 1,
+	"category_id": {
+		"$oid": "5d5984c414aa473964221e4d"
+	}
+},
+{
+	"_id": {
+		"$oid": "e9804d22decf47749cb9ac1c"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Podlewanie\",\"englishName\":\"Watering\",\"img\":\"games/rolnictwo/watering.jpg\"}",
+	"correct_answer": "",
+	"game_order": 0,
+	"category_id": {
+		"$oid": "6da86d5f78cc4155a96bc885"
+	}
+},
+{
+	"_id": {
+		"$oid": "f7ff8a4eff884ec691f9be30"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Spotkanie\",\"englishName\":\"Meeting\",\"img\":\"games/biuro/meeting.jpg\"}",
+	"correct_answer": "",
+	"game_order": 2,
+	"category_id": {
+		"$oid": "5d59851614aa473964221e4f"
+	}
+},
+{
+	"_id": {
+		"$oid": "730945a2bc9ba07fb77e11a2"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Pies\",\"englishName\":\"Dog\",\"img\":\"games/zwierzetaDomowe/dog.jpg\"}",
+	"correct_answer": "",
+	"game_order": 0,
+	"category_id": {
+		"$oid": "00c448518a6571d6a5e4a694"
+	}
+},
+{
+	"_id": {
+		"$oid": "e4004389ab8556d1b1a8d1de"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Kot\",\"englishName\":\"Cat\",\"img\":\"games/zwierzetaDomowe/cat.jpg\"}",
+	"correct_answer": "",
+	"game_order": 1,
+	"category_id": {
+		"$oid": "00c448518a6571d6a5e4a694"
+	}
+},
+{
+	"_id": {
+		"$oid": "0d9040a3a39336d2959493a3"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/zwierzetaDomowe/dog_2.jpg\"}",
+	"correct_answer": "\"dog\"",
+	"game_order": 2,
+	"category_id": {
+		"$oid": "00c448518a6571d6a5e4a694"
+	}
+},
+{
+	"_id": {
+		"$oid": "27be4302b49a20fdfc2bd0e8"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Papuga\",\"englishName\":\"Parrot\",\"img\":\"games/zwierzetaDomowe/parrot.jpg\"}",
+	"correct_answer": "",
+	"game_order": 3,
+	"category_id": {
+		"$oid": "00c448518a6571d6a5e4a694"
+	}
+},
+{
+	"_id": {
+		"$oid": "90ce4e67ad17a777d9ee976d"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/zwierzetaDomowe/cat_2.jpg\",\"answers\":[\"Gold fish\",\"Cat\",\"Dog\",\"Hamster\"]}",
+	"correct_answer": "1",
+	"game_order": 4,
+	"category_id": {
+		"$oid": "00c448518a6571d6a5e4a694"
+	}
+},
+{
+	"_id": {
+		"$oid": "da59447b9cf2dbf5c3a13d1b"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Karmienie\",\"englishName\":\"Feeding\",\"img\":\"games/zwierzetaDomowe/dogFeeding.jpg\"}",
+	"correct_answer": "",
+	"game_order": 5,
+	"category_id": {
+		"$oid": "00c448518a6571d6a5e4a694"
+	}
+},
+{
+	"_id": {
+		"$oid": "ee4143f795e29795298849e2"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/zwierzetaDomowe/parrot_2.jpg\",\"answers\":[\"Cat\",\"Parrot\",\"Dog\",\"Gold Fish\"]}",
+	"correct_answer": "1",
+	"game_order": 6,
+	"category_id": {
+		"$oid": "00c448518a6571d6a5e4a694"
+	}
+},
+{
+	"_id": {
+		"$oid": "6f8947668d735f410cd692e4"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Chomik\",\"englishName\":\"Hamster\",\"img\":\"games/zwierzetaDomowe/hamster.jpg\"}",
+	"correct_answer": "",
+	"game_order": 7,
+	"category_id": {
+		"$oid": "00c448518a6571d6a5e4a694"
+	}
+},
+{
+	"_id": {
+		"$oid": "e08f4e34822785ac6fe55dc4"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/zwierzetaDomowe/cat_3.jpg\"}",
+	"correct_answer": "\"cat\"",
+	"game_order": 8,
+	"category_id": {
+		"$oid": "00c448518a6571d6a5e4a694"
+	}
+},
+{
+	"_id": {
+		"$oid": "32f0406eb44e90e0be3c8976"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Złota rybka\",\"englishName\":\"Gold fish\",\"img\":\"games/zwierzetaDomowe/goldFish.jpg\"}",
+	"correct_answer": "",
+	"game_order": 9,
+	"category_id": {
+		"$oid": "00c448518a6571d6a5e4a694"
+	}
+},
+{
+	"_id": {
+		"$oid": "57434305b40c707f0a015ca5"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/zwierzetaDomowe/Turtle.jpg\",\"answers\":[\"Hamster\",\"Dog\",\"Parrot\",\"Turtle\"]}",
+	"correct_answer": "3",
+	"game_order": 10,
+	"category_id": {
+		"$oid": "00c448518a6571d6a5e4a694"
+	}
+},
+{
+	"_id": {
+		"$oid": "967640b4819a47963263fccf"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Królik\",\"englishName\":\"Rabbit\",\"img\":\"games/zwierzetaDomowe/rabbit.jpg\"}",
+	"correct_answer": "",
+	"game_order": 11,
+	"category_id": {
+		"$oid": "00c448518a6571d6a5e4a694"
+	}
+},
+{
+	"_id": {
+		"$oid": "94164a52aa799a72fb9acdf2"
+	},
+	"game_name": "Crossword",
+	"game_info": "{\"words\":[{\"word\":\"cat\",\"description\":\"Chodzi własnymi drogami\"},{\"word\":\"dog\",\"description\":\"Najlepszy przyjaciel człowieka\"},{\"word\":\"parrot\",\"description\":\"kolorowy ptak\"},{\"word\":\"feeding\",\"description\":\"karmienie zwierzaka\"},{\"word\":\"hamster\",\"description\":\"Biega w kole\"},{\"word\":\"rabbit\",\"description\":\"Skacze i ma długie uszy\"},{\"word\":\"turtle\",\"description\":\"Chroni go skorupa\"}]}",
+	"correct_answer": "",
+	"game_order": 12,
+	"category_id": {
+		"$oid": "00c448518a6571d6a5e4a694"
+	}
+},
+{
+	"_id": {
+		"$oid": "ffbc4580958c8f562e66c833"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Kapelusz\",\"englishName\":\"Hat\",\"img\":\"games/ubrania/hat.jpg\"}",
+	"correct_answer": "",
+	"game_order": 0,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "3185410aac74c7f6fff50d66"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Sweter\",\"englishName\":\"Sweater\",\"img\":\"games/ubrania/sweater.jpg\"}",
+	"correct_answer": "",
+	"game_order": 1,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "78f84382abccab1cdd775137"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Kapelusz\",\"answers\":[{\"img\":\"games/ubrania/sweater_2.jpg\",\"name\":\"sweater\"},{\"img\":\"games/ubrania/sunglasses_3.jpg\",\"name\":\"sunglasses\"},{\"img\":\"games/ubrania/hat_2.jpg\",\"name\":\"hat\"},{\"img\":\"games/ubrania/shoes_3.jpg\",\"name\":\"shoes\"}]}",
+	"correct_answer": "\"hat\"",
+	"game_order": 2,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "648f404bb24f541b13d1a7b9"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Rękawiczki\",\"englishName\":\"Gloves\",\"img\":\"games/ubrania/gloves_3.jpg\"}",
+	"correct_answer": "",
+	"game_order": 3,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "72284492aefc64853bc08318"
+	},
+	"game_name": "WordPicker",
+	"game_info": "{\"img\":\"games/ubrania/sweater_3.jpg\",\"answers\":[\"Gloves\",\"Suit\",\"Hat\",\"Sweater\"]}",
+	"correct_answer": "3",
+	"game_order": 4,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "c76f47b78bb6c9ec9907a6ff"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Okulary przeciwsłoneczne\",\"englishName\":\"Sunglasses\",\"img\":\"games/ubrania/sunglasses.jpg\"}",
+	"correct_answer": "",
+	"game_order": 5,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "80fe4463b516b2e4072bbdeb"
+	},
+	"game_name": "WordMatching",
+	"game_info": "{\"isPhrase\":false,\"polishName\":\"Rękawiczki\",\"answers\":[{\"img\":\"games/ubrania/dress_3.jpg\",\"name\":\"dress\"},{\"img\":\"games/ubrania/gloves.jpg\",\"name\":\"gloves\"},{\"img\":\"games/ubrania/suit.jpg\",\"name\":\"suit\"},{\"img\":\"games/ubrania/shoes.jpg\",\"name\":\"shoes\"}]}",
+	"correct_answer": "\"gloves\"",
+	"game_order": 6,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "2bc245c9a68ed56e807d2f48"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Sukienka\",\"englishName\":\"Dress\",\"img\":\"games/ubrania/dress.jpg\"}",
+	"correct_answer": "",
+	"game_order": 7,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "184f4c138629a39fa995a471"
+	},
+	"game_name": "StoryGame",
+	"game_info": "{\"stories\":[{\"img\":\"games/ubrania/hat_3.jpg\",\"storyEnglish\":\"When the sun is shining we wear a hat.\",\"storyPolish\":\"Gdy świeci słońce nosimy kapelusz\"},{\"img\":\"games/ubrania/sunglasses_2.jpg\",\"storyEnglish\":\"We also put on a pair of sunglasses\",\"storyPolish\":\"Zakładamy także parę okularow przeciwslonecznych\"},{\"img\":\"games/ubrania/sweater_4.jpg\",\"storyEnglish\":\"When it gets colder we wear a sweater\",\"storyPolish\":\"Gdy robi się chłodniej nosimy sweter\"},{\"img\":\"games/ubrania/gloves_2.jpg\",\"storyEnglish\":\"Gloves are keeping out hands warm\",\"storyPolish\":\"Rękawiczki utrzymują nasze dłonie w cieple\"}]}",
+	"correct_answer": "",
+	"game_order": 8,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "c8204b3cb1b29aebb1658e88"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Buty\",\"englishName\":\"Shoes\",\"img\":\"games/ubrania/shoes_2.jpg\"}",
+	"correct_answer": "",
+	"game_order": 9,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "45a94996bd3a27b47464b25c"
+	},
+	"game_name": "WordGuessing",
+	"game_info": "{\"img\":\"games/ubrania/dress_2.jpg\"}",
+	"correct_answer": "\"dress\"",
+	"game_order": 10,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
+{
+	"_id": {
+		"$oid": "a3674ca7a1407e9b4dc4fd33"
+	},
+	"game_name": "WordLearning",
+	"game_info": "{\"polishName\":\"Garnitur\",\"englishName\":\"Suit\",\"img\":\"games/ubrania/suit_2.jpg\"}",
+	"correct_answer": "",
+	"game_order": 11,
+	"category_id": {
+		"$oid": "691a40bf868a71e0a2e17595"
+	}
+},
   {
     "_id": {
       "$oid": "5d98959984791477fd7ac765"

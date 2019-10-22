@@ -7,7 +7,8 @@
 	"country_icon": "countries/poland.png",
 	"price": "0",
 	"centerLatitude": 52.0,
-	"centerLongitude": 19.5
+	"centerLongitude": 19.5,
+	"scale": 1
 },
 {
 	"_id": {
@@ -18,7 +19,8 @@
 	"country_icon": "countries/germany.png",
 	"price": 35,
 	"centerLatitude": 51.0,
-	"centerLongitude": 11.0
+	"centerLongitude": 10.0,
+	"scale": 1
 },
 {
 	"_id": {
@@ -29,18 +31,8 @@
 	"country_icon": "countries/france.png",
 	"price": "120",
 	"centerLatitude": 47.0,
-	"centerLongitude": 2.0
-},
-{
-	"_id": {
-		"$oid": "5d56967214aa473964221e45"
-	},
-	"ISO": "RU",
-	"country_name": "Russia",
-	"country_icon": "countries/russia.jpg",
-	"price": "21",
-	"centerLatitude": 60.0,
-	"centerLongitude": 100.0
+	"centerLongitude": 2.0,
+	"scale": 1
 },
 {
 	"_id": {
@@ -48,20 +40,10 @@
 	},
 	"ISO": "ES",
 	"country_name": "Spain",
-	"country_icon": "countries/spain.jpg",
+	"country_icon": "countries/spain.png",
 	"price": "86",
 	"centerLatitude": 40.0,
-	"centerLongitude": -4.0
-},
-{
-	"_id": {
-		"$oid": "5d5696e714aa473964221e47"
-	},
-	"ISO": "US",
-	"country_name": "United States of America",
-	"country_icon": "countries/usa.jpg",
-	"price": "65",
-	"centerLatitude": 38.0,
-	"centerLongitude": -97.0
+	"centerLongitude": -4.0,
+	"scale": 1
 }]
 
