@@ -375,7 +375,7 @@
 		"$oid": "5d8f9942054c868f6f9f47d5"
 	},
 	"game_name": "StoryGame",
-	"game_info": "{\"stories\":[{\"img\":\"games/pierwszeZwroty/coffee_story_1.jpg\",\"storyEnglish\":\"Matt and Samantha met at the cofee shop\",\"storyPolish\":\"Matt i Samanta spotkali się w kawiarni\"},{\"img\":\"games/pierwszeZwroty/coffee_story_2.jpg\",\"storyEnglish\":\"Samantha accidentally spilled coffee on Matt\",\"storyPolish\":\"Samanta przez przypadek wylał kawę na Mata\"},{\"img\":\"games/pierwszeZwroty/coffee_story_3.jpg\",\"storyEnglish\":\"Samantha said: I am sorry Matt\",\"storyPolish\":\"Samanta powiedział: przepraszam Matt\"},{\"img\":\"games/pierwszeZwroty/coffee_story_4.jpg\",\"storyEnglish\":\"Matt replied: no problem\",\"storyPolish\":\"Matt odpowiedział: nie ma problemu\"}]}",
+	"game_info": "{\"stories\":[{\"img\":\"games/pierwszeZwroty/coffee_story_1.jpg\",\"storyEnglish\":\"Matt and Samantha met at the cofee shop\",\"storyPolish\":\"Matt i Samanta spotkali się w kawiarni\"},{\"img\":\"games/pierwszeZwroty/coffee_story_2.jpg\",\"storyEnglish\":\"Samantha accidentally spilled coffee on Matt\",\"storyPolish\":\"Samanta przez przypadek wylała kawę na Mata\"},{\"img\":\"games/pierwszeZwroty/coffee_story_3.jpg\",\"storyEnglish\":\"Samantha said: I am sorry Matt\",\"storyPolish\":\"Samanta powiedziała: przepraszam Matt\"},{\"img\":\"games/pierwszeZwroty/coffee_story_4.jpg\",\"storyEnglish\":\"Matt replied: no problem\",\"storyPolish\":\"Matt odpowiedział: nie ma problemu\"}]}",
 	"correct_answer": "",
 	"game_order": 1,
 	"category_id": {
