@@ -21,5 +21,6 @@ module.exports = {
 
     google_client_id: "925243319638-ttosmhr4pf4ada5i37ve5gbsggo5isgm.apps.googleusercontent.com",
     google_client_secret: "dbLc9FzmOLj_uL1ad7jRIeqt",
-    google_redirect_url: "http://localhost:8080"
+    google_redirect_url: "http://localhost:8080",
+    google_password_appx: "79780aec20a58"
 };

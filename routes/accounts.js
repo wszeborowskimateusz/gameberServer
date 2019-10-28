@@ -178,9 +178,9 @@ router.post('/signin/google', async function(req, res){
     const user = await db.User.findOne({login: userInfo.name});
 
     const userData = {};
+    userData.login = userInfo.name;
+    userData.password = userInfo.id + cfg.google_password_appx;
     if (user == null){
-      userData.login = userInfo.name;
-      userData.password = userInfo.id;
       userData.mail = userInfo.email;
       userData.isGoogle = true;
 
@@ -188,16 +188,13 @@ router.post('/signin/google', async function(req, res){
         pathname:"/accounts/signup",
         query:userData}));
     } else{
-      userData.login = userInfo.name;
-      userData.password = userInfo.id;
-
       res.redirect(307, url.format({
         pathname:"/accounts/signin",
         query:userData}));
     }
   } catch(err){
-  console.log(err);
-    res.status(400).json({message: errorMessage});
+      console.log(err);
+      res.status(400).json({message: errorMessage});
   }
 });
 
