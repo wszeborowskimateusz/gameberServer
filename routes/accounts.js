@@ -194,7 +194,7 @@ router.post('/signin/google', async function(req, res){
     }
   } catch(err){
       console.log(err);
-      res.status(400).json({message: errorMessage});
+      res.status(400).send();
   }
 });
 

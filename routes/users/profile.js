@@ -83,7 +83,7 @@ router.get('/:user_id?', async function(req, res) {
             })
         })
 
-        const userExperience = await functions.getUserExperienceAsync(USER_ID);
+        const userExperience = await functions.getUserExperienceAsync(userId);
 
         r.user = {
             ...r.user, ...{
