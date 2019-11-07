@@ -128,7 +128,7 @@ router.post('/signin', async function(req, res){
           await functions.giveCoinsToUserAsync(coins, user._id, session);
           await functions.giveExperienceToUserAsync(experience, enums.ExperienceSubject.LOGIN_STREAK, user._id, session);
           
-          const loginStreakAchievement = await achievementForLoginStreak(user.logging_streak, session);
+          const loginStreakAchievement = await achievementForLoginStreak(user._id, user.logging_streak, session);
           if (loginStreakAchievement)
             r.everydayAwards.achievements.push(loginStreakAchievement);
         }
@@ -200,12 +200,12 @@ router.post('/signin/google', async function(req, res){
 
 // Functions
 
-async function achievementForLoginStreak(loginStreak, session){
+async function achievementForLoginStreak(userId, loginStreak, session){
   const newAchievementSymbol = enums.AchievementsSymbol['LOGIN_STREAK_' + loginStreak];
   if (!newAchievementSymbol)
     return null
 
-  const newAchievement = await functions.giveAchievementToUserAsync(null, newAchievementSymbol, USER_ID, session);
+  const newAchievement = await functions.giveAchievementToUserAsync(null, newAchievementSymbol, userId, session);
   return  {name: newAchievement.achievement_name,
            src: cfg.imagesUrl + newAchievement.achievement_img}
 }
