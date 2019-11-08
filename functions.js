@@ -64,7 +64,7 @@ module.exports.giveExperienceToUserAsync = async function (experiencePoints, sub
     const user = await db.User.findById(userId);
 
     while (userExperience >= user.points_to_new_level){
-        user.points_to_new_level = Math.floor(Math.pow(user.points_to_new_level, cfg.newLevelPower));
+        user.points_to_new_level = cfg.firstLevelPoints + user.points_to_new_level * cfg.newLevelMultiplier;
         user.level++;
     }
 

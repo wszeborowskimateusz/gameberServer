@@ -31,7 +31,7 @@ const userSchema = mongoose.Schema({
     login: String,
     password: String,
     mail: String,
-    points_to_new_level: { type : Number, default: 100 },
+    points_to_new_level: { type : Number, default: cfg.firstLevelPoints },
     points: { type : Number, default: 0 },
     level: { type : Number, default: 1 },
     amount_of_coins: { type : Number, default: 100 },

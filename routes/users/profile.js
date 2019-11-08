@@ -94,7 +94,8 @@ router.get('/:user_id?', async function(req, res) {
                 backgroundImages: backgroundsArr,
                 level: player_info.level,
                 experiencePoints: userExperience,
-                pointsToAchieveNewLevel: player_info.points_to_new_level,
+                pointsToAchievePreviousLevel: player_info.level == 1 ? 0 : Math.round((player_info.points_to_new_level - cfg.firstLevelPoints)/cfg.newLevelMultiplier),
+                pointsToAchieveNewLevel: Math.round(player_info.points_to_new_level),
                 achievements: achievementsArr
         }}
 

@@ -7,7 +7,8 @@ module.exports = {
     jwtSecret: 'be7bf361143bdf3c4fae102ad46e303d784910b3',
     serwerUrl: serwerUrl,
     imagesUrl: serwerUrl + '/images/',
-    newLevelPower: 1.05,
+    newLevelMultiplier: 1.1,
+    firstLevelPoints: 100,
     loginStreakCoinsMultiplier: 2,
     loginStreakExperienceMultiplier: 2,
     expirationTimeJWT: 900, // seconds
