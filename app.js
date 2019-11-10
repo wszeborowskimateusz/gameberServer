@@ -34,8 +34,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 USER_ID = 0;
 DB_CONNECTION = null;
 
-// Db connection
+// Db connection and clear USER_ID
 app.use(async function(req, res, next){
+    USER_ID = 0; // clear USER_ID
     try {
       if (mongoose.connection == null || mongoose.connection.readyState != 1)
         DB_CONNECTION = await mongoose.connect(cfg.dbConnectionString, {
