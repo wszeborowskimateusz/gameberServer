@@ -157,6 +157,8 @@ const categoriesSchema = mongoose.Schema({
     percentage_pass_treshold: Number,
     prize_points: Number,
     prize_coins: Number,
+    date_from: Date,
+    date_to: Date,
     country_id: { type: Schema.Types.ObjectId, ref: 'Countries' },
 });
 const Categories = mongoose.model("Categories", categoriesSchema);
