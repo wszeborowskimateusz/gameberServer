@@ -1515,7 +1515,7 @@
 		"$oid": "57434305b40c707f0a015ca5"
 	},
 	"game_name": "WordPicker",
-	"game_info": "{\"img\":\"games/zwierzetaDomowe/Turtle.jpg\",\"answers\":[\"Hamster\",\"Dog\",\"Parrot\",\"Turtle\"]}",
+	"game_info": "{\"img\":\"games/zwierzetaDomowe/turtle.jpg\",\"answers\":[\"Hamster\",\"Dog\",\"Parrot\",\"Turtle\"]}",
 	"correct_answer": "3",
 	"game_order": 10,
 	"category_id": {
