@@ -64,10 +64,12 @@ router.post('/challenge', async function(req,res){
         await session.startTransaction();
 
         const alreadyChallenged = await db.Clashes.findOne({
-            $or: [{user_from_id: USER_ID, user_to_id: userId},
-                  {user_from_id: userId, user_to_id: USER_ID}],
-            $or: [{user_from_percentage: null},
-                  {user_to_percentage: null}]});
+            $and: [
+                {$or: [{user_from_id: USER_ID, user_to_id: userId},
+                    {user_from_id: userId, user_to_id: USER_ID}]},
+                {$or: [{user_from_percentage: null},
+                    {user_to_percentage: null}]}
+                ]});
         if (alreadyChallenged)
             throw Error;
 
@@ -144,17 +146,24 @@ router.post('/accept-request', async function(req,res){
 
 router.post('/decline-request', async function(req,res){
     const clashId = req.body.clashId;
+    const session = await DB_CONNECTION.startSession();   
 
     try{
+        await session.startTransaction();
+
         const clash = await db.Clashes.findById(clashId);
 
         await functions.removeNotificationAsync(clash.notification_id, session);
-        await clash.remove();
+        await clash.remove({ session });
 
+        await session.commitTransaction();
         res.status(200).send();
     } catch(err) {
-        res.status(400).send();
-    } 
+            await session.abortTransaction();
+            res.status(400).send();
+    } finally {
+            await session.endSession();
+    }
 });
 
 
